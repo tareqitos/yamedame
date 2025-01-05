@@ -1,8 +1,5 @@
-import React, { useRef } from 'react';
 
-export function Form({ links, filteredLinks, setFilteredLinks }) {
-
-    const input_reference = useRef()
+export function Form({ links, setFilteredLinks, input_reference}) {
 
     const categories = Object.keys(links);
     
@@ -12,7 +9,6 @@ export function Form({ links, filteredLinks, setFilteredLinks }) {
 
         // Use reduce to create a new object with filtered links for each category
         const filtered = categories.reduce((acc, category) => {
-
             // Filter links for the current category
             acc[category] = links[category].filter((link) => {
                 return link.name.toLowerCase().includes(query) || link.description.toLowerCase().includes(query);

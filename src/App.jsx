@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Form } from './Form';
+import React, { useEffect, useState, useRef } from 'react';
 import { Links } from './Links';
-import './App.css';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import '../dist/css/main.css'
 
 function App() {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
+  const input_reference = useRef()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +27,16 @@ function App() {
 
   return (
     <>
-      <Form links={links} filteredLinks={filteredLinks} setFilteredLinks={setFilteredLinks}  />
-      <Links filteredLinks={filteredLinks} />
+      <Header links={links} setFilteredLinks={setFilteredLinks} input_reference={input_reference} />
+      <main>
+        <div className="main-content">
+          <div className="resources">
+            <Links filteredLinks={filteredLinks} input_reference={input_reference} />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
     </>
   );
 }

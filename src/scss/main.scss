@@ -1,0 +1,110 @@
+@import 'base/variables';
+@import 'base/base';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'components/suggestion_form';
+
+main {
+    position: relative;
+    flex-grow: 1;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    padding: $main-side-padding;
+}
+
+.resources {
+    flex: 2;
+
+    @media screen and (max-width: 1200px) {
+        padding-left: 0;
+    }
+}
+
+.resources-hr {
+    color: var(--text-primary-color);
+    opacity: .1;
+    border: none;
+    border-top: 1px solid;
+    margin: 40px 0 20px;
+    width: 80%;
+}
+
+.resources-title {
+    @include font-base-format(2rem, 400, 1.5);
+}
+
+.resources-desc {
+    color: var(--text-primary-color-opacity-04)
+}
+
+.links-container {
+    @include flex-column;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 30px;
+
+    .category-title {
+        @include font-base-format(1.2rem, 400, 1.5);
+        margin-bottom: 10px;
+    }
+
+    .link-list {
+        @include font-base-format(1.1rem, 400, 2.2);
+        color: var(--text-primary-color-opacity-07);
+        letter-spacing: .5px;
+        padding: 30px;
+        border-radius: 10px;
+        list-style: none;
+        background-color: var(--components-background-color);
+    }
+}
+
+.link-item-container {
+    transition: color .15s ease;
+
+    &:hover i {
+        color: var(--text-primary-color);
+        text-shadow: 0 0 10px var(--text-primary-color);
+    }
+
+    i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+    }
+
+    @each $icon, $color in (fa-flag-checkered: $beginner-color,
+        fa-book: $dictionary-color,
+        fa-spell-check: $grammar-color,
+        fa-language: $vocabulary-color,
+        fa-book-open: $reading-color,
+        fa-bookmark: $miscellaneous-color,
+        fa-microchip: $app-color ) {
+        html[data-theme="light"] &:hover .#{$icon} {
+            color: white;
+            text-shadow: 0 0 4px $color;
+        }
+        html[data-theme="dark"] &:hover .#{$icon} {
+            color: var(--text-primary-color);
+            text-shadow: 0 0 10px var(--text-primary-color);
+        }
+
+        .#{$icon} {
+        color: $color;
+        }
+    }
+}
+
+.link-item {
+    @include links-base-format;
+    transition: color .15s ease;
+
+    &:hover {
+        color: var(--text-primary-color);
+    }
+}
