@@ -1,6 +1,17 @@
+import { useState } from "react"
 import { Form } from "./Form"
 
-export function Header({ links, setFilteredLinks, input_reference }) {
+export function toggleSideBar(sidebarActive, setSidebarActive) {
+    setSidebarActive(!sidebarActive)
+    console.log(sidebarActive)
+}
+
+export function Header({
+    links,
+    setFilteredLinks,
+    input_reference,
+    toggleTheme, theme,
+    sidebarActive, setSidebarActive }) {
 
     return (
         <header>
@@ -14,7 +25,7 @@ export function Header({ links, setFilteredLinks, input_reference }) {
 
             <div className="header-right-side">
                 <hr />
-                <button className="btn theme-toggle"><i className="fa-solid fa-moon"></i></button>
+                <button onClick={() => toggleTheme()} className="btn theme-toggle"><i className={`fa-solid ${theme == 'dark' ? 'fa-moon' : 'fa-sun'}`}></i></button>
                 <hr />
                 <div className="socials">
                     <a href="https://github.com/tareqitos/yamedame.github.io" target="_blank"><i className="fa-brands fa-github"></i></a>
@@ -22,7 +33,7 @@ export function Header({ links, setFilteredLinks, input_reference }) {
                 </div>
             </div>
             <div className="sidebar-btn-container">
-                <button className="sidebar-btn open"><i className="fa-solid fa-bars"></i></button>
+                <button onClick={() => toggleSideBar(sidebarActive, setSidebarActive)} className="sidebar-btn open"><i className="fa-solid fa-bars"></i></button>
             </div>
         </header>
     )

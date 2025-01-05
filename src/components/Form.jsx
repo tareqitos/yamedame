@@ -1,4 +1,3 @@
-
 export function Form({ links, setFilteredLinks, input_reference}) {
 
     const categories = Object.keys(links);
