@@ -1,2 +1,5 @@
 
 test.html
+dist/css/main.css
+/node_modules
+dist/css/main.css.map
