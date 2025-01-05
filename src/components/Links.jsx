@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 
-export function Links({ filteredLinks, input_reference, isOnAnchor, setIsOnAnchor }) {
+export function Links({ filteredLinks, input_reference, setAnchorPositions }) {
 
     const [isEmpty, setIsEmpty] = useState();
     const [categoryIcons, setCategoryIcons] = useState({
@@ -22,7 +22,6 @@ export function Links({ filteredLinks, input_reference, isOnAnchor, setIsOnAncho
         checkListIsEmpty()
     })
 
-    const [anchorPositions, setAnchorPositions] = useState({});
     const anchor_references = useRef({});
 
     function updateAnchorPositions() {
