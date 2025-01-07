@@ -11,8 +11,8 @@ function App() {
   const [categories, setCategories] = useState([]);
   const input_reference = useRef()
 
+  const [activeCategory, setActiveCategory] = useState(null);
   const [sidebarActive, setSidebarActive] = useState(false);
-  const [anchorPositions, setAnchorPositions] = useState({});
   const [theme, setTheme] = useState('dark')
 
   function toggleTheme() {
@@ -56,12 +56,13 @@ function App() {
             <Links
               filteredLinks={filteredLinks}
               input_reference={input_reference}
-              setAnchorPositions={setAnchorPositions} />
+              activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
           </div>
           <Sidebar
             categories={categories}
             theme={theme} toggleTheme={toggleTheme}
-            sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
+            sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
+            activeCategory={activeCategory} />
         </div>
       </main>
 

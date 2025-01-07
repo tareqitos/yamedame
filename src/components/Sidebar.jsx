@@ -2,7 +2,11 @@ import { toggleSideBar } from "./Header"
 import { useEffect, useState } from "react"
  
 
-export function Sidebar({ categories, sidebarActive, setSidebarActive, theme, toggleTheme }) {
+export function Sidebar({ categories, sidebarActive, setSidebarActive, theme, toggleTheme, activeCategory }) {
+
+    useEffect(() => {
+        console.log(activeCategory)
+    })
 
     return (
         <aside className={`sidebar sidebar-main ${sidebarActive ? 'active' : ''}`} style={{display: sidebarActive ? 'flex' : '' }}>
@@ -12,7 +16,7 @@ export function Sidebar({ categories, sidebarActive, setSidebarActive, theme, to
                 <ul className="navbar-list">
                     {categories.map((category) => (
                         <li key={category} className={`navbar-item navbar-${category}`}>
-                            <a href={`#${category}-id`}><span className="nav-bar-pos"></span>
+                            <a href={`#${category}-id`} className={activeCategory == `${category}-id` ? 'active' : ''}><span></span>
                                 {category == 'beginner' ? category + ' essentials' : category}</a>
                             </li>
                     ))}
