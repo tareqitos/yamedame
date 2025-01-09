@@ -3,11 +3,30 @@
     bottom: 200px
 }
 
-
 .sidebar-main {
     @include flex-column;
     position: relative;
     transition: transform .25s ease;
+}
+
+.sidebar-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--components-background-color);
+    opacity: .7;
+    visibility: hidden;
+    transition: all .25s ease;
+}
+
+.fade-in {
+    visibility: visible;
+    opacity: .7;
+}
+
+.fade-out {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .navbar {
@@ -116,7 +135,7 @@
     }
 
     .navbar {
-        
+
         border-radius: unset;
         align-items: unset;
         top: 0;
@@ -136,20 +155,20 @@
     .sidebar-external-links {
         @include flex-column;
         justify-content: left;
-        
+
     }
-    
+
     .theme-toggle-sidebar {
         @include button-base-format;
         font-size: 1.3em;
         text-align: left;
-        background: var(--background-color);
+        background: var(--components-background-color);
         padding: 10px 20px;
         border-radius: 10px;
         width: 100%;
     }
-    
-    .socials-sidebar{
-        justify-content: center; 
+
+    .socials-sidebar {
+        justify-content: center;
     }
 }

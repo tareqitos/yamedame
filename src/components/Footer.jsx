@@ -1,6 +1,7 @@
-export function Footer() {
+export function Footer( {  }) {
+
     return (
-        <footer>
+        <footer >
             © 2024 yame dame
         </footer>
     )

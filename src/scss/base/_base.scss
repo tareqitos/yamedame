@@ -11,5 +11,9 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     @include flex-column;
-    height: 100vh;
+}
+
+html,
+body {
+    height: 100%;
 }

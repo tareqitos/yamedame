@@ -1,12 +1,22 @@
 import { toggleSideBar } from "./Header"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
  
 
 export function Sidebar({ categories, sidebarActive, setSidebarActive, theme, toggleTheme, activeCategory }) {
 
-    useEffect(() => {
-        console.log(activeCategory)
-    })
+    // const click_event = useRef()
+
+    // useEffect(() => {
+    //     const handleCloseSidebarEvent = () => {
+    //         if (sidebarActive) {
+    //             if (click_event.current !== 'sidebar' && click_event.current) {
+    //                 setSidebarActive(false)
+    //                 console.log(click_event.current)
+    //                 console.log('SET')
+    //             }
+    //         }
+    //     }
+    // })
 
     return (
         <aside className={`sidebar sidebar-main ${sidebarActive ? 'active' : ''}`} style={{display: sidebarActive ? 'flex' : '' }}>

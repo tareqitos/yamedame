@@ -43,7 +43,6 @@ export function Links({ filteredLinks, input_reference, activeCategory, setActiv
       const elements = document.querySelectorAll('.anchor');
   
       elements.forEach((element) => observer.current.observe(element));
-      console.log(elements)
   
       return () => {
         elements.forEach((element) => observer.current.unobserve(element));

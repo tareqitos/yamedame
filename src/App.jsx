@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
 import '../dist/css/main.css'
 
+
 function App() {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
@@ -13,7 +14,9 @@ function App() {
 
   const [activeCategory, setActiveCategory] = useState(null);
   const [sidebarActive, setSidebarActive] = useState(false);
-  const [theme, setTheme] = useState('dark')
+
+  const get_theme_from_storage = window.localStorage.getItem('theme')
+  const [theme, setTheme] = useState(!get_theme_from_storage ? 'dark' : get_theme_from_storage)
 
   function toggleTheme() {
     theme == 'dark' ? setTheme('light') : setTheme('dark')
@@ -22,6 +25,7 @@ function App() {
   useEffect(() => {
     const html = document.documentElement
     html.dataset.theme = theme; // Switch theme in <html>
+    window.localStorage.setItem('theme', theme); 
   }, [theme])
 
   useEffect(() => {
@@ -43,6 +47,9 @@ function App() {
 
   return (
     <>
+      <div onClick={() => setSidebarActive(false)}
+        className={`sidebar-bg ${sidebarActive ? 'fade-in' : 'fade-out'}`}>
+      </div>
       <Header
         links={links}
         setFilteredLinks={setFilteredLinks}
@@ -50,23 +57,24 @@ function App() {
         theme={theme} toggleTheme={toggleTheme}
         sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
       <main>
-        <div className="main-content">
-          <div className="resources">
-            <Title />
-            <Links
-              filteredLinks={filteredLinks}
-              input_reference={input_reference}
-              activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        <div className="main-wrapper">
+          <div className="main-content">
+            <div className="resources">
+              <Title />
+              <Links
+                filteredLinks={filteredLinks}
+                input_reference={input_reference}
+                activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+            </div>
+            <Sidebar
+              categories={categories}
+              theme={theme} toggleTheme={toggleTheme}
+              sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
+              activeCategory={activeCategory} />
           </div>
-          <Sidebar
-            categories={categories}
-            theme={theme} toggleTheme={toggleTheme}
-            sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
-            activeCategory={activeCategory} />
+          <Footer />
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
