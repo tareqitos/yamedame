@@ -1,0 +1,57 @@
+@import '../../styles/main.scss';
+
+.anchor {
+    position: relative;
+    bottom: 200px
+}
+
+.links_container {
+    @include flex-column;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 30px;
+
+    .category_title {
+        @include font-base-format(1.2rem, 400, 1.5);
+        margin-bottom: 10px;
+    }
+
+    .link_list {
+        @include font-base-format(1.1rem, 400, 2.2);
+        color: var(--text-primary-color-opacity-07);
+        letter-spacing: .5px;
+        padding: 30px;
+        border-radius: 10px;
+        list-style: none;
+        background-color: var(--components-background-color);
+    }
+}
+
+.link_item_container {
+    transition: color .15s ease;
+
+    html[data-theme="light"] &:hover i {
+        opacity: .5;
+    }
+
+    html[data-theme="dark"] &:hover i {
+        color: var(--text-primary-color);
+        text-shadow: 0 0 10px var(--text-primary-color);
+    }
+
+    i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+    }
+}
+
+.link_item {
+    @include links-base-format;
+    transition: color .15s ease;
+
+    &:hover {
+        color: var(--text-primary-color);
+    }
+}

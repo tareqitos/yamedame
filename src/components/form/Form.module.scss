@@ -1,0 +1,16 @@
+@import '../../styles/main.scss';
+
+input {
+    color: var(--text-primary-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 20vw;
+    background-color: var(--background-color);
+    transition: all .2s ease;
+
+    &:focus {
+        outline: 1px solid rgba(var(--text-primary-color), 0.4);
+        width: 30vw;
+    }
+}

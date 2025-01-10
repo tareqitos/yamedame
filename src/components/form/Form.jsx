@@ -1,4 +1,6 @@
-export function Form({ links, setFilteredLinks, input_reference}) {
+import styles from './Form.module.scss'
+
+function Form({ links, setFilteredLinks, input_reference}) {
 
     const categories = Object.keys(links);
     
@@ -26,3 +28,5 @@ export function Form({ links, setFilteredLinks, input_reference}) {
         </>
     );
 }
+
+export default Form;

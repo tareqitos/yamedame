@@ -1,0 +1,10 @@
+@import './variables';
+@import './reset';
+@import './theme';
+@import './mixins';
+
+html {
+    &.stop-scrolling {
+        overflow: hidden;
+    }
+}

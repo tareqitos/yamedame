@@ -1,0 +1,30 @@
+@import './variables';
+@import './theme';
+@import './mixins';
+
+.btn {
+    @include button-base-format;
+    padding: 10px;
+    border-radius: 8px;
+    color: #78B3E2;
+    border: 1px solid #78B;
+    background-color: var(--components-background-color);
+    cursor: pointer;
+}
+
+.theme_toggle {
+    @include button-base-format;
+    font-size: 1.3em;
+}
+
+.socials {
+    @include flex-row;
+    gap: 10px;
+
+    a {
+        @include links-base-format;
+        @include font-base-format;
+        font-size: 1.3em;
+        color: var(--text-primary-color-opacity-07);
+    }
+}

@@ -1,3 +1,5 @@
+@import '../../styles/main.scss';
+
 header {
     background-color: var(--components-background-color);
     padding: $header-footer-side-padding;
@@ -36,42 +38,11 @@ header {
         border-left: 1px solid var(--text-primary-color-opacity-07)
     }
 
-    input {
-        color: var(--text-primary-color);
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        width: 20vw;
-        background-color: var(--background-color);
-        transition: all .2s ease;
-
-        &:focus {
-            outline: 1px solid rgba(var(--text-primary-color), 0.4);
-            width: 30vw;
-        }
-    }
 }
 
-.header-right-side {
+.header_right_side {
     @include flex-center;
     gap: 20px;
-
-    .theme-toggle {
-        @include button-base-format;
-        font-size: 1.3em;
-    }
-
-    .socials {
-        @include flex-row;
-        gap: 10px;
-
-        a {
-            @include links-base-format;
-            @include font-base-format;
-            font-size: 1.3em;
-            color: var(--text-primary-color-opacity-07);
-        }
-    }
 
     @media screen and (max-width: 576px) {
         display: none;

@@ -1,9 +1,0 @@
-.btn {
-    @include button-base-format;
-    padding: 10px;
-    border-radius: 8px;
-    color: #78B3E2;
-    border: 1px solid #78B;
-    background-color: var(--components-background-color);
-    cursor: pointer;
-}

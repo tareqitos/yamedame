@@ -1,70 +1,49 @@
-.anchor {
-    position: relative;
-    bottom: 200px
-}
+@import '../../styles/main.scss';
 
-.sidebar-main {
+.sidebar_main {
     @include flex-column;
     position: relative;
     transition: transform .25s ease;
-}
 
-.sidebar-bg {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: var(--components-background-color);
-    opacity: .7;
-    visibility: hidden;
-    transition: all .25s ease;
-}
+    .navbar {
+        padding: 20px 40px;
+        border-radius: 10px;
 
-.fade-in {
-    visibility: visible;
-    opacity: .7;
-}
+        position: sticky;
+        top: 20px;
 
-.fade-out {
-    visibility: hidden;
-    opacity: 0;
-}
+        @include flex-row;
+        gap: 10px;
 
-.navbar {
-    padding: 20px 40px;
-    border-radius: 10px;
 
-    position: sticky;
-    top: 20px;
 
-    @include flex-row;
-    gap: 10px;
+        hr {
+            opacity: .2;
+            height: 100%
+        }
 
-    .close {
-        display: none;
-    }
-
-    hr {
-        opacity: .2;
-        height: 100%
     }
 }
 
-.navbar-list {
+        .close {
+            display: none;
+        }
+
+.navbar_list {
     line-height: 2.5;
     list-style-type: none;
     position: relative;
 }
 
-
-.navbar-item .active a {
+.navbar_item .active a {
     color: var(--text-primary-color);
 }
 
-.navbar-item {
+.navbar_item {
 
     a {
         @include links-base-format;
-        color: rgba(var(--text-primary-color), 0.2);
+        color: var(--text-primary-color-opacity-04);
         position: relative;
 
         transition: all .2s ease;
@@ -88,12 +67,12 @@
 }
 
 // MODAL
-.sidebar-btn-container {
+.sidebar_btn_container {
     display: none;
     margin-left: 20px
 }
 
-.sidebar-btn {
+.sidebar_btn {
     @include font-base-format(.9em, 100, 1.5);
     right: 2rem;
     border: none;
@@ -105,24 +84,17 @@
 
 // Links / Theme toggle
 
-.sidebar-external-links {
+.sidebar_external_links {
     display: none;
     padding: 0 20px;
 }
 
-@media screen and (min-width: 1201px) {
-    .sidebar-bg {
-        visibility: hidden;
-        opacity: 0;
-    }
-}
-
 @media screen and (max-width: 1200px) {
-    .sidebar-btn-container {
+    .sidebar_btn_container {
         display: block;
     }
 
-    .sidebar-main {
+    .sidebar_main {
         visibility: hidden;
         position: fixed;
         right: 0;
@@ -146,26 +118,27 @@
         border-radius: unset;
         align-items: unset;
         top: 0;
-
-        .close {
-            display: block;
-            order: 1;
-            position: absolute;
-            top: 20px;
-        }
-
         hr {
             display: none;
         }
     }
 
-    .sidebar-external-links {
-        @include flex-column;
-        justify-content: left;
-
+    .close {
+        display: block;
+        order: 1;
+        position: absolute;
+        top: 20px;
     }
 
-    .theme-toggle-sidebar {
+
+
+    .sidebar_external_links {
+        @include flex-column;
+        justify-content: left;
+        margin-top: 20px
+    }
+
+    .theme_toggle_sidebar {
         @include button-base-format;
         font-size: 1.3em;
         text-align: left;
@@ -175,7 +148,7 @@
         width: 100%;
     }
 
-    .socials-sidebar {
+    .socials_sidebar {
         justify-content: center;
     }
 }

@@ -10,7 +10,8 @@ html {
     font-family: $nunito-font;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    @include flex-column;
+    display: flex;
+    flex-direction: column;
 }
 
 html,

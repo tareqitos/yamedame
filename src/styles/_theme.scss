@@ -32,9 +32,8 @@ $text-primary-color-opacity-04-light: rgba($text-primary-color-light, .4);
     fa-book-open: $reading-color,
     fa-bookmark: $miscellaneous-color,
     fa-microchip: $app-color ) {
-    .#{$icon} {
+        .#{$icon} {
         color: $color;
-        text-shadow: 0 0 0px $color;
     }
 }
 
@@ -47,7 +46,6 @@ $text-primary-color-opacity-04-light: rgba($text-primary-color-light, .4);
     fa-microchip: $app-color ) {
     html[data-theme="light"] .#{$icon} {
         color: $color;
-        text-shadow: 0 0 0px $color;
     }
 }
 

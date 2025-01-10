@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Links } from './components/Links';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
+import Links from '../links';
+import Header from '../header';
+import Footer from '../footer';
+import Sidebar from '../sidebar';
+import styles from './App.module.scss';
 
 function App() {
   const [links, setLinks] = useState();
@@ -19,6 +20,12 @@ function App() {
   function toggleTheme() {
     theme == 'dark' ? setTheme('light') : setTheme('dark')
   }
+
+
+  useEffect(() => {
+    const html = document.documentElement;
+    sidebarActive ? html.classList.add('stop-scrolling') : html.classList.remove('stop-scrolling')
+  }, [sidebarActive])
 
   useEffect(() => {
     const html = document.documentElement
@@ -46,7 +53,7 @@ function App() {
   return (
     <>
       <div onClick={() => setSidebarActive(false)}
-        className={`sidebar-bg ${sidebarActive ? 'fade-in' : 'fade-out'}`}>
+        className={`${styles.sidebar_bg} ${sidebarActive ? styles.fade_in : styles.fade_out}`}>
       </div>
       <Header
         links={links}
@@ -55,9 +62,9 @@ function App() {
         theme={theme} toggleTheme={toggleTheme}
         sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
       <main>
-        <div className="main-wrapper">
-          <div className="main-content">
-            <div className="resources">
+        <div className={styles.main_wrapper}>
+          <div className={styles.main_content}>
+            <div className={styles.resources}>
               <Title />
               <Links
                 filteredLinks={filteredLinks}
@@ -80,9 +87,9 @@ function App() {
 function Title() {
   return (
     <>
-      <h1 className="resources-title">Japanese Learning Resources</h1>
-      <p className="resources-desc">Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
-      <hr className="resources-hr"></hr>
+      <h1 className={styles.resources_title}>Japanese Learning Resources</h1>
+      <p className={styles.resources_desc}>Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
+      <hr className={styles.resources_hr}></hr>
     </>
   )
 }
