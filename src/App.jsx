@@ -3,8 +3,6 @@ import { Links } from './components/Links';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
-import '../dist/css/main.css'
-
 
 function App() {
   const [links, setLinks] = useState();

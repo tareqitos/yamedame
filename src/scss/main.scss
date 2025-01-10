@@ -74,7 +74,6 @@ section {
 
     &:hover i {
         color: var(--text-primary-color);
-        text-shadow: 0 0 10px var(--text-primary-color);
     }
 
     i {
@@ -90,8 +89,9 @@ section {
         fa-bookmark: $miscellaneous-color,
         fa-microchip: $app-color ) {
         html[data-theme="light"] &:hover .#{$icon} {
-            color: white;
-            text-shadow: 0 0 4px white;
+            color: $color;
+            opacity: .5;
+            text-shadow: none;
         }
 
         html[data-theme="dark"] &:hover .#{$icon} {

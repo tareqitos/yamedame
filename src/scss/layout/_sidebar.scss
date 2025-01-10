@@ -110,13 +110,20 @@
     padding: 0 20px;
 }
 
+@media screen and (min-width: 1201px) {
+    .sidebar-bg {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .sidebar-btn-container {
         display: block;
     }
 
     .sidebar-main {
-        display: none;
+        visibility: hidden;
         position: fixed;
         right: 0;
         top: 0;

@@ -1,25 +1,25 @@
+import { useEffect, useRef } from "react"
 import { toggleSideBar } from "./Header"
-import { useEffect, useRef, useState } from "react"
  
 
 export function Sidebar({ categories, sidebarActive, setSidebarActive, theme, toggleTheme, activeCategory }) {
 
-    // const click_event = useRef()
+    useEffect (() => {
+        function sidebarCloseOnResize() {
+            if (window.innerWidth > 1200) {
+                setSidebarActive(false);
+            }
+        }
+        
+        window.addEventListener('resize', sidebarCloseOnResize);
 
-    // useEffect(() => {
-    //     const handleCloseSidebarEvent = () => {
-    //         if (sidebarActive) {
-    //             if (click_event.current !== 'sidebar' && click_event.current) {
-    //                 setSidebarActive(false)
-    //                 console.log(click_event.current)
-    //                 console.log('SET')
-    //             }
-    //         }
-    //     }
-    // })
+        return () => {
+            window.removeEventListener('resize', sidebarCloseOnResize);
+        }
+    }, [])
 
     return (
-        <aside className={`sidebar sidebar-main ${sidebarActive ? 'active' : ''}`} style={{display: sidebarActive ? 'flex' : '' }}>
+        <aside className={`sidebar sidebar-main ${sidebarActive ? 'active' : ''}`} style={{visibility: sidebarActive ? 'visible' : '' }}>
             <nav className="navbar">
                 <button onClick={() => toggleSideBar(sidebarActive, setSidebarActive)} className="sidebar-btn close"><i className="fa-solid fa-xmark"></i></button>
                 <hr />

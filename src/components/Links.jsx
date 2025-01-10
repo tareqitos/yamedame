@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 
-export function Links({ filteredLinks, input_reference, activeCategory, setActiveCategory }) {
+export function Links({ filteredLinks, input_reference, setActiveCategory }) {
 
     const [isEmpty, setIsEmpty] = useState();
     const [categoryIcons, setCategoryIcons] = useState({
@@ -20,7 +20,7 @@ export function Links({ filteredLinks, input_reference, activeCategory, setActiv
 
     useEffect(() => {
         checkListIsEmpty()
-    })
+    }, [filteredLinks])
 
     const observer = useRef(null);
 
@@ -47,7 +47,7 @@ export function Links({ filteredLinks, input_reference, activeCategory, setActiv
       return () => {
         elements.forEach((element) => observer.current.unobserve(element));
       };
-    }, []);
+    }, [filteredLinks, setActiveCategory]);
 
     return (
         <>
@@ -58,7 +58,7 @@ export function Links({ filteredLinks, input_reference, activeCategory, setActiv
 
                             <section key={category} className={category + '-container'}>
                                 <a className="anchor" id={category + '-id'}></a>
-                                <h2 className='category-title'>{category}</h2>
+                                <h2 className='category-title'>{category == 'beginner' ? 'Beginner essentials': category.charAt(0).toUpperCase() + category.slice(1)}</h2>
                                 <ul className="link-list">
                                     {filteredLinks[category].map((link) => (
                                         <li key={link.id} className={`link-item-container ${category}`}>
