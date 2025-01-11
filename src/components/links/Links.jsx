@@ -19,15 +19,19 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
         setIsEmpty(Object.keys(filteredLinks).every(category => filteredLinks[category].length === 0));
     }
 
+
+
+    useEffect(() => {
+        AOS.init();
+    })
+
     useEffect(() => {
         checkListIsEmpty()
-        AOS.init();
     }, [filteredLinks])
 
     const observer = useRef(null);
 
     useEffect(() => {
-        AOS.init();
         const handleIntersect = (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -55,7 +59,7 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
     return (
         <>
             <div className={styles['links-container']}>
-                {isEmpty ? <p className={styles['empty-list-message']}>No result for {input_reference.current.value.trim()}</p> :
+                {isEmpty ? <p className={styles['empty-list-message']}>No result for <span style={{color: '#92BFB1'}}>{input_reference.current.value.trim()}</span></p> :
                     Object.keys(filteredLinks).map((category) => (
                         filteredLinks[category].length == 0 ? '' :
 

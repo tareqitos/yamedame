@@ -16,6 +16,7 @@ $link-primary-color: rgb(120, 179, 226);
 $text-primary-color-opacity-07: rgba($text-primary-color, .7);
 $text-primary-color-opacity-04: rgba($text-primary-color, .4);
 $link-icon-color: rgb(255, 255, 255);
+$button-color: rgb(146, 191, 177);
 
 // Light mode colors
 $background-color-light: rgb(255, 255, 255);
@@ -24,6 +25,9 @@ $text-primary-color-light: rgb(0, 0, 0);
 $link-primary-color-light: rgb(0, 122, 204);
 $text-primary-color-opacity-07-light: rgba($text-primary-color-light, .7);
 $text-primary-color-opacity-04-light: rgba($text-primary-color-light, .4);
+$button-color-light: rgb(98, 154, 136);
+
+
 
 @each $icon, $color in (fa-flag-checkered: $beginner-color,
     fa-book: $dictionary-color,
@@ -56,6 +60,7 @@ html[data-theme="light"] {
     --link-primary-color: #{$link-primary-color-light};
     --text-primary-color-opacity-07: #{$text-primary-color-opacity-07-light};
     --text-primary-color-opacity-04: #{$text-primary-color-opacity-04-light};
+    --button-color: #{$button-color-light};
 }
 
 html[data-theme="dark"] {
@@ -66,4 +71,5 @@ html[data-theme="dark"] {
     --text-primary-color-opacity-07: #{$text-primary-color-opacity-07};
     --text-primary-color-opacity-04: #{$text-primary-color-opacity-04};
     --links-icon-drop-shadow-color: #{$text-primary-color};
+    --button-color: #{$button-color};
 }

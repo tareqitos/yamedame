@@ -1,3 +1,4 @@
+@import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
 .sidebar-main {
@@ -7,7 +8,7 @@
 
     .navbar {
         padding: 20px 40px;
-        border-radius: 10px;
+        border-radius: $border-radius-10;
 
         position: sticky;
         top: 20px;
@@ -53,7 +54,7 @@
                 height: 20px;
                 background-color: var(--text-primary-color);
                 left: -12px;
-                border-radius: 5px;
+                border-radius: $border-radius-5;
                 top: 0;
             }
         }
@@ -70,7 +71,7 @@
     @include font-base-format(.9em, 100, 1.5);
     right: 2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: $border-radius-10;
     color: var(--text-primary-color-opacity-07);
     background-color: var(--components-background-color);
     cursor: pointer;
@@ -139,7 +140,7 @@
         text-align: left;
         background: var(--components-background-color);
         padding: 10px 20px;
-        border-radius: 10px;
+        border-radius: $border-radius-10;
         width: 100%;
     }
 

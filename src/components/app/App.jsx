@@ -4,6 +4,7 @@ import Header from '../header';
 import Footer from '../footer';
 import Sidebar from '../sidebar';
 import ToTop from '../toTop';
+import Feedback from '../feedback'
 import styles from './App.module.scss';
 
 function App() {
@@ -117,6 +118,7 @@ function Title() {
     <>
       <h1 className={styles['resources-title']}>Japanese Learning Resources</h1>
       <p className={styles['resources-desc']}>Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
+      <Feedback />
       <hr className={styles['resources-hr']}></hr>
     </>
   )

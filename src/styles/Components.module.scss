@@ -4,13 +4,33 @@
 
 .btn {
     @include button-base-format;
-    border-radius: 8px;
-    color: #0DAE9C;
-    border: 1px solid #0DAE9C;
-    // color: #78B3E2;
-    // border: 1px solid #78B3E2;
+    border-radius: $border-radius-8;
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
     background-color: var(--components-background-color);
+    transition: all .15s ease;
     cursor: pointer;
+
+
+    html[data-theme="dark"]
+    &:hover {
+        color: $button-color-light;
+        border: 1px solid $button-color-light;
+    }
+
+    html[data-theme="light"]
+    &:hover {
+        color: $button-color;
+        border: 1px solid $button-color;
+    }
+}
+
+input {
+    color: var(--text-primary-color);
+    padding: 10px;
+    border: none;
+    border-radius: $border-radius-5;
+    background-color: var(--background-color);
 }
 
 .theme-toggle {

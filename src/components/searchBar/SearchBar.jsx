@@ -24,7 +24,7 @@ function Form({ links, setFilteredLinks, input_reference}) {
     return (
         <>
             <form onInput={filterLinksByQuery}>
-                <input ref={input_reference} id="input-field" type="text" placeholder="Explore the world of Japanese resources!" autoComplete='off' />
+                <input className={styles['search-input']} ref={input_reference} id="input-field" type="text" placeholder="Explore the world of Japanese resources!" autoComplete='off' />
             </form>
         </>
     );
