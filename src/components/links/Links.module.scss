@@ -1,11 +1,11 @@
-@import '../../styles/main.scss';
+@import '../../styles/mixins.scss';
 
 .anchor {
     position: relative;
     bottom: 200px
 }
 
-.links_container {
+.links-container {
     @include flex-column;
     flex: 1;
 }
@@ -13,12 +13,12 @@
 section {
     margin-bottom: 30px;
 
-    .category_title {
+    .category-title {
         @include font-base-format(1.2rem, 400, 1.5);
         margin-bottom: 10px;
     }
 
-    .link_list {
+    .link-list {
         @include font-base-format(1.1rem, 400, 2.2);
         color: var(--text-primary-color-opacity-07);
         letter-spacing: .5px;
@@ -29,7 +29,7 @@ section {
     }
 }
 
-.link_item_container {
+.link-item-container {
     transition: color .15s ease;
 
     html[data-theme="light"] &:hover i {
@@ -47,7 +47,7 @@ section {
     }
 }
 
-.link_item {
+.link-item {
     @include links-base-format;
     transition: color .15s ease;
 

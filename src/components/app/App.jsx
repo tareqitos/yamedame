@@ -3,6 +3,7 @@ import Links from '../links';
 import Header from '../header';
 import Footer from '../footer';
 import Sidebar from '../sidebar';
+import ToTop from '../toTop';
 import styles from './App.module.scss';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
   useEffect(() => {
     const html = document.documentElement
     html.dataset.theme = theme; // Switch theme in <html>
-    window.localStorage.setItem('theme', theme); 
+    window.localStorage.setItem('theme', theme);
   }, [theme])
 
   useEffect(() => {
@@ -44,16 +45,32 @@ function App() {
       } catch (error) {
         console.error('Error fetching JSON:', error);
       }
+
     };
+
     fetchData();
   }, []);
 
-  if (!links) return <p>Loading...</p>;
+  if (! links) {
+    return (
+      <>
+        <Header
+          links={links}
+          setFilteredLinks={setFilteredLinks}
+          input_reference={input_reference}
+          theme={theme} toggleTheme={toggleTheme}
+          sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
+        />
+        <p>An error has occured. Try refresh the page or contact me!</p>
+      </>
+    )
+  }
+
 
   return (
     <>
       <div onClick={() => setSidebarActive(false)}
-        className={`${styles.sidebar_bg} ${sidebarActive ? styles.fade_in : styles.fade_out}`}>
+        className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
       </div>
       <Header
         links={links}
@@ -62,8 +79,8 @@ function App() {
         theme={theme} toggleTheme={toggleTheme}
         sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
       <main>
-        <div className={styles.main_wrapper}>
-          <div className={styles.main_content}>
+        <div className={styles['main-wrapper']}>
+          <div className={styles['main-content']}>
             <div className={styles.resources}>
               <Title />
               <Links
@@ -79,17 +96,28 @@ function App() {
           </div>
           <Footer />
         </div>
+        <ToTop button_css_selector={styles['to-top-main']} />
       </main>
     </>
   );
 }
 
+function LoadingPage() {
+  return (
+    <>
+      <Header />
+      <p>Loading...</p>;
+      <Footer />
+    </>
+  )
+}
+
 function Title() {
   return (
     <>
-      <h1 className={styles.resources_title}>Japanese Learning Resources</h1>
-      <p className={styles.resources_desc}>Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
-      <hr className={styles.resources_hr}></hr>
+      <h1 className={styles['resources-title']}>Japanese Learning Resources</h1>
+      <p className={styles['resources-desc']}>Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
+      <hr className={styles['resources-hr']}></hr>
     </>
   )
 }

@@ -2,6 +2,7 @@ import styles from './Form.module.scss'
 
 function Form({ links, setFilteredLinks, input_reference}) {
 
+    if (!links) return;
     const categories = Object.keys(links);
     
     function filterLinksByQuery(event) {

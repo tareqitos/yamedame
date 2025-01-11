@@ -1,6 +1,6 @@
-@import '../../styles/main.scss';
+@import '../../styles/mixins.scss';
 
-.sidebar_main {
+.sidebar-main {
     @include flex-column;
     position: relative;
     transition: transform .25s ease;
@@ -15,39 +15,33 @@
         @include flex-row;
         gap: 10px;
 
-
-
         hr {
             opacity: .2;
-            height: 100%
+            height: 100%;
         }
-
     }
 }
 
-        .close {
-            display: none;
-        }
+.close {
+    display: none;
+}
 
-.navbar_list {
+.navbar-list {
     line-height: 2.5;
     list-style-type: none;
     position: relative;
 }
 
-.navbar_item .active a {
+.navbar-item .active a {
     color: var(--text-primary-color);
 }
 
-.navbar_item {
-
+.navbar-item {
     a {
         @include links-base-format;
         color: var(--text-primary-color-opacity-04);
         position: relative;
-
         transition: all .2s ease;
-
 
         &.active {
             color: var(--text-primary-color);
@@ -67,12 +61,12 @@
 }
 
 // MODAL
-.sidebar_btn_container {
+.sidebar-btn-container {
     display: none;
-    margin-left: 20px
+    margin-left: 20px;
 }
 
-.sidebar_btn {
+.sidebar-btn {
     @include font-base-format(.9em, 100, 1.5);
     right: 2rem;
     border: none;
@@ -84,24 +78,27 @@
 
 // Links / Theme toggle
 
-.sidebar_external_links {
+.sidebar-external-links {
     display: none;
     padding: 0 20px;
 }
 
+.to-top-sidebar {
+    visibility: visible;
+}
+
 @media screen and (max-width: 1200px) {
-    .sidebar_btn_container {
+    .sidebar-btn-container {
         display: block;
     }
 
-    .sidebar_main {
+    .sidebar-main {
         visibility: hidden;
         position: fixed;
         right: 0;
         top: 0;
         bottom: 0;
         transform: translateX(100%);
-
         border-left: 1px solid var(--text-primary-color-opacity-04);
         background-color: var(--components-background-color);
         height: 100vh;
@@ -114,10 +111,10 @@
     }
 
     .navbar {
-
         border-radius: unset;
         align-items: unset;
         top: 0;
+
         hr {
             display: none;
         }
@@ -130,15 +127,13 @@
         top: 20px;
     }
 
-
-
-    .sidebar_external_links {
+    .sidebar-external-links {
         @include flex-column;
         justify-content: left;
-        margin-top: 20px
+        margin-top: 20px;
     }
 
-    .theme_toggle_sidebar {
+    .theme-toggle-sidebar {
         @include button-base-format;
         font-size: 1.3em;
         text-align: left;
@@ -148,7 +143,7 @@
         width: 100%;
     }
 
-    .socials_sidebar {
+    .socials-sidebar {
         justify-content: center;
     }
 }

@@ -1,1 +1,1 @@
-export { default } from './Links'
+export { default } from './Links.jsx'

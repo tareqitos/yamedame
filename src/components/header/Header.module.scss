@@ -1,10 +1,16 @@
-@import '../../styles/main.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 header {
     background-color: var(--components-background-color);
     padding: $header-footer-side-padding;
     @include flex-space-between;
     align-items: center;
+
+    @media screen and (max-width: 576px) {
+        position: sticky;
+        top: 0;
+    }
 
     .title {
         flex-grow: 1;
@@ -40,7 +46,7 @@ header {
 
 }
 
-.header_right_side {
+.header-right-side {
     @include flex-center;
     gap: 20px;
 

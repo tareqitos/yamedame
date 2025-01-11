@@ -7,12 +7,12 @@
     padding: 10px;
     border-radius: 8px;
     color: #78B3E2;
-    border: 1px solid #78B;
+    border: 1px solid #78B3E2;
     background-color: var(--components-background-color);
     cursor: pointer;
 }
 
-.theme_toggle {
+.theme-toggle {
     @include button-base-format;
     font-size: 1.3em;
 }
@@ -28,3 +28,24 @@
         color: var(--text-primary-color-opacity-07);
     }
 }
+
+// To Top Button
+
+.to-top-button {
+        position: absolute;
+        bottom: -50px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media screen and (max-width: 1200px) {
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+        }
+    }

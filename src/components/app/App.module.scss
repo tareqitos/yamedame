@@ -1,17 +1,19 @@
-@import '../../styles/main.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 // Main content
 
-.main_wrapper {
+.main-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.main_content {
+.main-content {
     display: flex;
     flex: 1;
     padding: $main-side-padding;
+
     @media screen and (max-width: 1200px) {
         display: unset;
     }
@@ -24,7 +26,7 @@
     }
 }
 
-.resources_hr {
+.resources-hr {
     color: var(--text-primary-color);
     opacity: .1;
     border: none;
@@ -33,17 +35,17 @@
     width: 80%;
 }
 
-.resources_title {
+.resources-title {
     @include font-base-format(2rem, 400, 1.5);
 }
 
-.resources_desc {
+.resources-desc {
     color: var(--text-primary-color-opacity-04)
 }
 
 // Sidebar background
 
-.sidebar_bg {
+.sidebar-bg {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -57,20 +59,32 @@
     }
 }
 
-.fade_in {
+.fade-in {
     visibility: visible;
     opacity: .7;
 }
 
-.fade_out {
+.fade-out {
     visibility: hidden;
     opacity: 0;
 }
 
+.to-top-main {
+    display: none;
+}
 
 @media screen and (min-width: 1201px) {
-    .sidebar_bg {
+    .sidebar-bg {
         visibility: hidden;
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .to-top-main {
+        display: block;
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
     }
 }
