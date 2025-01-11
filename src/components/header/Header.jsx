@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {AtSymbolIcon, MoonIcon, SunIcon} from "@heroicons/react/24/outline";
 import Form from "../form"
 import styles from './Header.module.scss'
 import sidebar_styles from '../sidebar/Sidebar.module.scss'
@@ -9,7 +10,7 @@ function Header({
     setFilteredLinks,
     input_reference,
     toggleTheme, theme,
-    sidebarActive, setSidebarActive }) {
+    setSidebarActive }) {
 
     return (
         <header className={styles['header']}>
@@ -23,11 +24,12 @@ function Header({
 
             <div className={styles['header-right-side']}>
                 <hr className={styles['hr']} />
-                <button onClick={() => toggleTheme()} className={`${components_styles['btn']} ${components_styles['theme-toggle']}`}><i className={`fa-solid ${theme === 'dark' ? 'fa-moon' : 'fa-sun'}`}></i></button>
+                <button onClick={() => toggleTheme()} className={`${components_styles['btn']} ${components_styles['theme-toggle']}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']}/>: <SunIcon className={components_styles['h-icon']} />}</button>
                 <hr className={styles['hr']} />
                 <div className={components_styles['socials']}>
                     <a href="https://github.com/tareqitos/yamedame.github.io" target="_blank" className={styles['social-link']}><i className={`fa-brands fa-github`}></i></a>
-                    <a href="mailto:social@tareqitos.com" className={styles['social-link']}><i className={`fa-solid fa-at`}></i></a>
+                    <a href="mailto:social@tareqitos.com" className={styles['social-link']}><AtSymbolIcon className={components_styles['h-icon']} /></a>
+                    
                 </div>
             </div>
             <div className={sidebar_styles['sidebar-btn-container']}>

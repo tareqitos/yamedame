@@ -52,6 +52,7 @@
     background-color: var(--components-background-color);
     opacity: .7;
     visibility: hidden;
+    z-index: 1;
     transition: all .25s ease;
 
     body {

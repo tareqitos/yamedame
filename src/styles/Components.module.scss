@@ -4,10 +4,11 @@
 
 .btn {
     @include button-base-format;
-    padding: 10px;
     border-radius: 8px;
-    color: #78B3E2;
-    border: 1px solid #78B3E2;
+    color: #0DAE9C;
+    border: 1px solid #0DAE9C;
+    // color: #78B3E2;
+    // border: 1px solid #78B3E2;
     background-color: var(--components-background-color);
     cursor: pointer;
 }
@@ -22,17 +23,28 @@
     gap: 10px;
 
     a {
+        @include font-base-format(1.25em, 400, 0);
         @include links-base-format;
-        @include font-base-format;
-        font-size: 1.3em;
         color: var(--text-primary-color-opacity-07);
     }
+}
+
+.h-icon,
+.at-icon {
+    width: 24px;
+    vertical-align: middle;
+}
+
+.link-icon {
+    width: 25px;
+    vertical-align: center;
 }
 
 // To Top Button
 
 .to-top-button {
         position: absolute;
+        padding: 10px 15px;
         bottom: -50px;
         visibility: hidden;
         opacity: 0;

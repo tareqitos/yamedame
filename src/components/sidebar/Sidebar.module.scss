@@ -3,7 +3,7 @@
 .sidebar-main {
     @include flex-column;
     position: relative;
-    transition: transform .25s ease;
+    transition: transform .15s ease;
 
     .navbar {
         padding: 20px 40px;

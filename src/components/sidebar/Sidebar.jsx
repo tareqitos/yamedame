@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react"
+import {AtSymbolIcon, MoonIcon, SunIcon} from "@heroicons/react/24/outline";
 import ToTop from "../toTop/";
 import styles from './Sidebar.module.scss';
 import header_styles from '../header/Header.module.scss';
@@ -38,12 +39,12 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, theme, toggleThe
                 <ToTop button_css_selector={styles['to-top-sidebar']}/>
                 </nav>
             <div className={`${header_styles['header-right-side']} ${styles['sidebar-external-links']}`}>
-                <button onClick={() => toggleTheme()} className={`${components_styles.btn} ${styles['theme-toggle-sidebar']}`}><i className={`fa-solid ${theme == 'dark' ? 'fa-moon' : 'fa-sun'}`}></i></button>
+                <button onClick={() => toggleTheme()} className={`${components_styles.btn} ${styles['theme-toggle-sidebar']}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']}/>: <SunIcon className={components_styles['h-icon']} />}</button>
 
                 <div className={`${components_styles.socials} ${styles['socials-sidebar']}`}>
                     <a href="https://github.com/tareqitos/yamedame.github.io" target="_blank"><i
                         className="fa-brands fa-github"></i></a>
-                    <a href="mailto:social@tareqitos.com"><i className="fa-solid fa-at"></i></a>
+                    <a href="mailto:social@tareqitos.com"><AtSymbolIcon className={components_styles['h-icon']} /></a>
                 </div>
             </div>
         </aside>
