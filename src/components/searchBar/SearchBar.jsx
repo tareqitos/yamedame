@@ -1,4 +1,4 @@
-import styles from './Form.module.scss'
+import styles from './SearchBar.module.scss'
 
 function Form({ links, setFilteredLinks, input_reference}) {
 
