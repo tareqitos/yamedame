@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ArrowUpIcon } from '@heroicons/react/24/outline';
 import styles from './Feedback.module.scss'
 import components_styles from '../../styles/Components.module.scss'
@@ -7,49 +7,120 @@ import components_styles from '../../styles/Components.module.scss'
 function Feedback() {
     const [windowIndex, setWindowIndex] = useState(null);
 
+    const [category, setCategory] = useState('');
+    const [name, setName] = useState('');
+    const [url, setUrl] = useState('');
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState('');
+
+    function toogleWindow(index, this_index) {
+        setSuccess(false)
+        setError('')
+        !windowIndex || windowIndex == index ? setWindowIndex(this_index) : setWindowIndex(null)
+    }
+
+    const name_reference = useRef();
+    const url_reference = useRef();
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        setSuccess(false);
+        setError('');
+        
+        name_reference.current.value = ''
+        url_reference.current.value = ''
+
+        try {
+            const reponse = await fetch('https://api.tareqitos.me/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ category, name, url })
+            });
+
+            if (reponse.ok) {
+                setSuccess(true);
+                setCategory('');
+                setName('');
+                setUrl('')
+            } else {
+                throw new Error('Failed to send feedback ⛓️‍💥')
+            }
+        } catch (err) {
+            setError('Failed to send feedback ⛓️‍💥')
+        }
+    }
+
+    useEffect(() => {
+        AOS.init();
+    }, [windowIndex, setWindowIndex])
+
     return (
         <>
             <div className={styles['feedback-container']}>
                 <button
-                    onClick={() => !windowIndex || windowIndex == 2 ? setWindowIndex(1) : setWindowIndex(null)}
+                    onClick={() => toogleWindow(2, 1)}
                     className={`${components_styles.btn} ${styles['btn-sugg']}`}>
                     💡 Send a suggestion {windowIndex == 1 ? <ArrowUpIcon className={`${components_styles['h-icon']} ${styles['arrow-icon']}`} /> : ''}
                 </button>
                 <button
-                    onClick={() => !windowIndex || windowIndex == 1 ? setWindowIndex(2) : setWindowIndex(null)}
+                    onClick={() => toogleWindow(1, 2)}
                     className={`${components_styles.btn} ${styles['btn-dead-link']}`}>
                     🔗 Report a dead link {windowIndex == 2 ? <ArrowUpIcon className={`${components_styles['h-icon']} ${styles['arrow-icon']}`} /> : ''}
                 </button>
 
             </div>
-            <SendSuggestion index={windowIndex} />
-            <ReportDeadLink index={windowIndex} />
+            <SendSuggestion
+                success={success}
+                error={error}
+                setCategory={setCategory}
+                setName={setName}
+                setUrl={setUrl}
+                handleSubmit={handleSubmit}
+                name_reference={name_reference}
+                url_reference={url_reference}
+                index={windowIndex} />
+            <ReportDeadLink
+                success={success}
+                error={error}
+                setCategory={setCategory}
+                setName={setName}
+                setUrl={setUrl}
+                handleSubmit={handleSubmit}
+                name_reference={name_reference}
+                url_reference={url_reference}
+                index={windowIndex} />
 
         </>
     )
 }
 
-function ReportDeadLink({ index }) {
+function ReportDeadLink({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, index }) {
     return (
         <>
             <div className={styles["form-suggestion-overflow-hidden"]}>
                 <div className={`${styles['form-suggestion-container']} ${index == 2 ? styles['active'] : styles['hidden']}`}>
                     <h2>Report a dead link ☠️</h2>
                     <hr />
-                    <form className={styles['form-suggestion']}>
-                        <select id="form-category-select" defaultValue="" className={styles['form-select']}>
+
+                    {success ? <p className={styles.success}>Thank you for your report! 🚀</p> : 
+                    error ? <p className={styles.error}>Error: {error}</p> :''}
+
+                    <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
+                        <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
                             <option value="" disabled hidden>Select a category</option>
-                            <option value="Beginner essentials">Dictionary</option>
+                            <option value="Beginner essentials">Beginner essentials</option>
                             <option value="Dictionary">Dictionary</option>
                             <option value="Grammar">Grammar</option>
                             <option value="Vocabulary">Vocabulary</option>
                             <option value="Reading">Reading</option>
                             <option value="Miscellaneous">Miscellaneous</option>
                             <option value="Application">Application</option>
+                            <option value="Other">Other</option>
                         </select>
                         <div className={styles["form-suggestion-inputs"]}>
-                            <input className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
-                            <input className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
+                            <input ref={name_reference} onChange={(e) => setName(e.target.value)} className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
+                            <input ref={url_reference} onChange={(e) => setUrl(e.target.value)} className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
                         </div>
                         <button type="submit" className={`${components_styles.btn} ${styles['btn-send']}`}>✉️ Send</button>
                     </form>
@@ -59,27 +130,32 @@ function ReportDeadLink({ index }) {
     )
 }
 
-function SendSuggestion({ index }) {
+function SendSuggestion({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, index }) {
     return (
         <>
             <div className={styles["form-suggestion-overflow-hidden"]}>
                 <div className={`${styles['form-suggestion-container']} ${index == 1 ? styles['active'] : styles['hidden']}`}>
                     <h2>Share your favorite Japanese learning tool</h2>
                     <hr />
-                    <form className={styles['form-suggestion']}>
-                        <select id="form-category-select" defaultValue="" className={styles['form-select']}>
+
+                    {success ? <p className={styles.sucess}>Thank you for your report! 🚀</p> : 
+                    error ? <p className={styles.error}>Error: {error}</p> :''}
+
+                    <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
+                        <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
                             <option value="" disabled hidden>Select a category</option>
-                            <option value="Beginner essentials">Dictionary</option>
+                            <option value="Beginner essentials">Beginner essentials</option>
                             <option value="Dictionary">Dictionary</option>
                             <option value="Grammar">Grammar</option>
                             <option value="Vocabulary">Vocabulary</option>
                             <option value="Reading">Reading</option>
                             <option value="Miscellaneous">Miscellaneous</option>
                             <option value="Application">Application</option>
+                            <option value="Other">Other</option>
                         </select>
                         <div className={styles["form-suggestion-inputs"]}>
-                            <input className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
-                            <input className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
+                            <input ref={name_reference} onChange={(e) => setName(e.target.value)} className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
+                            <input ref={url_reference} onChange={(e) => setUrl(e.target.value)} className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
                         </div>
                         <p className={styles['form-specific-request']}>For a specific request or feedback, feel free to <a href='mailto:social@tareqitos.com'>contact me</a> directly!</p>
                         <button type="submit" className={`${components_styles.btn} ${styles['btn-send']}`} >✉️ Send Suggestion</button>

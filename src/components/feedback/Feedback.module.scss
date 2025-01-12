@@ -32,6 +32,10 @@
     width: fit-content;
     border-radius: $border-radius-10;
     background: var(--components-background-color);
+
+    h2 {
+        color: var(--text-primary-color-opacity-07);
+    }
     
     @mixin showAnimation {
         display: block;
@@ -116,4 +120,12 @@
     to {
         opacity: 0;
     }
+}
+
+.error {
+    color: rgb(203, 53, 53)
+}
+
+.success {
+    color: var(--button-color);
 }

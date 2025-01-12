@@ -15,7 +15,7 @@ function Header({
     return (
         <header className={styles['header']}>
             <div className={styles['title']}>
-                <a href="index.html"><span className={styles['logo']}></span>やめだめ</a>
+                <a href="index.html"><span className={styles['logo']}></span>やめだめ<span className={styles['exclamation-mark']}>!!</span></a>
             </div>
 
             <div className={styles['form-container']}>
@@ -24,7 +24,7 @@ function Header({
 
             <div className={styles['header-right-side']}>
                 <hr className={styles['hr']} />
-                <button onClick={() => toggleTheme()} className={`${components_styles['btn']} ${components_styles['theme-toggle']}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']}/>: <SunIcon className={components_styles['h-icon']} />}</button>
+                <button onClick={() => toggleTheme()} className={components_styles['theme-toggle']}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']}/>: <SunIcon className={components_styles['h-icon']} />}</button>
                 <hr className={styles['hr']} />
                 <div className={components_styles['socials']}>
                     <a href="https://github.com/tareqitos/yamedame.github.io" target="_blank" className={styles['social-link']}><i className={`fa-brands fa-github`}></i></a>

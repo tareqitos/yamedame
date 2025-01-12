@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/src/links.json')
+        let response = await fetch('src/links.json')
         const result = await response.json()
         setLinks(result)
         setFilteredLinks(result)
@@ -46,13 +46,12 @@ function App() {
       } catch (error) {
         console.error('Error fetching JSON:', error);
       }
-
     };
 
     fetchData();
   }, []);
 
-  if (! links) {
+  if (!links) {
     return (
       <>
         <Header
@@ -62,11 +61,10 @@ function App() {
           theme={theme} toggleTheme={toggleTheme}
           sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
         />
-        <p>An error has occured. Try refresh the page or contact me!</p>
+        <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:social@tareqitos.com'>contact me</a>!</p>
       </>
     )
   }
-
 
   return (
     <>
@@ -101,16 +99,6 @@ function App() {
       </main>
     </>
   );
-}
-
-function LoadingPage() {
-  return (
-    <>
-      <Header />
-      <p>Loading...</p>;
-      <Footer />
-    </>
-  )
 }
 
 function Title() {

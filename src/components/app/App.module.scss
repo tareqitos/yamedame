@@ -1,6 +1,17 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+
+.json-error-message {
+    text-align: center;
+    margin: 50px;
+
+    a {
+        @include button-base-format;
+        color: var(--button-color);
+    }
+}
+
 // Main content
 
 .main-wrapper {

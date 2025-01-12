@@ -9,17 +9,14 @@
     border: 1px solid var(--button-color);
     background-color: var(--components-background-color);
     transition: all .15s ease;
-    cursor: pointer;
 
 
-    html[data-theme="dark"]
-    &:hover {
+    html[data-theme="dark"] &:hover {
         color: $button-color-light;
         border: 1px solid $button-color-light;
     }
 
-    html[data-theme="light"]
-    &:hover {
+    html[data-theme="light"] &:hover {
         color: $button-color;
         border: 1px solid $button-color;
     }
@@ -46,6 +43,11 @@ input {
         @include font-base-format(1.25em, 400, 0);
         @include links-base-format;
         color: var(--text-primary-color-opacity-07);
+        transition: all .15s ease;
+
+        &:hover {
+            color: $button-color-light;
+        }
     }
 }
 
@@ -53,6 +55,11 @@ input {
 .at-icon {
     width: 24px;
     vertical-align: middle;
+    transition: all .15s ease;
+
+    &:hover {
+        color: $button-color-light;
+    }
 }
 
 .link-icon {
@@ -63,21 +70,21 @@ input {
 // To Top Button
 
 .to-top-button {
-        position: absolute;
-        padding: 10px 15px;
-        bottom: -50px;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    padding: 10px 15px;
+    bottom: -50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-        &.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media screen and (max-width: 1200px) {
-            position: fixed;
-            bottom: 12px;
-            right: 12px;
-        }
+    &.active {
+        opacity: 1;
+        visibility: visible;
     }
+
+    @media screen and (max-width: 1200px) {
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+    }
+}

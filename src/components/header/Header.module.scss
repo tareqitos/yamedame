@@ -13,6 +13,13 @@ header {
         z-index: 1;
     }
 
+    .exclamation-mark {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all .2s ease;
+    }
+
     .title {
         flex-grow: 1;
 
@@ -26,6 +33,12 @@ header {
 
             @include flex-center;
             gap: 10px;
+
+            &:hover .exclamation-mark{
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     }
 
