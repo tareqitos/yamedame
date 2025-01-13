@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
 
   ],
+  publicDir: 'public',
   build: {
     outDir: 'dist',
     cssCodeSplit: true, // Enable CSS code splitting

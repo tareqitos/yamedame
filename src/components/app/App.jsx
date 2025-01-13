@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch('src/links.json')
+        let response = await fetch('/public/api/links.json')
         const result = await response.json()
         setLinks(result)
         setFilteredLinks(result)
