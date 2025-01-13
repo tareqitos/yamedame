@@ -31,6 +31,7 @@
     margin: 20px 0;
     width: fit-content;
     border-radius: $border-radius-10;
+    border: 1px solid var(--section-border);
     background: var(--components-background-color);
 
     h2 {

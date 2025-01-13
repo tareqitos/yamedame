@@ -17,6 +17,7 @@ $text-primary-color-opacity-07: rgba($text-primary-color, .7);
 $text-primary-color-opacity-04: rgba($text-primary-color, .4);
 $link-icon-color: rgb(255, 255, 255);
 $button-color: rgb(146, 191, 177);
+$section-border: rgba(0, 0, 0, 0);
 
 // Light mode colors
 $background-color-light: rgb(255, 255, 255);
@@ -26,6 +27,7 @@ $link-primary-color-light: rgb(0, 122, 204);
 $text-primary-color-opacity-07-light: rgba($text-primary-color-light, .7);
 $text-primary-color-opacity-04-light: rgba($text-primary-color-light, .4);
 $button-color-light: rgb(98, 154, 136);
+$section-border-light: rgba(0, 0, 0, .1);
 
 
 
@@ -36,7 +38,7 @@ $button-color-light: rgb(98, 154, 136);
     fa-book-open: $reading-color,
     fa-bookmark: $miscellaneous-color,
     fa-microchip: $app-color ) {
-        .#{$icon} {
+    .#{$icon} {
         color: $color;
     }
 }
@@ -61,6 +63,7 @@ html[data-theme="light"] {
     --text-primary-color-opacity-07: #{$text-primary-color-opacity-07-light};
     --text-primary-color-opacity-04: #{$text-primary-color-opacity-04-light};
     --button-color: #{$button-color-light};
+    --section-border: #{$section-border-light};
 }
 
 html[data-theme="dark"] {
@@ -72,4 +75,5 @@ html[data-theme="dark"] {
     --text-primary-color-opacity-04: #{$text-primary-color-opacity-04};
     --links-icon-drop-shadow-color: #{$text-primary-color};
     --button-color: #{$button-color};
+    --section-border: #{$section-border};
 }
