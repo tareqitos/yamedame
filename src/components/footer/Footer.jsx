@@ -1,10 +1,13 @@
 import styles from './Footer.module.scss'
 
 function Footer() {
+    
+    const date = new Date()
 
     return (
         <footer>
-            © 2024 yame dame
+            {`© ${date.getFullYear().toLocaleString()} yame dame`}
+            <p>Made with ♥️</p>
         </footer>
     )
 }

@@ -1,6 +1,6 @@
 import styles from './SearchBar.module.scss'
 
-function Form({ links, setFilteredLinks, input_reference}) {
+function SearchBar({ links, setFilteredLinks, input_reference}) {
 
     if (!links) return;
     const categories = Object.keys(links);
@@ -30,4 +30,4 @@ function Form({ links, setFilteredLinks, input_reference}) {
     );
 }
 
-export default Form;
+export default SearchBar;

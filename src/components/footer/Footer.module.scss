@@ -1,6 +1,10 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 footer {
+    @include flex-center;
+    justify-content: space-between;
+
     width: 100%;
     color: var(--text-primary-color-opacity-07);
     padding: $header-footer-side-padding;

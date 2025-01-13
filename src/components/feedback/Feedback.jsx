@@ -135,7 +135,7 @@ function SendSuggestion({ name_reference, url_reference, success, error, setCate
         <>
             <div className={styles["form-suggestion-overflow-hidden"]}>
                 <div className={`${styles['form-suggestion-container']} ${index == 1 ? styles['active'] : styles['hidden']}`}>
-                    <h2>Share your favorite Japanese learning tool</h2>
+                    <h2>Share your favorite Japanese learning tool 📖</h2>
                     <hr />
 
                     {success ? <p className={styles.sucess}>Thank you for your report! 🚀</p> : 
