@@ -1,0 +1,70 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+header {
+    background-color: var(--components-background-color);
+    padding: $header-footer-side-padding;
+    @include flex-space-between;
+    align-items: center;
+
+    @media screen and (max-width: 576px) {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .exclamation-mark {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all .2s ease;
+    }
+
+    .title {
+        flex-grow: 1;
+
+        a {
+            @include links-base-format;
+            @include font-base-format;
+            font-family: $title-font;
+            font-size: 1.2em;
+            color: var(--text-primary-color);
+            width: fit-content;
+
+            @include flex-center;
+            gap: 10px;
+
+            &:hover .exclamation-mark{
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    .logo {
+        display: inline-block;
+        margin-bottom: 3px;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        background-color: #c93d1a;
+    }
+
+    hr {
+        height: 30px;
+        border: none;
+        border-left: 1px solid var(--text-primary-color-opacity-07)
+    }
+
+}
+
+.header-right-side {
+    @include flex-center;
+    gap: 20px;
+
+    @media screen and (max-width: 576px) {
+        display: none;
+    }
+}

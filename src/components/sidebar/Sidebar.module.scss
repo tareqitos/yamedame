@@ -1,0 +1,150 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.sidebar-main {
+    @include flex-column;
+    position: relative;
+    transition: transform .15s ease;
+
+    .navbar {
+        padding: 20px 40px;
+        border-radius: $border-radius-10;
+
+        position: sticky;
+        top: 20px;
+
+        @include flex-row;
+        gap: 10px;
+
+        hr {
+            opacity: .2;
+            height: 100%;
+        }
+    }
+}
+
+.close {
+    display: none;
+}
+
+.navbar-list {
+    line-height: 2.5;
+    list-style-type: none;
+    position: relative;
+}
+
+.navbar-item .active a {
+    color: var(--text-primary-color);
+}
+
+.navbar-item {
+    a {
+        @include links-base-format;
+        color: var(--text-primary-color-opacity-04);
+        position: relative;
+        transition: all .2s ease;
+
+        &.active {
+            color: var(--text-primary-color);
+
+            &::before {
+                content: '';
+                width: 2px;
+                position: absolute;
+                height: 20px;
+                background-color: var(--text-primary-color);
+                left: -12px;
+                border-radius: $border-radius-5;
+                top: 0;
+            }
+        }
+    }
+}
+
+// MODAL
+.sidebar-btn-container {
+    display: none;
+    margin-left: 20px;
+}
+
+.sidebar-btn {
+    @include font-base-format(.9em, 100, 1.5);
+    right: 2rem;
+    border: none;
+    border-radius: $border-radius-10;
+    color: var(--text-primary-color-opacity-07);
+    background-color: var(--components-background-color);
+    cursor: pointer;
+}
+
+// Links / Theme toggle
+
+.sidebar-external-links {
+    display: none;
+    padding: 0 20px;
+}
+
+.to-top-sidebar {
+    visibility: visible;
+}
+
+@media screen and (max-width: 1200px) {
+    .sidebar-btn-container {
+        display: block;
+    }
+
+    .sidebar-main {
+        visibility: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(100%);
+        border-left: 1px solid var(--text-primary-color-opacity-04);
+        background-color: var(--components-background-color);
+        height: 100vh;
+        z-index: 100;
+        width: 300px;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    .navbar {
+        border-radius: unset;
+        align-items: unset;
+        top: 0;
+
+        hr {
+            display: none;
+        }
+    }
+
+    .close {
+        display: block;
+        order: 1;
+        position: absolute;
+        top: 20px;
+    }
+
+    .sidebar-external-links {
+        @include flex-column;
+        justify-content: left;
+        margin-top: 20px;
+    }
+
+    .theme-toggle-sidebar {
+        @include button-base-format;
+        font-size: 1.3em;
+        text-align: left;
+        background: var(--components-background-color);
+        padding: 10px 20px;
+        border-radius: $border-radius-10;
+        width: 100%;
+    }
+
+    .socials-sidebar {
+        justify-content: center;
+    }
+}
