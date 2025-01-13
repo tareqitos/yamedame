@@ -1,7 +1,3 @@
-The current README.md file is empty. Here's a suggested README for your yamedame repository:
-
----
-
 # [yame dame](https://yameda.me)
 
 Curated list of Japanese learning resources for all proficiency levels.
