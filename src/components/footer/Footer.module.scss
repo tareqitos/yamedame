@@ -1,12 +1,23 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-footer {
+.footer {
     @include flex-center;
-    justify-content: space-between;
+    position: relative;
 
     width: 100%;
     color: var(--text-primary-color-opacity-07);
     padding: $header-footer-side-padding;
     background-color: var(--components-background-color);
+
+    p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (max-width: 567px) {
+            left: 75%;
+        }
+    }
 }
