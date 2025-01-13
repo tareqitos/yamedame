@@ -47,7 +47,12 @@
 }
 
 .resources-title {
-    @include font-base-format(2rem, 400, 1.5);
+    @include font-base-format(2em, 400, 1.5);
+
+    @media screen and (max-width: 567px) {
+        font-size: 1.8em;
+        
+    }
 }
 
 .resources-desc {

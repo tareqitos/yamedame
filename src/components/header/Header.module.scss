@@ -22,6 +22,7 @@ header {
 
     .title {
         flex-grow: 1;
+        color: var(--text-primary-color);
 
         a {
             @include links-base-format;

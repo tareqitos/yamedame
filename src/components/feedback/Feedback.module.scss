@@ -83,6 +83,7 @@
     background: var(--background-color);
     -webkit-appearance: none;
     appearance: none;
+    border: 1px solid var(--text-primary-color-opacity-04);
 
     &:focus {
         outline:none;

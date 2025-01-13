@@ -12,6 +12,8 @@ function Feedback() {
     const [url, setUrl] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
+    const [honeypot, setHoneypot] = useState(''); // Honeypot field
+
 
     function toogleWindow(index, this_index) {
         setSuccess(false)
@@ -25,9 +27,15 @@ function Feedback() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (honeypot) {
+            // If honeypot field is filled, it's likely a bot
+            setError('Bot detected');
+            return;
+        }
+
         setSuccess(false);
         setError('');
-        
+
         name_reference.current.value = ''
         url_reference.current.value = ''
 
@@ -79,7 +87,8 @@ function Feedback() {
                 handleSubmit={handleSubmit}
                 name_reference={name_reference}
                 url_reference={url_reference}
-                index={windowIndex} />
+                index={windowIndex}
+                honeypot={honeypot} setHoneypot={setHoneypot} />
             <ReportDeadLink
                 success={success}
                 error={error}
@@ -89,13 +98,14 @@ function Feedback() {
                 handleSubmit={handleSubmit}
                 name_reference={name_reference}
                 url_reference={url_reference}
-                index={windowIndex} />
+                index={windowIndex}
+                honeypot={honeypot} setHoneypot={setHoneypot} />
 
         </>
     )
 }
 
-function ReportDeadLink({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, index }) {
+function ReportDeadLink({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, honeypot, setHoneypot, index }) {
     return (
         <>
             <div className={styles["form-suggestion-overflow-hidden"]}>
@@ -103,8 +113,8 @@ function ReportDeadLink({ name_reference, url_reference, success, error, setCate
                     <h2>Report a dead link ☠️</h2>
                     <hr />
 
-                    {success ? <p className={styles.success}>Thank you for your report! 🚀</p> : 
-                    error ? <p className={styles.error}>Error: {error}</p> :''}
+                    {success ? <p className={styles.success}>Thank you for your report! 🚀</p> :
+                        error ? <p className={styles.error}>Error: {error}</p> : ''}
 
                     <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
                         <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
@@ -121,6 +131,12 @@ function ReportDeadLink({ name_reference, url_reference, success, error, setCate
                         <div className={styles["form-suggestion-inputs"]}>
                             <input ref={name_reference} onChange={(e) => setName(e.target.value)} className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
                             <input ref={url_reference} onChange={(e) => setUrl(e.target.value)} className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
+                            <input
+                                type="text"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                style={{ display: 'none' }} // Honeypot field
+                            />
                         </div>
                         <button type="submit" className={`${components_styles.btn} ${styles['btn-send']}`}>✉️ Send</button>
                     </form>
@@ -130,7 +146,7 @@ function ReportDeadLink({ name_reference, url_reference, success, error, setCate
     )
 }
 
-function SendSuggestion({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, index }) {
+function SendSuggestion({ name_reference, url_reference, success, error, setCategory, setName, setUrl, handleSubmit, honeypot, setHoneypot, index }) {
     return (
         <>
             <div className={styles["form-suggestion-overflow-hidden"]}>
@@ -138,8 +154,8 @@ function SendSuggestion({ name_reference, url_reference, success, error, setCate
                     <h2>Share your favorite Japanese learning tool 📖</h2>
                     <hr />
 
-                    {success ? <p className={styles.sucess}>Thank you for your report! 🚀</p> : 
-                    error ? <p className={styles.error}>Error: {error}</p> :''}
+                    {success ? <p className={styles.sucess}>Thank you for your report! 🚀</p> :
+                        error ? <p className={styles.error}>Error: {error}</p> : ''}
 
                     <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
                         <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
@@ -156,6 +172,12 @@ function SendSuggestion({ name_reference, url_reference, success, error, setCate
                         <div className={styles["form-suggestion-inputs"]}>
                             <input ref={name_reference} onChange={(e) => setName(e.target.value)} className={`${styles['sugg-input']} ${styles['name']}`} type="text" placeholder="Name" required />
                             <input ref={url_reference} onChange={(e) => setUrl(e.target.value)} className={`${styles['sugg-input']} ${styles['url']}`} type="url" placeholder="https://..." required />
+                            <input
+                                type="text"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                style={{ display: 'none' }} // Honeypot field
+                            />
                         </div>
                         <p className={styles['form-specific-request']}>For a specific request or feedback, feel free to <a href='mailto:social@tareqitos.com'>contact me</a> directly!</p>
                         <button type="submit" className={`${components_styles.btn} ${styles['btn-send']}`} >✉️ Send Suggestion</button>

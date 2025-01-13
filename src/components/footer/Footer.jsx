@@ -5,8 +5,8 @@ function Footer() {
     const date = new Date()
 
     return (
-        <footer>
-            {`© ${date.getFullYear().toLocaleString()} yame dame`}
+        <footer className={styles['footer']}>
+            {`© ${date.getFullYear().toLocaleString().replace(/\s/g, '')} yame dame`}
             <p>Made with ♥️</p>
         </footer>
     )

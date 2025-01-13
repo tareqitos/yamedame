@@ -8,4 +8,12 @@
         outline: 1px solid rgba(var(--text-primary-color), 0.4);
         width: 30vw;
     }
+
+    @media screen and (max-width: 768px) {
+        width: 35vw;
+
+        &:focus {
+            width: 40vw;
+        }
+    }
 }

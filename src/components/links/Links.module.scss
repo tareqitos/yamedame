@@ -28,6 +28,11 @@ section {
         list-style: none;
         background-color: var(--components-background-color);
         border: 1px solid var(--section-border);
+
+        @media screen and (max-width: 567px) {
+            font-size: 1em;
+            line-height: 1.8;
+        }
     }
 }
 
