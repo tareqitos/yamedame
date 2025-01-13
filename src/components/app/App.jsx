@@ -23,6 +23,23 @@ function App() {
     theme == 'dark' ? setTheme('light') : setTheme('dark')
   }
 
+  useEffect(() => {
+    const removeIndexHtmlAndAnchors = () => {
+      if (window.location.pathname.endsWith('index.html')) {
+        window.history.replaceState({}, '', window.location.pathname.replace('index.html', ''));
+      }
+      if (window.location.hash) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    };
+
+    removeIndexHtmlAndAnchors();
+    window.addEventListener('hashchange', removeIndexHtmlAndAnchors);
+
+    return () => {
+      window.removeEventListener('hashchange', removeIndexHtmlAndAnchors);
+    };
+  }, []);
 
   useEffect(() => {
     const html = document.documentElement;
