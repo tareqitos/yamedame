@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Links from '../links';
-import Header from '../header';
-import Footer from '../footer';
-import Sidebar from '../sidebar';
-import ToTop from '../toTop';
-import Feedback from '../feedback'
-import styles from './App.module.scss';
+import Links from '../../components/links';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import Sidebar from '../../components/sidebar';
+import ToTop from '../../components/toTop';
+import Feedback from '../../components/feedback'
+import styles from './ResourcesPage.module.scss';
 
-function App() {
+function ResourcesPage() {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
   const [categories, setCategories] = useState([]);
@@ -71,13 +71,7 @@ function App() {
   if (!links) {
     return (
       <>
-        <Header
-          links={links}
-          setFilteredLinks={setFilteredLinks}
-          input_reference={input_reference}
-          theme={theme} toggleTheme={toggleTheme}
-          sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
-        />
+        <Header />
         <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:social@tareqitos.com'>contact me</a>!</p>
       </>
     )
@@ -88,12 +82,6 @@ function App() {
       <div onClick={() => setSidebarActive(false)}
         className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
       </div>
-      <Header
-        links={links}
-        setFilteredLinks={setFilteredLinks}
-        input_reference={input_reference}
-        theme={theme} toggleTheme={toggleTheme}
-        sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
       <main>
         <div className={styles['main-wrapper']}>
           <div className={styles['main-content']}>
@@ -110,7 +98,6 @@ function App() {
               sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
               activeCategory={activeCategory} />
           </div>
-          <Footer />
         </div>
         <ToTop button_css_selector={styles['to-top-main']} />
       </main>
@@ -129,4 +116,4 @@ function Title() {
   )
 }
 
-export default App;
+export default ResourcesPage;
