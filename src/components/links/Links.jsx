@@ -64,7 +64,7 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
                             <section key={category} className={`${category}_container`}>
                                 <a className={styles.anchor} id={`${category}_id`}></a>
                                 <h2 className={styles['category-title']}>{category == 'beginner' ? 'Beginner essentials' : category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-                                <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0">
+                                <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
                                     {filteredLinks[category].map((link) => (
                                         <li key={link.id} className={`${styles['link-item-container']} ${category}`}>
                                             <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
