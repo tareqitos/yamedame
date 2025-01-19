@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from "react-router";
 import Links from '../../components/links';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -8,7 +7,7 @@ import ToTop from '../../components/toTop';
 import Feedback from '../../components/feedback'
 import styles from '../Page.module.scss';
 
-function ResourcesPage() {
+function MediaPage() {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
   const [categories, setCategories] = useState([]);
@@ -56,9 +55,8 @@ function ResourcesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch('/api/links.json')
+        let response = await fetch('/api/media.json')
         const result = await response.json()
-        console.log(result)
         setLinks(result)
         setFilteredLinks(result)
         setCategories(Object.keys(result).map((category) => category))
@@ -102,8 +100,7 @@ function ResourcesPage() {
         <div className={styles['main-wrapper']}>
           <div className={styles['main-content']}>
             <div className={styles.resources}>
-              <Link to='/media'>TO MEDIA</Link>
-              <Title title='Japanese Learning Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
+              <Title title='Japanese Media Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.'/>
               <Links
                 filteredLinks={filteredLinks}
                 input_reference={input_reference}
@@ -123,7 +120,7 @@ function ResourcesPage() {
   );
 }
 
-function Title({ title, description }) {
+function Title({title, description}) {
   return (
     <>
       <h1 className={styles['resources-title']}>{title}</h1>
@@ -134,4 +131,4 @@ function Title({ title, description }) {
   )
 }
 
-export default ResourcesPage;
+export default MediaPage;
