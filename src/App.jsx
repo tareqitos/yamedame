@@ -1,16 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/header';
 import ResourcesPage from './pages/ResourcesPage';
-import Footer from './components/footer';
+import MediaPage from './pages/MediaPage';
+
 
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/learning-resources" element={<ResourcesPage />} />
+        <Route path="/" element={<ResourcesPage />} />
+        <Route path="/media" element={<MediaPage />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
