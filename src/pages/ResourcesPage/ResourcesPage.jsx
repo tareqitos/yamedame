@@ -7,6 +7,7 @@ import Sidebar from '../../components/sidebar';
 import ToTop from '../../components/toTop';
 import Feedback from '../../components/feedback'
 import styles from '../Page.module.scss';
+import SearchBar from '../../components/searchBar';
 
 function ResourcesPage() {
   const [links, setLinks] = useState();
@@ -56,7 +57,7 @@ function ResourcesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch('/api/links.json')
+        let response = await fetch('https://api.tareqitos.me/api/resources')
         const result = await response.json()
         console.log(result)
         setLinks(result)
@@ -68,16 +69,12 @@ function ResourcesPage() {
     };
 
     fetchData();
-  }, []);
+  }, [setFilteredLinks]);
 
   if (!links) {
     return (
       <>
         <Header
-          links={links}
-          filteredLinks={filteredLinks}
-          setFilteredLinks={setFilteredLinks}
-          input_reference={input_reference}
           theme={theme} toggleTheme={toggleTheme}
           sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
         />
@@ -92,18 +89,21 @@ function ResourcesPage() {
         className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
       </div>
       <Header
-        links={links}
-        filteredLinks={filteredLinks}
-        setFilteredLinks={setFilteredLinks}
-        input_reference={input_reference}
-        theme={theme} toggleTheme={toggleTheme}
-        sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
+        theme={theme} 
+        toggleTheme={toggleTheme}
+        sidebarActive={sidebarActive} 
+        setSidebarActive={setSidebarActive} />
       <main>
         <div className={styles['main-wrapper']}>
           <div className={styles['main-content']}>
             <div className={styles.resources}>
-              <Link to='/media'>TO MEDIA</Link>
               <Title title='Japanese Learning Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
+              <SearchBar
+                links={links}
+                filteredLinks={filteredLinks}
+                setFilteredLinks={setFilteredLinks}
+                input_reference={input_reference} />
+
               <Links
                 filteredLinks={filteredLinks}
                 input_reference={input_reference}
