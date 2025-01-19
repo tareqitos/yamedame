@@ -40,7 +40,7 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
 
         const options = {
             root: null, // Use the viewport
-            rootMargin: '0px 0px -90% 0px', // Offset to trigger earlier
+            rootMargin: '0px 0px -80% 0px', // Offset to trigger earlier
             threshold: 0.6, // Trigger when 60% of the element is visible
         };
 

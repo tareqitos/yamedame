@@ -18,19 +18,6 @@ function ResourcesPage() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [sidebarActive, setSidebarActive] = useState(false);
 
-  const get_theme_from_storage = window.localStorage.getItem('theme')
-  const [theme, setTheme] = useState(!get_theme_from_storage ? 'dark' : get_theme_from_storage)
-
-  function toggleTheme() {
-    theme == 'dark' ? setTheme('light') : setTheme('dark')
-  }
-
-  useEffect(() => {
-    const html = document.documentElement
-    html.dataset.theme = theme; // Switch theme in <html>
-    window.localStorage.setItem('theme', theme);
-  }, [theme])
-
   useEffect(() => {
     const removeIndexHtmlAndAnchors = () => {
       if (window.location.pathname.endsWith('index.html')) {
@@ -59,7 +46,6 @@ function ResourcesPage() {
       try {
         let response = await fetch('https://api.tareqitos.me/api/resources')
         const result = await response.json()
-        console.log(result)
         setLinks(result)
         setFilteredLinks(result)
         setCategories(Object.keys(result).map((category) => category))
@@ -75,7 +61,6 @@ function ResourcesPage() {
     return (
       <>
         <Header
-          theme={theme} toggleTheme={toggleTheme}
           sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
         />
         <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:social@tareqitos.com'>contact me</a>!</p>
@@ -89,8 +74,6 @@ function ResourcesPage() {
         className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
       </div>
       <Header
-        theme={theme} 
-        toggleTheme={toggleTheme}
         sidebarActive={sidebarActive} 
         setSidebarActive={setSidebarActive} />
       <main>
@@ -110,10 +93,11 @@ function ResourcesPage() {
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
             </div>
             <Sidebar
-              categories={categories}
-              theme={theme} toggleTheme={toggleTheme}
-              sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
-              activeCategory={activeCategory} />
+              categories={categories} 
+              activeCategory={activeCategory} 
+              sidebarActive={sidebarActive} 
+              setSidebarActive={setSidebarActive}
+              />
           </div>
         </div>
         <ToTop button_css_selector={styles['to-top-main']} />
