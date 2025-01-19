@@ -117,7 +117,7 @@ function ReportDeadLink({ name_reference, url_reference, success, error, setCate
                         error ? <p className={styles.error}>Error: {error}</p> : ''}
 
                     <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
-                        <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
+                        <select id="form-category-select" defaultValue="" className={components_styles['select-input']} onChange={(e) => setCategory(e.target.value)}>
                             <option value="" disabled hidden>Select a category</option>
                             <option value="Beginner essentials">Beginner essentials</option>
                             <option value="Dictionary">Dictionary</option>
@@ -158,7 +158,7 @@ function SendSuggestion({ name_reference, url_reference, success, error, setCate
                         error ? <p className={styles.error}>Error: {error}</p> : ''}
 
                     <form className={styles['form-suggestion']} onSubmit={handleSubmit}>
-                        <select id="form-category-select" defaultValue="" className={styles['form-select']} onChange={(e) => setCategory(e.target.value)}>
+                        <select id="form-category-select" defaultValue="" className={components_styles['select-input']} onChange={(e) => setCategory(e.target.value)}>
                             <option value="" disabled hidden>Select a category</option>
                             <option value="Beginner essentials">Beginner essentials</option>
                             <option value="Dictionary">Dictionary</option>

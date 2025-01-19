@@ -1,15 +1,9 @@
-import { useState } from "react"
 import {AtSymbolIcon, MoonIcon, SunIcon} from "@heroicons/react/24/outline";
-import SearchBar from "../searchBar"
 import styles from './Header.module.scss'
 import sidebar_styles from '../sidebar/Sidebar.module.scss'
 import components_styles from '../../styles/Components.module.scss'
 
 function Header({
-    links,
-    filteredLinks,
-    setFilteredLinks,
-    input_reference,
     toggleTheme, theme,
     setSidebarActive }) {
 
@@ -20,7 +14,6 @@ function Header({
             </div>
 
             <div className={styles['form-container']}>
-                <SearchBar links={links} filteredLinks={filteredLinks} setFilteredLinks={setFilteredLinks} input_reference={input_reference} />
             </div>
 
             <div className={styles['header-right-side']}>

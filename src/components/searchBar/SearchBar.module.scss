@@ -1,7 +1,10 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
 
 .search-input {
     width: 25vw;
+    background-color: var(--components-background-color);
     transition: all .2s ease;
 
     &:focus {
@@ -16,4 +19,10 @@
             width: 40vw;
         }
     }
+}
+
+.sort-input {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
