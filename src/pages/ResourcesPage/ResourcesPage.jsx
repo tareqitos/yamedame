@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Links from '../links';
-import Header from '../header';
-import Footer from '../footer';
-import Sidebar from '../sidebar';
-import ToTop from '../toTop';
-import Feedback from '../feedback'
-import styles from './App.module.scss';
+import { Link } from "react-router";
+import Links from '../../components/links';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import Sidebar from '../../components/sidebar';
+import ToTop from '../../components/toTop';
+import Feedback from '../../components/feedback'
+import styles from '../Page.module.scss';
+import SearchBar from '../../components/searchBar';
 
-function App() {
+function ResourcesPage() {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
   const [categories, setCategories] = useState([]);
@@ -15,13 +17,6 @@ function App() {
 
   const [activeCategory, setActiveCategory] = useState(null);
   const [sidebarActive, setSidebarActive] = useState(false);
-
-  const get_theme_from_storage = window.localStorage.getItem('theme')
-  const [theme, setTheme] = useState(!get_theme_from_storage ? 'dark' : get_theme_from_storage)
-
-  function toggleTheme() {
-    theme == 'dark' ? setTheme('light') : setTheme('dark')
-  }
 
   useEffect(() => {
     const removeIndexHtmlAndAnchors = () => {
@@ -47,15 +42,9 @@ function App() {
   }, [sidebarActive])
 
   useEffect(() => {
-    const html = document.documentElement
-    html.dataset.theme = theme; // Switch theme in <html>
-    window.localStorage.setItem('theme', theme);
-  }, [theme])
-
-  useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch('/api/links.json')
+        let response = await fetch('https://api.tareqitos.me/api/resources')
         const result = await response.json()
         setLinks(result)
         setFilteredLinks(result)
@@ -66,16 +55,12 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [setFilteredLinks]);
 
   if (!links) {
     return (
       <>
         <Header
-          links={links}
-          setFilteredLinks={setFilteredLinks}
-          input_reference={input_reference}
-          theme={theme} toggleTheme={toggleTheme}
           sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
         />
         <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:social@tareqitos.com'>contact me</a>!</p>
@@ -89,44 +74,48 @@ function App() {
         className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
       </div>
       <Header
-        links={links}
-        setFilteredLinks={setFilteredLinks}
-        input_reference={input_reference}
-        theme={theme} toggleTheme={toggleTheme}
-        sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
+        sidebarActive={sidebarActive} 
+        setSidebarActive={setSidebarActive} />
       <main>
         <div className={styles['main-wrapper']}>
           <div className={styles['main-content']}>
             <div className={styles.resources}>
-              <Title />
+              <Title title='Japanese Learning Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
+              <SearchBar
+                links={links}
+                filteredLinks={filteredLinks}
+                setFilteredLinks={setFilteredLinks}
+                input_reference={input_reference} />
+
               <Links
                 filteredLinks={filteredLinks}
                 input_reference={input_reference}
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
             </div>
             <Sidebar
-              categories={categories}
-              theme={theme} toggleTheme={toggleTheme}
-              sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
-              activeCategory={activeCategory} />
+              categories={categories} 
+              activeCategory={activeCategory} 
+              sidebarActive={sidebarActive} 
+              setSidebarActive={setSidebarActive}
+              />
           </div>
-          <Footer />
         </div>
         <ToTop button_css_selector={styles['to-top-main']} />
       </main>
+      <Footer />
     </>
   );
 }
 
-function Title() {
+function Title({ title, description }) {
   return (
     <>
-      <h1 className={styles['resources-title']}>Japanese Learning Resources</h1>
-      <p className={styles['resources-desc']}>Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.</p>
+      <h1 className={styles['resources-title']}>{title}</h1>
+      <p className={styles['resources-desc']}>{description}</p>
       <Feedback />
       <hr className={styles['resources-hr']}></hr>
     </>
   )
 }
 
-export default App;
+export default ResourcesPage;

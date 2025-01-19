@@ -1,5 +1,5 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
 
 
 .json-error-message {
@@ -68,7 +68,7 @@
     background-color: var(--components-background-color);
     opacity: .7;
     visibility: hidden;
-    z-index: 1;
+    z-index: 2;
     transition: all .25s ease;
 
     body {

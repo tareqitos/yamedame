@@ -88,3 +88,20 @@ input {
         right: 12px;
     }
 }
+
+// select
+
+.select-input {
+    padding: 4px;
+    max-width: 200px;
+    border-radius: $border-radius-5;
+    color: var(--text-primary-color-opacity-04);
+    background: var(--background-color);
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--text-primary-color-opacity-04);
+
+    &:focus {
+        outline:none;
+    }
+}
