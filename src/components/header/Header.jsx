@@ -7,6 +7,7 @@ import components_styles from '../../styles/Components.module.scss'
 
 function Header({
     links,
+    filteredLinks,
     setFilteredLinks,
     input_reference,
     toggleTheme, theme,
@@ -15,11 +16,11 @@ function Header({
     return (
         <header className={styles['header']}>
             <div className={styles['title']}>
-                <a href="index.html"><span className={styles['logo']}></span>やめだめ<span className={styles['exclamation-mark']}>!!</span></a>
+                <a href="/"><span className={styles['logo']}></span>やめだめ<span className={styles['exclamation-mark']}>!!</span></a>
             </div>
 
             <div className={styles['form-container']}>
-                <SearchBar links={links} setFilteredLinks={setFilteredLinks} input_reference={input_reference} />
+                <SearchBar links={links} filteredLinks={filteredLinks} setFilteredLinks={setFilteredLinks} input_reference={input_reference} />
             </div>
 
             <div className={styles['header-right-side']}>

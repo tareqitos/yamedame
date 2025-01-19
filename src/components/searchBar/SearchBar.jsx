@@ -1,6 +1,6 @@
 import styles from './SearchBar.module.scss'
 
-function SearchBar({ links, setFilteredLinks, input_reference}) {
+function SearchBar({ links, filteredLinks, setFilteredLinks, input_reference}) {
 
     if (!links) return;
     const categories = Object.keys(links);
@@ -21,9 +21,26 @@ function SearchBar({ links, setFilteredLinks, input_reference}) {
         setFilteredLinks(filtered);
     }
 
+    function filterLinksByName(event) {
+        event.preventDefault();
+
+        const filtered_by_name = categories.reduce((acc, category) => {
+            acc[category] = filteredLinks[category].sort((link, next_link) => {
+                return link.name.localeCompare(next_link.name);
+            })
+            return acc;
+        }, {})
+
+        console.log('sorted')
+        console.log(filtered_by_name)
+
+        setFilteredLinks(filtered_by_name)
+    }
+
     return (
         <>
             <form onInput={filterLinksByQuery}>
+                <button onClick={filterLinksByName}>Sort</button>
                 <input className={styles['search-input']} ref={input_reference} id="input-field" type="text" placeholder="Explore the world of Japanese resources!" autoComplete='off' />
             </form>
         </>
