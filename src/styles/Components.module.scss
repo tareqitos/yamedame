@@ -2,6 +2,7 @@
 @import './theme';
 @import './mixins';
 
+
 .btn {
     @include button-base-format;
     border-radius: $border-radius-8;
@@ -73,6 +74,7 @@ input {
     position: absolute;
     padding: 10px 15px;
     bottom: -50px;
+    z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;

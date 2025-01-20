@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import styles from './Links.module.scss'
 
-function Links({ filteredLinks, input_reference, setActiveCategory }) {
+function Links({ filteredLinks, input_reference }) {
 
     const [isEmpty, setIsEmpty] = useState();
     const [categoryIcons, setCategoryIcons] = useState({
@@ -24,41 +24,14 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
     })
 
     useEffect(() => {
-        checkListIsEmpty()
+        filteredLinks ? checkListIsEmpty() : null
     }, [filteredLinks])
-
-    const observer = useRef(null);
-
-    useEffect(() => {
-        const handleIntersect = (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveCategory(entry.target.id);
-                }
-            });
-        };
-
-        const options = {
-            root: null, // Use the viewport
-            rootMargin: '0px 0px -80% 0px', // Offset to trigger earlier
-            threshold: 0.6, // Trigger when 60% of the element is visible
-        };
-
-        observer.current = new IntersectionObserver(handleIntersect, options);
-        const elements = document.querySelectorAll(`.${styles['anchor']}`);
-
-        elements.forEach((element) => observer.current.observe(element));
-
-        return () => {
-            elements.forEach((element) => observer.current.unobserve(element));
-        };
-    }, [filteredLinks, setActiveCategory]);
 
     return (
         <>
             <div className={styles['links-container']}>
-                {isEmpty ? <p className={styles['empty-list-message']}>No result for <span style={{color: '#92BFB1'}}>{input_reference.current.value.trim()}</span></p> :
-                    Object.keys(filteredLinks).map((category) => (
+                {isEmpty ? <p className={styles['empty-list-message']}>No result for <span style={{ color: '#92BFB1' }}>{input_reference.current.value.trim()}</span></p> :
+                    filteredLinks ? Object.keys(filteredLinks).map((category) => (
                         filteredLinks[category].length == 0 ? '' :
 
                             <section key={category} className={`${category}_container`}>
@@ -76,8 +49,8 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
                                     ))}
                                 </ul>
                             </section>
-
-                    ))}
+                    )) : null
+                }
             </div>
         </>
     )

@@ -1,108 +1,85 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from "react-router";
-import Links from '../../components/links';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
-import Sidebar from '../../components/sidebar';
-import ToTop from '../../components/toTop';
-import Feedback from '../../components/feedback'
-import styles from '../Page.module.scss';
-import SearchBar from '../../components/searchBar';
 
-function ResourcesPage() {
+import Links from '../../components/links';
+import Sidebar from '../../components/sidebar';
+import Feedback from '../../components/feedback'
+
+import styles from '../Page.module.scss';
+import Searchbar from '../../components/searchbar';
+
+function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, isLoading, setIsLoading, error, setError}) {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
   const [categories, setCategories] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(null);
+
   const input_reference = useRef()
 
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [sidebarActive, setSidebarActive] = useState(false);
 
   useEffect(() => {
-    const removeIndexHtmlAndAnchors = () => {
-      if (window.location.pathname.endsWith('index.html')) {
-        window.history.replaceState({}, '', window.location.pathname.replace('index.html', ''));
-      }
-      if (window.location.hash) {
-        window.history.replaceState({}, '', window.location.pathname);
-      }
-    };
-
-    removeIndexHtmlAndAnchors();
-    window.addEventListener('hashchange', removeIndexHtmlAndAnchors);
-
-    return () => {
-      window.removeEventListener('hashchange', removeIndexHtmlAndAnchors);
-    };
-  }, []);
-
-  useEffect(() => {
-    const html = document.documentElement;
-    sidebarActive ? html.classList.add('stop-scrolling') : html.classList.remove('stop-scrolling')
-  }, [sidebarActive])
-
-  useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (api) => {
+      setIsLoading(true)
       try {
-        let response = await fetch('https://api.tareqitos.me/api/resources')
+        let response = await fetch(api)
         const result = await response.json()
         setLinks(result)
         setFilteredLinks(result)
         setCategories(Object.keys(result).map((category) => category))
       } catch (error) {
+        setError(true);
         console.error('Error fetching JSON:', error);
+      } finally {
+        setTimeout(() => setIsLoading(false), 200);
+
+        if (error) {
+          return console.log('Error fetching JSON')
+        }
       }
     };
 
-    fetchData();
-  }, [setFilteredLinks]);
+    fetchData('https://api.tareqitos.me/api/resources');
+  }, []);
 
-  if (!links) {
+  if (error) {
     return (
       <>
-        <Header
-          sidebarActive={sidebarActive} setSidebarActive={setSidebarActive}
-        />
-        <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:social@tareqitos.com'>contact me</a>!</p>
+        <p className={styles['json-error-message']}>An error has occured. Try refresh the page or <a href='mailto:contact@yameda.me'>contact me</a>!<br /><br />ごめんなさい 🙇</p>
       </>
     )
   }
 
   return (
     <>
-      <div onClick={() => setSidebarActive(false)}
-        className={`${styles['sidebar-bg']} ${sidebarActive ? styles['fade-in'] : styles['fade-out']}`}>
-      </div>
-      <Header
-        sidebarActive={sidebarActive} 
-        setSidebarActive={setSidebarActive} />
-      <main>
-        <div className={styles['main-wrapper']}>
-          <div className={styles['main-content']}>
-            <div className={styles.resources}>
-              <Title title='Japanese Learning Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
-              <SearchBar
-                links={links}
-                filteredLinks={filteredLinks}
-                setFilteredLinks={setFilteredLinks}
-                input_reference={input_reference} />
+      {isLoading ? <p className={styles['loading-data']}>中</p> :
 
-              <Links
-                filteredLinks={filteredLinks}
-                input_reference={input_reference}
-                activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        <main>
+          <div className={styles['main-wrapper']}>
+            <div className={styles['main-content']}>
+              <div className={styles.resources}>
+                <Title title='Japanese Learning Resources' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
+                <Searchbar
+                  links={links}
+                  filteredLinks={filteredLinks}
+                  setFilteredLinks={setFilteredLinks}
+                  input_reference={input_reference} />
+
+                <Links
+                  filteredLinks={filteredLinks}
+                  input_reference={input_reference} />
+              </div>
+              <Sidebar
+                theme={theme}
+                toggleTheme={toggleTheme}
+                sidebarActive={sidebarActive}
+                setSidebarActive={setSidebarActive}
+                categories={categories}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory} />
             </div>
-            <Sidebar
-              categories={categories} 
-              activeCategory={activeCategory} 
-              sidebarActive={sidebarActive} 
-              setSidebarActive={setSidebarActive}
-              />
           </div>
-        </div>
-        <ToTop button_css_selector={styles['to-top-main']} />
-      </main>
-      <Footer />
+        </main>
+      }
     </>
   );
 }
