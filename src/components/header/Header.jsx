@@ -1,4 +1,5 @@
 import { AtSymbolIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router";
 
 import styles from './Header.module.scss'
 import sidebar_styles from '../sidebar/Sidebar.module.scss'

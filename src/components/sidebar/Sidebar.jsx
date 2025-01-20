@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import { AtSymbolIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router";
 
 import ToTop from "../toTop";
 import styles from './Sidebar.module.scss';
@@ -10,6 +11,7 @@ import components_styles from '../../styles/Components.module.scss'
 function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, setActiveCategory, theme, toggleTheme }) {
 
     useEffect(() => {
+        setSidebarActive(false)
         function sidebarCloseOnResize() {
             if (window.innerWidth > 1200) {
                 document.documentElement.classList.remove('stop-scrolling')
@@ -60,7 +62,6 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
         <aside className={`${styles['sidebar-main']} ${sidebarActive ? styles.active : ''}`} style={{ visibility: sidebarActive ? 'visible' : '' }}>
             <nav className={styles.navbar}>
                 <button onClick={() => setSidebarActive(false)} className={`${styles['sidebar-btn']} ${styles.close}`}><i className="fa-solid fa-xmark"></i></button>
-                <hr />
                 <ul className={styles['navbar-list']}>
                     {categories.map((category) => (
                         <li key={category} className={`${styles['navbar-item']} ${`navbar-${category}`}`}>
@@ -69,7 +70,11 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
                         </li>
                     ))}
                 </ul>
+                <hr />
+                
                 <ToTop button_css_selector={styles['to-top-sidebar']} />
+                <Link className={`${components_styles.btn} ${styles['page-links']}` } to='/resources'>Study Resources</Link>
+                <Link className={`${components_styles.btn} ${styles['page-links']}` } to='/media'>Media Library</Link>
             </nav>
             <div className={` ${styles['sidebar-external-links']}`}>
                 <button onClick={() => toggleTheme()} className={`${styles['theme-toggle-sidebar']} ${components_styles.btn}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']} /> : <SunIcon className={components_styles['h-icon']} />}</button>

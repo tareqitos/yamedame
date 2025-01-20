@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import ResourcesPage from './pages/ResourcesPage';
+import MediaPage from './pages/MediaPage/MediaPage';
 import Header from './components/header';
 import Footer from './components/footer';
 import ToTop from './components/toTop';
@@ -58,8 +59,20 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/"
+            path="/resources"
             element={<ResourcesPage
+              error={error}
+              setError={setError}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              theme={theme}
+              setTheme={setTheme}
+              toggleTheme={toggleTheme}
+              sidebarActive={sidebarActive}
+              setSidebarActive={setSidebarActive} />} />
+          <Route
+            path="/media"
+            element={<MediaPage
               error={error}
               setError={setError}
               isLoading={isLoading}

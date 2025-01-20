@@ -13,7 +13,7 @@
         position: sticky;
         top: 20px;
 
-        @include flex-row;
+        @include flex-column;
         gap: 10px;
 
         hr {
@@ -58,6 +58,16 @@
                 top: 0;
             }
         }
+    }
+}
+
+.page-links {
+    padding: 5px 10px;
+    font-size: .9em;
+
+    &.selected {
+        background-color: var(--text-primary-color-opacity-04);
+        border-radius: $border-radius-10;
     }
 }
 
