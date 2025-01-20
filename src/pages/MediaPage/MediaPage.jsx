@@ -7,7 +7,7 @@ import Feedback from '../../components/feedback'
 import styles from '../Page.module.scss';
 import Searchbar from '../../components/searchbar';
 
-function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, isLoading, setIsLoading, error, setError}) {
+function MediaPage({ theme, toggleTheme, sidebarActive, setSidebarActive, isLoading, setIsLoading, error, setError }) {
   const [links, setLinks] = useState();
   const [filteredLinks, setFilteredLinks] = useState();
   const [categories, setCategories] = useState([]);
@@ -37,7 +37,7 @@ function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, is
       }
     };
 
-    fetchData('https://api.tareqitos.me/api/resources');
+    fetchData('https://api.tareqitos.me/api/media');
   }, []);
 
   if (error) {
@@ -56,7 +56,7 @@ function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, is
           <div className={styles['main-wrapper']}>
             <div className={styles['main-content']}>
               <div className={styles.resources}>
-                <Title title='Japanese Study Resources 📖' description='Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey.' />
+                <Title title='Japanese Media Library 💾' description='Explore various media resources to enhance your Japanese learning journey.' />
                 <Searchbar
                   links={links}
                   filteredLinks={filteredLinks}
@@ -64,7 +64,7 @@ function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, is
                   input_reference={input_reference} />
 
                 <Links
-                  variant='resources'
+                  variant='media'
                   filteredLinks={filteredLinks}
                   input_reference={input_reference} />
               </div>
@@ -95,4 +95,4 @@ function Title({ title, description }) {
   )
 }
 
-export default ResourcesPage;
+export default MediaPage;
