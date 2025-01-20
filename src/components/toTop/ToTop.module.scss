@@ -1,12 +1,14 @@
 .to-top-button-sidebar {
     position: absolute;
     bottom: -50px;
+    z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
     &.active {
         opacity: 1;
+        
         visibility: visible;
     }
 }
