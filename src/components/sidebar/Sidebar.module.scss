@@ -19,6 +19,7 @@
         hr {
             opacity: .2;
             height: 100%;
+            margin-bottom: 10px;
         }
     }
 }
@@ -146,14 +147,13 @@
 
     .theme-toggle-sidebar {
         @include button-base-format;
-        font-size: 1.3em;
         text-align: left;
         border: 1px solid var(--button-color);
         background: var(--components-background-color);
         margin: 10px 0;
-        padding: 10px 20px;
+        padding: 10px 10px;
         border-radius: $border-radius-10;
-        width: 100%;
+
     }
 
     .socials-sidebar {

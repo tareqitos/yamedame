@@ -31,32 +31,32 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
         sidebarActive ? html.classList.add('stop-scrolling') : html.classList.remove('stop-scrolling')
     }, [sidebarActive])
 
-       const observer = useRef(null);
-    
-        useEffect(() => {
-            const handleIntersect = (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveCategory(entry.target.id);
-                    }
-                });
-            };
-    
-            const options = {
-                root: null, // Use the viewport
-                rootMargin: '0px 0px -75% 0px', // Offset to trigger earlier
-                threshold: 0.6, // Trigger when 60% of the element is visible
-            };
-    
-            observer.current = new IntersectionObserver(handleIntersect, options);
-            const elements = document.querySelectorAll(`.${links_styles['anchor']}`);
-    
-            elements.forEach((element) => observer.current.observe(element));
-    
-            return () => {
-                elements.forEach((element) => observer.current.unobserve(element));
-            };
-        }, [setActiveCategory]);
+    const observer = useRef(null);
+
+    useEffect(() => {
+        const handleIntersect = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveCategory(entry.target.id);
+                }
+            });
+        };
+
+        const options = {
+            root: null, // Use the viewport
+            rootMargin: '0px 0px -75% 0px', // Offset to trigger earlier
+            threshold: 0.6, // Trigger when 60% of the element is visible
+        };
+
+        observer.current = new IntersectionObserver(handleIntersect, options);
+        const elements = document.querySelectorAll(`.${links_styles['anchor']}`);
+
+        elements.forEach((element) => observer.current.observe(element));
+
+        return () => {
+            elements.forEach((element) => observer.current.unobserve(element));
+        };
+    }, [setActiveCategory]);
 
     return (
         <aside className={`${styles['sidebar-main']} ${sidebarActive ? styles.active : ''}`} style={{ visibility: sidebarActive ? 'visible' : '' }}>
@@ -71,15 +71,15 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
                     ))}
                 </ul>
                 <hr />
-                
+
                 <ToTop button_css_selector={styles['to-top-sidebar']} />
-                <Link className={`${components_styles.btn} ${styles['page-links']}` } to='/resources'>Study Resources</Link>
-                <Link className={`${components_styles.btn} ${styles['page-links']}` } to='/media'>Media Library</Link>
+                <Link className={`${components_styles.btn} ${styles['page-links']}`} to='/resources'>Study Resources</Link>
+                <Link className={`${components_styles.btn} ${styles['page-links']}`} to='/media'>Media Library</Link>
             </nav>
             <div className={` ${styles['sidebar-external-links']}`}>
-                <button onClick={() => toggleTheme()} className={`${styles['theme-toggle-sidebar']} ${components_styles.btn}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']} /> : <SunIcon className={components_styles['h-icon']} />}</button>
-
                 <div className={`${components_styles.socials} ${styles['socials-sidebar']}`}>
+                    <button onClick={() => toggleTheme()} className={`${styles['theme-toggle-sidebar']} ${components_styles.btn}`}>{theme == 'dark' ? <MoonIcon className={components_styles['h-icon']} /> : <SunIcon className={components_styles['h-icon']} />}</button>
+
                     <a href="https://github.com/tareqitos/yamedame.github.io" target="_blank"><i
                         className="fa-brands fa-github"></i></a>
                     <a href="mailto:contact@yameda.me"><AtSymbolIcon className={components_styles['h-icon']} /></a>
