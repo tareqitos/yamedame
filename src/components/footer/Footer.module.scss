@@ -3,7 +3,11 @@
 
 .footer {
     @include flex-center;
-    position: relative;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     width: 100%;
     color: var(--text-primary-color-opacity-07);

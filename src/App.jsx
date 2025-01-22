@@ -8,8 +8,10 @@ import Footer from './components/footer';
 import ToTop from './components/toTop';
 
 import styles from './pages/Page.module.scss'
+import Home from './pages/HomePage';
 
 function App() {
+  const [isHome, setIsHome] = useState(false);
   const [sidebarActive, setSidebarActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -49,17 +51,18 @@ function App() {
 
   return (
     <>
-
       <Header
         theme={theme}
         setTheme={setTheme}
         toggleTheme={toggleTheme}
         sidebarActive={sidebarActive}
-        setSidebarActive={setSidebarActive} />
+        setSidebarActive={setSidebarActive}
+        isHome={isHome} />
       <Router>
         <Routes>
+          <Route index element={<Home setIsHome={setIsHome}/>} />
           <Route
-            path="/resources"
+            path="resources"
             element={<ResourcesPage
               error={error}
               setError={setError}
@@ -71,7 +74,7 @@ function App() {
               sidebarActive={sidebarActive}
               setSidebarActive={setSidebarActive} />} />
           <Route
-            path="/media"
+            path="media"
             element={<MediaPage
               error={error}
               setError={setError}
@@ -85,7 +88,7 @@ function App() {
         </Routes>
       </Router>
       <ToTop button_css_selector={styles['to-top-main']} />
-      {!isLoading && !error  ? <Footer /> : null}
+      <Footer />
     </>
   );
 }
