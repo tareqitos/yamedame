@@ -38,6 +38,7 @@ function Links({ filteredLinks, input_reference, variant }) {
                                 <a className={styles.anchor} id={`${category}_id`}></a>
                                 <h2 className={styles['category-title']}>{category == 'beginner' ? 'Beginner essentials' : category.charAt(0).toUpperCase() + category.slice(1)}</h2>
                                 {variant === 'media' ? (
+                                    // MEDIAS
                                     <div className={styles['media-list']}>
                                         <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
                                             {filteredLinks[category].map((link) => (
@@ -47,7 +48,7 @@ function Links({ filteredLinks, input_reference, variant }) {
                                                         <div className={styles['media-infos']}>
                                                             <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
                                                             <a href={link.link} className={styles['link-item']} target="_blank" rel="noopener noreferrer">
-                                                                {link.name}
+                                                                {link.name}  {<i className={`fa-brands fa-${link.platform}`}></i>}
                                                             </a>
                                                             {link.description}
                                                         </div>
@@ -57,6 +58,7 @@ function Links({ filteredLinks, input_reference, variant }) {
                                             ))}
                                         </ul>
                                     </div>) : (
+                                    // RESOURCES 
                                     <div>
                                         <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
                                             {filteredLinks[category].map((link) => (
@@ -70,8 +72,6 @@ function Links({ filteredLinks, input_reference, variant }) {
                                             ))}
                                         </ul>
                                     </div>
-
-
                                 )}
                             </section>
                     )) : null
