@@ -1,11 +1,9 @@
 import { AtSymbolIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router";
-
 import styles from './Header.module.scss'
 import sidebar_styles from '../sidebar/Sidebar.module.scss'
 import components_styles from '../../styles/Components.module.scss'
 
-function Header({ theme, toggleTheme, sidebarActive, setSidebarActive }) {
+function Header({ theme, toggleTheme, sidebarActive, setSidebarActive, isHome }) {
 
     return (
         <>
@@ -29,9 +27,10 @@ function Header({ theme, toggleTheme, sidebarActive, setSidebarActive }) {
                         <a href="mailto:social@tareqitos.com" className={styles['social-link']}><AtSymbolIcon className={components_styles['h-icon']} /></a>
                     </div>
                 </div>
+                {!isHome ? 
                 <div className={sidebar_styles['sidebar-btn-container']}>
                     <button onClick={() => setSidebarActive(true)} className={`${sidebar_styles['sidebar-btn']} ${sidebar_styles['open']}`}><i className={`fa-solid fa-bars`}></i></button>
-                </div>
+                </div> : null}
             </header>
         </>
     )
