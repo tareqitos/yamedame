@@ -65,7 +65,7 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
                 <ul className={styles['navbar-list']}>
                     {categories.map((category) => (
                         <li key={category} className={`${styles['navbar-item']} ${`navbar-${category}`}`}>
-                            <a onClick={() => sidebarActive ? setSidebarActive(false) : sidebarActive} href={`#${category}_id`} className={activeCategory == `${category}_id` ? styles.active : ''}><span></span>
+                            <a onClick={() => sidebarActive ? setSidebarActive(false) : sidebarActive} href={`#${category.replace(/\s+/g, '_')}_id`} className={activeCategory == `${category}_id` ? styles.active : ''}><span></span>
                                 {category == 'beginner' ? category.charAt(0).toUpperCase() + category.slice(1) + ' essentials' : category.charAt(0).toUpperCase() + category.slice(1)}</a>
                         </li>
                     ))}

@@ -6,7 +6,6 @@
     padding: 100px max(2rem, 50vw - 1200px / 2);
 }
 
-
 .main-page-logo {
     @include flex-column;
     align-items: center;
@@ -56,10 +55,20 @@
     transition: all .2s ease;
 }
 
-.resource-card {
+.resource-card-title {
     @include links-base-format;
+    font-size: 1.2em;
     font-family: $nunito-font;
-    height: 250px;
+    display: block;
+    color: var(--text-primary-color);
+    line-height: 1.5;
+
+    &:hover {
+        color: var(--button-color);
+    }
+}
+
+.resource-card {
     border-radius: $border-radius-10;
     background-color: var(--components-background-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -72,7 +81,7 @@
         border-color: var(--button-color);
     }
 
-    &:hover h2 {
+    &:hover .resource-card-title {
         color: var(--button-color);
     }
 
@@ -85,7 +94,6 @@
         background-color: var(--background-color);
     }
 
-    h2,
     p {
         color: var(--text-primary-color);
         line-height: 1.5;
@@ -93,6 +101,18 @@
     }
 }
 
+
+.shortcuts-container {
+    @include flex-center;
+
+    gap: 10px;
+    margin-top: 20px;
+
+    .shortcut {
+        padding: 5px 10px;
+        background-color: var(--background-color);
+    }
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -118,7 +138,6 @@
     }
 
     .resource-card {
-        height: 200px;
         padding: 20px 30px;
 
         span {

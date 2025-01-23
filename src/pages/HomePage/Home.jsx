@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import styles from './Home.module.scss'
-import { Link } from 'react-router';
+import components_styles from '../../styles/Components.module.scss'
+// import { Link } from 'react-router';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
-function Home({setIsHome}) {
+function Home({ setIsHome }) {
 
     let data = [
         { title: 'Study Resources', desc: 'Access essential materials for your study sessions', path: 'resources' },
@@ -11,11 +13,20 @@ function Home({setIsHome}) {
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
     ];
 
+    let shortcuts = [
+
+        { category: 'Beginner Essentials', path: 'resources#beginner_id', parent: 'resources' },
+        { category: 'Application', path: 'resources#application_id', parent: 'resources' },
+        { category: 'History and Tradition', path: 'media#History_&_Tradition_id', parent: 'media' },
+        { category: 'Podcast', path: 'media#Podcast_id', parent: 'media' },
+
+    ]
+
     function disableIsHome() {
         setIsHome(false)
     }
-    
-    useEffect (() => {
+
+    useEffect(() => {
         setIsHome(true);
     }, [setIsHome])
 
@@ -28,15 +39,23 @@ function Home({setIsHome}) {
                 </div>
                 <div className={styles["resource-container"]}>
                     {data.map((card, i) => (
-                        <Link to={`/${card.path}`} onClick={disableIsHome} key={i} className={styles["resource-card"]}>
+                        <div key={i} className={styles["resource-card"]}>
                             {card.path == 'resources' ? <span>📖</span> :
                                 card.path == 'media' ? <span>💾</span> : <span>✨</span>}
-                            <h2>{card.title}</h2>
+                            <Link to={`/${card.path}`} onClick={disableIsHome} className={styles["resource-card-title"]}>{card.title}</Link>
                             <p>{card.desc}</p>
-                        </Link>
+                            <div className={styles['shortcuts-container']}>
+                                {shortcuts.map((shortcut, i) => (
+                                    card.path == shortcut.parent ?
+                                        <Link to={`/${shortcut.path}`} onClick={disableIsHome} key={i} className={`${styles["shortcut"]} ${components_styles.btn}`} >
+                                            {shortcut.category}
+                                        </Link> : null
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
-            </div>
+            </div >
         </>
     )
 }

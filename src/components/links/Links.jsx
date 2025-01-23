@@ -35,7 +35,7 @@ function Links({ filteredLinks, input_reference, variant }) {
                         filteredLinks[category].length == 0 ? '' :
 
                             <section key={category} className={`${category}_container`}>
-                                <a className={styles.anchor} id={`${category}_id`}></a>
+                                <a className={styles.anchor} id={`${category.replace(/\s+/g, '_')}_id`}></a>
                                 <h2 className={styles['category-title']}>{category == 'beginner' ? 'Beginner essentials' : category.charAt(0).toUpperCase() + category.slice(1)}</h2>
                                 {variant === 'media' ? (
                                     // MEDIAS
