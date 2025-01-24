@@ -9,9 +9,10 @@ import ToTop from './components/toTop';
 
 import styles from './pages/Page.module.scss'
 import Home from './pages/HomePage';
+import About from './pages/About';
 
 function App() {
-  const [isHome, setIsHome] = useState(false);
+  const [hideSidebarButton, setHideSidebarButton] = useState(false);
   const [sidebarActive, setSidebarActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -57,10 +58,11 @@ function App() {
         toggleTheme={toggleTheme}
         sidebarActive={sidebarActive}
         setSidebarActive={setSidebarActive}
-        isHome={isHome} />
+        hideSidebarButton={hideSidebarButton} />
       <Router>
         <Routes>
-          <Route index element={<Home setIsHome={setIsHome}/>} />
+          <Route index element={<Home setHideSidebarButton={setHideSidebarButton}/>} />
+          <Route path="about" element={<About setHideSidebarButton={setHideSidebarButton}/>} />
           <Route
             path="resources"
             element={<ResourcesPage

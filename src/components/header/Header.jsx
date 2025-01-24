@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import sidebar_styles from '../sidebar/Sidebar.module.scss'
 import components_styles from '../../styles/Components.module.scss'
 
-function Header({ theme, toggleTheme, sidebarActive, setSidebarActive, isHome }) {
+function Header({ theme, toggleTheme, sidebarActive, setSidebarActive, hideSidebarButton }) {
 
     return (
         <>
@@ -27,7 +27,7 @@ function Header({ theme, toggleTheme, sidebarActive, setSidebarActive, isHome })
                         <a href="mailto:social@tareqitos.com" className={styles['social-link']}><AtSymbolIcon className={components_styles['h-icon']} /></a>
                     </div>
                 </div>
-                {!isHome ? 
+                {!hideSidebarButton ? 
                 <div className={sidebar_styles['sidebar-btn-container']}>
                     <button onClick={() => setSidebarActive(true)} className={`${sidebar_styles['sidebar-btn']} ${sidebar_styles['open']}`}><i className={`fa-solid fa-bars`}></i></button>
                 </div> : null}

@@ -5,7 +5,7 @@ import components_styles from '../../styles/Components.module.scss'
 import { HashLink as Link } from 'react-router-hash-link';
 
 
-function Home({ setIsHome }) {
+function Home({ setHideSidebarButton }) {
 
     let data = [
         { title: 'Study Resources', desc: 'Access essential materials for your study sessions', path: 'resources' },
@@ -19,16 +19,15 @@ function Home({ setIsHome }) {
         { category: 'Application', path: 'resources#application_id', parent: 'resources' },
         { category: 'History and Tradition', path: 'media#History_&_Tradition_id', parent: 'media' },
         { category: 'Podcast', path: 'media#Podcast_id', parent: 'media' },
-
-    ]
+    ];
 
     function disableIsHome() {
-        setIsHome(false)
+        setHideSidebarButton(false)
     }
 
     useEffect(() => {
-        setIsHome(true);
-    }, [setIsHome])
+        setHideSidebarButton(true);
+    }, [setHideSidebarButton])
 
     return (
         <>
@@ -42,7 +41,9 @@ function Home({ setIsHome }) {
                         <div key={i} className={styles["resource-card"]}>
                             {card.path == 'resources' ? <span>📖</span> :
                                 card.path == 'media' ? <span>💾</span> : <span>✨</span>}
-                            <Link to={`/${card.path}`} onClick={disableIsHome} className={styles["resource-card-title"]}>{card.title}</Link>
+                            {!card.path ?
+                                <div className={styles["resource-card-title"]}>{card.title}</div> :
+                                <Link to={`/${card.path}`} onClick={disableIsHome} className={styles["resource-card-title"]}>{card.title}</Link>}
                             <p>{card.desc}</p>
                             <div className={styles['shortcuts-container']}>
                                 {shortcuts.map((shortcut, i) => (
@@ -55,6 +56,9 @@ function Home({ setIsHome }) {
                         </div>
                     ))}
                 </div>
+
+                <Link to='/about' className={`${components_styles['extra-links']} ${components_styles.btn}`}>About</Link>
+                <a className={`${components_styles['extra-links']} ${components_styles.btn}`} href='https://ko-fi.com/H2H0QZVAZ' target='_blank'>Donate</a>
             </div >
         </>
     )

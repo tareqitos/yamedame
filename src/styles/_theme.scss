@@ -29,6 +29,7 @@ $text-primary-color-opacity-04-light: rgba($text-primary-color-light, .4);
 $button-color-light: rgb(98, 154, 136);
 $section-border-light: rgba(0, 0, 0, .1);
 
+$logo-color: rgb(201, 61, 27);
 
 
 @each $icon, $color in (fa-flag-checkered: $beginner-color,
