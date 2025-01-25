@@ -97,10 +97,10 @@
     p {
         color: var(--text-primary-color);
         line-height: 1.5;
+        font-weight: 200;
 
     }
 }
-
 
 .shortcuts-container {
     @include flex-center;
@@ -112,6 +112,12 @@
         padding: 5px 10px;
         background-color: var(--background-color);
     }
+}
+
+.extra-container {
+    @include flex-center;
+    gap: 10px;
+    margin: 20px 0 40px 0;
 }
 
 

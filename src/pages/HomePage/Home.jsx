@@ -57,8 +57,10 @@ function Home({ setHideSidebarButton }) {
                     ))}
                 </div>
 
-                <Link to='/about' className={`${components_styles['extra-links']} ${components_styles.btn}`}>About</Link>
-                <a className={`${components_styles['extra-links']} ${components_styles.btn}`} href='https://ko-fi.com/H2H0QZVAZ' target='_blank'>Donate</a>
+                <div className={styles["extra-container"]}>
+                    <Link to='/about' className={`${components_styles['extra-links']} ${components_styles.btn}`}>About</Link>
+                    <a className={`${components_styles['extra-links']} ${components_styles.btn}`} href='https://ko-fi.com/H2H0QZVAZ' target='_blank'>Donate</a>
+                </div>
             </div >
         </>
     )
