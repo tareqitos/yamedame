@@ -2,6 +2,7 @@
 @import './theme';
 @import './mixins';
 
+
 .btn {
     @include button-base-format;
     border-radius: $border-radius-8;
@@ -20,6 +21,13 @@
         color: $button-color;
         border: 1px solid $button-color;
     }
+}
+
+.extra-links {
+    padding: 10px 20px;
+    border-color: transparent;
+    border-radius: 50px;
+    width: fit-content;
 }
 
 input {
@@ -73,6 +81,7 @@ input {
     position: absolute;
     padding: 10px 15px;
     bottom: -50px;
+    z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;

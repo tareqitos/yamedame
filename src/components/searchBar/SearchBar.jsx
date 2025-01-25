@@ -1,6 +1,6 @@
+import { useRef } from 'react';
 import styles from './Searchbar.module.scss'
 import components_styles from '../../styles/Components.module.scss'
-import { useState, useRef } from 'react';
 
 function SearchBar({ links, filteredLinks, setFilteredLinks, input_reference }) {
 

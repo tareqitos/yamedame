@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import styles from './Links.module.scss'
 
-function Links({ filteredLinks, input_reference, setActiveCategory }) {
+function Links({ filteredLinks, input_reference, variant }) {
 
     const [isEmpty, setIsEmpty] = useState();
     const [categoryIcons, setCategoryIcons] = useState({
@@ -24,60 +24,58 @@ function Links({ filteredLinks, input_reference, setActiveCategory }) {
     })
 
     useEffect(() => {
-        checkListIsEmpty()
+        filteredLinks ? checkListIsEmpty() : null
     }, [filteredLinks])
-
-    const observer = useRef(null);
-
-    useEffect(() => {
-        const handleIntersect = (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveCategory(entry.target.id);
-                }
-            });
-        };
-
-        const options = {
-            root: null, // Use the viewport
-            rootMargin: '0px 0px -80% 0px', // Offset to trigger earlier
-            threshold: 0.6, // Trigger when 60% of the element is visible
-        };
-
-        observer.current = new IntersectionObserver(handleIntersect, options);
-        const elements = document.querySelectorAll(`.${styles['anchor']}`);
-
-        elements.forEach((element) => observer.current.observe(element));
-
-        return () => {
-            elements.forEach((element) => observer.current.unobserve(element));
-        };
-    }, [filteredLinks, setActiveCategory]);
 
     return (
         <>
             <div className={styles['links-container']}>
-                {isEmpty ? <p className={styles['empty-list-message']}>No result for <span style={{color: '#92BFB1'}}>{input_reference.current.value.trim()}</span></p> :
-                    Object.keys(filteredLinks).map((category) => (
+                {isEmpty ? <p className={styles['empty-list-message']}>No result for <span style={{ color: '#92BFB1' }}>{input_reference.current.value.trim()}</span></p> :
+                    filteredLinks ? Object.keys(filteredLinks).map((category) => (
                         filteredLinks[category].length == 0 ? '' :
 
                             <section key={category} className={`${category}_container`}>
-                                <a className={styles.anchor} id={`${category}_id`}></a>
+                                <a className={styles.anchor} id={`${category.replace(/\s+/g, '_')}_id`}></a>
                                 <h2 className={styles['category-title']}>{category == 'beginner' ? 'Beginner essentials' : category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-                                <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
-                                    {filteredLinks[category].map((link) => (
-                                        <li key={link.id} className={`${styles['link-item-container']} ${category}`}>
-                                            <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
-                                            <a href={link.link} className={styles['link-item']} target="_blank" rel="noopener noreferrer">
-                                                {link.name}
-                                            </a>
-                                            {' - ' + link.description}
-                                        </li>
-                                    ))}
-                                </ul>
+                                {variant === 'media' ? (
+                                    // MEDIAS
+                                    <div className={styles['media-list']}>
+                                        <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
+                                            {filteredLinks[category].map((link) => (
+                                                <div key={link.id} className={styles['media-link-wrapper']}>
+                                                    <li className={`${styles['link-item-container']} ${category}`}>
+                                                        <img className={styles['media-img']}src={link.image} alt="" />
+                                                        <div className={styles['media-infos']}>
+                                                            <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
+                                                            <a href={link.link} className={styles['link-item']} target="_blank" rel="noopener noreferrer">
+                                                                {link.name}  {<i className={`fa-brands fa-${link.platform}`}></i>}
+                                                            </a>
+                                                            {link.description}
+                                                        </div>
+                                                    </li>
+                                                    <img className={styles['media-img-bg']} src={link.image} alt="" />
+                                                </div>
+                                            ))}
+                                        </ul>
+                                    </div>) : (
+                                    // RESOURCES 
+                                    <div>
+                                        <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
+                                            {filteredLinks[category].map((link) => (
+                                                <li key={link.id} className={`${styles['link-item-container']} ${category}`}>
+                                                    <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
+                                                    <a href={link.link} className={styles['link-item']} target="_blank" rel="noopener noreferrer">
+                                                        {link.name}
+                                                    </a>
+                                                    {' - ' + link.description}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </section>
-
-                    ))}
+                    )) : null
+                }
             </div>
         </>
     )
