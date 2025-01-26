@@ -76,6 +76,10 @@
 .sidebar-btn-container {
     display: none;
     margin-left: 20px;
+
+    @media screen and (min-width: 576px) {
+        display: none;
+    }
 }
 
 .sidebar-btn {

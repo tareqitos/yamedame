@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+import { HashRouter as Router, Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 
 import ResourcesPage from './pages/ResourcesPage';
 import MediaPage from './pages/MediaPage/MediaPage';
@@ -33,22 +33,39 @@ function App() {
     window.localStorage.setItem("theme", theme);
   }
 
+  function ScrollToHash() {
+    const { hash } = useLocation();
+    const prevHash = useRef(hash);
+  
+    useEffect(() => {
+      if (hash && hash !== "" && hash !== prevHash.current) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.replaceState({}, window.location.pathname + window.location.search + hash);
+        }
+        prevHash.current = hash;
+      }
+    }, [hash]);
+  
+    return null;
+  }
   // --------- ANCHOR --------- //
 
-  useEffect(() => {
-    const removeAnchorsFromURL = () => {
-      if (window.location.hash) {
-        window.history.replaceState({}, '', window.location.pathname);
-      }
-    };
+  // useEffect(() => {
+  //   const removeAnchorsFromURL = () => {
+  //     if (window.location.hash) {
+  //       window.history.replaceState({}, '', window.location.pathname);
+  //     }
+  //   };
 
-    removeAnchorsFromURL();
-    window.addEventListener('hashchange', removeAnchorsFromURL);
+  //   removeAnchorsFromURL();
+  //   window.addEventListener('hashchange', removeAnchorsFromURL);
 
-    return () => {
-      window.removeEventListener('hashchange', removeAnchorsFromURL);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('hashchange', removeAnchorsFromURL);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -60,9 +77,10 @@ function App() {
         setSidebarActive={setSidebarActive}
         hideSidebarButton={hideSidebarButton} />
       <Router>
+        <ScrollToHash />
         <Routes>
-          <Route index element={<Home setHideSidebarButton={setHideSidebarButton}/>} />
-          <Route path="about" element={<About setHideSidebarButton={setHideSidebarButton}/>} />
+          <Route index element={<Home setHideSidebarButton={setHideSidebarButton} />} />
+          <Route path="about" element={<About setHideSidebarButton={setHideSidebarButton} />} />
           <Route
             path="resources"
             element={<ResourcesPage

@@ -15,24 +15,6 @@ function MediaPage({ theme, toggleTheme, sidebarActive, setSidebarActive, isLoad
 
   const input_reference = useRef()
 
-     // --------- ANCHOR --------- //
-
-     useEffect(() => {
-      const removeAnchorsFromURL = () => {
-        if (window.location.hash) {
-          window.history.replaceState({}, '', window.location.pathname);
-        }
-      };
-  
-      removeAnchorsFromURL();
-      window.addEventListener('hashchange', removeAnchorsFromURL);
-  
-      return () => {
-        window.removeEventListener('hashchange', removeAnchorsFromURL);
-      };
-    }, []);
-  
-
   useEffect(() => {
     const fetchData = async (api) => {
       setIsLoading(true)

@@ -17,7 +17,7 @@ function Home({ setHideSidebarButton }) {
 
         { category: 'Beginner Essentials', path: 'resources#beginner_id', parent: 'resources' },
         { category: 'Application', path: 'resources#application_id', parent: 'resources' },
-        { category: 'History and Tradition', path: 'media#History_&_Tradition_id', parent: 'media' },
+        { category: 'Culture', path: 'media#Culture_id', parent: 'media' },
         { category: 'Podcast', path: 'media#Podcast_id', parent: 'media' },
     ];
 

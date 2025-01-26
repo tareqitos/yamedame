@@ -63,9 +63,9 @@ header {
 
 .header-right-side {
     @include flex-center;
-    gap: 20px;
+    gap: 10px;
 
     @media screen and (max-width: 576px) {
-        display: none;
+        
     }
 }
