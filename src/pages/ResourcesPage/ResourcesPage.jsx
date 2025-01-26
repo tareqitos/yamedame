@@ -17,20 +17,20 @@ function ResourcesPage({ theme, toggleTheme, sidebarActive, setSidebarActive, is
 
    // --------- ANCHOR --------- //
 
-   useEffect(() => {
-    const removeAnchorsFromURL = () => {
-      if (window.location.hash) {
-        window.history.replaceState({}, '', window.location.pathname);
-      }
-    };
+  //  useEffect(() => {
+  //   const removeAnchorsFromURL = () => {
+  //     if (window.location.hash) {
+  //       window.history.replaceState({}, window.location.pathname);
+  //     }
+  //   };
 
-    removeAnchorsFromURL();
-    window.addEventListener('hashchange', removeAnchorsFromURL);
+  //   removeAnchorsFromURL();
+  //   window.addEventListener('hashchange', removeAnchorsFromURL);
 
-    return () => {
-      window.removeEventListener('hashchange', removeAnchorsFromURL);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('hashchange', removeAnchorsFromURL);
+  //   };
+  // }, []);
 
 
   useEffect(() => {
