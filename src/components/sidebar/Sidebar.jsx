@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { AtSymbolIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 import ToTop from "../toTop";
 import styles from './Sidebar.module.scss';
@@ -76,8 +76,9 @@ function Sidebar({ categories, sidebarActive, setSidebarActive, activeCategory, 
                 <hr />
 
                 <ToTop button_css_selector={styles['to-top-sidebar']} />
-                <Link className={`${components_styles.btn} ${styles['page-links']}`} to='/resources'>Study Resources</Link>
-                <Link className={`${components_styles.btn} ${styles['page-links']}`} to='/media'>Media Library</Link>
+                <NavLink className={`${components_styles.btn} ${styles['page-links']}`} to='/resources'>Study Resources</NavLink>
+                <NavLink className={`${components_styles.btn} ${styles['page-links']}`} to='/media'>Media Library</NavLink>
+                <NavLink className={`${components_styles.btn} ${styles['page-links']}`} to='/applications'>Applications</NavLink>
             </nav>
             <div className={` ${styles['sidebar-external-links']}`}>
                 <div className={`${components_styles.socials} ${styles['socials-sidebar']}`}>

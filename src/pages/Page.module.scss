@@ -40,12 +40,12 @@
 // Main content
 
 .main-wrapper {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 }
 
 .main-content {
     display: flex;
+    justify-content: center;
     padding: $main-side-padding;
 
 

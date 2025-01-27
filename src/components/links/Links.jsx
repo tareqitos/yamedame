@@ -63,11 +63,17 @@ function Links({ filteredLinks, input_reference, variant }) {
                                         <ul className={styles['link-list']} data-aos="fade-up" data-aos-offset="0" data-aos-once="true">
                                             {filteredLinks[category].map((link) => (
                                                 <li key={link.id} className={`${styles['link-item-container']} ${category}`}>
-                                                    <i className={categoryIcons[category] ? categoryIcons[category] : ''}></i>
+                                                    <i className={categoryIcons[category] ? categoryIcons[category] : categoryIcons['application']}></i>
                                                     <a href={link.link} className={styles['link-item']} target="_blank" rel="noopener noreferrer">
                                                         {link.name}
                                                     </a>
-                                                    {' - ' + link.description}
+                                                    {` - ${link.description} ${variant == 'applications' ? ' / ' : ''}`}
+                                                    {/* // APPLICATIONS */}
+                                                    {variant == 'applications' ? (link['platforms'].map((platform, i) => (
+                                                        platform == 'desktop' ? 
+                                                        <i key={i} title={platform} className={`fa-solid fa-${platform}`}></i> :
+                                                        <i key={i} title={platform} className={`fa-brands fa-${platform}`}></i>
+                                                    ))) : null}
                                                 </li>
                                             ))}
                                         </ul>

@@ -10,6 +10,7 @@ import ToTop from './components/toTop';
 import styles from './pages/Page.module.scss'
 import Home from './pages/HomePage';
 import About from './pages/About';
+import ApplicationsPage from './pages/ApplicationsPage/ApplicationsPage';
 
 function App() {
   const [hideSidebarButton, setHideSidebarButton] = useState(false);
@@ -50,22 +51,6 @@ function App() {
   
     return null;
   }
-  // --------- ANCHOR --------- //
-
-  // useEffect(() => {
-  //   const removeAnchorsFromURL = () => {
-  //     if (window.location.hash) {
-  //       window.history.replaceState({}, '', window.location.pathname);
-  //     }
-  //   };
-
-  //   removeAnchorsFromURL();
-  //   window.addEventListener('hashchange', removeAnchorsFromURL);
-
-  //   return () => {
-  //     window.removeEventListener('hashchange', removeAnchorsFromURL);
-  //   };
-  // }, []);
 
   return (
     <>
@@ -96,6 +81,18 @@ function App() {
           <Route
             path="media"
             element={<MediaPage
+              error={error}
+              setError={setError}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              theme={theme}
+              setTheme={setTheme}
+              toggleTheme={toggleTheme}
+              sidebarActive={sidebarActive}
+              setSidebarActive={setSidebarActive} />} />
+          <Route
+            path="applications"
+            element={<ApplicationsPage
               error={error}
               setError={setError}
               isLoading={isLoading}
