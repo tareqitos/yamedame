@@ -10,15 +10,18 @@ function Home({ setHideSidebarButton }) {
     let data = [
         { title: 'Study Resources', desc: 'Access essential materials for your study sessions', path: 'resources' },
         { title: 'Media Library', desc: 'Explore videos, podcasts, and more to enhance your Japanese learning!', path: 'media' },
+        { title: 'Software / Applications', desc: 'Discover useful software and applications to aid your Japanese learning!', path: 'applications' },
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
     ];
 
     let shortcuts = [
 
         { category: 'Beginner Essentials', path: 'resources#beginner_id', parent: 'resources' },
-        { category: 'Application', path: 'resources#application_id', parent: 'resources' },
+        { category: 'Reading', path: 'resources#reading_id', parent: 'resources' },
         { category: 'Culture', path: 'media#Culture_id', parent: 'media' },
         { category: 'Podcast', path: 'media#Podcast_id', parent: 'media' },
+        { category: 'Flashcards', path: 'applications#Flashcards_id', parent: 'applications' },
+        { category: 'Tools', path: 'applications#Tools_id', parent: 'applications' },
     ];
 
     function disableIsHome() {
@@ -40,7 +43,8 @@ function Home({ setHideSidebarButton }) {
                     {data.map((card, i) => (
                         <div key={i} className={styles["resource-card"]}>
                             {card.path == 'resources' ? <span>📖</span> :
-                                card.path == 'media' ? <span>💾</span> : <span>✨</span>}
+                                card.path == 'media' ? <span>💾</span> :
+                                    card.path == 'applications' ? <span>💻</span> : <span>✨</span>}
                             {!card.path ?
                                 <div className={styles["resource-card-title"]}>{card.title}</div> :
                                 <Link to={`/${card.path}`} onClick={disableIsHome} className={styles["resource-card-title"]}>{card.title}</Link>}
