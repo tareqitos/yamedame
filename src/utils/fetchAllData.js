@@ -7,7 +7,6 @@ export const fetchData = async () => {
     const result = await response.json();
 
     let data = Object.values(result).flat();
-    console.log(data)
 
     return data;
   } catch (err) {
