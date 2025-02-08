@@ -21,7 +21,7 @@ export default async function Resources() {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     await new Promise(resolve => setTimeout(resolve, 500));
-    const response = await fetch(`${API_URL}api/resources/resources`);
+    const response = await fetch(`${API_URL}/api/resources/resources`);
     const resources = await response.json();
 
     const category_icons: { [key: string]: IconDefinition } = {

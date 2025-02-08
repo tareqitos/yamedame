@@ -22,7 +22,7 @@ export default async function Media() {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     await new Promise(resolve => setTimeout(resolve, 500));
-    const response = await fetch(`${API_URL}api/resources/media`);
+    const response = await fetch(`${API_URL}/api/resources/media`);
     const media = await response.json();
 
     const platforms_icons: { [key: string]: IconDefinition } = {
