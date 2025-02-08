@@ -1,0 +1,194 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.update-message {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+    opacity: .5;
+}
+
+.homepage-wrapper {
+    padding: $auto-padding-50;
+}
+
+.homepage-logo {
+    @include flex-column;
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .title a {
+        @include font-properties(5em, 700, normal);
+        @include link-properties(var(--text-color), var(--text-color));
+        @include flex-row-center;
+        @include center-with-margin(0 auto, fit-content);
+        gap: 10px;
+        font-family: $font-mochiy;
+
+        .logo {
+            display: inline-block;
+            margin-bottom: 3px;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            background-color: var(--logo-color);
+            transition: background-color .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            &::before {
+                content: '';
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                background-color: var(--logo-color);
+
+                filter: blur(80px);
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                bottom: 100%;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                background-color: var(--logo-color);
+                z-index: 0;
+
+                transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+
+        &:hover {
+            .logo {
+                background-color: #fefefe;
+            }
+            .logo::after {
+                transform: scale(.5);
+            }
+        }
+    }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    @include border-hover;
+    padding: 30px 40px;
+    border-radius: $border-radius-10;
+    background-color: var(--component-background-color);
+
+    @include flex-column;
+    justify-content: space-between;
+
+    span {
+        display: inline-block;
+        width: fit-content;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: $border-radius-05;
+        background-color: var(--background-color);
+    }
+
+    .card-title {
+        @include link-properties;
+        @include font-properties(1.2em, 400, normal);
+        display: block;
+    }
+
+    .card-desc {
+        @include font-properties(1em, 200, 1.5);
+    }
+}
+
+.navigation-links {
+    @include flex-row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.shortcuts {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .homepage-wrapper {
+        padding: $auto-padding-50-divide-3;
+    }
+
+    .homepage-logo {
+        .title a {
+            font-size: 4em;
+
+            .logo {
+                height: 80px;
+                width: 80px;
+            }
+        }
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        padding: 20px 30px;
+
+        span {
+            font-size: 1em;
+            padding: 5px 10px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+        }
+
+        .card-desc {
+            font-size: 1em;
+        }
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .homepage-wrapper {
+        padding: $auto-padding-50-1;
+    }
+
+    .homepage-logo {
+        .title a {
+            font-size: 3em;
+
+            .logo {
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        height: 100%;
+        padding: 20px 20px;
+    }
+
+    .shortcuts {
+        font-size: .8em;
+    }
+}

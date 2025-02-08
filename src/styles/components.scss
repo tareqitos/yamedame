@@ -1,0 +1,101 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// LINKS =================================================================
+.links {
+    @include link-properties;
+    border: none;
+    background: none;
+}
+
+
+// BUTTONS ===============================================================
+
+.button {
+    @include link-properties;
+    cursor: pointer;
+}
+
+.button-rounded {
+    @include navigation-buttons($border-radius: 50px);
+    color: var(--links-color);
+    padding: $button-padding-05-15;
+    background: var(--component-background-color);
+}
+
+.button-padding-10-15 {
+    padding: $button-padding-10-15;
+}
+
+.and-border {
+    border: 1px solid var(--links-color);
+    box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white; // anti-aliasing
+}
+
+.and-background:hover {
+    background: var(--links-color);
+    color: var(--component-background-color);
+}
+
+// INPUTS ===============================================================
+
+.search-input {
+    font-family: $font-nunito, 'FontAwesome';
+    color: var(--text-color);
+    width: 20vw;
+    padding: 5px 10px;
+    border: none;
+    border-radius: $border-radius-05;
+    background: var(--background-color);
+    transition: all $transition-02s-cubic;
+
+    position: relative;
+    z-index: 6;
+
+    &:focus {
+        width: 30vw;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: var(--links-color);
+    }
+}
+
+// TO TOP BUTTON ========================================================
+
+.to-top-container {
+    @include flex-row;
+    justify-content: flex-end;
+    position: sticky;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    bottom: 10px;
+}
+
+.to-top {
+    @include navigation-buttons($border-radius: 50px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+// SCROLLBAR ============================================================
+
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--links-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: $border-radius-20;
+    background: var(--component-background-color);
+}

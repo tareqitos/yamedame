@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+html[data-theme=light] {
+  --logo-color: #C93D1A;
+  --background-color: #f8f9fa;
+  --component-background-color: #e9eef3;
+  --links-color: #007ACC;
+  --resources-links-color: #007ACC;
+  --text-color: #212529;
+  --border-opacity-05: #21252980;
+  --shadow: #7e7e7e7e;
+}
+
+html[data-theme=dark] {
+  --logo-color: #C93D1A;
+  --background-color: #212529;
+  --component-background-color: #17191C;
+  --links-color: #78b3e2;
+  --resources-links-color: #78b3e2;
+  --text-color: #fff;
+  --border-opacity-05: #ffffff80;
+  --shadow: #000000;
+}
+
+.fa-flag-checkered {
+  color: rgb(232, 59, 42);
+}
+
+.fa-book {
+  color: rgb(34, 174, 90);
+}
+
+.fa-spell-check {
+  color: rgb(233, 94, 28);
+}
+
+.fa-language {
+  color: rgb(66, 107, 254);
+}
+
+.fa-book-open {
+  color: rgb(207, 132, 36);
+}
+
+.fa-bookmark {
+  color: rgb(176, 71, 176);
+}
+
+.fa-microchip {
+  color: rgb(13, 174, 156);
+}
+
+.fa-brain {
+  color: rgb(208, 132, 214);
+}
+
+.fa-screwdriver-wrench {
+  color: rgb(45, 110, 189);
+}
+
+.fa-photo-film {
+  color: rgb(88, 116, 198);
+}
+
+.links {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  border: none;
+  background: none;
+}
+.links:hover {
+  color: var(--links-color);
+}
+
+.button {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+.button:hover {
+  color: var(--links-color);
+}
+
+.button-rounded {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  padding: 5px 10px;
+  border: 1px solid var(--links-color);
+  border-color: transparent;
+  border-radius: 50px;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: pointer;
+  color: var(--links-color);
+  padding: 5px 15px;
+  background: var(--component-background-color);
+}
+.button-rounded:hover {
+  color: var(--links-color);
+}
+.button-rounded:hover {
+  border-color: var(--links-color);
+}
+
+.button-padding-10-15 {
+  padding: 10px 15px;
+}
+
+.and-border {
+  border: 1px solid var(--links-color);
+  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+}
+
+.and-background:hover {
+  background: var(--links-color);
+  color: var(--component-background-color);
+}
+
+.search-input {
+  font-family: "Nunito Sans", sans-serif, "FontAwesome";
+  color: var(--text-color);
+  width: 20vw;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--background-color);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+  z-index: 6;
+}
+.search-input:focus {
+  width: 30vw;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--links-color);
+}
+
+.to-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: sticky;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  bottom: 10px;
+}
+
+.to-top {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  padding: 5px 10px;
+  border: 1px solid var(--links-color);
+  border-color: transparent;
+  border-radius: 50px;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.to-top:hover {
+  color: var(--links-color);
+}
+.to-top:hover {
+  border-color: var(--links-color);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--links-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: var(--component-background-color);
+}/*# sourceMappingURL=components.css.map */
