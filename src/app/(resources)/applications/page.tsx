@@ -19,10 +19,9 @@ type Applications = {
 }
 
 export default async function Applications() {
-    const API_URL = process.env.API_URL;
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const response = await fetch(`${API_URL}api/resources/applications`);
+    const response = await fetch(`${API_URL}/api/resources/applications`);
     const apps = await response.json();
 
     const category_icons: { [key: string]: IconDefinition } = {
@@ -53,13 +52,13 @@ export default async function Applications() {
                             <h2 className="category-title">{category}</h2>
 
                             <ul className="list-item-container">
-                                {apps[category].map((item: Applications, i: number) => (
+                                {apps[category].map((item: Applications) => (
                                     <li key={item.uuid} className={`item-container ${item.slug}`}>
                                         <FontAwesomeIcon className="item-icons" icon={category_icons[item.slug]} height={20} />
                                         <a href={item.link} className="item" target="_blank">{item.name}</a>
                                         {` - ${item.description}  / `}
                                         {item.platforms.map((platform) => (
-                                            <FontAwesomeIcon className="item-icons" icon={category_icons[platform]} height={20} />
+                                            <FontAwesomeIcon key={platform} className="item-icons" icon={category_icons[platform]} height={20} />
                                         ))}
 
                                     </li>

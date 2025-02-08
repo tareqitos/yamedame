@@ -40,7 +40,12 @@ export const Search = () => {
     }, [])
 
     useEffect(() => {
-        isSearchActive ? document.documentElement.classList.add('no-scroll') : document.documentElement.classList.remove('no-scroll')
+        if (isSearchActive) {
+            document.documentElement.classList.add('no-scroll')
+        } else {
+            document.documentElement.classList.remove('no-scroll')
+        } 
+
     }, [isSearchActive])
 
     const toggleSearch = () => {
@@ -72,7 +77,7 @@ export const Search = () => {
 
         if (!allResources || allResources.length == 0) return;
 
-        let miniSearch = new MiniSearch({
+        const miniSearch = new MiniSearch({
             idField: 'uuid',
             fields: ['name', 'description'],
             storeFields: ['uuid', 'name', 'description', 'link', 'category', 'slug', 'path'],
@@ -89,8 +94,8 @@ export const Search = () => {
             console.error('Failed to fetch resources');
         }
 
-        let input = event.target.value.trim();
-        let results = miniSearch.search(input);
+        const input = event.target.value.trim();
+        const results = miniSearch.search(input);
 
         if (input_reference.current?.value.trim()) {
             setFilteredResources(results as unknown as SearchResult[]);

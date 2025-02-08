@@ -1,10 +1,9 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AtSymbolIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from '../../utils/theme'
 import Link from "next/link";
 import { Search } from "./search";
-import Sidebar from "./sidebar";
 
 export const Header = () => {
     return (

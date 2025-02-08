@@ -19,10 +19,9 @@ type Media = {
 }
 
 export default async function Media() {
-    const API_URL = process.env.API_URL;
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const response = await fetch(`${API_URL}api/resources/media`);
+    const response = await fetch(`${API_URL}/api/resources/media`);
     const media = await response.json();
 
     const platforms_icons: { [key: string]: IconDefinition } = {
@@ -46,7 +45,7 @@ export default async function Media() {
                         <h2 className="category-title">{category}</h2>
 
                         <ul key={i} className="list-item-container media">
-                            {media[category].map((item: Media, i: number) => (
+                            {media[category].map((item: Media) => (
 
                                 <li key={item.uuid} className={`item-container ${item.slug} media`}>
                                     <img src={item.image} alt={item.name} className="item-picture media" />
@@ -54,7 +53,7 @@ export default async function Media() {
                                         <a href={item.link} className="item media" target="_blank">{item.name} <FontAwesomeIcon className="icon" icon={platforms_icons[item.platform]} width={20} /></a>
                                         {item.description}
                                     </div>
-                                    <img src={item.image} className="item-picture-bg" />
+                                    <img src={item.image} alt={item.name} className="item-picture-bg" />
                                 </li>
 
                             ))}

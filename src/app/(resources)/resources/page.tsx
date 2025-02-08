@@ -18,10 +18,9 @@ type Resource = {
 }
 
 export default async function Resources() {
-    const API_URL = process.env.API_URL;
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const response = await fetch(`${API_URL}api/resources/resources`);
+    const response = await fetch(`${API_URL}/api/resources/resources`);
     const resources = await response.json();
 
     const category_icons: { [key: string]: IconDefinition } = {
@@ -48,7 +47,7 @@ export default async function Resources() {
                         <h2 className="category-title">{category}</h2>
 
                         <ul key={i} className="list-item-container">
-                            {resources[category].map((item: Resource, i: number) => (
+                            {resources[category].map((item: Resource) => (
                                 <li key={item.uuid} className={`item-container ${item.slug}`}>
                                     <FontAwesomeIcon className="item-icons" icon={category_icons[item.slug]} height={20} />
                                     <a href={item.link} className="item" target="_blank">{item.name}</a>

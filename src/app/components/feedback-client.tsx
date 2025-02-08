@@ -5,29 +5,28 @@ import { useState } from "react";
 interface FeedbackProps {
     title: string;
     categories: string[];
-    sendFeedback: any;
+    sendFeedback: (formData: FormData) => Promise<void>;
 }
 
 
 export default function FeedbackClient({ title, categories, sendFeedback }: FeedbackProps) {
     const [isActive, setIsActive] = useState(false);
     const [message, setMessage] = useState("");
-    const [succes, setSucces] = useState("");
     const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         setMessage("")
-        setSucces("")
         const formData = new FormData(event.currentTarget);
 
         setIsLoading(true);
         try {
             await sendFeedback(formData);
             setMessage("Thank you for your contribution! 🚀")
-        } catch (err) {
+        } catch (error) {
             setIsLoading(false)
             setMessage("Sorry, the server couldn't be reached ⚠️ ")
+            console.log(error)
         } finally {
             setIsLoading(false)
         }

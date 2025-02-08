@@ -18,9 +18,11 @@ export default function ToTopButton() {
 
     useEffect(() => {
         function checkIfScrolling() {
-            window.scrollY > 100 ?
-                setIsScrolling(true) :
+            if (window.scrollY > 100) {
+                setIsScrolling(true)
+            } else {
                 setIsScrolling(false)
+            }
         }
 
         window.addEventListener('scroll', checkIfScrolling);
