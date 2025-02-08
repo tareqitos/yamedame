@@ -1,0 +1,142 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// RESOURCES //
+
+.list-item-container {
+    @include font-properties(1.1em, 400, 2);
+    padding: 30px;
+    list-style: none;
+    background: var(--component-background-color);
+    border-radius: $border-radius-10;
+}
+
+section {
+    margin-top: 30px;
+    
+    .category-title {
+        margin-bottom: 20px;
+    }
+}
+
+.item-container {
+    transition: color $transition-015s ease;
+
+    .item-icons {
+        margin-right: 10px;
+        vertical-align: sub;
+    }
+
+    html[data-theme="dark"] &:hover .item-icons {
+        color: var(--text-color);
+        filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+
+    }
+
+    html[data-theme="light"] &:hover .item-icons {
+        opacity: .5;
+    }
+
+
+}
+
+.item {
+    @include link-properties(var(--resources-links-color), var(--text-color));
+}
+
+// MEDIA //
+
+.list-item-container.media {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+
+    .item-container.media {
+        @include flex-row-center('left');
+        align-items: center;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .item-infos {
+        @include flex-column;
+        line-height: 1.5;
+
+        .item.media .icon {
+            vertical-align: middle;
+        }
+    }
+
+    .item-picture {
+        position: relative;
+        height: 60px;
+        border-radius: $border-radius-05;
+        z-index: 1;
+    }
+
+    .item-picture-bg {
+        position: absolute;
+        left: -25px;
+        height: 100px;
+        filter: blur(20px);
+        opacity: .3;
+        z-index: 0;
+    }
+}
+
+
+// GENERAL //
+
+.resources-container {
+    padding: $auto-padding-50;
+}
+
+.resources-title {
+    margin-bottom: 10px;
+    .title {
+        @include font-properties(2em, 400, normal);
+    }
+    .desc {
+        opacity: .5;
+    }
+}
+
+.resources-title-separator {
+    margin: 50px 0 20px;
+    opacity: .1;
+    width: 50%;
+}
+
+// LOADING //
+
+.loading {
+    @include font-properties(5em, 400, normal);
+    padding-top: 50px;
+    font-family: $font-mochiy;
+    text-align: center;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .8;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: .3;
+        transform: scale(1);
+    }
+}
+
+.error {
+    text-align: center;
+    padding-top: 50px;
+
+    a {
+        @include link-properties(var(--links-color), var(--links-color));
+    }
+}

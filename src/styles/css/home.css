@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+html[data-theme=light] {
+  --logo-color: #C93D1A;
+  --background-color: #f8f9fa;
+  --component-background-color: #e9eef3;
+  --links-color: #007ACC;
+  --resources-links-color: #007ACC;
+  --text-color: #212529;
+  --border-opacity-05: #21252980;
+  --shadow: #7e7e7e7e;
+}
+
+html[data-theme=dark] {
+  --logo-color: #C93D1A;
+  --background-color: #212529;
+  --component-background-color: #17191C;
+  --links-color: #78b3e2;
+  --resources-links-color: #78b3e2;
+  --text-color: #fff;
+  --border-opacity-05: #ffffff80;
+  --shadow: #000000;
+}
+
+.fa-flag-checkered {
+  color: rgb(232, 59, 42);
+}
+
+.fa-book {
+  color: rgb(34, 174, 90);
+}
+
+.fa-spell-check {
+  color: rgb(233, 94, 28);
+}
+
+.fa-language {
+  color: rgb(66, 107, 254);
+}
+
+.fa-book-open {
+  color: rgb(207, 132, 36);
+}
+
+.fa-bookmark {
+  color: rgb(176, 71, 176);
+}
+
+.fa-microchip {
+  color: rgb(13, 174, 156);
+}
+
+.fa-brain {
+  color: rgb(208, 132, 214);
+}
+
+.fa-screwdriver-wrench {
+  color: rgb(45, 110, 189);
+}
+
+.fa-photo-film {
+  color: rgb(88, 116, 198);
+}
+
+.update-message {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 10px;
+  opacity: 0.5;
+}
+
+.homepage-wrapper {
+  padding: 50px max(2rem, 50vw - 600px);
+}
+
+.homepage-logo {
+  display: flex;
+  flex-direction: column;
+}
+.homepage-logo .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.homepage-logo .title a {
+  font-size: 5em;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: fit-content;
+  gap: 10px;
+  font-family: "Mochiy Pop P One", serif;
+}
+.homepage-logo .title a:hover {
+  color: var(--text-color);
+}
+.homepage-logo .title a .logo {
+  display: inline-block;
+  margin-bottom: 3px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: var(--logo-color);
+  transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.homepage-logo .title a .logo::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--logo-color);
+  filter: blur(80px);
+  z-index: -1;
+}
+.homepage-logo .title a .logo::after {
+  content: "";
+  display: block;
+  position: relative;
+  bottom: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--logo-color);
+  z-index: 0;
+  transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.homepage-logo .title a:hover .logo {
+  background-color: #fefefe;
+}
+.homepage-logo .title a:hover .logo::after {
+  transform: scale(0.5);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid transparent;
+  transition: border-color 0.15s;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: var(--component-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover {
+  border-color: var(--links-color);
+}
+.card span {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--background-color);
+}
+.card .card-title {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.15s;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: normal;
+  display: block;
+}
+.card .card-title:hover {
+  color: var(--links-color);
+}
+.card .card-desc {
+  font-size: 1em;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.navigation-links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepage-wrapper {
+    padding: 50px max(2rem, 50vw - 400px);
+  }
+  .homepage-logo .title a {
+    font-size: 4em;
+  }
+  .homepage-logo .title a .logo {
+    height: 80px;
+    width: 80px;
+  }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    padding: 20px 30px;
+  }
+  .card span {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+  .card .card-title {
+    font-size: 1.2em;
+  }
+  .card .card-desc {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 765px) {
+  .homepage-wrapper {
+    padding: 50px max(1rem, 50vw - 600px);
+  }
+  .homepage-logo .title a {
+    font-size: 3em;
+  }
+  .homepage-logo .title a .logo {
+    height: 60px;
+    width: 60px;
+  }
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card {
+    height: 100%;
+    padding: 20px 20px;
+  }
+  .shortcuts {
+    font-size: 0.8em;
+  }
+}/*# sourceMappingURL=home.css.map */

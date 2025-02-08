@@ -1,16 +1,36 @@
-@import './fonts';
+@use 'colors' as *;
+@use 'fonts' as *;
 
-$primary-font: 'Roboto', sans-serif;
-$title-font: 'Mochiy Pop P One', serif;
-$nunito-font: 'Nunito Sans', serif;
+// Fonts
+$font-roboto: 'Roboto', sans-serif;
+$font-mochiy: 'Mochiy Pop P One', serif;
+$font-nunito: 'Nunito Sans', sans-serif;
 
-$border-radius-5: 5px;
-$border-radius-8: 8px;
-$border-radius-10: 10px;
-$border-radius-20: 20px;
+// Padding
 
 $contentWidth: 1200px;
+$auto-padding-5: 5px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-10: 10px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-50: 50px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-100: 100px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-50-divide-3: 50px max(2rem, 50vw - $contentWidth / 3);
+$auto-padding-100-divide-3: 100px max(2rem, 50vw - $contentWidth / 3);
 
-$header-footer-side-padding: 10px max(2rem, 50vw - $contentWidth / 2);
-$main-side-padding: 50px max(2rem, 50vw - $contentWidth / 2);
-$sidebar-container-side-padding: 5px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-50-1: 50px max(1rem, 50vw - $contentWidth / 2);
+
+$button-padding-05-15: 5px 15px;
+$button-padding-10-15: 10px 15px;
+
+// Border radiuus
+
+$border-radius-05: 5px;
+$border-radius-10: 10px;
+$border-radius-15: 15px;
+$border-radius-20: 20px;
+
+// Transitions
+
+$transition-speed: 0.2s;
+
+$transition-015s: 0.15s;
+$transition-02s-cubic: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1);
