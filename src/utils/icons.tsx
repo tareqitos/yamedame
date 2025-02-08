@@ -1,8 +1,12 @@
 import { faAndroid, faApple, faSpotify, faYoutube, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { faBook, faBookmark, faBookOpen, faBrain, faFlagCheckered, faGamepad, faLanguage, faLaptop, faPhotoFilm, faSpellCheck, faTools } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBookmark, faBookOpen, faBrain, faFlagCheckered, faLanguage, faLaptop, faPhotoFilm, faSpellCheck, faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Icons({resource}: any) {
+interface IconsProps {
+    resource: string;
+}
+
+export default function Icons({resource}: IconsProps) {
     const category_icons: { [key: string]: IconDefinition } = {
         'beginner': faFlagCheckered,
         'dictionaries': faBook,
