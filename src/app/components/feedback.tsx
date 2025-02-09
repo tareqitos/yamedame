@@ -15,7 +15,7 @@ export default async function Feedback({ title, categories }: FeedbackProps) {
         const name = formData.get('name')
         const url = formData.get('url')
 
-        const API_URL = process.env.API_URL;
+        const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
         const res = await fetch(`${API_URL}feedback/suggestion`, {
             method: "POST",
