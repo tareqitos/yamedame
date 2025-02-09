@@ -28,8 +28,8 @@
 }
 
 .and-border {
-    border: 1px solid var(--links-color);
-    box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white; // anti-aliasing
+    border: 2px solid var(--links-color);
+    // box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white; // anti-aliasing
 }
 
 .and-background:hover {
@@ -42,7 +42,7 @@
 .search-input {
     font-family: $font-nunito, 'FontAwesome';
     color: var(--text-color);
-    width: 20vw;
+    width: 30vw;
     padding: 5px 10px;
     border: none;
     border-radius: $border-radius-05;
@@ -53,10 +53,17 @@
     z-index: 6;
 
     &:focus {
-        width: 30vw;
+        width: 40vw;
         outline-style: solid;
         outline-width: 2px;
         outline-color: var(--links-color);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 25vw;
+        &:focus {
+            width: 30vw;
+        }
     }
 }
 

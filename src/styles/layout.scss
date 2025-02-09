@@ -2,18 +2,27 @@
 @use 'reset' as *;
 @use 'mixins' as *;
 
+// NOT FOUND ==============================================================
+
+.not-found-title {
+    font-family: $font-mochiy;
+    @include font-properties(8em, 400, normal);
+    color: var(--text-color);
+    opacity: .8;
+}
+
+.not-found-links {
+    @include flex-row-center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 // HEADER =================================================================
 
 .header {
     @include flex-row-center(space-between);
     background-color: var(--component-background-color);
     padding: $auto-padding-10;
-
-    @media screen and (max-width: 576px) {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
 
     .title a {
         @include font-properties(1.2em, 700, normal);
@@ -46,6 +55,16 @@
             visibility: visible;
             opacity: 1;
             left: 2px;
+        }
+
+        @media screen and (max-width: 432px) {
+            font-size: .8em;
+
+            &::before {
+                height: 20px;
+                width: 20px;
+            }
+    
         }
     }
 
@@ -96,9 +115,9 @@
 }
 
 .search-results-container {
-    position: relative;
+    @include center-position-horizontal;
     z-index: 5;
-    top: 30px;
+    top: 60px;
     visibility: hidden;
     opacity: 0;
     transition: all $transition-02s-cubic;
@@ -110,7 +129,6 @@
 }
 
 .search-list {
-    @include center-position-horizontal;
     padding: 5px 10px;
     border: 2px solid var(--text-color);
     border-color: var(--border-opacity-05);
@@ -123,11 +141,15 @@
     width: 60vw;
 ;
     visibility: hidden;
-    transition: max-height $transition-02s-cubic;
+    transition: all $transition-02s-cubic;
 
     &.active {
         visibility: visible;
         max-height: 50vh;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 80vw;
     }
 
     .search-container {
@@ -162,6 +184,9 @@
         span {
             font-weight: 700;
             margin-left: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: .9em;
         }
     }
 

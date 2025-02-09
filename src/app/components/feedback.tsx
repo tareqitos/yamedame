@@ -17,7 +17,7 @@ export default async function Feedback({ title, categories }: FeedbackProps) {
 
         const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-        const res = await fetch(`${API_URL}feedback/suggestion`, {
+        const res = await fetch(`${API_URL}/feedback/suggestion`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ category, name, url })

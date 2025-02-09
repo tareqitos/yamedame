@@ -64,10 +64,12 @@ html[data-theme=dark] {
 }
 
 .update-message {
+  padding: 10px 20px 10px;
   font-size: 14px;
   text-align: center;
-  padding-top: 10px;
   opacity: 0.5;
+  position: relative;
+  z-index: -1;
 }
 
 .homepage-wrapper {

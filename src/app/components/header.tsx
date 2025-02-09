@@ -16,8 +16,8 @@ export const Header = () => {
                 <ThemeToggle />
                 <hr className="header-separator"/>
                 <div className="socials">
-                    <a href="" className="links"><FontAwesomeIcon icon={faGithub} fontSize={20} display={'block'} /></a>
-                    <a href="" className="links"><AtSymbolIcon width={24} display={'block'} /></a>
+                    <a href="https://github.com/tareqitos/yamedame" target="_blank" className="links"><FontAwesomeIcon icon={faGithub} fontSize={20} display={'block'} /></a>
+                    <a href="mailto:contact@yameda.me" target="_blank" className="links"><AtSymbolIcon width={24} display={'block'} /></a>
                 </div>
             </div>
         </header>
