@@ -1,6 +1,5 @@
 "use client"
 import MiniSearch from "minisearch"
-import { fetchData } from '@/utils/fetchAllData.js'
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
 import Icons from "@/utils/icons";
@@ -26,17 +25,19 @@ export const Search = () => {
     const [isSearchActive, setIsSearchActive] = useState(false)
     const input_reference = useRef<HTMLInputElement>(null);
     
-
     useEffect(() => {
-        const fetchResources = async () => {
+        const fetchAllResources = async () => {
             try {
-                const all_resources: Resource[] = await fetchData() || [];
-                setAllResources(all_resources);
+                const API_URL = process.env.NEXT_PUBLIC_API_URL;
+                const response = await fetch(`${API_URL}/api/all`);
+
+                const all_resources: Resource[] = await response.json() || [];
+                setAllResources(Object.values(all_resources).flat());
             } catch (err) {
                 console.error(err)
             }
         };
-        fetchResources();
+        fetchAllResources();
     }, [])
 
     useEffect(() => {
