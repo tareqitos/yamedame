@@ -24,6 +24,10 @@
     background-color: var(--component-background-color);
     padding: $auto-padding-10;
 
+    @media screen and (max-width: $media-768) {
+        padding: $auto-padding-10-1;
+    }
+
     .title a {
         @include font-properties(1.2em, 700, normal);
         @include link-properties(var(--text-color), var(--text-color));
@@ -57,7 +61,7 @@
             left: 2px;
         }
 
-        @media screen and (max-width: 432px) {
+        @media screen and (max-width: $media-432) {
             font-size: .8em;
 
             &::before {
@@ -99,6 +103,10 @@
     background-color: var(--component-background-color);
 
     height: 50px;
+
+    @media screen and (max-width: $media-768) {
+        padding: $auto-padding-10-1;
+    }
 }
 
 // SEARCHBAR ==============================================================
@@ -148,7 +156,7 @@
         max-height: 50vh;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $media-768) {
         width: 80vw;
     }
 
@@ -185,7 +193,7 @@
             font-weight: 700;
             margin-left: 10px;
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: $media-768) {
             font-size: .9em;
         }
     }

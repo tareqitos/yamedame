@@ -75,6 +75,11 @@ html[data-theme=dark] {
 .homepage-wrapper {
   padding: 50px max(2rem, 50vw - 600px);
 }
+@media screen and (max-width: 768px) {
+  .homepage-wrapper {
+    padding: 50px max(1rem, 50vw - 600px);
+  }
+}
 
 .homepage-logo {
   display: flex;
@@ -232,9 +237,9 @@ html[data-theme=dark] {
     font-size: 1em;
   }
 }
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 768px) {
   .homepage-wrapper {
-    padding: 50px max(1rem, 50vw - 600px);
+    padding: 20px max(1rem, 50vw - 600px);
   }
   .homepage-logo .title a {
     font-size: 3em;

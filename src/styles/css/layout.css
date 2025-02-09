@@ -105,6 +105,11 @@ html.no-scroll {
   background-color: var(--component-background-color);
   padding: 10px max(2rem, 50vw - 600px);
 }
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px max(1rem, 50vw - 600px);
+  }
+}
 .header .title a {
   font-size: 1.2em;
   font-weight: 700;
@@ -182,6 +187,11 @@ html.no-scroll {
   padding: 10px max(2rem, 50vw - 600px);
   background-color: var(--component-background-color);
   height: 50px;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px max(1rem, 50vw - 600px);
+  }
 }
 
 .search-background {

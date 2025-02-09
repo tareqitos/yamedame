@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import '@/styles/layout.scss'
+import '@/styles/components.scss'
 
 export default function NotFound() {
   return (

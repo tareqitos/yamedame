@@ -89,6 +89,10 @@ section {
 
 .resources-container {
     padding: $auto-padding-50;
+
+    @media screen and (max-width: $media-768) {
+        padding: $auto-padding-50-1;
+    }
 }
 
 .resources-title {
