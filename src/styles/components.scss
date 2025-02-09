@@ -59,7 +59,7 @@
         outline-color: var(--links-color);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $media-768) {
         width: 25vw;
         &:focus {
             width: 30vw;

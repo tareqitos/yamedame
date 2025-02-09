@@ -12,6 +12,11 @@
 
 .homepage-wrapper {
     padding: $auto-padding-50;
+
+    @media screen and (max-width: $media-768) {
+        padding: $auto-padding-50-1;
+        
+    }
 }
 
 .homepage-logo {
@@ -127,7 +132,7 @@
     margin-top: 20px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $media-1200) {
     .homepage-wrapper {
         padding: $auto-padding-50-divide-3;
     }
@@ -165,9 +170,9 @@
     }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: $media-768) {
     .homepage-wrapper {
-        padding: $auto-padding-50-1;
+        padding: $auto-padding-20-1;
     }
 
     .homepage-logo {

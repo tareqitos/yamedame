@@ -144,6 +144,11 @@ html[data-theme=light] .item-container:hover .item-icons {
 .resources-container {
   padding: 50px max(2rem, 50vw - 600px);
 }
+@media screen and (max-width: 768px) {
+  .resources-container {
+    padding: 50px max(1rem, 50vw - 600px);
+  }
+}
 
 .resources-title {
   margin-bottom: 10px;

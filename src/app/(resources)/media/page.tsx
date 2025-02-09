@@ -4,6 +4,7 @@ import { faYoutube, faSpotify, IconDefinition } from "@fortawesome/free-brands-s
 import ScrollToHash from "@/utils/scrollToHash";
 import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
+import Image from "next/image";
 
 type Media = {
     id: number,
@@ -53,12 +54,12 @@ export default async function Media() {
                             {media[category].map((item: Media) => (
 
                                 <li key={item.uuid} className={`item-container ${item.slug} media`}>
-                                    <img src={item.image} alt={item.name} className="item-picture media" />
+                                    <Image src={item.image} alt={item.name} width={60} height={60} className="item-picture media" />
                                     <div className="item-infos">
                                         <a href={item.link} className="item media" target="_blank">{item.name} <FontAwesomeIcon className="icon" icon={platforms_icons[item.platform]} width={20} /></a>
                                         {item.description}
                                     </div>
-                                    <img src={item.image} alt={item.name} className="item-picture-bg" />
+                                    <Image src={item.image} alt={item.name} width={100} height={100} className="item-picture-bg" />
                                 </li>
 
                             ))}
