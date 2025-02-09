@@ -113,8 +113,7 @@ html[data-theme=dark] {
 }
 
 .and-border {
-  border: 1px solid var(--links-color);
-  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+  border: 2px solid var(--links-color);
 }
 
 .and-background:hover {
@@ -125,7 +124,7 @@ html[data-theme=dark] {
 .search-input {
   font-family: "Nunito Sans", sans-serif, "FontAwesome";
   color: var(--text-color);
-  width: 20vw;
+  width: 30vw;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -135,10 +134,18 @@ html[data-theme=dark] {
   z-index: 6;
 }
 .search-input:focus {
-  width: 30vw;
+  width: 40vw;
   outline-style: solid;
   outline-width: 2px;
   outline-color: var(--links-color);
+}
+@media screen and (max-width: 768px) {
+  .search-input {
+    width: 25vw;
+  }
+  .search-input:focus {
+    width: 30vw;
+  }
 }
 
 .to-top-container {

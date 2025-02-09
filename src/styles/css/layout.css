@@ -81,19 +81,29 @@ html.no-scroll {
   overflow: hidden;
 }
 
+.not-found-title {
+  font-family: "Mochiy Pop P One", serif;
+  font-size: 8em;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.not-found-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--component-background-color);
   padding: 10px max(2rem, 50vw - 600px);
-}
-@media screen and (max-width: 576px) {
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
 }
 .header .title a {
   font-size: 1.2em;
@@ -133,6 +143,15 @@ html.no-scroll {
   visibility: visible;
   opacity: 1;
   left: 2px;
+}
+@media screen and (max-width: 432px) {
+  .header .title a {
+    font-size: 0.8em;
+  }
+  .header .title a::before {
+    height: 20px;
+    width: 20px;
+  }
 }
 .header .header-separator {
   height: 30px;
@@ -177,9 +196,11 @@ html.no-scroll {
 }
 
 .search-results-container {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 5;
-  top: 30px;
+  top: 60px;
   visibility: hidden;
   opacity: 0;
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -190,9 +211,6 @@ html.no-scroll {
 }
 
 .search-list {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 5px 10px;
   border: 2px solid var(--text-color);
   border-color: var(--border-opacity-05);
@@ -203,11 +221,16 @@ html.no-scroll {
   max-height: 0vh;
   width: 60vw;
   visibility: hidden;
-  transition: max-height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .search-list.active {
   visibility: visible;
   max-height: 50vh;
+}
+@media screen and (max-width: 768px) {
+  .search-list {
+    width: 80vw;
+  }
 }
 .search-list .search-container {
   display: flex;
@@ -243,6 +266,11 @@ html.no-scroll {
 .search-list .search-item span {
   font-weight: 700;
   margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .search-list .search-item {
+    font-size: 0.9em;
+  }
 }
 .search-list .search-separator {
   height: 1px;
