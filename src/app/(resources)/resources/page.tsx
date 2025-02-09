@@ -5,7 +5,6 @@ import ScrollToHash from "@/utils/scrollToHash";
 import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 
-
 type Resource = {
     id: number,
     uuid: string,
@@ -17,11 +16,17 @@ type Resource = {
     platform: string
 }
 
-export default async function Resources() {
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+export default async function Resources() {
+    
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const response = await fetch(`${API_URL}/api/resources/resources`);
-    const resources = await response.json();
+    if (!response.ok) {
+        // Log and throw an error if the response status is not OK.
+        console.error("Failed to fetch resources:", response.status, response.statusText);
+        throw new Error("Failed to fetch resources");
+    }
+    const resources = await response.json()
 
     const category_icons: { [key: string]: IconDefinition } = {
         'beginner': faFlagCheckered,

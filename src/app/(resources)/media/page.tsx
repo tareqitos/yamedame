@@ -5,7 +5,6 @@ import ScrollToHash from "@/utils/scrollToHash";
 import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 
-
 type Media = {
     id: number,
     uuid: string,
@@ -19,9 +18,15 @@ type Media = {
 }
 
 export default async function Media() {
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const response = await fetch(`${API_URL}/api/resources/media`);
+
+    if (!response.ok) {
+        // Log and throw an error if the response status is not OK.
+        console.error("Failed to fetch resources:", response.status, response.statusText);
+        throw new Error("Failed to fetch resources");
+    }
     const media = await response.json();
 
     const platforms_icons: { [key: string]: IconDefinition } = {
