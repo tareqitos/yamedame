@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.monthly-update{
+    padding: $auto-padding-50-divide-3;
+
+    h1 {
+        width: fit-content;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-opacity-05);
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        margin-top: 20px;
+    }
+
+    ul {
+        margin-top: 10px;
+        list-style-type: none;
+    }
+
+    li {
+        line-height: 2;
+    }
+
+    a {
+        @include link-properties(var(--links-color));
+    }
+}

@@ -2,14 +2,14 @@ import Link from "next/link"
 
 export const Cards = () => {
     const data = [
-        { title: 'Study Resources', desc: 'Access essential materials for your study sessions', path: 'resources' },
-        { title: 'Media Library', desc: 'Explore videos, podcasts, and more to enhance your Japanese learning!', path: 'media' },
-        { title: 'Software / Applications', desc: 'Discover useful software and applications to aid your Japanese learning!', path: 'applications' },
+        { title: 'Study Resources', desc: 'Access essential materials for your study sessions.', path: 'resources' },
+        { title: 'Media Library', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media' },
+        { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications' },
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
     ]
 
     const shortcuts = [
-        { category: 'Beginner Essentials', slug: 'beginner-essentials-id', path: 'resources' },
+        { category: 'Dictionaries', slug: 'dictionaries-id', path: 'resources' },
         { category: 'Reading', slug: 'reading-id', path: 'resources' },
         { category: 'Culture', slug: 'culture-id', path: 'media' },
         { category: 'Podcast', slug: 'podcast-id', path: 'media' },
