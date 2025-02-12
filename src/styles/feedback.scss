@@ -61,6 +61,7 @@ select {
     color: var(--text-color);
     margin-bottom: $gap;
     padding: $padding-input;
+    border: 1px solid var(--border-color);
     border-radius: $border-radius-05;
     background: var(--background-color);
 

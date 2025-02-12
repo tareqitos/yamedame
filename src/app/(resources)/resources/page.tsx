@@ -40,7 +40,7 @@ export default async function Resources() {
     return (
         <div className="resources-container">
             <ScrollToHash />
-            <ResourcesTitle title="Japanese Study Resources 📖" description="Dictionaries, grammar guides, vocabulary insights, and reading materials to enhance your Japanese learning journey." />
+            <ResourcesTitle title="Study Resources 📖" description="Dictionaries, grammar guides, vocabulary insights, reading materials and other useful resources for studying!" />
             <Feedback
                 title="Share your favorite Japanese learning tool 📖"
                 categories={Object.keys(resources)} />

@@ -44,7 +44,7 @@ export default async function Applications() {
     return (
         <div className="resources-container">
             <ScrollToHash />
-            <ResourcesTitle title="Japanese Applications 💻" description="Discover amazing software and applications to boost your Japanese learning journey!" />
+            <ResourcesTitle title="Software & Applications 💻" description="Useful software and applications to support your studies." />
             <Feedback
                 title="Share your favorite applications / softwares!"
                 categories={Object.keys(apps)} />

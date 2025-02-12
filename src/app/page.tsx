@@ -19,6 +19,7 @@ export default function Home() {
           <div className="navigation-links">
             <Link href={'/about'} className="about-link button-rounded">About</Link>
             <a href='https://ko-fi.com/H2H0QZVAZ' className="about-link button-rounded" target="_blank">Donate</a>
+            <Link href='/[year]/[month]' as='/2025/february' className="about-link button-rounded">February updates 🌸</Link>
           </div>
         </div>
       </main>
