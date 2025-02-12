@@ -24,6 +24,11 @@
     background-color: var(--component-background-color);
     padding: $auto-padding-10;
 
+    
+
+    @media screen and (max-width: $media-1024) {
+        border-bottom: 1px solid var(--shadow);
+    }
     @media screen and (max-width: $media-768) {
         padding: $auto-padding-10-1;
     }
@@ -119,7 +124,7 @@
     height: 100%;
     background: var(--background-color);
     opacity: .4;
-    z-index: 0;
+    z-index: 2;
 }
 
 .search-results-container {

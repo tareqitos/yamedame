@@ -4,6 +4,8 @@ import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from '../../utils/theme'
 import Link from "next/link";
 import { Search } from "./search";
+import SidebarButton, { SidebarProvider } from "@/context/sidebarContext";
+
 
 export const Header = () => {
     return (

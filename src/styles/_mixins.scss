@@ -1,8 +1,9 @@
 // FLEXBOX MIXINS
 
-@mixin flex-row {
+@mixin flex-row ($justify-content: 'inherit'){
     display: flex;
     flex-direction: row;
+    justify-content: $justify-content;
 }
 
 @mixin flex-column {

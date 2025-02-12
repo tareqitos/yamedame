@@ -13,7 +13,7 @@
 
 section {
     margin-top: 30px;
-    
+
     .category-title {
         margin-bottom: 20px;
     }
@@ -87,19 +87,31 @@ section {
 
 // GENERAL //
 
-.resources-container {
-    padding: $auto-padding-50;
+.resources-wrapper {
+    @include flex-row(center);
+    gap: 50px;
+    padding: $auto-padding-50-divide-2-5;
+
+    @media screen and (max-width: $media-1024) {
+        display: block;
+    }
 
     @media screen and (max-width: $media-768) {
         padding: $auto-padding-50-1;
     }
 }
 
+.resources-container {
+    flex: 1;
+}
+
 .resources-title {
     margin-bottom: 10px;
+
     .title {
         @include font-properties(2em, 400, normal);
     }
+
     .desc {
         opacity: .5;
     }
@@ -126,10 +138,12 @@ section {
         opacity: .3;
         transform: scale(1);
     }
+
     50% {
         opacity: .8;
         transform: scale(1.1);
     }
+
     100% {
         opacity: .3;
         transform: scale(1);
@@ -144,3 +158,84 @@ section {
         @include link-properties(var(--links-color), var(--links-color));
     }
 }
+
+// SIDEBAR 
+
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar-ul {
+    position: sticky;
+    top: 40px;
+    list-style: none;
+    padding-left: 10px;
+    border-left: 1px solid var(--border-opacity-05);
+
+
+    .sidebar-li {
+        @include link-properties(var(--text-color-opacity-50), var(--links-color));
+        @include font-properties(1em, 200, 2);
+        position: relative;
+
+        &.active {
+            color: var(--links-color);
+            ;
+
+            &::before {
+                content: "";
+                position: absolute;
+
+                top: 5px;
+                left: -12px;
+
+                width: 3px;
+                height: 20px;
+
+                background-color: var(--links-color);
+                border-radius: $border-radius-05;
+
+                z-index: 1;
+
+                animation: appear .5s cubic-bezier(0.23, 1, 0.320, 1);
+            }
+        }
+    }
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+// MENU //
+
+
+    .menu-navbar {
+     
+        @include flex-row(space-between);
+        padding: $auto-padding-5;
+        position: sticky;
+        top: 0px;
+    
+        border-bottom: 1px solid var(--shadow);
+        background: var(--component-background-color);
+    
+        z-index: 1;
+
+        display: none;
+
+        @media screen and (max-width: $media-1024) {
+            display: flex;
+        }
+    }

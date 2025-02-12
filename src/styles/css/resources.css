@@ -8,7 +8,10 @@ html[data-theme=light] {
   --links-color: #007ACC;
   --resources-links-color: #007ACC;
   --text-color: #212529;
+  --text-color-opacity-50: #21252980;
+  --border-opacity-09: #212529e6;
   --border-opacity-05: #21252980;
+  --border-opacity-02: #21252930;
   --shadow: #7e7e7e7e;
 }
 
@@ -19,7 +22,10 @@ html[data-theme=dark] {
   --links-color: #78b3e2;
   --resources-links-color: #78b3e2;
   --text-color: #fff;
+  --text-color-opacity-50: #ffffff80;
+  --border-opacity-09: #ffffffe6;
   --border-opacity-05: #ffffff80;
+  --border-opacity-02: #ffffff30;
   --shadow: #000000;
 }
 
@@ -141,13 +147,26 @@ html[data-theme=light] .item-container:hover .item-icons {
   z-index: 0;
 }
 
-.resources-container {
-  padding: 50px max(2rem, 50vw - 600px);
+.resources-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px max(2rem, 50vw - 480px);
+}
+@media screen and (max-width: 1024px) {
+  .resources-wrapper {
+    display: block;
+  }
 }
 @media screen and (max-width: 768px) {
-  .resources-container {
+  .resources-wrapper {
     padding: 50px max(1rem, 50vw - 600px);
   }
+}
+
+.resources-container {
+  flex: 1;
 }
 
 .resources-title {
@@ -204,4 +223,73 @@ html[data-theme=light] .item-container:hover .item-icons {
 }
 .error a:hover {
   color: var(--links-color);
+}
+
+.sidebar-container {
+  position: relative;
+}
+
+.sidebar-ul {
+  position: sticky;
+  top: 40px;
+  list-style: none;
+  padding-left: 10px;
+  border-left: 1px solid var(--border-opacity-05);
+}
+.sidebar-ul .sidebar-li {
+  text-decoration: none;
+  color: var(--text-color-opacity-50);
+  cursor: pointer;
+  transition: color 0.15s;
+  font-size: 1em;
+  font-weight: 200;
+  line-height: 2;
+  position: relative;
+}
+.sidebar-ul .sidebar-li:hover {
+  color: var(--links-color);
+}
+.sidebar-ul .sidebar-li.active {
+  color: var(--links-color);
+}
+.sidebar-ul .sidebar-li.active::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -12px;
+  width: 3px;
+  height: 20px;
+  background-color: var(--links-color);
+  border-radius: 5px;
+  z-index: 1;
+  animation: appear 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px max(2rem, 50vw - 600px);
+  position: sticky;
+  top: 0px;
+  border-bottom: 1px solid var(--shadow);
+  background: var(--component-background-color);
+  z-index: 1;
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .menu-navbar {
+    display: flex;
+  }
 }/*# sourceMappingURL=resources.css.map */
