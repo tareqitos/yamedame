@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ month: string
                 <h1>Monthly update - {month.charAt(0).toUpperCase() + month.slice(1).split('-updates')}</h1>
                 <h2>Updates</h2>
                 <ul>
-                    <li>Added 'Monthly update' page</li>
+                    <li>Added &quot;Monthly update&quot; page</li>
                 </ul>
                 <h2>Resources updates</h2>
                 <ul>
