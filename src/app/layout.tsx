@@ -39,10 +39,11 @@ export default function RootLayout({
   );
 }
 
-function Head () {
+function Head() {
   return (
     <head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+      <script defer src="https://analytics.tareqitos.me/script.js" data-website-id="420f37a5-a3c0-424a-803f-3b937bf0c67f"></script>
     </head>
   )
 }
