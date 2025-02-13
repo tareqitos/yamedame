@@ -1,8 +1,19 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+.update-wrapper {
+    @include flex-row(space-around);
+    padding: $auto-padding-50;
+    gap: 100px;
+}
+
 .monthly-update{
-    padding: $auto-padding-50-divide-3;
+    padding-left: 50px;
+    border-left: 1px solid var(--border-opacity-05);
+
+    @media screen and (max-width: $media-768) {
+        padding-left: 15px;        
+    }
 
     h1 {
         width: fit-content;
@@ -26,5 +37,21 @@
 
     a {
         @include link-properties(var(--links-color));
+    }
+}
+
+.thats-all {
+    @include center-position-horizontal;
+    @include font-properties(5em, 400, normal);
+    font-family: $font-mochiy;
+    margin-top: 50px;
+    opacity: .1;
+
+    @media screen and (max-width: $media-768) {
+        font-size: 3em;
+    }
+
+    @media screen and (max-width: $media-432) {
+        font-size: 2em;
     }
 }
