@@ -202,8 +202,8 @@ html[data-theme=dark] {
 
 .navigation-links {
   display: flex;
-  flex-direction: row;
-  justify-content: "inherit";
+  justify-content: left;
+  align-items: center;
   gap: 10px;
   margin-top: 20px;
 }
