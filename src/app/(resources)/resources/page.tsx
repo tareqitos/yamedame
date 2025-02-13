@@ -22,13 +22,20 @@ type Resource = {
 export default async function Resources() {
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    const response = await fetch(`${API_URL}/api/resources/resources`);
-    if (!response.ok) {
-        // Log and throw an error if the response status is not OK.
-        console.error("Failed to fetch resources:", response.status, response.statusText);
-        throw new Error("Failed to fetch resources");
+    let resources: { [key: string]: Resource[] } = {};
+
+    try {
+        const response = await fetch(`${API_URL}/api/resources/resources`);
+        if (!response.ok) {
+            console.error("Failed to fetch resources:", response.status, response.statusText);
+            throw new Error("Failed to fetch resources");
+        }
+        resources = await response.json();
+    } catch (error) {
+        console.error("Error fetching resources:", error);
+        // Provide fallback data or UI
+        resources = {}; // Fallback to empty data or provide some default data
     }
-    const resources = await response.json()
 
     const category_icons: { [key: string]: IconDefinition } = {
         'beginner': faFlagCheckered,

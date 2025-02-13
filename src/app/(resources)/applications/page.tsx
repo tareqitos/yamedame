@@ -24,14 +24,21 @@ type Applications = {
 export default async function Applications() {
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    const response = await fetch(`${API_URL}/api/resources/applications`);
-    if (!response.ok) {
-        // Log and throw an error if the response status is not OK.
-        console.log(response)
-        console.error("Failed to fetch resources:", response.status, response.statusText);
-        throw new Error("Failed to fetch resources");
+    let apps: { [key: string]: Applications[] } = {};
+
+    try {
+        const response = await fetch(`${API_URL}/api/resources/applications`);
+        if (!response.ok) {
+            console.error("Failed to fetch resources:", response.status, response.statusText);
+            throw new Error("Failed to fetch resources");
+        }
+        apps = await response.json();
+    } catch (error) {
+        console.error("Error fetching applications:", error);
+        // Provide fallback data or UI
+        apps = {}; // Fallback to empty data or provide some default data
     }
-    const apps = await response.json()
+
 
     const category_icons: { [key: string]: IconDefinition } = {
         'dictionaries': faBook,
