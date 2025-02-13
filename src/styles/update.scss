@@ -41,7 +41,7 @@
 }
 
 .thats-all {
-    @include center-position-horizontal;
+    position: relative;
     @include font-properties(5em, 400, normal);
     font-family: $font-mochiy;
     margin-top: 50px;
