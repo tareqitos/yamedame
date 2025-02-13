@@ -1,22 +1,30 @@
 "use client"
 
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext, useState } from 'react';
 
-const SidebarContext = createContext(false);
+const SidebarContext = createContext();
 
-export const SidebarProvider = ({ children }) => {
-    const [isSidebarActive, setIsSidebarActive] = useState(false);
+export function SidebarProvider({children}) {
+  const [isOpen, setIsOpen] = useState();
 
-    const toggleSidebar = () => {
-        setIsSidebarActive(!isSidebarActive);
-        console.log('Button state: ', isSidebarActive)
-    }
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+    console.log("Is open? ", isOpen)
+  }
 
-    return (
-        <SidebarContext.Provider value={{isSidebarActive, toggleSidebar}}>
-            {children}
-        </SidebarContext.Provider>
-    )
+  return (
+    <SidebarContext.Provider value={{ isOpen, toggleSidebar }}>
+      {children}
+    </SidebarContext.Provider>
+  );
 }
 
-export const useSidebar = () => useContext(SidebarContext);
+
+export default function SidebarButton() {
+  const { isOpen, toggleSidebar} = useContext(SidebarContext);
+  return (
+      <>
+          <button onClick={toggleSidebar}>Sidebar</button>
+      </>
+  )
+}

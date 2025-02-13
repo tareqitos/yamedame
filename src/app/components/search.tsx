@@ -108,7 +108,7 @@ export const Search = () => {
             <form>
                 <input ref={input_reference} className="search-input" type="text" placeholder="&#xF002; Search..." onClick={() => setIsSearchActive(true)} onChange={searchResult} />
             </form>
-            <div onClick={toggleSearch} className="search-background" style={{zIndex: isSearchActive ? 0 : -1000 }}></div>
+            <div onClick={toggleSearch} className="search-background" style={{zIndex: isSearchActive ? 5 : -1000 }}></div>
 
             <div className={`search-results-container ${isSearchActive ? 'active' : ''}`}>
                 <ul className={`search-list ${input_reference.current?.value.trim().length != 0 ? 'active' : ''}`}>
