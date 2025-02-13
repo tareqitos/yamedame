@@ -22,8 +22,9 @@ export default async function Page({ params }: { params: Promise<{ month: string
                         </ul>
                         <h2>Resources updates</h2>
                         <ul>
-                            <li>Added <a href="https://learnjapanese.moe/">The Moe Way</a> to <Link href='/resources#miscellaneous-id'>Miscellaneous </Link><Icons resource='miscellaneous' /> </li>
-                            <li>Added <a href="https://community.wanikani.com/t/master-list-of-book-clubs/35283">Master List of Book Clubs</a> to <Link href='/resources#reading-id'>Reading </Link><Icons resource='reading' /></li>
+                            <li>Added <a href="https://learnjapanese.moe/">The Moe Way</a> to <Link href='/resources#miscellaneous-id'>Resources - Miscellaneous&nbsp;&nbsp;</Link><Icons resource='miscellaneous' /> </li>
+                            <li>Added <a href="https://community.wanikani.com/t/master-list-of-book-clubs/35283">Master List of Book Clubs</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
+                            <li>Added <a href="https://www.youtube.com/@BappaShota">Bappa Shota</a> to <Link href='/media#culture-id'>Media - Culture&nbsp;&nbsp;</Link><Icons resource='youtube' /></li>
                         </ul>
                     </div>
                     <p className="thats-all">以上です&#33;</p>
