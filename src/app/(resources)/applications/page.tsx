@@ -7,7 +7,6 @@ import ScrollToHash from "@/utils/scrollToHash";
 import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
-import Link from "next/link";
 import Navbar from "@/app/components/navbar";
 
 

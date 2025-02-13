@@ -17,11 +17,11 @@ export default function Sidebar({ resources }: SidebarProps) {
     const observer = useRef<IntersectionObserver | null>(null)
 
     useEffect(() => {
-        const handleIntersect = (entries: any[]) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveCategory(entry.target.id)
-                }
+        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry: IntersectionObserverEntry) => {
+            if (entry.isIntersecting) {
+                setActiveCategory(entry.target.id)
+            }
             })
         }
 
@@ -33,7 +33,6 @@ export default function Sidebar({ resources }: SidebarProps) {
 
         observer.current = new IntersectionObserver(handleIntersect, options);
         const anchors = document.querySelectorAll('.anchor');
-        console.log(activeCategory)
 
         anchors.forEach((anchor) => observer.current?.observe(anchor));
         return () => {
