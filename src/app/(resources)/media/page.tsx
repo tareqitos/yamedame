@@ -23,14 +23,20 @@ type Media = {
 export default async function Media() {
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    const response = await fetch(`${API_URL}/api/resources/media`);
+    let media: { [key: string]: Media[] } = {};
 
-    if (!response.ok) {
-        // Log and throw an error if the response status is not OK.
-        console.error("Failed to fetch resources:", response.status, response.statusText);
-        throw new Error("Failed to fetch resources");
+    try {
+        const response = await fetch(`${API_URL}/api/resources/media`);
+        if (!response.ok) {
+            console.error("Failed to fetch resources:", response.status, response.statusText);
+            throw new Error("Failed to fetch resources");
+        }
+        media = await response.json();
+    } catch (error) {
+        console.error("Error fetching media:", error);
+        // Provide fallback data or UI
+        media = {}; // Fallback to empty data or provide some default data
     }
-    const media = await response.json();
 
     const platforms_icons: { [key: string]: IconDefinition } = {
         'youtube': faYoutube,

@@ -30,11 +30,16 @@ export const Search = () => {
             try {
                 const API_URL = process.env.NEXT_PUBLIC_API_URL;
                 const response = await fetch(`${API_URL}/api/all`);
-
+                if (!response.ok) {
+                    console.error("Failed to fetch resources:", response.status, response.statusText);
+                    throw new Error("Failed to fetch resources");
+                }
                 const all_resources: Resource[] = await response.json() || [];
                 setAllResources(Object.values(all_resources).flat());
             } catch (err) {
-                console.error(err)
+                console.error("Error fetching resources:", err);
+                // Provide fallback data or UI
+                setAllResources([]); // Fallback to empty data or provide some default data
             }
         };
         fetchAllResources();
