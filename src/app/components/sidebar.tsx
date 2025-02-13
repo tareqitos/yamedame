@@ -16,10 +16,6 @@ export default function Sidebar({ resources }: SidebarProps) {
     const [activeCategory, setActiveCategory] = useState<string>('')
     const observer = useRef<IntersectionObserver | null>(null)
 
-    const highlightOnClick = (id: string) => {
-        setActiveCategory(id);
-    }
-
     useEffect(() => {
         const handleIntersect = (entries: any[]) => {
             entries.forEach((entry) => {
@@ -47,12 +43,23 @@ export default function Sidebar({ resources }: SidebarProps) {
 
     return (
         <aside className="sidebar-container">
-            <ul className="sidebar-ul">
-                {Object.keys(resources).map((category) => (
-                    <Link href={`#${resources[category][0].slug}-id`} key={category} 
-                    className={`sidebar-li ${activeCategory == `${resources[category][0].slug}-id` ? 'active' : ''}`}><li>{category}</li></Link>
-                ))}
-            </ul>
+            <div className="sidebar-wrapper">
+                <ul className="sidebar-ul">
+                    {Object.keys(resources).map((category) => (
+                        <Link href={`#${resources[category][0].slug}-id`} key={category}
+                            className={`sidebar-li ${activeCategory == `${resources[category][0].slug}-id` ? 'active' : ''}`}><li>{category}</li></Link>
+                    ))}
+                </ul>
+                <div className={'menu-sidebar'}>
+                    <Link className="" href="/">🏠&nbsp;&nbsp;Home</Link>
+                    <hr />
+                    <Link className="" href="/resources">📖&nbsp;&nbsp;Study Resources</Link>
+                    <hr />
+                    <Link className="" href="/media">💾&nbsp;&nbsp;Media Library</Link>
+                    <hr />
+                    <Link className="" href="/applications">💻&nbsp;&nbsp;Software & Applications</Link>
+                </div>
+            </div>
         </aside>
     )
 }
