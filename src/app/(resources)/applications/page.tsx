@@ -7,6 +7,9 @@ import ScrollToHash from "@/utils/scrollToHash";
 import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
+import Link from "next/link";
+import Navbar from "@/app/components/navbar";
+
 
 type Applications = {
     id: number,
@@ -44,13 +47,8 @@ export default async function Applications() {
 
     return (
         <>
-            <div className="menu-navbar">
-                <button className="menu-button button-rounded">Menu</button>
-                <button className="on-this-page-button button-rounded">On this page</button>
-            </div>
-
+            <Navbar resources={apps}/>
             <div className="resources-wrapper">
-
                 <div className="resources-container">
                     <ScrollToHash />
                     <ResourcesTitle title="Software & Applications 💻" description="Useful software and applications to support your studies." />
