@@ -23,7 +23,6 @@
     @include flex-row-center(space-between);
     background-color: var(--component-background-color);
     padding: $auto-padding-10;
-    position: relative;
 
     @media screen and (max-width: $media-1024) {
         border-bottom: 1px solid var(--shadow);

@@ -110,7 +110,6 @@ html.no-scroll {
   align-items: center;
   background-color: var(--component-background-color);
   padding: 10px max(2rem, 50vw - 600px);
-  position: relative;
 }
 @media screen and (max-width: 1024px) {
   .header {

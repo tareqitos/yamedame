@@ -4,6 +4,7 @@ import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from '../../utils/theme'
 import Link from "next/link";
 import { Search } from "./search";
+import LoginButton from "./auth";
 
 export const Header = () => {
     return (
@@ -19,6 +20,7 @@ export const Header = () => {
                     <a href="https://github.com/tareqitos/yamedame" target="_blank" className="links"><FontAwesomeIcon icon={faGithub} fontSize={20} display={'block'} /></a>
                     <a href="mailto:contact@yameda.me" target="_blank" className="links"><AtSymbolIcon width={24} display={'block'} /></a>
                 </div>
+                <LoginButton />
             </div>
         </header>
     )

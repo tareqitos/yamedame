@@ -80,6 +80,13 @@
     width: $width;
 }
 
+@mixin center-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin center-position-horizontal {
     position: absolute;
     left: 50%;
