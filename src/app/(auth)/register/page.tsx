@@ -1,9 +1,11 @@
 "use client"
 
 import { useState } from "react";
-import '@/styles/modal.scss'
+import '@/styles/auth.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { registerUser } from "@/lib/api";
+import { useAuth } from "@/context/authContext";
 
 
 export default function UserRegister() {
@@ -11,29 +13,35 @@ export default function UserRegister() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [verifyPassword, setVerifyPassword] = useState('');
-    const [message , setMessage] = useState('');
+    const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState<string[]>([]);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
     const router = useRouter()
+    const { hasAccess, checkAccess } = useAuth();
 
 
-    const handleRegister = async (e: {preventDefault: () => void;}) => {
+    const handleRegister = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:4000/users/register", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify({ email, username, password, verifyPassword}),
-            });
+            const { response, result } = await registerUser(email, username, password, verifyPassword);
 
-            const result = await response.json();
             if (response.ok) {
+                setSuccess(true)
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Wait before redirecting to homepage
+                checkAccess();
+                router.refresh();
                 router.push('/login');
             } else {
-                setMessage(result.message || result.errors);
+                setError(true);
+                setMessage(result.message);
+                setErrorMessage(result.errors)
             }
 
-            console.log(result)
+            console.log(message)
 
-        } catch(err) {
+        } catch (err) {
             console.error('Error during registration: ', err)
         }
 
@@ -42,10 +50,9 @@ export default function UserRegister() {
 
 
     return (
-        <div className="register-login-container">
+        <div className={`register-login-container ${success ? 'validation' : error ? 'error' : ''}`}>
             <form onSubmit={handleRegister} className="register-login-form">
                 <h3 className="title">Sign up</h3>
-                <p>{message}</p>
                 <div className="field-container">
                     <div className="field">
                         <label htmlFor="email">Email</label>
@@ -87,10 +94,18 @@ export default function UserRegister() {
                             required
                         />
                     </div>
+
+                    {errorMessage && errorMessage.length > 0 && errorMessage.map((message) => (
+                        <p key={message} className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{message}</p>
+                    ))}
+
+                    <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                        message : 'Welcome to やめだめ!'}</p>
+
                 </div>
                 <div className="button-container">
-                    <button 
-                    type="submit" className="button-rounded and-border and-background">
+                    <button
+                        type="submit" className="button-rounded and-border and-background">
                         Register
                     </button>
                 </div>

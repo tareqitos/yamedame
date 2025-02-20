@@ -1,3 +1,5 @@
+"use client"
+
 import "@/styles/home.scss";
 import Link from "next/link";
 import { Cards } from "@/app/components/cards";

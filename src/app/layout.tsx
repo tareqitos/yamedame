@@ -8,6 +8,7 @@ import ToTopButton from "@/utils/toTopButton";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import NextTopLoader from "nextjs-toploader";
+import { AuthProvider } from "@/context/authContext";
 
 export const metadata: Metadata = {
   title: "Welcome - Yame Dame",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <Head />
       <body>
         <ThemeProvider>
+        <AuthProvider>
           <Header />
           <NextTopLoader />
           <div id="content">
@@ -35,6 +37,7 @@ export default function RootLayout({
           </div>
           <ToTopButton />
           <Footer />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

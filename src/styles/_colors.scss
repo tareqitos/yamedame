@@ -22,7 +22,7 @@ html[data-theme="light"] {
     --border-opacity-09: #212529e6;
     --border-opacity-05: #21252980;
     --border-opacity-02: #21252930;
-    --shadow: #7e7e7e7e;
+    --shadow: #7e7e7e7e; 
 }
 
 html[data-theme="dark"] {
@@ -37,6 +37,8 @@ html[data-theme="dark"] {
     --border-opacity-05: #ffffff80;
     --border-opacity-02: #ffffff30;
     --shadow: #000000;
+    --success: #62e862;
+    --error: #e84545;  
 }
 
 

@@ -27,6 +27,8 @@ html[data-theme=dark] {
   --border-opacity-05: #ffffff80;
   --border-opacity-02: #ffffff30;
   --shadow: #000000;
+  --success: #62e862;
+  --error: #e84545;
 }
 
 .fa-flag-checkered {
