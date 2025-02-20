@@ -1,15 +1,17 @@
 "use client"
 
-import fetchProtectedData from '@/lib/refresh';
+import {fetchProtectedData} from '@/lib/api';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext({
   hasAccess: false,
+  user: {id: null, username: null},
   checkAccess: () => {}
 });
 
 export const AuthProvider = ({ children }) => {
   const [hasAccess, setHasAccess] = useState(false)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const storedHasAccess = localStorage.getItem("hasAccess") === 'true';
@@ -19,8 +21,9 @@ export const AuthProvider = ({ children }) => {
   // Calling the function to refresh the access token 
   const checkAccess = async () => {
     try {
-      const response = await fetchProtectedData();
-      if (response === 200) {
+      const {response, result} = await fetchProtectedData();
+      if (response.status === 200) {
+        setUser(result)
         setHasAccess(true);
         localStorage.setItem("hasAccess", "true");
       } else {
@@ -38,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ hasAccess, checkAccess }}>
+    <AuthContext.Provider value={{ hasAccess, user, checkAccess }}>
       {children}
     </AuthContext.Provider>
   );

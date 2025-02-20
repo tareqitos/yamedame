@@ -50,7 +50,8 @@ async function fetchProtectedData() {
         }
     }
 
-    return response.status;
+    const result = await response.json();
+    return { response, result };
 }
 
 // Refresh token
