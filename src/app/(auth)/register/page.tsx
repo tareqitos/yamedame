@@ -19,7 +19,7 @@ export default function UserRegister() {
     const [error, setError] = useState(false);
 
     const router = useRouter()
-    const { hasAccess, checkAccess } = useAuth();
+    const { checkAccess } = useAuth();
 
 
     const handleRegister = async (e: { preventDefault: () => void; }) => {

@@ -14,7 +14,7 @@ export default function UserLogin() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
     const router = useRouter()
-    const {hasAccess, checkAccess } = useAuth();
+    const { checkAccess } = useAuth();
 
 
     const handleLogin = async (e: { preventDefault: () => void; }) => {

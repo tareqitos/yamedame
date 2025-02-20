@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         checkAccess()
-    }, [])
+    }, [checkAccess])
 
     return (
         <>

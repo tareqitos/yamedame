@@ -5,7 +5,6 @@ import ThemeToggle from '../../utils/theme'
 import AuthButton from '../../utils/auth'
 import Link from "next/link";
 import { Search } from "./search";
-import { AuthProvider } from "@/context/authContext";
 
 export const Header = () => {
     return (
