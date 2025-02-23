@@ -1,6 +1,6 @@
 "use client"
 
-import {fetchProtectedData} from '@/lib/api';
+import {fetchProtectedData} from '@/lib/auth-api';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext({

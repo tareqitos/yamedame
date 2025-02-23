@@ -28,7 +28,6 @@ export default async function Feedback({ title, categories }: FeedbackProps) {
           }
 
         const data = await res.json();
-        console.log(data);
     }
 
     return (
