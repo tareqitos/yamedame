@@ -5,7 +5,7 @@ import '@/styles/auth.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
-import { loginUser } from "@/lib/api";
+import { loginUser } from "@/lib/auth-api";
 
 export default function UserLogin() {
     const [email, setEmail] = useState('test@test');
@@ -20,8 +20,8 @@ export default function UserLogin() {
     const handleLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const {response, result} = await loginUser(email, password);
-            
+            const { response, result } = await loginUser(email, password);
+
             if (response.ok) {
                 setSuccess(true)
                 localStorage.setItem("accessToken", result.token);
@@ -35,17 +35,13 @@ export default function UserLogin() {
                 setMessage(result.message || result.errors);
             }
 
-            console.log(result)
-
         } catch (err) {
             console.error('Error during registration: ', err)
         }
-
-        console.log('Login:', { email, password });
     }
 
     return (
-        <div className={`register-login-container ${success ? 'validation': error ? 'error' : ''}`}>
+        <div className={`register-login-container ${success ? 'validation' : error ? 'error' : ''}`}>
             <form onSubmit={handleLogin} className="register-login-form">
                 <h3 className="title">Login</h3>
                 <div className="field-container">
@@ -69,8 +65,9 @@ export default function UserLogin() {
                             required
                         />
                     </div>
-                    <p className={`register-login-message ${success ? 'validation': error? 'error': ''}`}>{!success ? 
-                    message : 'Happy to see you back!'}</p>
+                    <p className="reset-password-message">Password gone? <Link href='/forgot-password'>Get a new one!</Link></p>
+                    <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                        message : 'Happy to see you!'}</p>
                 </div>
                 <div className="button-container">
                     <button type="submit" className="button-rounded and-border and-background">
