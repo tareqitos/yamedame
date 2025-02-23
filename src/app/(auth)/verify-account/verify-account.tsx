@@ -28,7 +28,7 @@ export default function VerifyAccountClient({ token }: Props) {
 
     useEffect(() => {
         verifyAccount();
-    }, [verifyAccount])
+    }, [])
 
     return (
         

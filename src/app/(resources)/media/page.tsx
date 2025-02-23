@@ -7,6 +7,7 @@ import Feedback from "@/app/components/feedback";
 import Image from "next/image";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
+import getResources from "@/lib/resources-api";
 
 type Media = {
     id: number,
@@ -22,16 +23,13 @@ type Media = {
 
 export default async function Media() {
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     let media: { [key: string]: Media[] } = {};
 
     try {
-        const response = await fetch(`${API_URL}/api/resources/media`);
-        if (!response.ok) {
-            console.error("Failed to fetch resources:", response.status, response.statusText);
-            throw new Error("Failed to fetch resources");
+        const {response, result} = await getResources('/api/media')
+        if (response.ok) {
+            media = await result
         }
-        media = await response.json();
     } catch (error) {
         console.error("Error fetching media:", error);
         // Provide fallback data or UI

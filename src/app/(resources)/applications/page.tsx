@@ -8,6 +8,7 @@ import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
+import getResources from "@/lib/resources-api";
 
 
 type Applications = {
@@ -23,16 +24,14 @@ type Applications = {
 
 export default async function Applications() {
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     let apps: { [key: string]: Applications[] } = {};
 
     try {
-        const response = await fetch(`${API_URL}/api/resources/applications`);
-        if (!response.ok) {
-            console.error("Failed to fetch resources:", response.status, response.statusText);
-            throw new Error("Failed to fetch resources");
+        const {response, result} = await getResources('/api/applications')
+        if (response.ok) {
+            apps = await result
         }
-        apps = await response.json();
+
     } catch (error) {
         console.error("Error fetching applications:", error);
         // Provide fallback data or UI

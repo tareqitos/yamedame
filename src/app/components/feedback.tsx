@@ -26,8 +26,6 @@ export default async function Feedback({ title, categories }: FeedbackProps) {
         if (!res.ok) {
             throw new Error("Failed to send feedback");
           }
-
-        const data = await res.json();
     }
 
     return (

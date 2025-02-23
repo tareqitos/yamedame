@@ -6,6 +6,7 @@ import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
+import getResources from "@/lib/resources-api";
 
 type Resource = {
     id: number,
@@ -18,19 +19,14 @@ type Resource = {
     platform: string
 }
 
-
 export default async function Resources() {
-
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     let resources: { [key: string]: Resource[] } = {};
 
     try {
-        const response = await fetch(`${API_URL}/api/resources/resources`);
-        if (!response.ok) {
-            console.error("Failed to fetch resources:", response.status, response.statusText);
-            throw new Error("Failed to fetch resources");
+        const { response, result } = await getResources(`/api/resources`)
+        if (response.ok) {
+            resources = await result
         }
-        resources = await response.json();
     } catch (error) {
         console.error("Error fetching resources:", error);
         // Provide fallback data or UI

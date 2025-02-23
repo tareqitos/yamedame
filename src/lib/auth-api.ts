@@ -1,7 +1,9 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 // Register
 
 async function registerUser(email: string, username: string, password: string, verifyPassword: string) {
-    const response = await fetch("http://localhost:4000/users/register", {
+    const response = await fetch(`${API_URL}/users/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, username, password, verifyPassword }),
@@ -14,7 +16,7 @@ async function registerUser(email: string, username: string, password: string, v
 // Register verify account
 
 async function registerVerifyAccount(token: string) {
-    const response = await fetch(`http://localhost:4000/users/verify-account/${token}`, {
+    const response = await fetch(`${API_URL}/users/verify-account/${token}`, {
         method: "GET",
         credentials: "include"
     });
@@ -32,7 +34,7 @@ async function registerVerifyAccount(token: string) {
 // Login
 
 async function loginUser(email: string, password: string) {
-    const response = await fetch("http://localhost:4000/users/login", {
+    const response = await fetch(`${API_URL}/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -46,7 +48,7 @@ async function loginUser(email: string, password: string) {
 // Logout
 
 async function logout() {
-    const response = await fetch("http://localhost:4000/users/logout", {
+    const response = await fetch(`${API_URL}/users/logout`, {
         method: "GET",
         credentials: "include"
     });
@@ -59,7 +61,7 @@ async function logout() {
 // Reset password
 
 async function forgotPassword(email: string) {
-    const response = await fetch("http://localhost:4000/users/forgot-password", {
+    const response = await fetch(`${API_URL}/users/forgot-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -72,7 +74,7 @@ async function forgotPassword(email: string) {
 async function resetPassword(password: string, verifyPassword: string, token: string) {
     
 
-    const response = await fetch(`http://localhost:4000/users/reset-password/${token}`, {
+    const response = await fetch(`${API_URL}/users/reset-password/${token}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password, verifyPassword }),
@@ -93,7 +95,7 @@ async function resetPassword(password: string, verifyPassword: string, token: st
 async function fetchProtectedData() {
     const token = localStorage.getItem("accessToken");
 
-    const response = await fetch("http://localhost:4000/users/verify", {
+    const response = await fetch(`${API_URL}/users/verify`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
     })
@@ -123,7 +125,7 @@ async function fetchProtectedData() {
 // Refresh token
 
 async function refreshToken() {
-    const response = await fetch("http://localhost:4000/users/refresh", {
+    const response = await fetch(`${API_URL}/users/refresh`, {
         method: 'POST',
         credentials: 'include',
     });
