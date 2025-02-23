@@ -13,7 +13,11 @@
     border: 1px solid transparent;
     border-radius: $border-radius-10;
     background-color: var(--component-background-color);
-    transition: border-color 3s cubic-bezier(0.075, 0.82, 0.165, 1), filter 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 
+        border-color 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        filter 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        width 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        height 3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &.validation {
         border-color: #62e862;
@@ -78,3 +82,28 @@
     }
 }
 
+
+// REGISTER ========================================================
+.register-confirmation {
+    @include flex-column-center;
+    gap: 20px;
+
+    p {
+        text-align: center;
+        span {
+            font-family: $font-mochiy;
+            font-size: 1.2em;
+        }
+    }
+
+    .registration-buttons {
+        @include flex-row;
+        gap: 10px;
+    }
+}
+
+// LOGIN ========================================================
+.reset-password-message {
+    align-items: left;
+    font-size: .9em;
+}
