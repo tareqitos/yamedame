@@ -6,7 +6,10 @@ import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
-import getResources from "@/lib/resources-api";
+import { getFavorite, getResources } from "@/lib/resources-api";
+import AddToFavorite from "@/app/components/addFavorite";
+import { cookies } from "next/headers";
+
 
 type Resource = {
     id: number,
@@ -21,6 +24,26 @@ type Resource = {
 
 export default async function Resources() {
     let resources: { [key: string]: Resource[] } = {};
+    let fav = [];
+
+    try {
+        const cookieStore = await cookies();
+        console.log("All cookies:", cookieStore.getAll());
+
+        const token = cookieStore.get('refreshToken')?.value || '';
+        console.log(token)
+        const { result } = await getFavorite(token)
+
+        if (result.favorite.length > 0) {
+            fav = result.favorite.map((item: { item_id: string }) => item.item_id);
+        } else {
+            fav = [result.favorite.item_id];
+        }
+        console.log(result.message)
+        
+    } catch (err) {
+        console.log("Error loading favorite", err)
+    }
 
     try {
         const { response, result } = await getResources(`/api/resources`)
@@ -32,6 +55,9 @@ export default async function Resources() {
         // Provide fallback data or UI
         resources = {}; // Fallback to empty data or provide some default data
     }
+
+ 
+
 
     const category_icons: { [key: string]: IconDefinition } = {
         'beginner': faFlagCheckered,
@@ -64,6 +90,12 @@ export default async function Resources() {
                                             <FontAwesomeIcon className="item-icons" icon={category_icons[item.slug]} height={20} />
                                             <a href={item.link} className="item" target="_blank">{item.name}</a>
                                             {` - ${item.description}`}
+                                            <div className="add-to-favorite" style={{ display: 'inline' }}>
+                                                <AddToFavorite
+                                                    id={item.uuid}
+                                                    type={'resources'}
+                                                    fav={fav}/>
+                                            </div>
                                         </li>
                                     ))}
                                 </ul>

@@ -8,7 +8,7 @@ import '@/styles/resources.scss'
 import Feedback from "@/app/components/feedback";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
-import getResources from "@/lib/resources-api";
+import {getResources} from "@/lib/resources-api";
 
 
 type Applications = {

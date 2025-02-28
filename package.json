@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@analytics/cookie-utils": "^0.2.12",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",

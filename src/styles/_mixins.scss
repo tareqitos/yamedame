@@ -47,11 +47,11 @@
 // BUTTONS
 
 @mixin navigation-buttons ($border-radius: 5px, $border-color: var(--links-color)) {
-    @include link-properties;
     padding: 5px 10px;
     border: 1px solid $border-color;
     border-color: transparent;
     border-radius: $border-radius;
+    text-decoration: none;
     transition: border-color 0.15s, background 0.15s; 
     cursor: pointer;
 

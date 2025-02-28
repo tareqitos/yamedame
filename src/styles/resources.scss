@@ -37,7 +37,6 @@ section {
         opacity: .5;
     }
 
-
 }
 
 .item {
@@ -252,7 +251,7 @@ section {
 // NAVBAR ======================================================================================
 .menu-navbar {
     @include flex-row(space-between);
-    
+
     position: relative;
     top: -50px;
 

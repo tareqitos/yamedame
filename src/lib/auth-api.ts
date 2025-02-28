@@ -24,7 +24,7 @@ async function registerVerifyAccount(token: string) {
     const result = await response.json();
 
     if (!token || token == undefined) {
-        return { response,  result: null }
+        return { response, result: null }
     }
 
     return { response, result };
@@ -72,7 +72,7 @@ async function forgotPassword(email: string) {
 }
 
 async function resetPassword(password: string, verifyPassword: string, token: string) {
-    
+
 
     const response = await fetch(`${API_URL}/users/reset-password/${token}`, {
         method: "POST",
@@ -80,12 +80,12 @@ async function resetPassword(password: string, verifyPassword: string, token: st
         body: JSON.stringify({ password, verifyPassword }),
         credentials: "include",
     })
-    
+
 
     const result = await response.json();
 
     if (!token || token == undefined) {
-        return { response,  result: null }
+        return { response, result: null }
     }
     return { response, result }
 }
@@ -133,6 +133,7 @@ async function refreshToken() {
     if (response.ok) {
         const result = await response.json();
         localStorage.setItem("accessToken", result.accessToken);
+        window.location.reload();
         return true;
     } else {
         return false;
@@ -140,13 +141,13 @@ async function refreshToken() {
 }
 
 
-export { 
+export {
     registerUser,
     registerVerifyAccount,
-    loginUser, 
-    logout, 
+    loginUser,
+    logout,
     forgotPassword,
     resetPassword,
-    fetchProtectedData, 
-    refreshToken 
+    fetchProtectedData,
+    refreshToken
 }

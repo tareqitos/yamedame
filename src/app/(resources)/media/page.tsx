@@ -7,7 +7,7 @@ import Feedback from "@/app/components/feedback";
 import Image from "next/image";
 import Sidebar from "@/app/components/sidebar";
 import Navbar from "@/app/components/navbar";
-import getResources from "@/lib/resources-api";
+import {getResources} from "@/lib/resources-api";
 
 type Media = {
     id: number,

@@ -1,5 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'animations' as *;
 
 // LINKS =================================================================
 .links {
@@ -37,6 +38,48 @@
     color: var(--component-background-color);
 }
 
+// FAVORITE BUTTON
+
+.button-favorite {
+    @include flex-row;
+    display: inline-flex;
+    vertical-align: middle;
+    gap: 5px;
+    color: var(--border-opacity-04);
+    margin-left: 5px;
+    border: none;
+    background: none;
+    
+    cursor: pointer;
+
+    
+
+    &:hover {
+        color: var(--favorite-color);
+        .button-favorite-text {
+            visibility: visible;
+            opacity: 1;
+            left: 0;
+        }
+    }
+
+    .button-favorite-text {
+        visibility: hidden;
+        opacity: 0;
+        position: relative;
+        left: -5px;
+        top: 4px;
+        transition: all $transition-02s-cubic;
+    }
+
+    .favorite-icon {
+
+        &.spin {
+            animation: spin 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+}
+
 // INPUTS ===============================================================
 
 .search-input {
@@ -61,6 +104,7 @@
 
     @media screen and (max-width: $media-768) {
         width: 25vw;
+
         &:focus {
             width: 30vw;
         }
@@ -94,7 +138,7 @@
 
 ::-webkit-scrollbar {
     width: 8px;
-    
+
 }
 
 ::-webkit-scrollbar-thumb {
