@@ -1,7 +1,7 @@
 "use client"
 
 import { useAuth } from "@/context/authContext";
-import { logout } from "@/lib/auth-api";
+import { logout } from "@/app/api/api";
 import { useRouter } from "next/navigation"
 
 interface Props {

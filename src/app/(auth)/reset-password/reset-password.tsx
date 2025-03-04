@@ -4,7 +4,7 @@ import { useState } from "react";
 import '@/styles/auth.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { resetPassword } from "@/lib/auth-api";
+import { resetPassword } from "@/app/api/api";
 
 interface Props {
     token: string;

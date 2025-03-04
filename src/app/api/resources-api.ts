@@ -26,18 +26,18 @@ async function addAndRemoveFavorite(uuid: string, userId: number, type: string) 
 }
 
 // Get favorite list 
-async function getFavorite(token: string) {
+
+async function getFavorite() {
     const response = await fetch(`${API_URL}/favorite/all`, {
         method: "GET",
         credentials: "include",
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-        }
     })
 
+    if (response.status !== 200) {
+        return { response, result: null }
+    }
     const result = await response.json();
     return { response, result }
-}
+};
 
 export { getResources, addAndRemoveFavorite, getFavorite };

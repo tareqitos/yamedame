@@ -4,7 +4,7 @@ interface Props {
     token: string;
 }
 
-import { registerVerifyAccount } from "@/lib/auth-api";
+import { registerVerifyAccount } from "@/app/api/api";
 import '@/styles/auth.scss'
 import Link from "next/link";
 import { useEffect, useState } from "react"

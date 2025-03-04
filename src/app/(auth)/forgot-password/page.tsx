@@ -3,7 +3,7 @@
 import { useState } from "react";
 import '@/styles/auth.scss'
 import Link from "next/link";
-import { forgotPassword } from "@/lib/auth-api";
+import { forgotPassword } from "@/app/api/api";
 
 
 export default function ForgotPassword() {

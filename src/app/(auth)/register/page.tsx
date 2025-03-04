@@ -4,7 +4,7 @@ import { useState } from "react";
 import '@/styles/auth.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { registerUser } from "@/lib/auth-api";
+import { registerUser } from "@/app/api/api";
 
 export default function UserRegister() {
     const [email, setEmail] = useState('');

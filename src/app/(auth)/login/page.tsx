@@ -5,7 +5,7 @@ import '@/styles/auth.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
-import { loginUser } from "@/lib/auth-api";
+import { loginUser } from "@/app/api/api";
 
 export default function UserLogin() {
     const [email, setEmail] = useState('test@test');
