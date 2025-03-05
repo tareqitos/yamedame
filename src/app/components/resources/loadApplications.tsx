@@ -7,6 +7,7 @@ import { ResourcesTitle } from "../resourcesTitle";
 import AddToFavorite from "../addFavorite";
 import Sidebar from "../sidebar";
 import Icons from "@/utils/icons";
+import { useEffect } from "react";
 
 type Applications = {
     id: number,
@@ -25,7 +26,13 @@ interface ApplicationsProps {
 
 export function LoadApplications({ apps }: ApplicationsProps) {
 
-    const { hasAccess, favorites } = useAuth();
+    const { hasAccess, favorites, loadFavorite } = useAuth();
+
+    useEffect(() => {
+        if (hasAccess && favorites) {
+            loadFavorite();
+        }
+    }, [])
 
     return (
         <>
