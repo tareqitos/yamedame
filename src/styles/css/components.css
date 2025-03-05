@@ -167,6 +167,11 @@ html[data-theme=dark] {
   background: none;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .button-favorite .button-favorite-text {
+    display: none;
+  }
+}
 .button-favorite:hover {
   color: var(--favorite-color);
 }
@@ -204,6 +209,14 @@ html[data-theme=dark] {
   outline-style: solid;
   outline-width: 2px;
   outline-color: var(--links-color);
+}
+@media screen and (min-width: 1200px) {
+  .search-input {
+    width: 20vw;
+  }
+  .search-input:focus {
+    width: 25vw;
+  }
 }
 @media screen and (max-width: 768px) {
   .search-input {

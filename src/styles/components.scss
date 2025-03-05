@@ -38,7 +38,7 @@
     color: var(--component-background-color);
 }
 
-// FAVORITE BUTTON
+// FAVORITE BUTTON ======================================================
 
 .button-favorite {
     @include flex-row;
@@ -53,6 +53,11 @@
     cursor: pointer;
 
     
+    @media screen and (max-width: $media-768) {
+        .button-favorite-text {
+            display: none;
+        }
+    }
 
     &:hover {
         color: var(--favorite-color);
@@ -100,6 +105,14 @@
         outline-style: solid;
         outline-width: 2px;
         outline-color: var(--links-color);
+    }
+
+    @media screen and (min-width: $media-1200) {
+        width: 20vw;
+
+        &:focus {
+            width: 25vw;
+        }
     }
 
     @media screen and (max-width: $media-768) {

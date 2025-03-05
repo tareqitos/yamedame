@@ -258,7 +258,7 @@ html.no-scroll {
 }
 @media screen and (max-width: 768px) {
   .search-list {
-    width: 80vw;
+    width: 95vw;
   }
 }
 .search-list .search-container {

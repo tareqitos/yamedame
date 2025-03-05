@@ -13,7 +13,7 @@ export default function Home() {
         <div className="homepage-logo">
           <div className="title">
             <Link href="/"><span className="logo"></span>やめだめ</Link>
-            <p>No excuses not to learn Japanese</p>
+            <p className="catchphrase">No excuses not to learn Japanese</p>
           </div>
           <div className="cards-container">
             <Cards />

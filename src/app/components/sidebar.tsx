@@ -54,7 +54,7 @@ export default function Sidebar({ resources }: SidebarProps) {
                     <hr />
                     <Link className="" href="/resources">📖&nbsp;&nbsp;Study Resources</Link>
                     <hr />
-                    <Link className="" href="/media">💾&nbsp;&nbsp;Media Library</Link>
+                    <Link className="" href="/media">💾&nbsp;&nbsp;Media</Link>
                     <hr />
                     <Link className="" href="/applications">💻&nbsp;&nbsp;Software & Applications</Link>
                 </div>

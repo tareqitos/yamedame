@@ -87,6 +87,12 @@ html[data-theme=dark] {
   background: var(--component-background-color);
   border-radius: 10px;
 }
+@media screen and (max-width: 768px) {
+  .list-item-container {
+    font-size: 1em;
+    padding: 20px;
+  }
+}
 
 section {
   margin-top: 30px;
@@ -168,7 +174,7 @@ html[data-theme=light] .item-container:hover .item-icons {
   flex-direction: row;
   justify-content: center;
   gap: 50px;
-  padding: 50px max(2rem, 50vw - 480px);
+  padding: 50px max(2rem, 50vw - 600px);
 }
 @media screen and (max-width: 1024px) {
   .resources-wrapper {

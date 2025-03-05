@@ -9,6 +9,7 @@ $font-nunito: 'Nunito Sans', sans-serif;
 // Padding
 
 $contentWidth: 1200px;
+$auto-padding: 0px max(2rem, 50vw - $contentWidth / 2);
 $auto-padding-5: 5px max(2rem, 50vw - $contentWidth / 2);
 $auto-padding-10: 10px max(2rem, 50vw - $contentWidth / 2);
 $auto-padding-50: 50px max(2rem, 50vw - $contentWidth / 2);

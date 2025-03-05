@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className="not-found-links">
         <Link className='button-rounded' href="/">Home</Link>
         <Link className='button-rounded' href="/">Study resources</Link>
-        <Link className='button-rounded' href="/">Media Library</Link>
+        <Link className='button-rounded' href="/">Media</Link>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ html[data-theme=dark] {
 }
 
 .homepage-wrapper {
-  padding: 50px max(2rem, 50vw - 600px);
+  padding: 0px max(2rem, 50vw - 600px);
 }
 @media screen and (max-width: 768px) {
   .homepage-wrapper {
@@ -99,10 +99,13 @@ html[data-theme=dark] {
 .homepage-logo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .homepage-logo .title {
   text-align: center;
   margin-bottom: 20px;
+  margin: 100px 0;
 }
 .homepage-logo .title a {
   font-size: 5em;
@@ -162,10 +165,18 @@ html[data-theme=dark] {
 .homepage-logo .title a:hover .logo::after {
   transform: scale(0.5);
 }
+.homepage-logo .catchphrase {
+  font-size: 0.8em;
+  border-radius: 50px;
+  padding: 5px 20px;
+  width: fit-content;
+  float: right;
+  background-color: var(--component-background-color);
+}
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -226,9 +237,16 @@ html[data-theme=dark] {
   margin-top: 20px;
 }
 
+.shortcut {
+  padding: 5px 10px;
+}
+
 @media screen and (max-width: 1200px) {
   .homepage-wrapper {
-    padding: 50px max(2rem, 50vw - 400px);
+    padding-top: 0;
+  }
+  .homepage-logo .title {
+    margin: 50px 0;
   }
   .homepage-logo .title a {
     font-size: 4em;
@@ -256,14 +274,7 @@ html[data-theme=dark] {
 }
 @media screen and (max-width: 768px) {
   .homepage-wrapper {
-    padding: 20px max(1rem, 50vw - 600px);
-  }
-  .homepage-logo .title a {
-    font-size: 3em;
-  }
-  .homepage-logo .title a .logo {
-    height: 60px;
-    width: 60px;
+    padding-top: 0;
   }
   .cards-container {
     grid-template-columns: repeat(1, 1fr);

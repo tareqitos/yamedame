@@ -4,6 +4,8 @@ import { useAuth } from "@/context/authContext";
 import { getAllResources, logout } from "@/app/api/api";
 import { useRouter } from "next/navigation"
 import { useCallback, useEffect, useState } from "react";
+import '@/styles/auth.scss'
+import Link from "next/link";
 
 interface Props {
     id: number;
@@ -87,7 +89,17 @@ export default function Dashboard({ id }: Props) {
                     </ul>
 
                     <button className='button-rounded and-hover' style={{ fontSize: '1.2em' }} onClick={handleLogout}>Log out</button>
-                </div> : <p>Need to login to access this page</p>}
+                </div> : 
+                <div className="register-login-container">
+                    <div className="register-confirmation">
+                        <p>Need to login to access this page</p>
+                        <div className="registration-buttons">
+                            <Link href={'/'} className="button-rounded and-border and-background">Home</Link>
+                            <Link href={'/login'} className="button-rounded and-border and-background">Login</Link>
+                        </div>
+                    </div>
+                </div>
+                }
         </>
     )
 }

@@ -3,7 +3,7 @@ import Link from "next/link"
 export const Cards = () => {
     const data = [
         { title: 'Study Resources', desc: 'Access essential materials for your study sessions.', path: 'resources' },
-        { title: 'Media Library', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media' },
+        { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media' },
         { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications' },
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
     ]

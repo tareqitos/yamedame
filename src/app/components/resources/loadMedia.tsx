@@ -43,7 +43,7 @@ export function LoadMedia({ media }: ResourcesProps) {
             <div className="resources-wrapper">
                 <div className="resources-container">
                     <ScrollToHash />
-                    <ResourcesTitle title="Media Library 💾" description="Teaching videos, vlogs, podcasts, gaming and more!" />
+                    <ResourcesTitle title="Media 💾" description="Teaching videos, vlogs, podcasts, gaming and more!" />
                     <hr className="resources-title-separator" />
                     <div className="list-container media">
                         {Object.keys(media).map((category, i) => (
@@ -58,15 +58,17 @@ export function LoadMedia({ media }: ResourcesProps) {
                                                 <a href={item.link} className="item media" target="_blank">{item.name}
                                                     <Icons resource={item.platform} />
                                                 </a>
-                                                {item.description}
-                                                {hasAccess &&
-                                                    <div className="add-to-favorite" style={{ display: 'inline' }}>
-                                                        <AddToFavorite
-                                                            id={item.uuid}
-                                                            type={'media'}
-                                                            favItems={favorites} />
-                                                    </div>
-                                                }
+                                                <div>
+                                                    {item.description}
+                                                    {hasAccess &&
+                                                        <div className="add-to-favorite" style={{ display: 'inline', verticalAlign: 'text-bottom' }}>
+                                                            <AddToFavorite
+                                                                id={item.uuid}
+                                                                type={'media'}
+                                                                favItems={favorites} />
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
                                             <Image src={item.image} alt={item.name} width={100} height={100} className="item-picture-bg" />
                                         </li>

@@ -9,6 +9,11 @@
     list-style: none;
     background: var(--component-background-color);
     border-radius: $border-radius-10;
+
+    @media screen and (max-width: $media-768) {
+        font-size: 1em;
+        padding: 20px;
+    }
 }
 
 section {
@@ -95,7 +100,7 @@ section {
 .resources-wrapper {
     @include flex-row(center);
     gap: 50px;
-    padding: $auto-padding-50-divide-2-5;
+    padding: $auto-padding-50;
 
     @media screen and (max-width: $media-1024) {
         display: block;
