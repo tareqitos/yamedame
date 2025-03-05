@@ -6,44 +6,27 @@ import Icons from "@/utils/icons";
 import { useHotkeys } from "react-hotkeys-hook";
 
 interface Resource {
-    uuid: string
-    name: string;
-    description: string;
-    link: string;
-    category: string;
-    slug: string;
-    path: string;
+    uuid: string,
+    name: string,
+    description: string,
+    link: string,
+    category: string,
+    slug: string,
+    path: string
 }
 
 interface SearchResult extends Resource {
     score: number;
 }
 
-export const Search = () => {
-    const [allResources, setAllResources] = useState<Resource[]>()
+interface ResourceProps {
+    resources: Resource[];
+}
+
+export const Search = ({resources}: ResourceProps) => {
     const [filteredResources, setFilteredResources] = useState<SearchResult[]>()
     const [isSearchActive, setIsSearchActive] = useState(false)
     const input_reference = useRef<HTMLInputElement>(null);
-    
-    useEffect(() => {
-        const fetchAllResources = async () => {
-            try {
-                const API_URL = process.env.NEXT_PUBLIC_API_URL;
-                const response = await fetch(`${API_URL}/api/all`);
-                if (!response.ok) {
-                    console.error("Failed to fetch resources:", response.status, response.statusText);
-                    throw new Error("Failed to fetch resources");
-                }
-                const all_resources: Resource[] = await response.json() || [];
-                setAllResources(Object.values(all_resources).flat());
-            } catch (err) {
-                console.error("Error fetching resources:", err);
-                // Provide fallback data or UI
-                setAllResources([]); // Fallback to empty data or provide some default data
-            }
-        };
-        fetchAllResources();
-    }, [])
 
     useEffect(() => {
         if (isSearchActive) {
@@ -81,7 +64,7 @@ export const Search = () => {
     const searchResult = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
 
-        if (!allResources || allResources.length == 0) return;
+        if (!resources || resources.length == 0) return;
 
         const miniSearch = new MiniSearch({
             idField: 'uuid',
@@ -94,8 +77,8 @@ export const Search = () => {
             },
         })
 
-        if (allResources) {
-            miniSearch.addAll(allResources);
+        if (resources) {
+            miniSearch.addAll(resources);
         } else {
             console.error('Failed to fetch resources');
         }

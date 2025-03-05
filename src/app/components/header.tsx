@@ -4,7 +4,7 @@ import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from '../../utils/theme'
 import AuthButton from '../../utils/auth'
 import Link from "next/link";
-import { Search } from "./search";
+import Searchbar from "../searchbar/searchbar";
 
 export const Header = () => {
     return (
@@ -14,7 +14,7 @@ export const Header = () => {
             </div>
 
             <div className="header-links">
-                <Search />
+                <Searchbar />
                 <ThemeToggle />
                 <hr className="header-separator" />
                 <div className="socials">
