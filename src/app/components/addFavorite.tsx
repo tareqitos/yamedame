@@ -2,25 +2,23 @@
 
 import { useAuth } from "@/context/authContext";
 import { addAndRemoveFavorite } from "@/app/api/api";
-import { PlusCircleIcon, PlusIcon, StarIcon } from "@heroicons/react/24/outline";
-import { } from "@heroicons/react/24/solid"
+import { StarIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 
 interface FavoriteProps {
     id: string;
     type: string;
+    favItems: string[];
 }
 
-export default function AddToFavorite({ id, type }: FavoriteProps) {
-    const { hasAccess, user, favorites } = useAuth();
+export default function AddToFavorite({ id, type, favItems }: FavoriteProps) {
+    const { user, favorites } = useAuth();
     const [favorite, setFavorite] = useState(false);
 
     const handleFavorite = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         const uuid = id;
         const userId = user.id || 0;
-
-        // console.log(favorites)
 
         try {
             const { response, result } = await addAndRemoveFavorite(uuid, userId, type)
@@ -30,32 +28,33 @@ export default function AddToFavorite({ id, type }: FavoriteProps) {
             console.log(result)
             console.log(result.message)
 
-        } catch (err) {
-            console.log("Error adding favorite")
+        } catch (error) {
+            console.log("Error adding favorite: ", error)
         }
     }
 
     useEffect(() => {
-        if (!favorites) return;
+        if (!favItems) return;
         const uuid = id;
-        if (favorites.includes(uuid)) {
-            setFavorite(true);
+        if (!favItems.includes(uuid)) {
+            setFavorite(false);
+        } else {
+            setFavorite(true)
         }
-    }, [favorites])
+    }, [favItems, id, favorites])
 
     return (
         <>
-            {hasAccess &&
-                <button onClick={handleFavorite} className="button-favorite">
-                    <StarIcon
-                        className={`favorite-icon ${favorite ? 'spin' : ''}`}
-                        display={'inline-block'}
-                        width={20}
-                        fill={favorite ? "#d9a323" : ''}
-                        stroke={favorite ? "#d9a323" : 'grey'}
-                    />
-                    <p className="button-favorite-text">{!favorite ? "Add to my list" : "Remove from list"}</p>
-                </button>}
+            <button onClick={handleFavorite} className="button-favorite">
+                <StarIcon
+                    className={`favorite-icon ${favorite ? 'spin' : ''}`}
+                    display={'inline-block'}
+                    width={20}
+                    fill={favorite ? "#d9a323" : ''}
+                    stroke={favorite ? "#d9a323" : 'grey'}
+                />
+                <p className="button-favorite-text">{!favorite ? "Add to my list" : "Remove from list"}</p>
+            </button>
         </>
     )
 }
