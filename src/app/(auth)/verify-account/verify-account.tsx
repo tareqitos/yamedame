@@ -7,13 +7,13 @@ interface Props {
 import { registerVerifyAccount } from "@/app/api/api";
 import '@/styles/auth.scss'
 import Link from "next/link";
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export default function VerifyAccountClient({ token }: Props) {
     const [success, setSuccess] = useState(false)
     const [message, setMessage] = useState('')
 
-    const verifyAccount = async () => {
+    const verifyAccount = useCallback(async () => {
         try {
             const { response, result } = await registerVerifyAccount(token)
             if (response.status == 200) {
@@ -24,11 +24,11 @@ export default function VerifyAccountClient({ token }: Props) {
         } catch (err) {
             console.error('Could not verify account: ', err);
         }
-    }
+    }, [token])
 
     useEffect(() => {
         verifyAccount();
-    }, [])
+    }, [verifyAccount])
 
     return (
         
