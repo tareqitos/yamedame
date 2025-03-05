@@ -142,6 +142,20 @@ async function refreshToken() {
     }
 }
 
+// RESOURCES API ================================================================================================================
+
+//
+
+async function getAllResources(path: string) {
+    const response = await fetch(`${API_URL}${path}`);
+    if (response.status !== 200) {
+        return { response, result: null }
+    }
+    const result = await response.json();
+    return { response, result }
+}
+
+
 // Get resources
 
 async function getResources(path: string) {
@@ -184,6 +198,22 @@ async function getFavorite(userId: number) {
     return { response, result }
 };
 
+// FEEDBACK API ================================================================================================================
+
+async function sendFeedback(category: string, name: string, url: string) {
+    const response = await fetch(`${API_URL}/feedback/suggestion`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category, name, url })
+    })
+
+    if (response.status !== 200) {
+        return { response, result: null }
+    }
+    const result = await response.json();
+    return { response, result }
+}
+
 export {
     registerUser,
     registerVerifyAccount,
@@ -191,6 +221,8 @@ export {
     logout,
     forgotPassword,
     resetPassword,
-    fetchProtectedData,
-    refreshToken, getResources, addAndRemoveFavorite, getFavorite
+    fetchProtectedData,refreshToken, 
+    getAllResources,getResources, 
+    addAndRemoveFavorite, getFavorite,
+    sendFeedback
 }
