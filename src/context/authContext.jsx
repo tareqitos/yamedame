@@ -5,15 +5,16 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext({
   hasAccess: false,
-  user: { id: null, username: null },
+  user: { id: Number | null, username: null },
   favorites: [],
-  checkAccess: () => { }
+  checkAccess: () => { },
+  loadFavorite: () => { }
 });
 
 export const AuthProvider = ({ children }) => {
   const [hasAccess, setHasAccess] = useState(false)
   const [user, setUser] = useState(null);
-  const [favorites, setFavorites] = useState(null)
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     const storedHasAccess = localStorage.getItem("hasAccess") === 'true';
@@ -59,7 +60,7 @@ export const AuthProvider = ({ children }) => {
   }, [user])
 
   return (
-    <AuthContext.Provider value={{ hasAccess, user, favorites, checkAccess }}>
+    <AuthContext.Provider value={{ hasAccess, user, favorites, loadFavorite, checkAccess }}>
       {children}
     </AuthContext.Provider>
   );
