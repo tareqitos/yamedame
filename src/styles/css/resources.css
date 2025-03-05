@@ -138,6 +138,13 @@ html[data-theme=light] .item-container:hover .item-icons {
   flex-direction: column;
   line-height: 1.5;
 }
+.list-item-container.media .item-infos .item.media {
+  display: flex;
+  flex-direction: row;
+  justify-content: "inherit";
+  align-items: center;
+  gap: 10px;
+}
 .list-item-container.media .item-infos .item.media .icon {
   vertical-align: middle;
 }

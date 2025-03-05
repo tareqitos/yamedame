@@ -61,6 +61,12 @@ section {
         @include flex-column;
         line-height: 1.5;
 
+        .item.media {
+            @include flex-row;
+            align-items: center;
+            gap: 10px;
+        }
+
         .item.media .icon {
             vertical-align: middle;
         }
