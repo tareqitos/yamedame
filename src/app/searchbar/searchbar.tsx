@@ -15,7 +15,7 @@ export default async function Searchbar() {
 
     let resources: Resource[] = [];
     try {
-        const { response, result } = await getResources(`/ai/all`)
+        const { response, result } = await getResources(`/api/all`)
         if (response.ok) {
             resources = Object.values(result).flat() as Resource[];
         }
