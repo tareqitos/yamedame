@@ -8,6 +8,7 @@ import AddToFavorite from "../addFavorite";
 import Sidebar from "../sidebar";
 import Icons from "@/utils/icons";
 import { useEffect } from "react";
+import Feedback from "../feedback";
 
 type Applications = {
     id: number,
@@ -41,6 +42,9 @@ export function LoadApplications({ apps }: ApplicationsProps) {
                 <div className="resources-container">
                     <ScrollToHash />
                     <ResourcesTitle title="Software & Applications 💻" description="Useful software and applications to support your studies." />
+                    <Feedback
+                        title="Share your favorite Japanese learning tool 📖"
+                        categories={Object.keys(apps)} />
                     <hr className="resources-title-separator" />
                     <div className="list-container">
                         {Object.keys(apps).map((category, i) => (

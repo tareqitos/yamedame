@@ -102,6 +102,16 @@
     }
 }
 
+.register-disclaimer {
+    font-size: .9em;
+    color: grey;
+    line-height: 1.8;
+
+    &.first {
+        margin-top: 20px;
+    }
+}
+
 // LOGIN ========================================================
 .reset-password-message {
     align-items: left;

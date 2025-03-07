@@ -9,6 +9,7 @@ import Sidebar from "../sidebar";
 import Icons from "@/utils/icons";
 import { useEffect } from "react";
 import Image from "next/image";
+import Feedback from "../feedback";
 
 interface Media {
     id: number,
@@ -44,6 +45,9 @@ export function LoadMedia({ media }: ResourcesProps) {
                 <div className="resources-container">
                     <ScrollToHash />
                     <ResourcesTitle title="Media 💾" description="Teaching videos, vlogs, podcasts, gaming and more!" />
+                    <Feedback
+                        title="Share your favorite Japanese learning tool 📖"
+                        categories={Object.keys(media)} />
                     <hr className="resources-title-separator" />
                     <div className="list-container media">
                         {Object.keys(media).map((category, i) => (

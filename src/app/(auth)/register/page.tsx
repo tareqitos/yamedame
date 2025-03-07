@@ -45,77 +45,87 @@ export default function UserRegister() {
 
 
     return (
-        <div className={`register-login-container ${success ? 'validation' : error ? 'error' : ''}`}>
-            {showVerify ?
-                <div className="register-confirmation">
-                    <p className="title">Welcome to <span>やめだめ!</span> 🎉</p>
-                    <p>A confirmation e-mail has been sent to your inbox</p>
-                    <div className="registration-buttons">
-                        <Link href={'/'} className="button-rounded and-border and-background">Home</Link>
-                        <Link href={'/login'} className="button-rounded and-border and-background">Login</Link>
-                    </div>
-                </div> :
-                <form onSubmit={handleRegister} className="register-login-form">
-                    <h3 className="title">Sign up</h3>
-                    <div className="field-container">
-                        <div className="field">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
+        <>
+            <div className={`register-login-container ${success ? 'validation' : error ? 'error' : ''}`}>
+                {showVerify ?
+                    <div className="register-confirmation">
+                        <p className="title">Welcome to <span>やめだめ!</span> 🎉</p>
+                        <p>A confirmation e-mail has been sent to your inbox</p>
+                        <div className="registration-buttons">
+                            <Link href={'/'} className="button-rounded and-border and-background">Home</Link>
+                            <Link href={'/login'} className="button-rounded and-border and-background">Login</Link>
                         </div>
-                        <div className="field">
-                            <label htmlFor="username">Username</label>
-                            <input
-                                type="text"
-                                id="username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="password">Password</label>
-                            <input
-                                type="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="verify-password">Verify Password</label>
-                            <input
-                                type="password"
-                                id="verify-password"
-                                value={verifyPassword}
-                                onChange={(e) => setVerifyPassword(e.target.value)}
-                                required
-                            />
-                        </div>
+                    </div> :
+                    <form onSubmit={handleRegister} className="register-login-form">
+                        <h3 className="title">Sign up</h3>
+                        <div className="field-container">
+                            <div className="field">
+                                <label htmlFor="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <label htmlFor="username">Username</label>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <label htmlFor="password">Password</label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <label htmlFor="verify-password">Verify Password</label>
+                                <input
+                                    type="password"
+                                    id="verify-password"
+                                    value={verifyPassword}
+                                    onChange={(e) => setVerifyPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
 
-                        {errorMessage && errorMessage.length > 0 && errorMessage.map((message) => (
-                            <p key={message} className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{message}</p>
-                        ))}
+                            {errorMessage && errorMessage.length > 0 && errorMessage.map((message) => (
+                                <p key={message} className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{message}</p>
+                            ))}
 
-                        <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
-                            message : 'Welcome to やめだめ!'}</p>
+                            <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                                message : 'Welcome to やめだめ!'}</p>
 
+                        </div>
+                        <div className="button-container">
+                            <button
+                                type="submit" className="button-rounded and-border and-background">
+                                Register
+                            </button>
+                        </div>
+                        <div>Already have an account? <Link href='/login'>Login</Link></div>
+                    </form>
+                }
+                {!showVerify &&
+                    <div>
+                        <p className="register-disclaimer first">Creating an account is completely optional!</p>
+                        <p className="register-disclaimer">It&apos;s mainly for saving your favorite links.</p>
+                        <p className="register-disclaimer">Feel free to browse without signing up if you don&apos;t need that feature.</p>
                     </div>
-                    <div className="button-container">
-                        <button
-                            type="submit" className="button-rounded and-border and-background">
-                            Register
-                        </button>
-                    </div>
-                    <div>Already have an account? <Link href='/login'>Login</Link></div>
-                </form>
-            }
-        </div>
+                }
+            </div>
+
+        </>
     )
 }

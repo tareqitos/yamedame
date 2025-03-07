@@ -25,13 +25,10 @@ export default function Feedback({ title, categories }: FeedbackProps) {
         setMessage("")
         setIsLoading(true);
         try {
-            const {response, result} = await sendFeedback(category, name, url);
+            const {response} = await sendFeedback(category, name, url);
             if (response.ok) {
                 setMessage("Thank you for your contribution! 🚀")
-            } else {
-                console.log(result.message);
-            }
-
+            } 
         } catch (error) {
             setIsLoading(false)
             setMessage("Sorry, the server couldn't be reached ⚠️ ")

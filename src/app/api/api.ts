@@ -107,13 +107,11 @@ async function fetchProtectedData() {
     }
 
     if (response.status === 403) {
-        console.log("Access token expired, trying to refresh...");
 
         const refresh_success = await refreshToken();
         if (refresh_success) {
             return fetchProtectedData();
         } else {
-            console.log("Refresh token expired, please log in again.");
             await logout();
             return { response, result: null };
         }

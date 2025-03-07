@@ -13,7 +13,7 @@ import Icons from "@/utils/icons";
 import Image from "next/image";
 import Navbar from "@/app/components/navbar";
 import Sidebar from "@/app/components/sidebar";
-import { CakeIcon, EnvelopeIcon, StarIcon } from "@heroicons/react/24/outline";
+import { CakeIcon, EnvelopeIcon, HashtagIcon, StarIcon } from "@heroicons/react/24/outline";
 
 interface Props {
     id: number;
@@ -66,7 +66,7 @@ export default function Dashboard({ id }: Props) {
             const filteredResult = flattenedResult.filter((item) => favorites.includes(item.uuid))
             setAllResources(filteredResult)
         } else {
-            console.log('oh no')
+            console.log('Error loading saved resources')
         }
     }, [favorites])
 
@@ -88,7 +88,6 @@ export default function Dashboard({ id }: Props) {
                 getResources();
             }
         }
-        console.log(user)
     }, [hasAccess, favorites, getResources]);
 
     if (!hasAccess && !user) {
@@ -113,6 +112,10 @@ export default function Dashboard({ id }: Props) {
                 <div className="panel-container">
                     <div className="panel">
                         <div className="panel-infos">
+                        <div className="panel-item-container">
+                                <p> <HashtagIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> ID</p>
+                                <p className="panel-item">{id}</p>
+                            </div>
                             <div className="panel-item-container">
                                 <p> <EnvelopeIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> Email</p>
                                 <p className="panel-item">{user && user.email && user.email.replace(/(?<=^.)[^@]+(?=@)/g, '****').replace(/@(.)([^.]*)/, '@$1****')}</p>

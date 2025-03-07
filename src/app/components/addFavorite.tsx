@@ -21,13 +21,9 @@ export default function AddToFavorite({ id, type, favItems }: FavoriteProps) {
         const userId = user.id || 0;
 
         try {
-            const { response, result } = await addAndRemoveFavorite(uuid, userId, type)
+            const { response } = await addAndRemoveFavorite(uuid, userId, type)
             if (response.status == 201) setFavorite(false)
             if (response.status == 200) setFavorite(true)
-
-            console.log(result)
-            console.log(result.message)
-
         } catch (error) {
             console.log("Error adding favorite: ", error)
         }

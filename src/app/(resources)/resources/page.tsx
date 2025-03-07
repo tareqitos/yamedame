@@ -1,6 +1,6 @@
 import '@/styles/resources.scss'
 import { getResources } from "@/app/api/api";
-import { ShowResources } from "@/app/components/resources/loadResources";
+import { LoadResources } from "@/app/components/resources/loadResources";
 
 type Resource = {
     id: number,
@@ -29,7 +29,7 @@ export default async function Resources() {
 
     return (
         <>
-            <ShowResources resources={resources}/>
+            <LoadResources resources={resources}/>
         </>
     )
 }
