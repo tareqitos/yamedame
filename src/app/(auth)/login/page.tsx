@@ -8,8 +8,8 @@ import { useAuth } from "@/context/authContext";
 import { loginUser } from "@/app/api/api";
 
 export default function UserLogin() {
-    const [email, setEmail] = useState('test@test');
-    const [password, setPassword] = useState('test');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);

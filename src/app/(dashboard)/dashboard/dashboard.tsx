@@ -112,24 +112,24 @@ export default function Dashboard({ id }: Props) {
                 <div className="panel-container">
                     <div className="panel">
                         <div className="panel-infos">
-                        <div className="panel-item-container">
-                                <p> <HashtagIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> ID</p>
+                            <div className="panel-item-container">
+                                <p> <HashtagIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> ID</p>
                                 <p className="panel-item">{id}</p>
                             </div>
                             <div className="panel-item-container">
-                                <p> <EnvelopeIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> Email</p>
+                                <p> <EnvelopeIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> Email</p>
                                 <p className="panel-item">{user && user.email && user.email.replace(/(?<=^.)[^@]+(?=@)/g, '****').replace(/@(.)([^.]*)/, '@$1****')}</p>
                             </div>
                             <div className="panel-item-container">
-                                <p> <CakeIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> Joined on</p>
+                                <p> <CakeIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> Joined on</p>
                                 <p className="panel-item">{user && user.created_at?.split("T")[0]}</p>
                             </div>
                             <div className="panel-item-container">
-                                <p> <StarIcon width={20} display={'inline'} style={{verticalAlign: 'sub'}}/> Resources starred</p>
+                                <p> <StarIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> Resources starred</p>
                                 <p className="panel-item">{favorites.length}</p>
                             </div>
                         </div>
-                        <button className='button-rounded and-background and-border and-hover' style={{ fontSize: '.9em', width: 'fit-content', marginTop: '10px'}} onClick={handleLogout}>Log out</button>
+                        <button className='button-rounded and-background and-border and-hover' style={{ fontSize: '.9em', width: 'fit-content', marginTop: '10px' }} onClick={handleLogout}>Log out</button>
 
                     </div>
 
@@ -139,50 +139,54 @@ export default function Dashboard({ id }: Props) {
                 </div>
 
                 <div className="list-container dashboard">
-                    <section className="dashboard-section">
-                        <ul className="list-item-container dashboard">
-                            {regularResources.map((resource) => (
-                                <li key={resource.uuid} className={`item-container ${resource.slug}`}>
-                                    <Icons resource={resource.slug} />
-                                    <a href={resource.link} className="item" target="_blank">{resource.name}</a>
-                                    {` - ${resource.description}`}
-                                    <div className="add-to-favorite" style={{ display: 'inline' }}>
-                                        <AddToFavorite
-                                            id={resource.uuid}
-                                            type={'resources'}
-                                            favItems={favorites} />
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                        <h3>You have {regularResources.length} saved resources</h3>
-                    </section>
-                    <section className="dashboard-section">
-                        <ul className="list-item-container media dashboard">
-                            {mediaResources.map((resource) => (
-                                <li key={resource.uuid} className={`item-container ${resource.slug} media`}>
-                                    <Image src={resource.image} alt={resource.name} width={60} height={60} className="item-picture media" />
-                                    <div className="item-infos">
-                                        <a href={resource.link} className="item media" target="_blank">
-                                            {resource.name}
-                                            <Icons resource={resource.platform} />
-                                        </a>
-                                        <div>
-                                            {resource.description}
-                                            <div className="add-to-favorite" style={{ display: 'inline', verticalAlign: 'text-bottom' }}>
-                                                <AddToFavorite
-                                                    id={resource.uuid}
-                                                    type={'media'}
-                                                    favItems={favorites} />
+                    {regularResources.length == 0 ? <h3>Resources list is empty</h3> :
+                        <section className="dashboard-section">
+                            <ul className="list-item-container dashboard">
+                                {regularResources.map((resource) => (
+                                    <li key={resource.uuid} className={`item-container ${resource.slug}`}>
+                                        <Icons resource={resource.slug} />
+                                        <a href={resource.link} className="item" target="_blank">{resource.name}</a>
+                                        {` - ${resource.description}`}
+                                        <div className="add-to-favorite" style={{ display: 'inline' }}>
+                                            <AddToFavorite
+                                                id={resource.uuid}
+                                                type={'resources'}
+                                                favItems={favorites} />
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                            <h3>You have {regularResources.length} saved resources</h3>
+                        </section>
+                    }
+                    {regularResources.length == 0 ? <h3>Media list is empty</h3> :
+                        <section className="dashboard-section">
+                            <ul className="list-item-container media dashboard">
+                                {mediaResources.map((resource) => (
+                                    <li key={resource.uuid} className={`item-container ${resource.slug} media`}>
+                                        <Image src={resource.image} alt={resource.name} width={60} height={60} className="item-picture media" />
+                                        <div className="item-infos">
+                                            <a href={resource.link} className="item media" target="_blank">
+                                                {resource.name}
+                                                <Icons resource={resource.platform} />
+                                            </a>
+                                            <div>
+                                                {resource.description}
+                                                <div className="add-to-favorite" style={{ display: 'inline', verticalAlign: 'text-bottom' }}>
+                                                    <AddToFavorite
+                                                        id={resource.uuid}
+                                                        type={'media'}
+                                                        favItems={favorites} />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <Image src={resource.image} alt={resource.name} width={100} height={100} className="item-picture-bg" />
-                                </li>
-                            ))}
-                        </ul>
-                        <h3>You have {mediaResources.length} saved media</h3>
-                    </section>
+                                        <Image src={resource.image} alt={resource.name} width={100} height={100} className="item-picture-bg" />
+                                    </li>
+                                ))}
+                            </ul>
+                            <h3>You have {mediaResources.length} saved media</h3>
+                        </section>
+                    }
                 </div>
             </div>
 
