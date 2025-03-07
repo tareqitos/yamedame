@@ -52,7 +52,7 @@ export default function Sidebar({ resources }: SidebarProps) {
                 <div className={'menu-sidebar'}>
                     <Link className="" href="/">🏠&nbsp;&nbsp;Home</Link>
                     <hr />
-                    <Link className="" href="/resources">📖&nbsp;&nbsp;Study Resources</Link>
+                    <Link className="" href="/resources">📖&nbsp;&nbsp;Resources</Link>
                     <hr />
                     <Link className="" href="/media">💾&nbsp;&nbsp;Media</Link>
                     <hr />

@@ -28,7 +28,7 @@ export default function Privacy() {
                         <p>Thank you for visiting!</p>
                         <div className="navigation-links">
                             <Link href={'/'} className="button-rounded">Home</Link>
-                            <Link href={'/resources'} className="button-rounded">Study resources</Link>
+                            <Link href={'/resources'} className="button-rounded">Resources</Link>
                         </div>
 
                     </div>

@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext({
   hasAccess: false,
-  user: { id: Number | null, username: null },
+  user: { id: Number | null, username: null, email: null, created_at: null },
   favorites: [],
   checkAccess: () => { },
   loadFavorite: () => { }

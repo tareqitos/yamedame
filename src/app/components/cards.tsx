@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export const Cards = () => {
     const data = [
-        { title: 'Study Resources', desc: 'Access essential materials for your study sessions.', path: 'resources' },
+        { title: 'Resources', desc: 'Access essential materials for your study sessions.', path: 'resources' },
         { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media' },
         { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications' },
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
@@ -22,14 +22,14 @@ export const Cards = () => {
             {data.map((card, i) => {
                 return (
                     <div key={i} className="card">
-                        {card.path == 'resources' ? <span>📖</span> :
-                            card.path == 'media' ? <span>💾</span> :
-                                card.path == 'applications' ? <span>💻</span> : <span>✨</span>}
-
-                        {!card.path ? <div className="card-title">{card.title}</div> :
-                            <Link href={`/${card.path}`} className="card-title">{card.title}</Link>}
-
-                        <p className="card-desc">{card.desc}</p>
+                        <div className="card-infos">
+                            {card.path == 'resources' ? <span>📖</span> :
+                                card.path == 'media' ? <span>💾</span> :
+                                    card.path == 'applications' ? <span>💻</span> : <span>✨</span>}
+                            {!card.path ? <div className="card-title">{card.title}</div> :
+                                <Link href={`/${card.path}`} className="card-title">{card.title}</Link>}
+                            <p className="card-desc">{card.desc}</p>
+                        </div>
 
                         <div className="shortcuts">
                             {shortcuts.map((shortcut, i) => (

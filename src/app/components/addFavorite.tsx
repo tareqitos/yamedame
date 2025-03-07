@@ -50,7 +50,7 @@ export default function AddToFavorite({ id, type, favItems }: FavoriteProps) {
                     className={`favorite-icon ${favorite ? 'spin' : ''}`}
                     display={'inline-block'}
                     width={20}
-                    fill={favorite ? "#d9a323" : ''}
+                    fill={favorite ? "#d9a323" : 'none'}
                     stroke={favorite ? "#d9a323" : 'grey'}
                 />
                 <p className="button-favorite-text">{!favorite ? "Add to my list" : "Remove from list"}</p>

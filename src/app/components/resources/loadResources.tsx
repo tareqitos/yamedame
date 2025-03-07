@@ -25,7 +25,7 @@ interface ResourcesProps {
     resources: { [key: string]: Resource[] };
 }
 
-export function ShowResources({ resources }: ResourcesProps) {
+export function LoadResources({ resources }: ResourcesProps) {
 
     const { hasAccess, favorites, loadFavorite } = useAuth();
 
@@ -41,7 +41,7 @@ export function ShowResources({ resources }: ResourcesProps) {
             <div className="resources-wrapper">
                 <div className="resources-container">
                     <ScrollToHash />
-                    <ResourcesTitle title="Study Resources 📖" description="Dictionaries, grammar guides, vocabulary insights, reading materials and other useful resources for studying!" />
+                    <ResourcesTitle title="Resources 📖" description="Dictionaries, grammar guides, vocabulary insights, reading materials and other useful resources for studying!" />
                     <Feedback
                         title="Share your favorite Japanese learning tool 📖"
                         categories={Object.keys(resources)} />
