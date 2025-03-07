@@ -233,17 +233,17 @@ html[data-theme=light] .item-container:hover .item-icons {
     transform: scale(1);
   }
 }
-.error {
+#error {
   text-align: center;
   padding-top: 50px;
 }
-.error a {
+#error a {
   text-decoration: none;
   color: var(--links-color);
   cursor: pointer;
   transition: color 0.15s;
 }
-.error a:hover {
+#error a:hover {
   color: var(--links-color);
 }
 
