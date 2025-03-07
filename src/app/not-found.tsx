@@ -9,8 +9,8 @@ export default function NotFound() {
       <p className='not-found-text' >Sorry, the page you are looking for can&apos;t be found.</p>
       <div className="not-found-links">
         <Link className='button-rounded' href="/">Home</Link>
-        <Link className='button-rounded' href="/">Study resources</Link>
-        <Link className='button-rounded' href="/">Media Library</Link>
+        <Link className='button-rounded' href="/">Resources</Link>
+        <Link className='button-rounded' href="/">Media</Link>
       </div>
     </div>
   );

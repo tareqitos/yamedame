@@ -7,7 +7,7 @@ export default function About() {
         <div className="about-container">
             <div className="navigation-links">
                 <Link href={'/'} className="button-rounded">Home</Link>
-                <Link href={'/resources'} className="button-rounded">Study resources</Link>
+                <Link href={'/resources'} className="button-rounded">Resources</Link>
                 <a href='https://ko-fi.com/H2H0QZVAZ' className="button-rounded" target="_blank">Donate</a>
             </div>
 

@@ -1,3 +1,5 @@
+"use client"
+
 import "@/styles/home.scss";
 import Link from "next/link";
 import { Cards } from "@/app/components/cards";
@@ -11,7 +13,7 @@ export default function Home() {
         <div className="homepage-logo">
           <div className="title">
             <Link href="/"><span className="logo"></span>やめだめ</Link>
-            <p>No excuses not to learn Japanese</p>
+            <p className="catchphrase">No excuses not to learn Japanese</p>
           </div>
           <div className="cards-container">
             <Cards />
@@ -19,7 +21,7 @@ export default function Home() {
           <div className="navigation-links">
             <Link href={'/about'} className="about-link button-rounded">About</Link>
             <a href='https://ko-fi.com/H2H0QZVAZ' className="about-link button-rounded" target="_blank">Donate</a>
-            <Link href='/[year]/[month]' as='/2025/february' className="about-link button-rounded">February updates <span style={{fontSize: '14px', verticalAlign: 'top'}}>&#127800;</span></Link>
+            <Link href='/[year]/[month]' as='/2025/march' className="about-link button-rounded">March updates <span style={{fontSize: '14px', verticalAlign: 'top'}}>&#127800;</span></Link>
           </div>
         </div>
       </main>

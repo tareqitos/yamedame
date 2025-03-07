@@ -49,9 +49,9 @@ export default function Navbar({ resources }: NavbarProps) {
                 <div className={`menu-modal ${menuActive ? 'active' : ''}`}>
                     <Link className="" href="/">🏠&nbsp;&nbsp;Home</Link>
                     <hr />
-                    <Link href="/resources">📖&nbsp;&nbsp;Study Resources</Link>
+                    <Link href="/resources">📖&nbsp;&nbsp;Resources</Link>
                     <hr />
-                    <Link href="/media">💾&nbsp;&nbsp;Media Library</Link>
+                    <Link href="/media">💾&nbsp;&nbsp;Media</Link>
                     <hr />
                     <Link href="/applications">💻&nbsp;&nbsp;Software & Applications</Link>
                 </div>

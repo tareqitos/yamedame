@@ -11,20 +11,21 @@
 }
 
 .homepage-wrapper {
-    padding: $auto-padding-50;
+    padding: $auto-padding;
 
     @media screen and (max-width: $media-768) {
         padding: $auto-padding-50-1;
-        
+
     }
 }
 
 .homepage-logo {
-    @include flex-column;
+    @include flex-column-center;
 
     .title {
         text-align: center;
         margin-bottom: 20px;
+        margin: 100px 0;
     }
 
     .title a {
@@ -77,16 +78,26 @@
             .logo {
                 background-color: #fefefe;
             }
+
             .logo::after {
                 transform: scale(.5);
             }
         }
     }
+
+    .catchphrase {
+        font-size: .8em;
+        border-radius: 50px;
+        padding: 5px 20px;
+        width: fit-content;
+        float: right;
+        background-color: var(--component-background-color);
+    }
 }
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -127,17 +138,26 @@
 
 .shortcuts {
     @include flex-row;
+
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
 }
 
+.shortcut {
+    padding: 5px 10px;
+}
+
 @media screen and (max-width: $media-1200) {
     .homepage-wrapper {
-        padding: $auto-padding-50-divide-3;
+        padding-top: 0;
     }
 
     .homepage-logo {
+        .title {
+            margin: 50px 0;
+        }
+
         .title a {
             font-size: 4em;
 
@@ -172,19 +192,20 @@
 
 @media screen and (max-width: $media-768) {
     .homepage-wrapper {
-        padding: $auto-padding-20-1;
+        padding-top: 0;
     }
 
-    .homepage-logo {
-        .title a {
-            font-size: 3em;
 
-            .logo {
-                height: 60px;
-                width: 60px;
-            }
-        }
-    }
+    // .homepage-logo {
+    //     .title a {
+    //         font-size: 3em;
+
+    //         .logo {
+    //             height: 60px;
+    //             width: 60px;
+    //         }
+    //     }
+    // }
 
     .cards-container {
         grid-template-columns: repeat(1, 1fr);

@@ -8,7 +8,7 @@
 }
 
 .monthly-update{
-    padding-left: 50px;
+    padding-left: 25px;
     border-left: 1px solid var(--border-opacity-05);
 
     @media screen and (max-width: $media-768) {
@@ -28,11 +28,11 @@
 
     ul {
         margin-top: 10px;
-        list-style-type: none;
+        padding: inherit;
     }
 
     li {
-        line-height: 2;
+        line-height: 1.8;
     }
 
     a {

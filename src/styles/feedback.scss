@@ -1,5 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'animations' as *;
 
 $padding-input: 5px 10px;
 $gap: 20px;
@@ -43,17 +44,6 @@ $gap: 20px;
         opacity: 0;
         display: none;
     }
-
-    @keyframes fadeIn {
-        from { opacity: 0;}
-        to { opacity: 1;}
-    }
-    
-    @keyframes fadeOut {
-        from {opacity: 1;}
-        to {opacity: 0;}
-    }
-    
 }
 
 

@@ -8,5 +8,5 @@ export default function Error({ error }: {error: Error}) {
         console.log(error);
     }, [error])
 
-    return <p className="error">An error has occured. Try refresh the page or <a href='mailto:contact@yameda.me'>contact me</a>!<br /><br />ごめんなさい 🙇</p>
+    return <p id="error">An error has occured. Try refresh the page or <a href='mailto:contact@yameda.me'>contact me</a>!<br /><br />ごめんなさい 🙇</p>
 }

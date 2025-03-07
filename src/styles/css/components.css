@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+:root {
+  --logo-color: #C93D1A;
+  --success: #62e862;
+  --error: #e84545;
+  --favorite-color: #d9a323;
+}
+
 html[data-theme=light] {
   --logo-color: #C93D1A;
   --background-color: #f8f9fa;
@@ -11,6 +18,7 @@ html[data-theme=light] {
   --text-color-opacity-50: #21252980;
   --border-opacity-09: #212529e6;
   --border-opacity-05: #21252980;
+  --border-opacity-04: #21252960;
   --border-opacity-02: #21252930;
   --shadow: #7e7e7e7e;
 }
@@ -25,6 +33,7 @@ html[data-theme=dark] {
   --text-color-opacity-50: #ffffff80;
   --border-opacity-09: #ffffffe6;
   --border-opacity-05: #ffffff80;
+  --border-opacity-04: #ffffff60;
   --border-opacity-02: #ffffff30;
   --shadow: #000000;
 }
@@ -69,6 +78,30 @@ html[data-theme=dark] {
   color: rgb(88, 116, 198);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .links {
   text-decoration: none;
   color: var(--text-color);
@@ -93,22 +126,16 @@ html[data-theme=dark] {
 }
 
 .button-rounded {
-  text-decoration: none;
-  color: var(--text-color);
-  cursor: pointer;
-  transition: color 0.15s;
   padding: 5px 10px;
   border: 1px solid var(--links-color);
   border-color: transparent;
   border-radius: 50px;
+  text-decoration: none;
   transition: border-color 0.15s, background 0.15s;
   cursor: pointer;
   color: var(--links-color);
   padding: 5px 15px;
   background: var(--component-background-color);
-}
-.button-rounded:hover {
-  color: var(--links-color);
 }
 .button-rounded:hover {
   border-color: var(--links-color);
@@ -125,6 +152,44 @@ html[data-theme=dark] {
 .and-background:hover {
   background: var(--links-color);
   color: var(--component-background-color);
+}
+
+.button-favorite {
+  display: flex;
+  flex-direction: row;
+  justify-content: "inherit";
+  display: inline-flex;
+  vertical-align: middle;
+  gap: 5px;
+  color: var(--border-opacity-04);
+  margin-left: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .button-favorite .button-favorite-text {
+    display: none;
+  }
+}
+.button-favorite:hover {
+  color: var(--favorite-color);
+}
+.button-favorite:hover .button-favorite-text {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+}
+.button-favorite .button-favorite-text {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  left: -5px;
+  top: 4px;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.button-favorite .favorite-icon.spin {
+  animation: spin 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .search-input {
@@ -144,6 +209,14 @@ html[data-theme=dark] {
   outline-style: solid;
   outline-width: 2px;
   outline-color: var(--links-color);
+}
+@media screen and (min-width: 1200px) {
+  .search-input {
+    width: 20vw;
+  }
+  .search-input:focus {
+    width: 25vw;
+  }
 }
 @media screen and (max-width: 768px) {
   .search-input {
@@ -166,22 +239,16 @@ html[data-theme=dark] {
 }
 
 .to-top {
-  text-decoration: none;
-  color: var(--text-color);
-  cursor: pointer;
-  transition: color 0.15s;
   padding: 5px 10px;
   border: 1px solid var(--links-color);
   border-color: transparent;
   border-radius: 50px;
+  text-decoration: none;
   transition: border-color 0.15s, background 0.15s;
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
   transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.to-top:hover {
-  color: var(--links-color);
 }
 .to-top:hover {
   border-color: var(--links-color);
@@ -209,4 +276,12 @@ html[data-theme=dark] {
 .anchor {
   position: relative;
   bottom: 200px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inherit;
 }/*# sourceMappingURL=components.css.map */

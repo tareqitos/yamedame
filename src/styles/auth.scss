@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// GENERAL ========================================================
+
+.register-login-container {
+    @include center-with-margin(auto, max-content);
+    width: 350px;
+    padding: 50px 30px;
+    margin-top: 100px;
+    box-shadow: 0 10px 20px var(--shadow);
+
+    border: 1px solid transparent;
+    border-radius: $border-radius-10;
+    background-color: var(--component-background-color);
+    transition: 
+        border-color 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        filter 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        width 3s cubic-bezier(0.075, 0.82, 0.165, 1), 
+        height 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &.validation {
+        border-color: #62e862;
+        filter: drop-shadow(0px 0px 2px green);
+        
+    }
+
+    &.error {
+        border-color: #e84545;
+        filter: drop-shadow(0px 0px 2px rgba(207, 81, 81, 0.535));
+    }
+
+    .register-login-form {
+        @include flex-column;
+        gap: 20px;
+
+        h3 {
+            text-align: center;
+        }
+
+        input {
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: $border-radius-05;
+            background: var(--background-color);
+            width: auto;
+        }
+
+        .field-container {
+            @include flex-column;
+            gap: 10px;
+        }
+
+        .field {
+            @include flex-column;
+        }
+
+        a {
+            @include link-properties(var(--links-color), var(--text-color));
+        }
+    }
+
+    .register-login-message{
+        position: relative;
+        bottom: 30px;
+        font-size: .9em;
+        color: var(--error);
+        opacity: 0;
+        transition: bottom $transition-02s-cubic, opacity $transition-02s-cubic;
+
+        &.error {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        &.validation {
+            color: var(--success);
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+}
+
+
+// REGISTER ========================================================
+.register-confirmation {
+    @include flex-column-center;
+    gap: 20px;
+
+    p {
+        text-align: center;
+        span {
+            font-family: $font-mochiy;
+            font-size: 1.2em;
+        }
+    }
+
+    .registration-buttons {
+        @include flex-row;
+        gap: 10px;
+    }
+}
+
+.register-disclaimer {
+    font-size: .9em;
+    color: grey;
+    line-height: 1.8;
+
+    &.first {
+        margin-top: 20px;
+    }
+}
+
+// LOGIN ========================================================
+.reset-password-message {
+    align-items: left;
+    font-size: .9em;
+}

@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+:root {
+  --logo-color: #C93D1A;
+  --success: #62e862;
+  --error: #e84545;
+  --favorite-color: #d9a323;
+}
+
 html[data-theme=light] {
   --logo-color: #C93D1A;
   --background-color: #f8f9fa;
@@ -11,6 +18,7 @@ html[data-theme=light] {
   --text-color-opacity-50: #21252980;
   --border-opacity-09: #212529e6;
   --border-opacity-05: #21252980;
+  --border-opacity-04: #21252960;
   --border-opacity-02: #21252930;
   --shadow: #7e7e7e7e;
 }
@@ -25,6 +33,7 @@ html[data-theme=dark] {
   --text-color-opacity-50: #ffffff80;
   --border-opacity-09: #ffffffe6;
   --border-opacity-05: #ffffff80;
+  --border-opacity-04: #ffffff60;
   --border-opacity-02: #ffffff30;
   --shadow: #000000;
 }
@@ -110,7 +119,6 @@ html.no-scroll {
   align-items: center;
   background-color: var(--component-background-color);
   padding: 10px max(2rem, 50vw - 600px);
-  position: relative;
 }
 @media screen and (max-width: 1024px) {
   .header {
@@ -250,7 +258,7 @@ html.no-scroll {
 }
 @media screen and (max-width: 768px) {
   .search-list {
-    width: 80vw;
+    width: 95vw;
   }
 }
 .search-list .search-container {
