@@ -49,10 +49,10 @@
     margin-left: 5px;
     border: none;
     background: none;
-    
+
     cursor: pointer;
 
-    
+
     @media screen and (max-width: $media-768) {
         .button-favorite-text {
             display: none;
@@ -61,6 +61,7 @@
 
     &:hover {
         color: var(--favorite-color);
+
         .button-favorite-text {
             visibility: visible;
             opacity: 1;
@@ -101,7 +102,9 @@
     z-index: 6;
 
     &:focus {
-        width: 40vw;
+        @include center-position-horizontal;
+        top: 10px;
+        width: 60vw;
         outline-style: solid;
         outline-width: 2px;
         outline-color: var(--links-color);
@@ -111,7 +114,9 @@
         width: 20vw;
 
         &:focus {
-            width: 25vw;
+            @include center-position-horizontal;
+            top: 10px;
+            width: 60vw;
         }
     }
 
@@ -119,7 +124,9 @@
         width: 25vw;
 
         &:focus {
-            width: 30vw;
+            @include center-position-horizontal;
+            top: 10px;
+            width: 95vw;
         }
     }
 }

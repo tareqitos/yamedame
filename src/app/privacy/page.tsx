@@ -1,5 +1,7 @@
 import Link from "next/link"
 import '@/styles/update.scss'
+import '@/styles/resources.scss'
+import '@/styles/about.scss'
 import Navbar from "@/app/components/navbar"
 
 export default function Privacy() {

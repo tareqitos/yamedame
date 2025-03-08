@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import '@/styles/auth.scss'
+import '@/styles/resources.scss'
+import '@/styles/feedback.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
@@ -11,6 +13,7 @@ export default function UserLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
     const router = useRouter()
@@ -19,10 +22,12 @@ export default function UserLogin() {
 
     const handleLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        setLoading(true)
         try {
             const { response, result } = await loginUser(email, password);
 
             if (response.ok) {
+                setLoading(false)
                 setSuccess(true)
                 localStorage.setItem("accessToken", result.token);
                 localStorage.setItem("hasAccess", "true");
@@ -37,6 +42,8 @@ export default function UserLogin() {
 
         } catch (err) {
             console.error('Error during registration: ', err)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -65,9 +72,13 @@ export default function UserLogin() {
                             required
                         />
                     </div>
-                    <p className="reset-password-message">Password gone? <Link href='/forgot-password'>Get a new one!</Link></p>
-                    <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
-                        message : 'Happy to see you!'}</p>
+                    {loading ? <p className="loading feedback-loading" style={{width: 'fit-content'}}>中</p> :
+                        <>
+                            <p className="reset-password-message">Password gone? <Link href='/forgot-password'>Get a new one!</Link></p>
+                            <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                                message : 'Happy to see you!'}</p>
+                        </>
+                    }
                 </div>
                 <div className="button-container">
                     <button type="submit" className="button-rounded and-border and-background">

@@ -33,6 +33,11 @@
 }
 
 .panel-container {
+    width: 400px;
+
+    @media screen and (max-width: $media-1024) {
+        width: unset;
+    }
     .sidebar {
         padding-left: 10px;
         border-left: 1px solid var(--border-opacity-05);
