@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import '@/styles/auth.scss'
+import '@/styles/resources.scss'
+import '@/styles/feedback.scss'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { registerUser } from "@/app/api/api";
@@ -12,6 +14,7 @@ export default function UserRegister() {
     const [password, setPassword] = useState('');
     const [verifyPassword, setVerifyPassword] = useState('');
 
+    const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false);
     const [message, setMessage] = useState('');
     const [showVerify, setShowVerify] = useState(false);
@@ -23,10 +26,12 @@ export default function UserRegister() {
 
     const handleRegister = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        setLoading(true)
         try {
             const { response, result } = await registerUser(email, username, password, verifyPassword);
 
             if (response.ok) {
+                setLoading(false)
                 setSuccess(true)
                 await new Promise(resolve => setTimeout(resolve, 3000)); // Wait before redirecting to homepage
                 setShowVerify(true);
@@ -39,6 +44,8 @@ export default function UserRegister() {
 
         } catch (err) {
             console.error('Error during registration: ', err)
+        } finally {
+            setLoading(false)
         }
 
     }
@@ -104,8 +111,9 @@ export default function UserRegister() {
                                 <p key={message} className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{message}</p>
                             ))}
 
-                            <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
-                                message : 'Welcome to やめだめ!'}</p>
+                            {loading ? <p className="loading feedback-loading" style={{ width: 'fit-content' }}>中</p> :
+                                <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                                    message : 'Welcome to やめだめ!'}</p>}
 
                         </div>
                         <div className="button-container">

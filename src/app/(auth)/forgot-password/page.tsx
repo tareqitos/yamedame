@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import '@/styles/auth.scss'
+import '@/styles/resources.scss'
+import '@/styles/feedback.scss'
 import Link from "next/link";
 import { forgotPassword } from "@/app/api/api";
 
@@ -10,16 +12,20 @@ export default function ForgotPassword() {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false)
+
 
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string[]>([]);
 
     const handleRegister = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        setLoading(true)
         try {
             const { response, result } = await forgotPassword(email);
 
             if (response.ok) {
+                setLoading(false)
                 await new Promise(resolve => setTimeout(resolve, 1000)); // Wait before redirecting to homepage
                 setSuccess(true)
 
@@ -31,6 +37,8 @@ export default function ForgotPassword() {
 
         } catch (err) {
             console.error('Error sending email: ', err)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -55,9 +63,11 @@ export default function ForgotPassword() {
                         <p key={message} className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{message}</p>
                     ))}
 
-                    <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
-                        message : 'A verification email has been sent to your inbox'}</p>
-                    
+                    {loading ? <p className="loading feedback-loading" style={{ width: 'fit-content' }}>中</p> :
+                        <p className={`register-login-message ${success ? 'validation' : error ? 'error' : ''}`}>{!success ?
+                            message : 'A verification email has been sent to your inbox'}</p>
+                    }
+
                 </div>
                 <div className="button-container">
                     <button
