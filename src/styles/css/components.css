@@ -205,7 +205,11 @@ html[data-theme=dark] {
   z-index: 6;
 }
 .search-input:focus {
-  width: 40vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  width: 60vw;
   outline-style: solid;
   outline-width: 2px;
   outline-color: var(--links-color);
@@ -215,7 +219,11 @@ html[data-theme=dark] {
     width: 20vw;
   }
   .search-input:focus {
-    width: 25vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    width: 60vw;
   }
 }
 @media screen and (max-width: 768px) {
@@ -223,7 +231,11 @@ html[data-theme=dark] {
     width: 25vw;
   }
   .search-input:focus {
-    width: 30vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    width: 95vw;
   }
 }
 

@@ -37,11 +37,11 @@ export default function March2025({ month }: { month: string }) {
                 <li>Added <a href="https://community.wanikani.com/t/master-list-of-book-clubs/35283">Master List of Book Clubs</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
                 <li>Added <a href="https://www.youtube.com/@BappaShota">Bappa Shota</a> to <Link href='/media#culture-id'>Media - Culture&nbsp;&nbsp;</Link><Icons resource='media' /></li>
                 <li>Added <a href="https://open.spotify.com/show/58H68tM3uC2JNZI4hXvdeu">The Bite Size Japanese Podcast</a> to <Link href='/media#podcast-id'>Media - Podcast&nbsp;&nbsp;</Link><Icons resource='media' /></li>
-                <li>Added <a href="https://hanabira.org/">Hanabira</a> to <Link href='/software#tools-id'>Software/Applications - Tools&nbsp;&nbsp;</Link><Icons resource='tools' /></li>
-                <li>Added <a href="https://reader.manabi.io/">Manabi Reader</a> to <Link href='/software#reading-id'>Software/Applications - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
+                <li>Added <a href="https://hanabira.org/">Hanabira</a> to <Link href='/applications#tools-id'>Software/Applications - Tools&nbsp;&nbsp;</Link><Icons resource='tools' /></li>
+                <li>Added <a href="https://reader.manabi.io/">Manabi Reader</a> to <Link href='/applications#reading-id'>Software/Applications - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
                 <li>Added <a href="https://www.sosekiproject.org/index.html">Soseki Project</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
                 <li>Added <a href="https://nipponcolors.com/">Nippon Colors</a> to <Link href='/resources#vocabulary-id'>Resources - Vocabulary&nbsp;&nbsp;</Link><Icons resource='vocabulary' /></li>
-                <li>Added <a href="https://www.incompetech.com/graphpaper/genkoyoushi/">Genkoyoushi</a> to <Link href='/software#tools-id'>Software/Applications - Tools&nbsp;&nbsp;</Link><Icons resource='tools' /></li>
+                <li>Added <a href="https://www.incompetech.com/graphpaper/genkoyoushi/">Genkoyoushi</a> to <Link href='/applications#tools-id'>Software/Applications - Tools&nbsp;&nbsp;</Link><Icons resource='tools' /></li>
                 <li>Added <a href="http://www17408ui.sakura.ne.jp/tatsum/project/Yomimono/Yomimono-ippai/index.html">Yomimono Ippai</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
                 <li>Removed Otokake.com - link is dead</li>
 

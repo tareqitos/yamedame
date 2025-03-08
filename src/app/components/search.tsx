@@ -103,7 +103,7 @@ export const Search = ({resources}: ResourceProps) => {
                     <h4 className="search-status">{filteredResources?.length ? `${filteredResources?.length} results` : `No results for ${input_reference?.current?.value}`}</h4>
                     
                     {filteredResources?.map((resource) => (
-                        <Link key={resource.uuid} href={`${resource.path}#${resource.slug}-id`} className="search-container" onClick={toggleSearch}>
+                        <Link key={resource.uuid} href={`/${resource.path}#${resource.slug}-id`} className="search-container" onClick={toggleSearch}>
                             <li className="search-item">
                                 <p className={`search-path-category ${resource.slug}`}>{`${resource.path.charAt(0).toLocaleUpperCase()}${resource.path.slice(1)} / ${resource.category}`}</p>
                                 <p className="search-item">

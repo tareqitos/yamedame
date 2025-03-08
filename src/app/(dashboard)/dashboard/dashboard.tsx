@@ -90,6 +90,7 @@ export default function Dashboard({ id }: Props) {
         }
     }, [hasAccess, favorites, getResources]);
 
+    
     if (!hasAccess && !user) {
         return (
             <div className="register-login-container">
@@ -104,6 +105,13 @@ export default function Dashboard({ id }: Props) {
         )
     }
 
+    if (user) {
+        if (id.toString() !== user.id?.toString()) {
+            router.push('/not-found')
+        } 
+    }
+
+
     return (
         <>
             <Navbar resources={{}} />
@@ -114,7 +122,7 @@ export default function Dashboard({ id }: Props) {
                         <div className="panel-infos">
                             <div className="panel-item-container">
                                 <p> <HashtagIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> ID</p>
-                                <p className="panel-item">{id}</p>
+                                <p className="panel-item">{user && user.id}</p>
                             </div>
                             <div className="panel-item-container">
                                 <p> <EnvelopeIcon width={20} display={'inline'} style={{ verticalAlign: 'sub' }} /> Email</p>
