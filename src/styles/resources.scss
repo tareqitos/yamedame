@@ -56,7 +56,7 @@ section {
     padding: 0;
 
     .item-container.media {
-        @include flex-row-center('left');
+        @include flex-row-center(left);
         align-items: center;
         gap: 20px;
         padding: 15px;
@@ -279,7 +279,7 @@ section {
         position: sticky;
         top: 0px;
 
-        z-index: 2;
+        z-index: 10;
 
         visibility: visible;
         opacity: 1;

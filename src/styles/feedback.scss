@@ -44,6 +44,10 @@ $gap: 20px;
         opacity: 0;
         display: none;
     }
+
+    button[type="submit"] {
+        margin-top: $gap;
+    }
 }
 
 
@@ -72,10 +76,6 @@ input {
     border-radius: $border-radius-05;
     background: var(--background-color);
     width: 80%;
-}
-
-button[type="submit"] {
-    margin-top: $gap;
 }
 
 .feedback-contact {

@@ -200,8 +200,11 @@ html[data-theme=dark] {
   border: none;
   border-radius: 5px;
   background: var(--background-color);
-  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  position: relative;
+  transition: width 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
   z-index: 6;
 }
 .search-input:focus {
@@ -236,6 +239,16 @@ html[data-theme=dark] {
     transform: translateX(-50%);
     top: 10px;
     width: 95vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  .search-input {
+    width: 20vw;
+  }
+}
+@media screen and (max-width: 432px) {
+  .search-input {
+    width: 10vw;
   }
 }
 

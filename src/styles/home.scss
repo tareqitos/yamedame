@@ -43,7 +43,7 @@
             height: 100px;
             width: 100px;
             border-radius: 100%;
-            background-color: var(--logo-color);
+            background-color: white;
             transition: background-color .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
             &::before {
@@ -194,18 +194,6 @@
     .homepage-wrapper {
         padding-top: 0;
     }
-
-
-    // .homepage-logo {
-    //     .title a {
-    //         font-size: 3em;
-
-    //         .logo {
-    //             height: 60px;
-    //             width: 60px;
-    //         }
-    //     }
-    // }
 
     .cards-container {
         grid-template-columns: repeat(1, 1fr);

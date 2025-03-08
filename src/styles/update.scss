@@ -2,9 +2,11 @@
 @use 'mixins' as *;
 
 .update-wrapper {
-    @include flex-row(space-around);
     padding: $auto-padding-50;
-    gap: 100px;
+
+    .update-container {
+        margin-top: 20px;
+    }
 }
 
 .monthly-update{
