@@ -133,7 +133,7 @@ html[data-theme=dark] {
   height: 100px;
   width: 100px;
   border-radius: 100%;
-  background-color: var(--logo-color);
+  background-color: white;
   transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .homepage-logo .title a .logo::before {

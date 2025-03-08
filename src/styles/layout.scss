@@ -151,7 +151,7 @@
     width: 60vw;
 ;
     visibility: hidden;
-    transition: all $transition-02s-cubic;
+    // transition: width $transition-02s-cubic;
 
     &.active {
         visibility: visible;

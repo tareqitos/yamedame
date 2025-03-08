@@ -250,7 +250,6 @@ html.no-scroll {
   max-height: 0vh;
   width: 60vw;
   visibility: hidden;
-  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .search-list.active {
   visibility: visible;

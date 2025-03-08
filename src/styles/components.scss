@@ -96,9 +96,10 @@
     border: none;
     border-radius: $border-radius-05;
     background: var(--background-color);
-    transition: all $transition-02s-cubic;
+    transition: width $transition-02s-cubic;
 
-    position: relative;
+    @include center-position-horizontal;
+    top: 10px;
     z-index: 6;
 
     &:focus {
@@ -128,6 +129,14 @@
             top: 10px;
             width: 95vw;
         }
+    }
+
+    @media screen and (max-width: $media-576) {
+        width: 20vw;
+    }
+
+    @media screen and (max-width: $media-432) {
+        width: 10vw;
     }
 }
 

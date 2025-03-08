@@ -133,7 +133,7 @@ html[data-theme=light] .item-container:hover .item-icons {
 }
 .list-item-container.media .item-container.media {
   display: flex;
-  justify-content: "left";
+  justify-content: left;
   align-items: center;
   align-items: center;
   gap: 20px;
@@ -354,7 +354,7 @@ html[data-theme=light] .item-container:hover .item-icons {
     padding: 10px max(2rem, 50vw - 600px);
     position: sticky;
     top: 0px;
-    z-index: 2;
+    z-index: 10;
     visibility: visible;
     opacity: 1;
   }
