@@ -38,6 +38,7 @@
     @media screen and (max-width: $media-1024) {
         width: unset;
     }
+
     .sidebar {
         padding-left: 10px;
         border-left: 1px solid var(--border-opacity-05);
@@ -54,6 +55,10 @@
     .panel-infos {
         @include flex-column;
         gap: 10px;
+
+        > :first-child {
+            display: none;
+        }
     }
 
     .panel-item-container {
@@ -61,11 +66,10 @@
         align-items: center;
         gap: 10px;
     }
-    
+
     .panel-item {
         padding: 5px 10px;
         background-color: var(--background-color);
         border-radius: 50px;
     }
 }
-
