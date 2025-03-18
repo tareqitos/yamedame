@@ -14,6 +14,7 @@ import Image from "next/image";
 import Navbar from "@/app/components/navbar";
 import Sidebar from "@/app/components/sidebar";
 import { CakeIcon, EnvelopeIcon, HashtagIcon, StarIcon } from "@heroicons/react/24/outline";
+import { logoutCookie } from "@/app/api/cookies";
 
 interface Props {
     id: number;
@@ -48,6 +49,7 @@ export default function Dashboard({ id }: Props) {
     const handleLogout = async () => {
         await logout()
         localStorage.removeItem('hasAccess')
+        logoutCookie();
         checkAccess()
         router.refresh();
         router.push('/');
@@ -70,10 +72,11 @@ export default function Dashboard({ id }: Props) {
         }
     }, [favorites])
 
-    const { regularResources, mediaResources } = useMemo(() => {
+    const { regularResources, mediaResources, appResources } = useMemo(() => {
         return {
             regularResources: allResources.filter(resource => resource.path_id !== 2),
-            mediaResources: allResources.filter(resource => resource.path_id == 2)
+            mediaResources: allResources.filter(resource => resource.path_id == 2),
+            appResources: allResources.filter(resource => resource.path_id == 3)
         }
     }, [allResources])
 
@@ -90,7 +93,7 @@ export default function Dashboard({ id }: Props) {
         }
     }, [hasAccess, favorites, getResources]);
 
-    
+
     if (!hasAccess && !user) {
         return (
             <div className="register-login-container">
@@ -108,7 +111,7 @@ export default function Dashboard({ id }: Props) {
     if (user) {
         if (id.toString() !== user.id?.toString()) {
             router.push('/not-found')
-        } 
+        }
     }
 
 
@@ -195,9 +198,29 @@ export default function Dashboard({ id }: Props) {
                             <h3>You have {mediaResources.length} saved media</h3>
                         </section>
                     }
+
+                    {appResources.length == 0 ? <h3>Apps list is empty</h3> :
+                        <section className="dashboard-section">
+                            <ul className="list-item-container dashboard">
+                                {appResources.map((resource) => (
+                                    <li key={resource.uuid} className={`item-container ${resource.slug}`}>
+                                        <Icons resource={resource.slug} />
+                                        <a href={resource.link} className="item" target="_blank">{resource.name}</a>
+                                        {` - ${resource.description}`}
+                                        <div className="add-to-favorite" style={{ display: 'inline' }}>
+                                            <AddToFavorite
+                                                id={resource.uuid}
+                                                type={'resources'}
+                                                favItems={favorites} />
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                            <h3>You have {appResources.length} saved apps</h3>
+                        </section>
+                    }
                 </div>
             </div>
-
         </>
     )
 }
