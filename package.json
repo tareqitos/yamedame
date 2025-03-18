@@ -25,6 +25,7 @@
     "next": "15.1.6",
     "nextjs-toploader": "^3.7.15",
     "react": "^19.0.0",
+    "react-cookies": "^0.1.1",
     "react-dom": "^19.0.0",
     "react-hotkeys-hook": "^4.6.1",
     "sass": "^1.83.4"

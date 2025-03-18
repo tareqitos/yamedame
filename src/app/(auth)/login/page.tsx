@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
 import { loginUser } from "@/app/api/api";
+import { loginCookie } from "@/app/api/cookies";
+
 
 export default function UserLogin() {
     const [email, setEmail] = useState('');
@@ -20,6 +22,7 @@ export default function UserLogin() {
     const { checkAccess } = useAuth();
 
 
+
     const handleLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setLoading(true)
@@ -29,6 +32,9 @@ export default function UserLogin() {
             if (response.ok) {
                 setLoading(false)
                 setSuccess(true)
+
+                loginCookie(result.refreshToken);
+
                 localStorage.setItem("accessToken", result.token);
                 localStorage.setItem("hasAccess", "true");
                 await new Promise(resolve => setTimeout(resolve, 3000)); // Wait before redirecting to homepage
