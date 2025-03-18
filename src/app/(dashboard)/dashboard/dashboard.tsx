@@ -74,7 +74,7 @@ export default function Dashboard({ id }: Props) {
 
     const { regularResources, mediaResources, appResources } = useMemo(() => {
         return {
-            regularResources: allResources.filter(resource => resource.path_id !== 2),
+            regularResources: allResources.filter(resource => resource.path_id == 1),
             mediaResources: allResources.filter(resource => resource.path_id == 2),
             appResources: allResources.filter(resource => resource.path_id == 3)
         }
