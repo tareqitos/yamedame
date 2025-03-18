@@ -1,4 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AtSymbolIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from '../../utils/theme'
@@ -18,6 +18,7 @@ export const Header = () => {
                 <ThemeToggle />
                 <hr className="header-separator" />
                 <div className="socials">
+                    <a href="https://discord.gg/QW5QXf3YqX" target="_blank" className="links"><FontAwesomeIcon icon={faDiscord} fontSize={20} display={'block'} /></a>
                     <a href="https://github.com/tareqitos/yamedame" target="_blank" className="links"><FontAwesomeIcon icon={faGithub} fontSize={20} display={'block'} /></a>
                     <a href="mailto:contact@yameda.me" target="_blank" className="links"><AtSymbolIcon width={24} display={'block'} /></a>
                 </div>

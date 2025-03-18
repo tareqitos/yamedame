@@ -1,4 +1,6 @@
 import Icons from "@/utils/icons";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StarIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
@@ -8,19 +10,20 @@ export default function March2025({ month }: { month: string }) {
             <h1>Monthly update - {month.charAt(0).toUpperCase() + month.slice(1).split('-updates')}</h1>
             <h2>Updates</h2>
             <ul>
+                <li>Added a link to the yame dame Discord / <a href="https://discord.gg/QW5QXf3YqX" target="_blank" className="links"><FontAwesomeIcon icon={faDiscord} fontSize={20} display={'block'} /></a></li>
                 <li>When logged in, learners can now add <StarIcon
                     className={`favorite-icon`}
                     display={'inline-block'}
                     width={20}
                     fill="#d9a323"
-                    stroke="#d9a323" 
-                    style={{verticalAlign: 'sub'}}/>  and remove <StarIcon
+                    stroke="#d9a323"
+                    style={{ verticalAlign: 'sub' }} />  and remove <StarIcon
                         className={`favorite-icon`}
                         display={'inline-block'}
                         width={20}
                         fill=""
-                        stroke="#d9a323" 
-                        style={{verticalAlign: 'sub'}}/> resources to their personal list
+                        stroke="#d9a323"
+                        style={{ verticalAlign: 'sub' }} /> resources to their personal list
                 </li>
                 <li>Introduced a personal profile page that displays the user&apos;s curated resource collection</li>
                 <li>Added account functionality: </li>
@@ -43,6 +46,7 @@ export default function March2025({ month }: { month: string }) {
                 <li>Added <a href="https://nipponcolors.com/">Nippon Colors</a> to <Link href='/resources#vocabulary-id'>Resources - Vocabulary&nbsp;&nbsp;</Link><Icons resource='vocabulary' /></li>
                 <li>Added <a href="https://www.incompetech.com/graphpaper/genkoyoushi/">Genkoyoushi</a> to <Link href='/applications#tools-id'>Software/Applications - Tools&nbsp;&nbsp;</Link><Icons resource='tools' /></li>
                 <li>Added <a href="http://www17408ui.sakura.ne.jp/tatsum/project/Yomimono/Yomimono-ippai/index.html">Yomimono Ippai</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
+                <li>Added <a href="https://play.google.com/store/apps/details?id=com.smouldering_durtles.wk&hl=en-US">Smouldering Durtles</a> to <Link href='/applications#flashcards-id'>Software/Applications - Flashcards&nbsp;&nbsp;</Link><Icons resource='flashcards' /></li>
                 <li>Removed Otokake.com - link is dead</li>
 
 
