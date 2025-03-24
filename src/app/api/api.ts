@@ -42,7 +42,7 @@ async function loginUser(email: string, password: string) {
     });
 
     const result = await response.json();
-    
+
     return { response, result };
 }
 
@@ -220,8 +220,8 @@ export {
     logout,
     forgotPassword,
     resetPassword,
-    fetchProtectedData,refreshToken, 
-    getAllResources,getResources, 
+    fetchProtectedData, refreshToken,
+    getAllResources, getResources,
     addAndRemoveFavorite, getFavorite,
     sendFeedback
 }
