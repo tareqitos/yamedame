@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("hasAccess", "true");
       } else {
         setHasAccess(false);
-        localStorage.removeItem("hasAccess");
       }
     } catch (error) {
       console.log("Error checking access:", error);
