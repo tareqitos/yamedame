@@ -223,7 +223,6 @@ html[data-theme=dark] {
 }
 @media screen and (min-width: 1200px) {
   .search-input {
-    position: relative;
     width: 20vw;
   }
   .search-input:focus {
@@ -244,6 +243,16 @@ html[data-theme=dark] {
     transform: translateX(-50%);
     top: 10px;
     width: 95vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  .search-input {
+    width: 20vw;
+  }
+}
+@media screen and (max-width: 432px) {
+  .search-input {
+    width: 10vw;
   }
 }
 

@@ -72,11 +72,12 @@ export default function Dashboard({ id }: Props) {
         }
     }, [favorites])
 
-    const { regularResources, mediaResources, appResources } = useMemo(() => {
+    const { regularResources, mediaResources, appResources, gamesResources } = useMemo(() => {
         return {
             regularResources: allResources.filter(resource => resource.path_id == 1),
             mediaResources: allResources.filter(resource => resource.path_id == 2),
-            appResources: allResources.filter(resource => resource.path_id == 3)
+            appResources: allResources.filter(resource => resource.path_id == 3),
+            gamesResources: allResources.filter(resource => resource.path_id == 4)
         }
     }, [allResources])
 
@@ -217,6 +218,27 @@ export default function Dashboard({ id }: Props) {
                                 ))}
                             </ul>
                             <h3>You have {appResources.length} saved apps</h3>
+                        </section>
+                    }
+
+                    {gamesResources.length == 0 ? <h3>Games list is empty</h3> :
+                        <section className="dashboard-section">
+                            <ul className="list-item-container dashboard">
+                                {gamesResources.map((resource) => (
+                                    <li key={resource.uuid} className={`item-container ${resource.slug}`}>
+                                        <Icons resource={resource.slug} />
+                                        <a href={resource.link} className="item" target="_blank">{resource.name}</a>
+                                        {` - ${resource.description}`}
+                                        <div className="add-to-favorite" style={{ display: 'inline' }}>
+                                            <AddToFavorite
+                                                id={resource.uuid}
+                                                type={'resources'}
+                                                favItems={favorites} />
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                            <h3>You have {gamesResources.length} saved games</h3>
                         </section>
                     }
                 </div>
