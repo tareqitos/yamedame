@@ -19,9 +19,9 @@ export default function Sidebar({ resources }: SidebarProps) {
     useEffect(() => {
         const handleIntersect = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry: IntersectionObserverEntry) => {
-            if (entry.isIntersecting) {
-                setActiveCategory(entry.target.id)
-            }
+                if (entry.isIntersecting) {
+                    setActiveCategory(entry.target.id)
+                }
             })
         }
 
@@ -55,6 +55,8 @@ export default function Sidebar({ resources }: SidebarProps) {
                     <Link className="" href="/resources">📖&nbsp;&nbsp;Resources</Link>
                     <hr />
                     <Link className="" href="/media">💾&nbsp;&nbsp;Media</Link>
+                    <hr />
+                    <Link className="" href="/games">🎮&nbsp;&nbsp;Games</Link>
                     <hr />
                     <Link className="" href="/applications">💻&nbsp;&nbsp;Software & Applications</Link>
                 </div>

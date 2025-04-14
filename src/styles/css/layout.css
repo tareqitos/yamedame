@@ -78,6 +78,10 @@ html[data-theme=dark] {
   color: rgb(88, 116, 198);
 }
 
+.fa-mobile-screen-button {
+  color: rgb(224, 158, 59);
+}
+
 * {
   margin: 0;
   padding: 0;

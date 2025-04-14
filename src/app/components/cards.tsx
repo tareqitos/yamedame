@@ -4,6 +4,7 @@ export const Cards = () => {
     const data = [
         { title: 'Resources', desc: 'Access essential materials for your study sessions.', path: 'resources' },
         { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media' },
+        { title: 'Games', desc: 'Find and play games to enhance to practice the language!', path: 'games' },
         { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications' },
         { title: 'And more to come', desc: 'Stay tuned for more resources and updates!' }
     ]
@@ -15,6 +16,8 @@ export const Cards = () => {
         { category: 'Podcast', slug: 'podcast-id', path: 'media' },
         { category: 'Flashcards', slug: 'flashcards-id', path: 'applications' },
         { category: 'Tools', slug: 'tools-id', path: 'applications' },
+        { category: 'Web', slug: 'web-id', path: 'games' },
+        { category: 'Mobile', slug: 'mobile-id', path: 'games' },
     ]
 
     return (
@@ -25,7 +28,8 @@ export const Cards = () => {
                         <div className="card-infos">
                             {card.path == 'resources' ? <span>📖</span> :
                                 card.path == 'media' ? <span>💾</span> :
-                                    card.path == 'applications' ? <span>💻</span> : <span>✨</span>}
+                                    card.path == 'games' ? <span>🎮</span> :
+                                        card.path == 'applications' ? <span>💻</span> : <span>✨</span>}
                             {!card.path ? <div className="card-title">{card.title}</div> :
                                 <Link href={`/${card.path}`} className="card-title">{card.title}</Link>}
                             <p className="card-desc">{card.desc}</p>

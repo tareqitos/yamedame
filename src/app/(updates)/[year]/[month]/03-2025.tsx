@@ -48,8 +48,6 @@ export default function March2025({ month }: { month: string }) {
                 <li>Added <a href="http://www17408ui.sakura.ne.jp/tatsum/project/Yomimono/Yomimono-ippai/index.html">Yomimono Ippai</a> to <Link href='/resources#reading-id'>Resources - Reading&nbsp;&nbsp;</Link><Icons resource='reading' /></li>
                 <li>Added <a href="https://play.google.com/store/apps/details?id=com.smouldering_durtles.wk&hl=en-US">Smouldering Durtles</a> to <Link href='/applications#flashcards-id'>Software/Applications - Flashcards&nbsp;&nbsp;</Link><Icons resource='flashcards' /></li>
                 <li>Removed Otokake.com - link is dead</li>
-
-
             </ul>
         </div>
     )

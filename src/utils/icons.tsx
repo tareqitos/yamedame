@@ -1,29 +1,41 @@
 import { faAndroid, faApple, faSpotify, faYoutube, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { faBook, faBookmark, faBookOpen, faBrain, faFlagCheckered, faLanguage, faLaptop, faPhotoFilm, faSpellCheck, faTools } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBookmark, faBookOpen, faBrain, faFlagCheckered, faLanguage, faLaptop, faPhotoFilm, faSpellCheck, faTools, faMobileScreenButton, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IconsProps {
     resource: string;
 }
 
-export default function Icons({resource}: IconsProps) {
+export default function Icons({ resource }: IconsProps) {
+    // Group icons by category
     const category_icons: { [key: string]: IconDefinition } = {
+        // Learning levels
         'beginner': faFlagCheckered,
+
+        // Study materials
         'dictionaries': faBook,
         'grammar': faSpellCheck,
         'vocabulary': faLanguage,
+        'kana': faLanguage,
         'reading': faBookOpen,
-        'miscellaneous': faBookmark,
-        'youtube': faYoutube,
-        'spotify': faSpotify,
         'flashcards': faBrain,
         'grammar-kana': faSpellCheck,
-        'tools': faTools,
+
+        // Content platforms
+        'youtube': faYoutube,
+        'spotify': faSpotify,
+        'media': faPhotoFilm,
+
+        // Platforms/Devices
         'android': faAndroid,
         'apple': faApple,
         'desktop': faLaptop,
 
-        'media': faPhotoFilm
+        // Other
+        'miscellaneous': faBookmark,
+        'tools': faTools,
+        'mobile': faMobileScreenButton,
+        'web': faGlobe
     }
 
     return (

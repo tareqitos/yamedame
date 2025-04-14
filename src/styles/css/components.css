@@ -78,6 +78,10 @@ html[data-theme=dark] {
   color: rgb(88, 116, 198);
 }
 
+.fa-mobile-screen-button {
+  color: rgb(224, 158, 59);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -219,6 +223,7 @@ html[data-theme=dark] {
 }
 @media screen and (min-width: 1200px) {
   .search-input {
+    position: relative;
     width: 20vw;
   }
   .search-input:focus {
@@ -239,16 +244,6 @@ html[data-theme=dark] {
     transform: translateX(-50%);
     top: 10px;
     width: 95vw;
-  }
-}
-@media screen and (max-width: 576px) {
-  .search-input {
-    width: 20vw;
-  }
-}
-@media screen and (max-width: 432px) {
-  .search-input {
-    width: 10vw;
   }
 }
 

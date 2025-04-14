@@ -53,6 +53,8 @@ export default function Navbar({ resources }: NavbarProps) {
                     <hr />
                     <Link href="/media">💾&nbsp;&nbsp;Media</Link>
                     <hr />
+                    <Link href="/games">🎮&nbsp;&nbsp;Games</Link>
+                    <hr />
                     <Link href="/applications">💻&nbsp;&nbsp;Software & Applications</Link>
                 </div>
             </div>
