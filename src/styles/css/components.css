@@ -245,16 +245,6 @@ html[data-theme=dark] {
     width: 95vw;
   }
 }
-@media screen and (max-width: 576px) {
-  .search-input {
-    width: 20vw;
-  }
-}
-@media screen and (max-width: 432px) {
-  .search-input {
-    width: 10vw;
-  }
-}
 
 .to-top-container {
   display: flex;

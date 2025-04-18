@@ -27,6 +27,7 @@
     @media screen and (max-width: $media-1024) {
         border-bottom: 1px solid var(--shadow);
     }
+
     @media screen and (max-width: $media-768) {
         padding: $auto-padding-10-1;
     }
@@ -71,7 +72,7 @@
                 height: 20px;
                 width: 20px;
             }
-    
+
         }
     }
 
@@ -138,6 +139,45 @@
     }
 }
 
+.search-container {
+    display: flex;
+}
+
+.search-magnify {
+    @media screen and (min-width: $media-768) {
+        display: none;
+    }
+}
+
+.search-form {
+    @media screen and (max-width: $media-768) {
+        display: none;
+    }
+
+    &.mobile {
+        @media screen and (min-width: $media-768) {
+            display: none;
+        }
+    }
+}
+
+.search-container-items {
+    @include flex-column;
+    @include link-properties;
+    line-height: 1.5;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    border-radius: $border-radius-05;
+    background: var(--background-color);
+    list-style: none;
+
+    &:hover {
+        border-color: var(--links-color);
+    }
+}
+
+
 .search-list {
     padding: 5px 10px;
     border: 2px solid var(--text-color);
@@ -149,7 +189,7 @@
     overflow-y: scroll;
     max-height: 0vh;
     width: 60vw;
-;
+    ;
     visibility: hidden;
     // transition: width $transition-02s-cubic;
 
@@ -162,21 +202,6 @@
         width: 95vw;
     }
 
-    .search-container {
-        @include flex-column;
-        @include link-properties;
-        line-height: 1.5;
-        margin: 10px 0;
-        padding: 15px 20px;
-        border: 2px solid transparent;
-        border-radius: $border-radius-05;
-        background: var(--background-color);
-        list-style: none;
-
-        &:hover {
-            border-color: var(--links-color);
-        }
-    }
 
     .search-status {
         padding: 5px 0;
@@ -195,6 +220,7 @@
             font-weight: 700;
             margin-left: 10px;
         }
+
         @media screen and (max-width: $media-768) {
             font-size: .9em;
         }
