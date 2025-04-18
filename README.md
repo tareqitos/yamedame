@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔴 [Yamedame](https://yameda.me) (やめだめ)
+
+Curated list of Japanese learning resources for all proficiency levels.
+
+---
+
+## About the Project
+
+`Yamedame` is a repository that brings together Japanese learning resources for enthusiasts and students of all levels. From beginners to advanced learners, this list is designed to provide comprehensive materials to help you improve your Japanese reading, writing, speaking, and listening skills.
+
+## Features
+
+- Resources categorized by proficiency level.
+- Includes materials for grammar, vocabulary, kanji, and cultural insights.
+- A mix of textbooks, websites, apps, and videos.
+- Open-source and community-driven contributions.
 
 ## Getting Started
 
-First, run the development server:
+To explore the resources, simply browse through the categorized lists below or explore the repository files directly.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Contributing
+If you have any features you'd want to add, feel free to fork this repository and submit a pull request.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Happy learning! 🎌
