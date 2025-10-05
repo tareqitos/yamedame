@@ -7,7 +7,7 @@ const DB_NAME = process.env.DB_NAME
 
 const TABLES_SQL = `
 CREATE TABLE IF NOT EXISTS resources (
-name VARCHAR(50) NOT NULL,
+  name VARCHAR(50) NOT NULL,
   id INT AUTO_INCREMENT PRIMARY KEY,
   description VARCHAR(140) NOT NULL,
   link VARCHAR(300) NOT NULL,
@@ -51,7 +51,7 @@ export async function initDatabase() {
         SELECT 1 FROM resources WHERE name = ?
       );
     `;
-    
+
     await dbConn.query(SEED_SQL, [
       resource.name,
       resource.description,
