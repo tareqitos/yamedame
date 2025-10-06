@@ -42,7 +42,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
       >
         <Header />
-        <main className="flex-1 px-[max(1rem,calc(50vw-600px))]">
+        <main className="flex-1 px-[max(2rem,calc(50vw-600px))]">
           {children}
         </main>
         <Footer />
