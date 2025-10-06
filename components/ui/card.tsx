@@ -20,7 +20,7 @@ const CardMain = ({ icon, title, path, description }: CardMainProps) => {
 const CardResource = ({ array, className }: CardResourceProps) => {
     return (
         <ul className={clsx(
-            "flex flex-col gap-2 p-4 bg-card-background rounded-2xl my-6 text-primary text-lg font-semibold",
+            "flex flex-col gap-4 p-4 bg-card-background rounded-2xl my-6 text-primary text-lg font-semibold",
             className
         )}>
             {array.map((child, index) => (
