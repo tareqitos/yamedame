@@ -1,4 +1,4 @@
-import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon } from "@phosphor-icons/react/dist/ssr";
+import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon } from "@phosphor-icons/react/dist/ssr";
 
 // Using Phosphor Icons
 export const Icons = [
@@ -8,6 +8,7 @@ export const Icons = [
   { path: 'media', icon: VideoCameraIcon, iconColor: "#D084D6" },
   { path: 'games', icon: GameControllerIcon, iconColor: "#E09E3B" },
   { path: 'applications', icon: DesktopIcon, iconColor: "#e5475c" },
+  { path: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
   { path: '', icon: SparkleIcon, iconColor: "#fcbc32" },
 ]
 
@@ -21,6 +22,8 @@ export const IconsCategory = [
   { category: 'flashcards', icon: CardsThreeIcon, iconColor: "#a0c4ff" },
   { category: 'grammar-kana', icon: BookOpenTextIcon, iconColor: "#bdc3c7" },
   { category: 'tools', icon: ToolboxIcon, iconColor: "#e5475c" },
+  { category: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
+
 ]
 
 export const getCardData = () => {
@@ -31,6 +34,7 @@ export const getCardData = () => {
     { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media', icon: "💾" },
     { title: 'Games', desc: 'Find and play games to enhance to practice the language!', path: 'games', icon: "🎮" },
     { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications', icon: "💻" },
+    { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "🐱" },
     { title: 'And more to come', desc: 'Stay tuned for more resources and updates!', path: "", icon: "✨" }
   ];
 };
