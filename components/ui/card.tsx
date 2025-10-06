@@ -7,7 +7,7 @@ import { CardMainProps, CardResourceProps } from "@/types/types"
 
 const CardMain = ({ icon, title, path, description }: CardMainProps) => {
     return (
-        <div className="flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background transition">
+        <div className="flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background transition-border">
             <span className="w-fit p-2 rounded-sm bg-background" >
                 <Icon path={path} size={28} />
             </span>
@@ -23,13 +23,13 @@ const CardResource = ({ array, className }: CardResourceProps) => {
             "flex flex-col gap-4 p-4 bg-card-background rounded-2xl my-6 text-primary text-lg font-semibold",
             className
         )}>
-            {array.map((child, index) => (
+            {array.map((child) => (
                 <li key={child.id}>
                     <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
                     <a href={child.link} target="_blank" className={`flex-1 hover:text-white transition-primary`}>
                         {child.name}
                     </a>
-                    &nbsp;- <span className="text-white">{child.description}</span>
+                    &nbsp;- <span className="text-foreground">{child.description}</span>
                 </li>
             ))}
         </ul>

@@ -6,8 +6,8 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const buttonStyles = {
-    primary: "text-white text-2xl",
-    secondary: "text-primary font-semibold bg-card-background py-2 px-4 rounded-full"
+    primary: "text-2xl cursor-pointer hover:text-primary transition-primary",
+    secondary: "text-primary font-semibold bg-card-background py-2 px-4 rounded-full transition-border cursor-pointer"
 };
 
 const Button: React.FC<ButtonProps> = ({

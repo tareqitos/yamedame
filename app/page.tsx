@@ -27,9 +27,9 @@ export default async function Home() {
         ))}
       </div>
       <div className="flex gap-2 m-5">
-        <Button variant="secondary" className="transition-border cursor-pointer"><Link href="/about">About</Link></Button>
-        <Button variant="secondary" className="transition-border cursor-pointer"><Link href="https://ko-fi.com/H2H0QZVAZ">Donate</Link></Button>
-        <Button variant="secondary" className="transition-border cursor-pointer"><Link href="/updates">Updates 🌸</Link></Button>
+        <Button variant="secondary"><Link href="/about">About</Link></Button>
+        <Button variant="secondary"><Link href="https://ko-fi.com/H2H0QZVAZ">Donate</Link></Button>
+        <Button variant="secondary"><Link href="/updates">Updates 🌸</Link></Button>
       </div>
     </div>
   );

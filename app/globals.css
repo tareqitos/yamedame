@@ -8,6 +8,13 @@
     --card-background: #E9EEF3;
 }
 
+[data-theme="dark"] {
+  --background: #212529;
+  --foreground: #ededed;
+  --primary: #78b3e2;
+  --color-logo: #C93D1A;
+  --card-background: #17191C;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,7 +26,7 @@
   --font-mochiy: var(--font-mochiy);
   --font-nunito: var(--font-nunito);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #212529;
@@ -30,6 +37,7 @@
   }
 }
 
+*/
 body {
   background: var(--background);
   color: var(--foreground);

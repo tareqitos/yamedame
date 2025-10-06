@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Mochiy_Pop_P_One, Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ThemeProvider } from "@/context/themeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,11 +42,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
       >
+        <ThemeProvider>
         <Header />
         <main className="flex-1 px-[max(2rem,calc(50vw-600px))]">
           {children}
         </main>
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
