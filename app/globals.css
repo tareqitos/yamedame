@@ -54,6 +54,14 @@ body {
   @apply transition-all duration-100 ease-in
 }
 
+.transition-logo {
+  @apply transition-transform duration-200;
+  transition-timing-function: cubic-bezier(.075, .82, .165, 1)
+}
+
+.title:hover>div>div {
+  scale: .5;
+}
 li:hover svg {
   @apply fill-white filter;
   filter: drop-shadow(0 0 10px rgb(255, 255, 255));
