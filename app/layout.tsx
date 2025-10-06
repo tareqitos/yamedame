@@ -35,15 +35,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
       >
         <Header />
-        <main className="flex-1">
-
-        {children}
+        <main className="flex-1 px-[max(1rem,calc(50vw-600px))]">
+          {children}
         </main>
         <Footer />
       </body>
