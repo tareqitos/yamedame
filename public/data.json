@@ -6,7 +6,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Genkoyoushi Paper Generator",
@@ -15,7 +16,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Hinoki Project",
@@ -24,7 +26,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Japanese Graph",
@@ -33,7 +36,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kanji by Stroke Order",
@@ -42,7 +46,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kanji Practice",
@@ -51,7 +56,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kanjipedia",
@@ -60,7 +66,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Koohii Kanji Review",
@@ -69,7 +76,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kotoba no Gakko",
@@ -78,7 +86,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "KotobaBot",
@@ -87,7 +96,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kotowaza",
@@ -96,7 +106,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kurumi Kanji Search",
@@ -105,7 +116,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Mainichi Kanji",
@@ -114,7 +126,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Niai - Similar Vocabulary",
@@ -123,7 +136,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Nippon Colors",
@@ -132,7 +146,8 @@
         "category": "Vocabulary & Kanji",
         "platform": "",
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "OniKanji",
@@ -141,7 +156,8 @@
         "category": "Vocabulary & Kanji",
         "platform": "",
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Shared Anki Decks",
@@ -150,7 +166,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "WaniKani",
@@ -159,7 +176,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Wikibooks Linguistics Vocabulary",
@@ -168,7 +186,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Yomikatawa",
@@ -177,7 +196,8 @@
         "category": "Vocabulary & Kanji",
         "platform": null,
         "slug": "vocabulary",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "DeepL Translator",
@@ -186,7 +206,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "GeekyDic",
@@ -195,7 +216,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Goo Dictionary",
@@ -204,7 +226,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Jisho",
@@ -213,7 +236,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Jisho (Hlorenzi)",
@@ -222,7 +246,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Jitenon Kanji Dictionary",
@@ -231,7 +256,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "JLect",
@@ -240,7 +266,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Jotoba",
@@ -249,7 +276,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Kanjisho",
@@ -258,7 +286,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Kotobank",
@@ -267,7 +296,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Onomato Project",
@@ -276,7 +306,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "PokeJisho",
@@ -285,7 +316,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Takoboto",
@@ -294,7 +326,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Weblio Thesaurus",
@@ -303,7 +336,8 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "dictionaries",
+        "image": null
     },
     {
         "name": "Yomitan",
@@ -312,47 +346,38 @@
         "category": "Dictionaries",
         "platform": null,
         "slug": "dictionaries",
-        "path": "resources"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Aedict",
         "description": "Comprehensive dictionary app.",
         "link": "http://aedict.eu/",
         "category": "Dictionaries",
+        "platform": null,
         "slug": "dictionaries",
-        "path": "applications"
-    },
-    {
-        "name": "Jotoba",
-        "description": "Multilingual dictionary app.",
-        "link": "https://play.google.com/store/apps/details?id=com.jotoba.mobile",
-        "category": "Dictionaries",
-        "slug": "dictionaries",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Kanji Benkyō",
         "description": "Learn kanji with this app.",
         "link": "https://apps.apple.com/us/app/learn-japanese-kanji-benky%C5%8D/id1541592138?ct=https%3A%2F%2Findiecatalog.app",
         "category": "Dictionaries",
+        "platform": null,
         "slug": "dictionaries",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Shirabe Jisho",
         "description": "Dictionary app with kanji lookup.",
         "link": "https://apps.apple.com/app/shirabe-jisho/id1005203380",
         "category": "Dictionaries",
+        "platform": null,
         "slug": "dictionaries",
-        "path": "applications"
-    },
-    {
-        "name": "Takoboto",
-        "description": "Offline dictionary app.",
-        "link": "https://takoboto.jp/apps/",
-        "category": "Dictionaries",
-        "slug": "dictionaries",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "DJT Grammar Guide",
@@ -361,7 +386,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Edewakaru",
@@ -370,7 +396,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Guide to Japanese",
@@ -379,7 +406,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "IMABI",
@@ -388,7 +416,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "JLPT Grammar List",
@@ -397,7 +426,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Kanji-Link",
@@ -406,7 +436,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Maggie Sensei",
@@ -415,7 +446,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Minato JF",
@@ -424,7 +456,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Sakubi",
@@ -433,7 +466,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Tanos JLPT Resources",
@@ -442,7 +476,8 @@
         "category": "Grammar",
         "platform": null,
         "slug": "grammar",
-        "path": "resources"
+        "path": "grammar",
+        "image": null
     },
     {
         "name": "Dokusho Club",
@@ -451,7 +486,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Learn Natively",
@@ -460,7 +496,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Mangaz",
@@ -469,7 +506,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Master List of Book Clubs",
@@ -478,7 +516,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Satori Reader",
@@ -487,7 +526,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Sōseki Project",
@@ -496,7 +536,8 @@
         "category": "Reading",
         "platform": "",
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Tadoku",
@@ -505,7 +546,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Yomimono Ippai",
@@ -514,7 +556,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "YomuJP",
@@ -523,7 +566,8 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "YomuYomu",
@@ -532,31 +576,38 @@
         "category": "Reading",
         "platform": null,
         "slug": "reading",
-        "path": "resources"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Manabi Reader",
         "description": "A solid app for reading sentences, read ebooks and listen to audios.",
         "link": "https://reader.manabi.io/",
-        "category": "Reading",
+        "category": "Apps",
+        "platform": null,
         "slug": "reading",
-        "path": "applications"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Mihon",
         "description": "Manga reader app.",
         "link": "https://mihon.app/",
-        "category": "Reading",
+        "category": "Apps",
+        "platform": null,
         "slug": "reading",
-        "path": "applications"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Voracious",
         "description": "Improve reading and listening skills.",
         "link": "https://voracious.app/",
-        "category": "Reading",
+        "category": "Apps",
+        "platform": null,
         "slug": "reading",
-        "path": "applications"
+        "path": "reading",
+        "image": null
     },
     {
         "name": "Free Japanese Font",
@@ -565,7 +616,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Google Sheets JLPT",
@@ -574,7 +626,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Japanese Discord",
@@ -583,7 +636,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Japanese Wiki",
@@ -592,7 +646,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Kaiwa Kai",
@@ -601,7 +656,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Kuzuri Resources",
@@ -610,7 +666,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "LangPractice",
@@ -619,7 +676,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Learn Japanese Reddit",
@@ -628,7 +686,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Rondely English Terms",
@@ -637,7 +696,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "SuperNative",
@@ -646,7 +706,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "The Moe Way",
@@ -655,7 +716,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Unagibun JLPT Online",
@@ -664,7 +726,8 @@
         "category": "Miscellaneous",
         "platform": null,
         "slug": "miscellaneous",
-        "path": "resources"
+        "path": "miscellaneous",
+        "image": null
     },
     {
         "name": "Kana Dojo",
@@ -673,7 +736,8 @@
         "category": "Kana",
         "platform": null,
         "slug": "kana",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Kana Pro",
@@ -682,7 +746,8 @@
         "category": "Kana",
         "platform": null,
         "slug": "kana",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Real Kana",
@@ -691,7 +756,8 @@
         "category": "Kana",
         "platform": null,
         "slug": "kana",
-        "path": "resources"
+        "path": "vocabulary",
+        "image": null
     },
     {
         "name": "Akane Japanese Class",
@@ -699,9 +765,9 @@
         "link": "https://www.youtube.com/@Akane-JapaneseClass/",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/d85bb43d-a668-413f-83ad-d22693f02a03.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/d85bb43d-a668-413f-83ad-d22693f02a03.jpg"
     },
     {
         "name": "CI Japanese",
@@ -709,9 +775,9 @@
         "link": "https://www.youtube.com/@cijapanese",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/e0f45662-ec4d-4a04-b1df-773ec6429768.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/e0f45662-ec4d-4a04-b1df-773ec6429768.jpg"
     },
     {
         "name": "Dogen",
@@ -719,9 +785,9 @@
         "link": "https://www.youtube.com/@Dogen",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/76399ea0-eed3-420a-b11b-dfa84d7959e8.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/76399ea0-eed3-420a-b11b-dfa84d7959e8.jpg"
     },
     {
         "name": "Japanese Ammo with Misa",
@@ -729,9 +795,9 @@
         "link": "https://www.youtube.com/@JapaneseAmmowithMisa",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/9eeba09f-98d3-486a-b53d-cdc75f63856b.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/9eeba09f-98d3-486a-b53d-cdc75f63856b.jpg"
     },
     {
         "name": "Japanese with Shun",
@@ -739,9 +805,9 @@
         "link": "https://www.youtube.com/@JapanesewithShun",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/6b8aeee9-f179-4019-a4b0-98ee7cdfd717.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/6b8aeee9-f179-4019-a4b0-98ee7cdfd717.jpg"
     },
     {
         "name": "Japanese with Taka",
@@ -749,9 +815,9 @@
         "link": "https://www.youtube.com/@JapanesewithTaka",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/21c8daac-3bde-4c2d-9aff-ba471a35d9ba.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/21c8daac-3bde-4c2d-9aff-ba471a35d9ba.jpg"
     },
     {
         "name": "Japasuta",
@@ -759,9 +825,9 @@
         "link": "https://www.youtube.com/@japasuta",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/c2ecabe8-e935-4158-adf2-cdf3bb58f21a.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/c2ecabe8-e935-4158-adf2-cdf3bb58f21a.jpg"
     },
     {
         "name": "Meshclass",
@@ -769,9 +835,9 @@
         "link": "https://www.youtube.com/@meshclass",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/4025ac12-6487-4f3d-9ffe-5dd6d284cabf.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/4025ac12-6487-4f3d-9ffe-5dd6d284cabf.jpg"
     },
     {
         "name": "Miku Real Japanese",
@@ -779,9 +845,9 @@
         "link": "https://www.youtube.com/@mikurealjapanese",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/02649d85-7886-40fc-92f3-46ab25bf4189.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/02649d85-7886-40fc-92f3-46ab25bf4189.jpg"
     },
     {
         "name": "Necota''s Japanese Language Class",
@@ -789,9 +855,9 @@
         "link": "https://www.youtube.com/@necotasjapaneselanguagecla291",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/e7c82a95-198f-43bc-bb59-3228fe942d9a.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/e7c82a95-198f-43bc-bb59-3228fe942d9a.jpg"
     },
     {
         "name": "Nihongo no Mori",
@@ -799,9 +865,9 @@
         "link": "https://www.youtube.com/@nihongonomori2013",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/5331a389-d720-4097-9f31-9e0f201b38e0.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/5331a389-d720-4097-9f31-9e0f201b38e0.jpg"
     },
     {
         "name": "Onomappu",
@@ -809,9 +875,9 @@
         "link": "https://www.youtube.com/@Onomappu/",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/26d78526-5f7a-42ed-8fb5-6a39b020cb45.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/26d78526-5f7a-42ed-8fb5-6a39b020cb45.jpg"
     },
     {
         "name": "Sambonjuku",
@@ -819,9 +885,9 @@
         "link": "https://www.youtube.com/@sambonjuku/",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/51c7e587-a8db-4814-9e36-78762f5cf9e6.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/51c7e587-a8db-4814-9e36-78762f5cf9e6.jpg"
     },
     {
         "name": "Sayuri Saying",
@@ -829,9 +895,9 @@
         "link": "https://www.youtube.com/@SayuriSaying",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/a879e1a3-5439-4d6d-8d60-e161c571023c.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/a879e1a3-5439-4d6d-8d60-e161c571023c.jpg"
     },
     {
         "name": "Tanaka San",
@@ -839,9 +905,9 @@
         "link": "https://www.youtube.com/@japanese_tanakasan",
         "category": "Language Learning",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/5aeb279c-b4b8-4b8a-8fef-3c57befb642e.jpg",
         "slug": "language-learning",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/5aeb279c-b4b8-4b8a-8fef-3c57befb642e.jpg"
     },
     {
         "name": "Archipel Documentaries",
@@ -849,9 +915,9 @@
         "link": "https://www.youtube.com/@ArchipelDocumentaries",
         "category": "Culture",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/f59e9b0c-fc9e-492e-b49f-116f334bdf92.jpg",
         "slug": "culture",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f59e9b0c-fc9e-492e-b49f-116f334bdf92.jpg"
     },
     {
         "name": "Bappa Shota",
@@ -859,9 +925,9 @@
         "link": "https://www.youtube.com/@BappaShota",
         "category": "Culture",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/a27c10e8-0058-4859-ac19-aeccaf37c764.jpg?height=150&width=150",
         "slug": "culture",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/a27c10e8-0058-4859-ac19-aeccaf37c764.jpg?height=150&width=150"
     },
     {
         "name": "Koto Labo",
@@ -869,9 +935,9 @@
         "link": "https://www.youtube.com/@kotolabo",
         "category": "Culture",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/b6d30567-06bd-4d00-8254-976d74e9dad8.jpg",
         "slug": "culture",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/b6d30567-06bd-4d00-8254-976d74e9dad8.jpg"
     },
     {
         "name": "Osho Taigu",
@@ -879,9 +945,9 @@
         "link": "https://www.youtube.com/@osho_taigu/",
         "category": "Culture",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/be5a1326-fc18-4f04-9c11-ff386428d6d7.jpg",
         "slug": "culture",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/be5a1326-fc18-4f04-9c11-ff386428d6d7.jpg"
     },
     {
         "name": "Burihhiiinews Channel",
@@ -889,9 +955,9 @@
         "link": "https://www.youtube.com/@burihhiiiinewschannel",
         "category": "Entertainment",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/f58c21eb-c837-42f9-af41-ef9afd6d38b2.jpg",
         "slug": "entertainment",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f58c21eb-c837-42f9-af41-ef9afd6d38b2.jpg"
     },
     {
         "name": "Cocoro Kase",
@@ -899,9 +965,9 @@
         "link": "https://www.youtube.com/@cocoro_kase",
         "category": "Pop Culture",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/dd11fcff-2253-4d1d-8e0b-2eef1a9b2493.jpg",
         "slug": "pop-culture",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/dd11fcff-2253-4d1d-8e0b-2eef1a9b2493.jpg"
     },
     {
         "name": "EASY JAPANESE",
@@ -909,9 +975,9 @@
         "link": "https://www.youtube.com/@EASYJAPANESE",
         "category": "Podcast",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/97cf5176-be71-4a56-9c47-e3cf3fbae773.jpg",
         "slug": "podcast",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/97cf5176-be71-4a56-9c47-e3cf3fbae773.jpg"
     },
     {
         "name": "Nihongo Con Teppei",
@@ -919,9 +985,9 @@
         "link": "https://open.spotify.com/show/4W4jYoKRmjlURKO1fIfcOK?si=53534ca1bd654ffd",
         "category": "Podcast",
         "platform": "spotify",
-        "image": "https://cloud.tareqitos.me/i/f5d98ed5-9d5d-40a7-823d-81e11f6758bf.jpg?height=100&width=100&quality=50",
         "slug": "podcast",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f5d98ed5-9d5d-40a7-823d-81e11f6758bf.jpg?height=100&width=100&quality=50"
     },
     {
         "name": "Oyasumi Japanese with Shun",
@@ -929,9 +995,9 @@
         "link": "https://open.spotify.com/show/7x4JCyDeWR60kzJXoOBTrQ",
         "category": "Podcast",
         "platform": "spotify",
-        "image": "https://cloud.tareqitos.me/i/10d34001-1ee0-4773-9c50-5e170a519a82.jpg?height=150&width=150",
         "slug": "podcast",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/10d34001-1ee0-4773-9c50-5e170a519a82.jpg?height=150&width=150"
     },
     {
         "name": "The Bite Size Japanese Podcast",
@@ -939,9 +1005,9 @@
         "link": "https://open.spotify.com/show/58H68tM3uC2JNZI4hXvdeu",
         "category": "Podcast",
         "platform": "spotify",
-        "image": "https://cloud.tareqitos.me/i/6a10d710-6f8c-41c4-b36e-384784a08748.jpg?height=150&width=150",
         "slug": "podcast",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/6a10d710-6f8c-41c4-b36e-384784a08748.jpg?height=150&width=150"
     },
     {
         "name": "The Miku Real Japanese",
@@ -949,9 +1015,9 @@
         "link": "https://open.spotify.com/show/6Nl8RDfPxsk4h4bfWe76Kg?si=48aec8e2d5234a98",
         "category": "Podcast",
         "platform": "spotify",
-        "image": "https://cloud.tareqitos.me/i/d945d521-c56f-43da-972a-8386260670f2.jpg?height=150&width=150",
         "slug": "podcast",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/d945d521-c56f-43da-972a-8386260670f2.jpg?height=150&width=150"
     },
     {
         "name": "Game Nantoka / ゲームなんとか",
@@ -959,9 +1025,9 @@
         "link": "https://open.spotify.com/show/0VpJSbTokWLLJ0zppnbrlM?si=13ab080d6e7f4dbe",
         "category": "Gaming",
         "platform": "spotify",
-        "image": "https://cloud.tareqitos.me/i/1a81d385-dfca-40da-aea0-5133f3c1beac.jpg?height=150&width=150",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/1a81d385-dfca-40da-aea0-5133f3c1beac.jpg?height=150&width=150"
     },
     {
         "name": "KIYOi / キヨ。",
@@ -969,9 +1035,9 @@
         "link": "https://www.youtube.com/@KIYOisGOD",
         "category": "Gaming",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/80e37a5c-f9b4-4f6d-b479-4391cffc8511.jpg",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/80e37a5c-f9b4-4f6d-b479-4391cffc8511.jpg"
     },
     {
         "name": "Kojiseto Games",
@@ -979,9 +1045,9 @@
         "link": "https://www.youtube.com/@KojisetoGames",
         "category": "Gaming",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/c18df950-aea4-47df-8422-dbcccb81a605.jpg",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/c18df950-aea4-47df-8422-dbcccb81a605.jpg"
     },
     {
         "name": "Senakuma Desu",
@@ -989,9 +1055,9 @@
         "link": "https://www.youtube.com/@senakumadesu",
         "category": "Gaming",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/cfc78559-4f1a-4c53-8995-241d879052bd.jpg",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/cfc78559-4f1a-4c53-8995-241d879052bd.jpg"
     },
     {
         "name": "Sora Sakurai",
@@ -999,9 +1065,9 @@
         "link": "https://www.youtube.com/@sora_sakurai_jp",
         "category": "Gaming",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/468ce1be-a0cd-499b-949f-03b3ce7930b0.jpg",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/468ce1be-a0cd-499b-949f-03b3ce7930b0.jpg"
     },
     {
         "name": "Tetsuo/てつお ",
@@ -1009,284 +1075,328 @@
         "link": "https://www.youtube.com/@ch-mj8xi",
         "category": "Gaming",
         "platform": "youtube",
-        "image": "https://cloud.tareqitos.me/i/b1d092f6-3ede-4c1b-8da5-f89bad292a32.jpg",
         "slug": "gaming",
-        "path": "media"
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/b1d092f6-3ede-4c1b-8da5-f89bad292a32.jpg"
     },
     {
         "name": "Anki",
         "description": "Powerful flashcard app for studying.",
         "link": "https://apps.ankiweb.net/",
         "category": "Flashcards",
+        "platform": null,
         "slug": "flashcards",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Quizlet",
         "description": "Study with flashcards and games.",
         "link": "https://quizlet.com/",
         "category": "Flashcards",
+        "platform": null,
         "slug": "flashcards",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Renshuu",
         "description": "Practice vocabulary and grammar.",
         "link": "https://www.renshuu.org/",
         "category": "Flashcards",
+        "platform": null,
         "slug": "flashcards",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Ringotan",
         "description": "Learn kanji with mnemonics.",
         "link": "https://www.ringotan.com/",
         "category": "Flashcards",
+        "platform": null,
         "slug": "flashcards",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Smouldering Durtles",
         "description": "An android client application for WaniKani",
         "link": "https://play.google.com/store/apps/details?id=com.smouldering_durtles.wk&hl=en-US",
         "category": "Flashcards",
+        "platform": null,
         "slug": "flashcards",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Bunpro",
         "description": "Grammar study platform.",
         "link": "https://bunpro.jp/",
         "category": "Grammar & Kana",
+        "platform": null,
         "slug": "grammar-kana",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Kana",
         "description": "Learn hiragana and katakana.",
         "link": "https://apps.apple.com/us/app/kana-hiragana-and-katakana/id1454200955?ct=https%3A%2F%2Findiecatalog.app",
         "category": "Grammar & Kana",
+        "platform": null,
         "slug": "grammar-kana",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Genkoyoushi",
         "description": "Japanese character graph generator",
         "link": "https://www.incompetech.com/graphpaper/genkoyoushi/",
         "category": "Tools",
+        "platform": null,
         "slug": "tools",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Hanabi",
         "description": "A powerful subtitle parser for Youtube using AI",
         "link": "https://hanabira.org/",
         "category": "Tools",
+        "platform": null,
         "slug": "tools",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Jimaku",
         "description": "A list of subtitles files for anime, drama and movies.",
         "link": "https://jimaku.cc",
         "category": "Tools",
+        "platform": null,
         "slug": "tools",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Kaku",
         "description": "Handwriting recognition app.",
         "link": "https://kaku.fuwafuwa.ca/",
         "category": "Tools",
+        "platform": null,
         "slug": "tools",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "Sensei",
         "description": "Learn with interactive lessons.",
         "link": "https://apps.apple.com/us/app/learn-japanese-sensei/id1495789984?ct=https%3A%2F%2Findiecatalog.app",
         "category": "Tools",
+        "platform": null,
         "slug": "tools",
-        "path": "applications"
+        "path": "applications",
+        "image": null
     },
     {
         "name": "AFK Arena",
         "description": "Adventure / Arena game",
         "link": "https://play.google.com/store/apps/details?id=com.lilithgame.hgame.gp",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Aggretsuko: Match 3",
         "description": "Puzzle game based on the popular Netflix animation series",
         "link": "https://play.google.com/store/apps/details?id=com.hive.aggretsuko",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "ALTER EGO",
         "description": "Game about literature and psychology",
         "link": "https://play.google.com/store/apps/details?id=com.caracolu.alterego",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Animal crossing: Pocket Camp",
         "description": "Build your camp with furnitures",
         "link": "https://play.google.com/store/apps/details?id=com.nintendo.zaca",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Any Kairosoft game",
         "description": "Strategy game in a RPG style",
         "link": "https://play.google.com/store/apps/dev?id=7710637777904825280",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "AZNANA",
         "description": "Narrative game",
         "link": "https://play.google.com/store/apps/details?id=com.caracolu.aznana",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "BanG Dream!",
         "description": "Popular rythm game with original and anime covered songs",
         "link": "https://play.google.com/store/apps/details?id=com.bushiroad.en.bangdreamgbp",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Bear''s Restaurant",
         "description": "Manage a restaurant for the dead people and animals",
         "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.bearsrestaurant",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Cats & Soup",
         "description": "Cook with cats and prepare delicious soups",
         "link": "https://play.google.com/store/apps/details?id=com.hidea.cat",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Fishing paradiso",
         "description": "A narrative game with a moving scenario",
         "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.fishingparadise",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "her tears were my light",
         "description": "A love story between time and space",
         "link": "https://play.google.com/store/apps/details?id=com.nomnomnami.hertearsweremylight",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Hungry hearts diner",
         "description": "Manage a Japanese restaurant and bond with your clients",
         "link": "https://play.google.com/store/apps/details?id=jp.co.gagex.orionEN",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Love is in small things",
         "description": "A cozy art game",
         "link": "https://play.google.com/store/apps/details?id=com.lunosoft.puuung1",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Snowman Story",
         "description": "Follow the story of a snowman who doesn''t want to melt",
         "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.snowman",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Sumikkogurashi farm",
         "description": "Relaxing farming game",
         "link": "https://play.google.com/store/apps/details?id=jp.co.imagineer.sumikkogurashi.farm",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Tsuki''s Oddysey",
         "description": "A passive adventure game",
         "link": "https://play.google.com/store/apps/details?id=com.hyperbeard.odyssey",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "Vanished anniversary",
         "description": "Visual novel with five unique stories",
         "link": "https://play.google.com/store/apps/details?id=com.abocado.abocado",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "ねこあつめ",
         "description": "Tamagochi game with a cat",
         "link": "https://play.google.com/store/apps/details?id=jp.co.hit_point.nekoatsume",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "旅かえる",
         "description": "A game about a Frog that goes on many journeys",
         "link": "https://play.google.com/store/apps/details?id=jp.co.hit_point.tabikaeru",
         "category": "Mobile",
-        "slug": "mobile",
         "platform": "",
-        "path": "games"
+        "slug": "mobile",
+        "path": "games",
+        "image": null
     },
     {
         "name": "unityroom",
         "description": "A list of Unity-made games playable in browser",
         "link": "https://unityroom.com/",
         "category": "Web",
-        "slug": "web",
         "platform": "",
-        "path": "games"
+        "slug": "web",
+        "path": "games",
+        "image": null
     }
 ]
