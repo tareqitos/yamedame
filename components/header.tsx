@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Socials } from "./socials"
 import { Title } from "./title"
 
