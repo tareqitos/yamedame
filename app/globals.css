@@ -59,7 +59,7 @@ body {
   transition-timing-function: cubic-bezier(.075, .82, .165, 1)
 }
 
-.title:hover>div>div {
+.title:hover>div>div:first-child {
   scale: .5;
 }
 li:hover svg {
