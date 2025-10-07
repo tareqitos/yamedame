@@ -11,8 +11,10 @@
     "@phosphor-icons/react": "^2.1.10",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
+    "fs": "^0.0.1-security",
     "mysql2": "^3.15.1",
     "next": "15.5.4",
+    "path": "^0.12.7",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

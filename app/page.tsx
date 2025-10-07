@@ -1,11 +1,13 @@
 import { Title } from "@/components/title";
 import Button from "@/components/ui/button";
 import { CardMain } from "@/components/ui/card";
+import { initDatabase } from "@/lib/init";
 import { getResources } from "@/utils/api";
 import { getCardData } from "@/utils/constants";
 import Link from "next/link";
 
 export default async function Home() {
+  await initDatabase().catch(console.error);
   const cards = getCardData();
 
   return (

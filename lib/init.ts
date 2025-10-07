@@ -1,25 +1,19 @@
 // lib/initDB.ts
 import { getConnection } from './db'
 import * as dataJSON from '../public/data.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 // const DB_NAME = process.env.DB_NAME;
-const DB_NAME = process.env.DB_NAME
-
-const TABLES_SQL = `
-CREATE TABLE IF NOT EXISTS resources (
-  name VARCHAR(50) NOT NULL,
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  description VARCHAR(140) NOT NULL,
-  link VARCHAR(300) NOT NULL,
-  category VARCHAR(50) NOT NULL,
-  platform VARCHAR(50),
-  slug VARCHAR(50) NOT NULL,
-  path VARCHAR(50) NOT NULL,
-  image VARCHAR(300)
-);
-`;
+const DB_NAME = process.env.DB_NAME || 'yamedame';
+let isInitialized = false;
 
 export async function initDatabase() {
+  if (isInitialized) {
+    console.log('Database already initialized, skipping...');
+    return;
+  }
+
   // Connect to MySQL server without specifying a database
   const conn = await getConnection();
 
@@ -37,33 +31,23 @@ export async function initDatabase() {
   // Connect to the new/target DB
   const dbConn = await getConnection(DB_NAME);
 
-  // Create tables if they don’t exist
-  await dbConn.query(TABLES_SQL);
+  // Read and execute the seed SQL file instead of creating tables separately
+  const SEED_SQL = readFileSync(join(process.cwd(), 'public/database.sql'), 'utf-8');
 
-  const data = Array.isArray(dataJSON) ? dataJSON : (dataJSON as any).default || [];
+  // Split the SQL file into individual statements and execute them
+  const statements = SEED_SQL
+    .split(';')
+    .map(stmt => stmt.trim())
+    .filter(stmt => stmt.length > 0 && !stmt.startsWith('/*') && !stmt.startsWith('--'));
 
-  // Seed all resources from data.json
-  for (const resource of data) {
-    const SEED_SQL = `
-      INSERT INTO resources (name, description, link, category, platform, slug, path, image)
-      SELECT ?, ?, ?, ?, ?, ?, ?, ?
-      WHERE NOT EXISTS (
-        SELECT 1 FROM resources WHERE name = ?
-      );
-    `;
-
-    await dbConn.query(SEED_SQL, [
-      resource.name,
-      resource.description,
-      resource.link,
-      resource.category,
-      resource.platform,
-      resource.slug,
-      resource.path,
-      resource.image,
-      resource.name
-    ]);
+  for (const statement of statements) {
+    if (statement.trim()) {
+      await dbConn.query(statement);
+    }
   }
 
+
   await dbConn.end();
+  isInitialized = true;
+  console.log('Database initialization completed');
 }
