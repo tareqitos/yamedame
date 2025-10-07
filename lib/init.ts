@@ -31,6 +31,15 @@ export async function initDatabase() {
   // Connect to the new/target DB
   const dbConn = await getConnection(DB_NAME);
 
+  // Check if tables already exist
+  const [tables] = await dbConn.query(`SHOW TABLES LIKE 'resources'`);
+  if ((tables as any[]).length > 0) {
+    console.log('Tables already exist, skipping initialization...');
+    await dbConn.end();
+    isInitialized = true;
+    return;
+  }
+
   // Read and execute the seed SQL file instead of creating tables separately
   const SEED_SQL = readFileSync(join(process.cwd(), 'public/database.sql'), 'utf-8');
 
