@@ -1,14 +1,21 @@
 // lib/initDB.ts
-import { getConnection } from './db'
-import * as dataJSON from '../public/data.json';
+import { getConnection } from '../lib/db'
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { config } from 'dotenv';
 
-// const DB_NAME = process.env.DB_NAME;
-const DB_NAME = process.env.DB_NAME || 'yamedame';
+// Specify the exact path to the .env file
+import 'dotenv/config';
+
+const DB_NAME = process.env.DB_NAME || 'yamedame_db';
 let isInitialized = false;
 
-export async function initDatabase() {
+// Add debug logging
+console.log('Current working directory:', process.cwd());
+console.log('DB_NAME from env:', process.env.DB_NAME);
+console.log('DB_USERNAME from env:', process.env.DB_USERNAME);
+
+async function initDatabase() {
   if (isInitialized) {
     console.log('Database already initialized, skipping...');
     return;
@@ -60,3 +67,8 @@ export async function initDatabase() {
   isInitialized = true;
   console.log('Database initialization completed');
 }
+
+initDatabase().catch(err => {
+  console.error('Database initialization failed:', err);
+  process.exit(1);
+});
