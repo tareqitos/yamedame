@@ -1,6 +1,6 @@
 import { Title } from "@/components/title";
 import Button from "@/components/ui/button";
-import { CardMain } from "@/components/ui/card";
+import { MainCard } from "@/components/ui/card";
 import { getCardData } from "@/utils/constants";
 import Link from "next/link";
 
@@ -16,11 +16,11 @@ export default async function Home() {
       <div className=" gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card, index) => (
           <Link key={index} href={`/${card.path}`}>
-            <CardMain
+            <MainCard
               icon={card.icon}
               path={card.path}
               title={card.title}
-              description={card.desc}
+              desc={card.desc}
             />
           </Link>
         ))}

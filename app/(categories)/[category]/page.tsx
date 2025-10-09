@@ -1,13 +1,13 @@
-import { CardResource } from "@/components/ui/card";
+import { ResourceCard } from "@/components/ui/card";
 import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
-import { CardMainProps } from "@/types/types";
+import { MainCardProps } from "@/types/types";
 import { getResources } from "@/utils/api";
 import { getCardByPath, getCardData } from "@/utils/constants";
 import { convertToSlug, groupByCategory } from "@/utils/helpers";
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const { category } = await params;
-    const card = getCardByPath(category) as CardMainProps;
+    const card = getCardByPath(category) as MainCardProps;
 
     const data = await getResources()
     const resources = groupByCategory(data.filter((data: { path: string }) => data.path === category));
@@ -28,7 +28,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                         <div key={index}>
                             <div id={convertToSlug(cat[0])} className="pt-4"></div>
                             <h2 className="text-2xl font-semibold">{cat[0]}</h2>
-                            <CardResource
+                            <ResourceCard
                                 array={cat[1]}
                                 className="mb-10"
                             />

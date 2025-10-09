@@ -2,7 +2,7 @@ import { Icons, IconsCategory } from "@/utils/constants"
 import clsx from "clsx"
 
 
-export const Icon = ({ path, size, className }: { path?: string, size: number, className: string }) => {
+export const Icon = ({ path, size, className }: { path?: string, size: number, className?: string }) => {
     return (
         <>
             {Icons.map((item, index) => (

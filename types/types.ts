@@ -11,14 +11,14 @@ export type Item = {
 
 // Card props types
 
-export type CardMainProps = {
+export type MainCardProps = {
     icon: string,
     path?: string,
     title: string,
     desc: string,
 }
 
-export type CardResourceProps = {
+export type ResourceCardProps = {
     array: Item[],
     className?: string,
 }
