@@ -7,6 +7,7 @@ export type Item = {
     path: string;
     slug: string;
     image?: string
+    platform?: string[];
 }
 
 // Card props types

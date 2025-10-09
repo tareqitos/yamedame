@@ -1,4 +1,4 @@
-import { CardMainProps, Item } from "@/types/types";
+import { MainCardProps } from "@/types/types";
 import { Icon, IconCategory } from "./icon"
 import { convertToSlug } from "@/utils/helpers";
 import Link from "next/link";
@@ -27,7 +27,7 @@ export const SidebarCategory = ({ groups }: SidebarProps) => {
 }
 
 type SidebarMenuProps = {
-    items: CardMainProps[]
+    items: MainCardProps[]
 }
 
 export const SidebarMenu = ({ items }: SidebarMenuProps) => {

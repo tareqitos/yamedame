@@ -1,4 +1,4 @@
-import { ResourceCard } from "@/components/ui/card";
+import { MediaCard, ResourceCard } from "@/components/ui/card";
 import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
 import { MainCardProps } from "@/types/types";
 import { getResources } from "@/utils/api";
@@ -28,15 +28,18 @@ export default async function CategoryPage({ params }: { params: { category: str
                         <div key={index}>
                             <div id={convertToSlug(cat[0])} className="pt-4"></div>
                             <h2 className="text-2xl font-semibold">{cat[0]}</h2>
+                            {category === "media" ? (
+                                <MediaCard array={cat[1]} className="mb-10" />
+                            ) : (
                             <ResourceCard
                                 array={cat[1]}
                                 className="mb-10"
-                            />
+                                />)}
                         </div>
                     ))}
                 </section>
             </div>
-            <aside className="hidden lg:block w-60 h-fit p-4 mt-20 border-l-1 border-amber-50/10 sticky top-20">
+            <aside className="hidden lg:block w-60 h-fit p-4 mt-20 border-l-1 border-primary/10 sticky top-20">
                 <SidebarCategory groups={Object.keys(resources)} />
             </aside>
         </div>
