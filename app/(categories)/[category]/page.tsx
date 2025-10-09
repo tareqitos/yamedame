@@ -1,22 +1,21 @@
 import { CardResource } from "@/components/ui/card";
-import { Sidebar } from "@/components/ui/sidebar";
+import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
+import { CardMainProps } from "@/types/types";
 import { getResources } from "@/utils/api";
-import { getCardByPath } from "@/utils/constants";
+import { getCardByPath, getCardData } from "@/utils/constants";
 import { convertToSlug, groupByCategory } from "@/utils/helpers";
-
-type TitleData = { title: string; desc: string; icon: string }
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const { category } = await params;
-    const card = getCardByPath(category) as TitleData
+    const card = getCardByPath(category) as CardMainProps;
 
     const data = await getResources()
     const resources = groupByCategory(data.filter((data: { path: string }) => data.path === category));
 
     return (
         <div className="flex flex-row gap-8 ">
-            <aside className="hidden lg:block w-60 h-fit p-4 mt-20 rounded-xl bg-card-background ">
-                <Sidebar groups={Object.keys(resources)} />
+            <aside className="hidden xl:block w-70 h-fit p-4 mt-20 rounded-xl bg-card-background sticky top-20 ">
+                <SidebarMenu items={getCardData()} />
             </aside>
             <div className="flex flex-col flex-1">
                 <section className="mt-10 lg:mt-20">
@@ -37,6 +36,9 @@ export default async function CategoryPage({ params }: { params: { category: str
                     ))}
                 </section>
             </div>
+            <aside className="hidden lg:block w-60 h-fit p-4 mt-20 border-l-1 border-amber-50/10 sticky top-20">
+                <SidebarCategory groups={Object.keys(resources)} />
+            </aside>
         </div>
     )
 }

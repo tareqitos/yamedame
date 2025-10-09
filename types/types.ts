@@ -13,9 +13,9 @@ export type Item = {
 
 export type CardMainProps = {
     icon: string,
-    path: string,
+    path?: string,
     title: string,
-    description: string,
+    desc: string,
 }
 
 export type CardResourceProps = {

@@ -44,7 +44,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
         <Header />
-        <main className="flex-1 px-[max(2rem,calc(50vw-600px))]">
+          <main className="flex-1 px-[max(2rem,calc(50vw-800px))]">
           {children}
         </main>
         <Footer />

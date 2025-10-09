@@ -2,11 +2,11 @@ import { Icons, IconsCategory } from "@/utils/constants"
 import clsx from "clsx"
 
 
-export const Icon = ({ path, size }: { path: string, size: number }) => {
+export const Icon = ({ path, size, className }: { path?: string, size: number, className: string }) => {
     return (
         <>
             {Icons.map((item, index) => (
-                item.path === path ? <item.icon key={index} size={size} color={item.iconColor} weight="regular" /> : null
+                item.path === path ? <item.icon key={index} size={size} color={item.iconColor} weight="regular" className={className} /> : null
             ))}
         </>
     )

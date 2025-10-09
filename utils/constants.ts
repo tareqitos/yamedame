@@ -14,7 +14,7 @@ export const Icons = [
 
 export const IconsCategory = [
   { category: 'dictionaries', icon: BooksIcon, iconColor: "#23AE5B" },
-  { category: 'vocabulary', icon: TranslateIcon, iconColor: "#426BFE" },
+  { category: 'vocabulary-kanji', icon: TranslateIcon, iconColor: "#426BFE" },
   { category: 'grammar', icon: BookOpenTextIcon, iconColor: "#bdc3c7" },
   { category: 'kana', icon: FlowerTulipIcon, iconColor: "#d6408bff" },
   { category: 'mobile', icon: DeviceMobileIcon, iconColor: "#f1c40f" },
