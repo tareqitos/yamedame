@@ -17,7 +17,7 @@ export const IconCategory = ({ category, size, className }: { category: string, 
         <>
             {IconsCategory.map((item, index) => (
                 item.category === category ? 
-                    <item.icon key={index} size={size} color={item.iconColor} weight="bold" className={clsx("max-w-30 align-sub icons", className)} /> :
+                    <item.icon key={index} size={size} color={item.iconColor} weight="bold" className={clsx("max-w-30 align-sub", className)} /> :
                  null
             ))}
         </>

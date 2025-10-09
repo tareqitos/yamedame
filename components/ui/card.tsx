@@ -27,7 +27,7 @@ const ResourceCard = ({ array, className }: ResourceCardProps) => {
             {array.map((child) => (
                 <li key={child.id}>
                     <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
-                    <a href={child.link} target="_blank" className={`flex-1 hover:text-white transition-primary`}>
+                    <a href={child.link} target="_blank" className={`flex-1 hover:text-link-hover transition-primary`}>
                         {child.name}
                     </a>
                     &nbsp;- <span className="text-foreground">{child.description}</span>
