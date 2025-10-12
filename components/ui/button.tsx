@@ -2,12 +2,13 @@ import React from "react";
 import clsx from "clsx";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: "primary" | "secondary"
+    variant?: "primary" | "secondary" | "search"
 };
 
 const buttonStyles = {
     primary: "text-2xl cursor-pointer hover:text-primary transition-primary",
-    secondary: "text-primary font-semibold bg-card-background py-2 px-4 rounded-full transition-border cursor-pointer"
+    secondary: "text-primary font-semibold bg-card-background py-2 px-4 rounded-full transition-border cursor-pointer",
+    search: "inline-flex font-semibold bg-card-background py-2 px-4 rounded-lg border-1 border-primary/10 cursor-pointer"
 };
 
 const Button: React.FC<ButtonProps> = ({
