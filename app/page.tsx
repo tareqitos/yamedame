@@ -1,4 +1,4 @@
-import { Title } from "@/components/title";
+import { Title } from "@/components/ui/title";
 import Button from "@/components/ui/button";
 import { MainCard } from "@/components/ui/card";
 import { getCardData } from "@/utils/constants";
