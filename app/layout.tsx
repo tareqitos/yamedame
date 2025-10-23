@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/themeContext";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,11 +44,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
       >
         <ThemeProvider>
-        <Header />
+          <NextTopLoader showForHashAnchor={false} />
+          <Header />
           <main className="flex-1 px-[max(2rem,calc(50vw-800px))]">
-          {children}
-        </main>
-        <Footer />
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
