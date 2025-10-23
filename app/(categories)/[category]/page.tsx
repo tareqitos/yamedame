@@ -13,35 +13,33 @@ export default async function CategoryPage({ params }: { params: { category: str
     const resources = groupByCategory(data.filter((data: { path: string }) => data.path === category));
 
     return (
-        <div className="flex flex-row gap-8 ">
-            <aside className="hidden xl:block w-70 h-fit p-4 mt-20 rounded-xl bg-card-background sticky top-20 ">
+        <>
+            <div className="flex flex-row gap-8 ">
                 <SidebarMenu items={getCardData()} />
-            </aside>
-            <div className="flex flex-col flex-1">
-                <section className="mt-10 lg:mt-20">
-                    <h1 className="text-4xl font-bold">{`${card.title} ${card.icon}`}</h1>
-                    <p className="opacity-90">{card.desc}</p>
-                </section>
-                <hr className="my-10 opacity-10" />
-                <section>
-                    {Object.entries(resources).map((cat, index) => (
-                        <div key={index}>
-                            <div id={convertToSlug(cat[0])} className="pt-4"></div>
-                            <h2 className="text-2xl font-semibold">{cat[0]}</h2>
-                            {category === "media" ? (
-                                <MediaCard array={cat[1]} className="mb-10" />
-                            ) : (
-                            <ResourceCard
-                                array={cat[1]}
-                                className="mb-10"
-                                />)}
-                        </div>
-                    ))}
-                </section>
+                <div className="flex flex-col flex-1">
+                    <section className="mt-10 lg:mt-20">
+                        <h1 className="text-4xl font-bold">{`${card.title} ${card.icon}`}</h1>
+                        <p className="opacity-90">{card.desc}</p>
+                    </section>
+                    <hr className="my-10 opacity-10" />
+                    <section>
+                        {Object.entries(resources).map((cat, index) => (
+                            <div key={index}>
+                                <div id={convertToSlug(cat[0])} className="pt-4"></div>
+                                <h2 className="text-2xl font-semibold">{cat[0]}</h2>
+                                {category === "media" ? (
+                                    <MediaCard array={cat[1]} className="mb-10" />
+                                ) : (
+                                    <ResourceCard
+                                        array={cat[1]}
+                                        className="mb-10"
+                                    />)}
+                            </div>
+                        ))}
+                    </section>
+                </div>
+                <SidebarCategory items={Object.keys(resources)} />
             </div>
-            <aside className="hidden lg:block w-60 h-fit p-4 mt-20 border-l-1 border-primary/10 sticky top-20">
-                <SidebarCategory groups={Object.keys(resources)} />
-            </aside>
-        </div>
+        </>
     )
 }
