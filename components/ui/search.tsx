@@ -52,8 +52,8 @@ export const SearchButton = () => {
             </Button>
 
             {isOpen && (
-                <div className="fixed inset-0 flex h-fit top-20 justify-center z-50">
-                    <div className="bg-black/6f0 fixed inset-0 flex items-center justify-center -z-1" onClick={() => handleClose()}></div>
+                <div className="fixed inset-0 flex h-fit top-20 justify-center z-1000">
+                    <div className="bg-black/60 fixed inset-0 flex items-center justify-center -z-1" onClick={() => handleClose()}></div>
                     <div className="bg-card-background p-4 pb-10 rounded-lg w-11/12 max-w-4xl">
                         <form onSubmit={(e) => handleSubmit(e)}>
                             <input
@@ -71,8 +71,10 @@ export const SearchButton = () => {
                                 {fitleredResults.map((result, index) => (
                                     <li key={index} className="border-b border-primary/10 last:border-b-0">
                                         <Link href={`/${result.path}#${result.slug}`} className="md:flex items-center gap-2 p-2 border-b border-primary/10 last:border-b-0" onClick={() => handleClose()}>
-                                            <Icon path={result.path} className="inline-block md:mr-2" size={20} />
-                                            <p className="text-primary font-semibold hover:text-foreground transition-primary">{result.name}</p>
+                                            <div className="flex items-center gap-2">
+                                                <Icon path={result.path} className="inline-block md:mr-2" size={20} />
+                                                <p className="text-primary font-semibold hover:text-foreground transition-primary">{result.name}</p>
+                                            </div>
                                             <span className="hidden md:inline">-</span>
                                             <p className="text-sm md:flex-1">{result.description}</p>
                                             <p className="text-sm opacity-50">{result.category}</p>
