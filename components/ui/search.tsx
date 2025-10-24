@@ -53,14 +53,14 @@ export const SearchButton = () => {
 
             {isOpen && (
                 <div className="fixed inset-0 flex h-fit top-20 justify-center z-1000">
-                    <div className="bg-black/60 fixed inset-0 flex items-center justify-center -z-1" onClick={() => handleClose()}></div>
-                    <div className="bg-card-background p-4 pb-10 rounded-lg w-11/12 max-w-4xl">
+                    <div className="bg-black/60 fixed inset-0 flex items-center justify-center -z-1 transition-primary" onClick={() => handleClose()}></div>
+                    <div className="bg-card-background p-4 pb-10 rounded-lg w-11/12 max-w-4xl border-1 border-primary">
                         <form onSubmit={(e) => handleSubmit(e)}>
                             <input
                                 ref={inputRef}
                                 type="text"
                                 placeholder="Type to search..."
-                                className="w-full p-2 border border-primary/10 rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
+                                className="w-full p-2 border border-primary/10 rounded-md focus:outline-none focus:ring-1 focus:ring-primary/50"
                                 autoFocus
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value.trim() || '')}

@@ -19,7 +19,7 @@ const MenuList = ({ items, onLinkClick }: { items: MainCardProps[]; onLinkClick?
         {items.slice(0, -1).map((item, index: number) => (
             <div key={index} className="mb-2">
                 <Icon path={item.path} size={20} className="inline-block mr-4" />
-                <Link href={`/${item.path}`} className="inline text-lg" onClick={onLinkClick}>{item.title}</Link>
+                <Link href={`/${item.path}`} className="inline text-lg hover:text-primary" onClick={onLinkClick}>{item.title}</Link>
             </div>
         ))}
     </>
@@ -36,7 +36,7 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
                 </Button>
             </div>
 
-            <div className={`fixed xl:hidden top-0 left-0 w-full h-full transition ${isOpen ? 'bg-black/50 z-100' : 'bg-black/0 invisible'}`} onClick={() => setIsOpen(false)}></div>
+            <div className={`fixed xl:hidden top-0 left-0 w-full h-full transition-primary ${isOpen ? 'bg-black/50 z-100' : 'bg-black/0 invisible'}`} onClick={() => setIsOpen(false)}></div>
 
             <div className="hidden xl:block sticky left-0 top-10 h-fit w-60 p-4 mt-20 rounded-xl bg-card-background z-50 drop-shadow">
                 <aside className="z-100">
@@ -71,7 +71,7 @@ const CategoryList = ({ items, onLinkClick }: { items: string[]; onLinkClick?: (
         {items.map((cat: string, index: number) => (
             <div key={index} className="mb-2">
                 <IconCategory category={convertToSlug(cat)} size={20} className="inline-block mr-4" />
-                <a href={`#${convertToSlug(cat)}`} className="inline text-lg" onClick={onLinkClick}>{cat}</a>
+                <a href={`#${convertToSlug(cat)}`} className="inline text-lg hover:text-primary" onClick={onLinkClick}>{cat}</a>
             </div>
         ))}
     </>
