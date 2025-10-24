@@ -76,3 +76,22 @@ li:hover svg {
 .center-vertical {
   @apply top-1/2 -translate-y-1/2;
 }
+.button-extrude {
+  @apply filter;
+  filter: drop-shadow(0 4px 0px var(--color-primary));
+
+  &:hover {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 8px 0px var(--color-primary));
+  }
+
+  &:active {
+    transform: translateY(4px);
+    filter: drop-shadow(0 0px 0px var(--color-primary));
+  }
+}
+
+.drop-shadow {
+  @apply filter;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25));
+}

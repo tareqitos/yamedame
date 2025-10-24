@@ -25,7 +25,7 @@ export default async function Home() {
           </Link>
         ))}
       </div>
-      <div className="flex gap-2 m-5">
+      <div className="flex gap-2 my-10">
         <Button variant="secondary"><Link href="/about">About</Link></Button>
         <Button variant="secondary"><Link href="https://ko-fi.com/H2H0QZVAZ">Donate</Link></Button>
         <Button variant="secondary"><Link href="/updates">Updates 🌸</Link></Button>

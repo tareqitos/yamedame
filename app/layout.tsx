@@ -46,7 +46,7 @@ export default function RootLayout({
         <ThemeProvider>
           <NextTopLoader showForHashAnchor={false} />
           <Header />
-          <main className="flex-1 px-[max(2rem,calc(50vw-800px))]">
+          <main className="flex-1 px-[max(1rem,calc(50vw-800px))] lg:px-[max(2rem,calc(50vw-800px))]">
             {children}
           </main>
           <Footer />
