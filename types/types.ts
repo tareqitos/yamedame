@@ -3,7 +3,7 @@ export type Item = {
     name: string;
     description: string,
     link: string,
-    category?: string;
+    category: string;
     path?: string;
     slug: string;
     image?: string
