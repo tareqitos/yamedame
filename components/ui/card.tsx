@@ -8,7 +8,7 @@ import Image from "next/image"
 
 const MainCard = ({ title, path, desc }: MainCardProps) => {
     return (
-        <div className="flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background transition-border">
+        <div className="flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background drop-shadow-lg transition-border">
             <span className="w-fit p-2 rounded-sm bg-background" >
                 <Icon path={path} size={28} />
             </span>
@@ -27,10 +27,10 @@ const ResourceCard = ({ array, className }: ResourceCardProps) => {
             {array.map((child) => (
                 <li key={child.id}>
                     <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
-                    <a href={child.link} target="_blank" className={`flex-1 hover:text-link-hover transition-primary`}>
+                    <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`}>
                         {child.name}
                     </a>
-                    &nbsp;- <span className="text-foreground">{child.description}</span>
+                    &nbsp;- <span className="text-[16px] sm:text-lg text-foreground">{child.description}</span>
                 </li>
             ))}
         </ul>

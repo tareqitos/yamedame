@@ -7,7 +7,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const buttonStyles = {
     primary: "text-2xl cursor-pointer hover:text-primary transition-primary",
-    secondary: "text-primary font-semibold bg-card-background py-2 px-4 rounded-full transition-border cursor-pointer",
+    secondary: "text-primary font-semibold bg-card-background py-2 px-4 drop-shadow-md rounded-full transition-border cursor-pointer",
     button: "text-card-background hover:text-primary font-bold bg-primary hover:bg-card-background py-2 px-4 rounded-xl border-2 border-primary transition-primary cursor-pointer",
     search: "inline-flex font-semibold bg-card-background py-2 px-4 rounded-lg border-1 border-primary/10 cursor-pointer"
 };

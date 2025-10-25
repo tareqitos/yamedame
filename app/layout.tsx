@@ -44,7 +44,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
       >
         <ThemeProvider>
-          <NextTopLoader showForHashAnchor={false} />
+          <NextTopLoader showForHashAnchor={false} showSpinner={false} />
           <Header />
           <main className="flex-1 px-[max(1rem,calc(50vw-800px))] lg:px-[max(2rem,calc(50vw-800px))]">
             {children}

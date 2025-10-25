@@ -9,10 +9,10 @@ export const Header = () => {
             <Title />
             <div className="flex gap-4">
                 <SearchButton />
-                <div className="border-l-1"></div>
+                <div className="border-l-1 opacity-20"></div>
                 <ThemeToggle />
-                <div className="border-l-1"></div>
-                <Socials className="flex gap-2" />
+                <div className="border-l-1 opacity-20"></div>
+                <Socials className="flex gap-3" />
             </div>
         </div>
     )

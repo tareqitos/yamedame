@@ -17,11 +17,11 @@ export default async function CategoryPage({ params }: { params: { category: str
             <div className="flex flex-row gap-8 ">
                 <SidebarMenu items={getCardData()} />
                 <div className="flex flex-col flex-1">
-                    <section className="mt-10 lg:mt-20">
-                        <h1 className="text-4xl font-bold">{`${card.title} ${card.icon}`}</h1>
+                    <section className="sticky top-0 pt-10 lg:-top-10 lg:pt-20 bg-background z-10">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold dynamic-title transition-primary">{`${card.title} ${card.icon}`}</h1>
                         <p className="opacity-90">{card.desc}</p>
+                        <hr className="mt-10 opacity-10" />
                     </section>
-                    <hr className="my-10 opacity-10" />
                     <section>
                         {Object.entries(resources).map((cat, index) => (
                             <div key={index}>
