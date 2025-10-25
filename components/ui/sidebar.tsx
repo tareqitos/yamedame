@@ -16,9 +16,14 @@ const MenuList = ({ items, onLinkClick }: { items: MainCardProps[]; onLinkClick?
     <>
         <h1 className="opacity-80">Menu</h1>
         <hr className="my-4 opacity-20" />
+        <div className="mb-2">
+            <Icon path="beginners" size={20} className="inline-block align-sub mr-4" />
+            <Link href="/beginners" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Beginner Essentials</Link>
+        </div>
+        <hr className="my-4 opacity-20" />
         {items.slice(0, -1).map((item, index: number) => (
             <div key={index} className="mb-2">
-                <Icon path={item.path} size={20} className="inline-block mr-4" />
+                <Icon path={item.path} size={20} className="inline-block align-sub mr-4" />
                 <Link href={`/${item.path}`} className="inline text-lg hover:text-primary" onClick={onLinkClick}>{item.title}</Link>
             </div>
         ))}
@@ -38,7 +43,7 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
 
             <div className={`fixed xl:hidden top-0 left-0 w-full h-full transition-primary ${isOpen ? 'bg-black/50 z-100' : 'bg-black/0 invisible'}`} onClick={() => setIsOpen(false)}></div>
 
-            <div className="hidden xl:block sticky left-0 top-10 h-fit w-60 p-4 mt-20 rounded-xl bg-card-background z-50 drop-shadow">
+            <div className="hidden xl:block sticky left-0 top-10 h-fit min-w-70 p-4 mt-20 rounded-xl bg-card-background z-50 drop-shadow">
                 <aside className="z-100">
                     <MenuList items={items} />
                 </aside>

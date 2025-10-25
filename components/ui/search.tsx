@@ -55,7 +55,7 @@ export const SearchButton = () => {
 
     return (
         <>
-            <Button variant="search" className="inline-flex" onClick={() => isOpen ? handleClose() : handleOpen()}>
+            <Button variant="search" className="inline-flex transition-primary !duration-50 hover:pr-8" onClick={() => isOpen ? handleClose() : handleOpen()}>
                 <MagnifyingGlassIcon size={24} className="md:mr-2" />
                 <span className="hidden md:inline">Search</span>
             </Button>
@@ -72,7 +72,7 @@ export const SearchButton = () => {
                                 className="w-full p-2 border border-primary/10 rounded-md focus:outline-none focus:ring-1 focus:ring-primary/50"
                                 autoFocus
                                 value={query}
-                                onChange={(e) => setQuery(e.target.value.trim() || '')}
+                                onChange={(e) => setQuery(e.target.value || '')}
                             />
                         </form>
                         {fitleredResults.length > 0 && (

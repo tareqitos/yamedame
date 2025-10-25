@@ -3,8 +3,8 @@ export type Item = {
     name: string;
     description: string,
     link: string,
-    category: string;
-    path: string;
+    category?: string;
+    path?: string;
     slug: string;
     image?: string
     platform?: string[];
