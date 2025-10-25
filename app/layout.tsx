@@ -94,7 +94,7 @@ export default function RootLayout({
 function Head() {
   return (
     <head>
-      {/* <script defer src="https://analytics.tareqitos.me/script.js" data-website-id="420f37a5-a3c0-424a-803f-3b937bf0c67f"></script> */}
+      <script defer src="https://analytics.tareqitos.me/script.js" data-website-id="420f37a5-a3c0-424a-803f-3b937bf0c67f"></script>
       <meta property="og:image" content="/og-image.png"></meta>
       <meta property="og:site_name" content="Yame Dame"></meta>
       <meta property="og:title" content="Yame Dame"></meta>
