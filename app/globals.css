@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #007ACC;
+  --color-logo: #C93D1A;
+    --card-background: #E9EEF3;
+    --link-hover: #68b3e4;
+}
+
+[data-theme="dark"] {
+  --background: #212529;
+  --foreground: #ededed;
+  --primary: #78b3e2;
+  --color-logo: #C93D1A;
+  --card-background: #17191C;
+  --link-hover: #ffffff;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-card-background: var(--card-background);
+    --color-logo: var(--color-logo);
+    --color-link-hover: var(--link-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-mochiy: var(--font-mochiy);
+  --font-nunito: var(--font-nunito);
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #212529;
+    --foreground: #ededed;
+    --primary: #78b3e2;
+    --color-logo: #C93D1A;
+      --card-background: #17191C;
+  }
+}
+
+*/
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.transition-border {
+  @apply border-transparent border-1 transition-all hover:border-primary
+}
+.transition-primary {
+  @apply transition-all duration-100 ease-in
+}
+
+.transition-logo {
+  @apply transition-transform duration-200;
+  transition-timing-function: cubic-bezier(.075, .82, .165, 1)
+}
+
+.title:hover>div>div:first-child {
+  scale: .5;
+}
+li:hover svg {
+  @apply fill-link-hover filter;
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+.center-horizontal {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+.center-vertical {
+  @apply top-1/2 -translate-y-1/2;
+}
+.button-extrude {
+  @apply filter;
+  filter: drop-shadow(0 4px 0px var(--color-primary));
+
+  &:hover {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 8px 0px var(--color-primary));
+  }
+
+  &:active {
+    transform: translateY(4px);
+    filter: drop-shadow(0 0px 0px var(--color-primary));
+  }
+}
+
+.drop-shadow {
+  @apply filter;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25));
+}
