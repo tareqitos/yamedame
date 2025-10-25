@@ -1,4 +1,5 @@
-import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon } from "@phosphor-icons/react/dist/ssr";
+import { Item } from "@/types/types";
+import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon } from "@phosphor-icons/react/dist/ssr";
 
 // Using Phosphor Icons
 export const Icons = [
@@ -10,6 +11,7 @@ export const Icons = [
   { path: 'games', icon: GameControllerIcon, iconColor: "#e67e22" },
   { path: 'applications', icon: DesktopIcon, iconColor: "#de6878" },
   { path: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
+  { path: 'beginners', icon: StarIcon, iconColor: "#fcbc32" },
   { path: '', icon: SparkleIcon, iconColor: "#fcbc32" },
 ]
 
@@ -57,3 +59,99 @@ export const getCardData = () => {
 export const getCardByPath = (path: string) => {
   return getCardData().find(card => card.path === path);
 };
+
+export const dict: Item[] = [
+  {
+    id: "1",
+    name: "Jisho",
+    link: "https://jisho.org/",
+    description: "Powerful dictionary with detailed explanations.",
+    slug: "dictionaries"
+  },
+  {
+    id: "2",
+    name: "Jotoba",
+    link: "https://jotoba.de/",
+    description: "Multilingual dictionary with context.",
+    slug: "dictionaries"
+  },
+  {
+    id: "3",
+    name: "Yomitan",
+    link: "https://github.com/themoeway/yomitan",
+    description: "Translate text on webpages easily.",
+    slug: "dictionaries"
+  },
+]
+
+export const vocabulary: Item[] = [
+  {
+    id: "1",
+    name: "Kana Dojo",
+    link: "https://kanadojo.com/",
+    description: "KanaDojo is a fun, minimalist, aesthetic platform for learning and practicing Japanese online.",
+    slug: "vocabulary-kanji"
+  },
+  {
+    id: "2",
+    name: "Katakana Chart",
+    link: "https://www.tofugu.com/japanese/learn-katakana/",
+    description: "Comprehensive guide to learning Katakana.",
+    slug: "vocabulary-kanji"
+  },
+  {
+    id: "3",
+    name: "DJT Kana",
+    link: "https://djtguide.neocities.org/kana/",
+    description: "Interactive kana learning tool.",
+    slug: "vocabulary-kanji"
+  },
+]
+
+export const grammar: Item[] = [
+  {
+    id: "1",
+    name: "Imabi",
+    link: "https://imabi.org/",
+    description: "Extensive Japanese grammar resource.",
+    slug: "grammar"
+  },
+  {
+    id: "2",
+    name: "Tae Kim's Guide",
+    link: "https://guidetojapanese.org/learn/",
+    description: "Your go-to guide for grammar and basics.",
+    slug: "grammar"
+  },
+  {
+    id: "3",
+    name: "All About Particles",
+    link: "https://tatsumoto-ren.github.io/blog/all-about-particles.html",
+    description: "A organized book containing detailed explanations of Japanese particles.",
+    slug: "grammar"
+  },
+]
+
+export const anki: Item[] = [
+  {
+    id: "1",
+    name: "Japanese course",
+    link: "https://ankiweb.net/shared/info/911122782",
+    description: "Self-contained Japanese course using sample sentences from anime.",
+    slug: "kana"
+  },
+  {
+    id: "2",
+    name: "Core 2.3k V3",
+    link: "https://anacreondjt.gitlab.io/docs/coredeck/",
+    description: "High quality cards for the most common Japanese words.",
+    slug: "kana"
+  },
+  {
+    id: "3",
+    name: "Kaishi 1.5k",
+    link: "https://ankiweb.net/shared/info/1196762551",
+    description: "A modern Japanese deck in the spirit of Core 2k with additional useful features.",
+    slug: "kana"
+  },
+]
