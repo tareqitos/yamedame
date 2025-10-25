@@ -3,6 +3,7 @@ import Button from "@/components/ui/button";
 import { MainCard } from "@/components/ui/card";
 import { getCardData } from "@/utils/constants";
 import Link from "next/link";
+import { RandomLink } from "@/components/random";
 
 export default async function Home() {
   const cards = getCardData();
@@ -13,7 +14,10 @@ export default async function Home() {
         <Title fontSize="text-6xl lg:text-8xl" logoSize="w-15 h-15 lg:w-25 lg:h-25" />
         <p className="mt-2 px-4 py-1 text-sm bg-card-background rounded-2xl float-end">No excuses not to learn Japanese</p>
       </div>
-      <div className=" gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mb-5">
+        <RandomLink />
+      </div>
+      <div className="xl:px-20 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card, index) => (
           <Link key={index} href={`/${card.path}`}>
             <MainCard
