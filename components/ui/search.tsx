@@ -2,11 +2,12 @@
 
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"
 import Button from "./button"
-import { useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 import { search } from "@/utils/minisearch";
 import { SearchResult } from "minisearch";
 import Link from "next/link";
 import { Icon } from "./icon";
+import { ArrowSquareUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 export const SearchButton = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,14 @@ export const SearchButton = () => {
         document.body.style.overflow = "";
     }
 
+    const handleOpenLink = (link: string, e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (link) {
+            window.open(link, '_blank');
+        }
+    };
+
     return (
         <>
             <Button variant="search" className="inline-flex" onClick={() => isOpen ? handleClose() : handleOpen()}>
@@ -73,8 +82,11 @@ export const SearchButton = () => {
                                         <Link href={`/${result.path}#${result.slug}`} className="md:flex items-center gap-2 p-2 border-b border-primary/10 last:border-b-0" onClick={() => handleClose()}>
                                             <div className="flex items-center gap-2">
                                                 <Icon path={result.path} className="inline-block md:mr-2" size={20} />
-                                                <p className="text-primary font-semibold hover:text-foreground transition-primary">{result.name}</p>
+                                                <p className="text-primary font-semibold hover:text-link-hover">{result.name}</p>
                                             </div>
+                                            <Button variant="primary" className="text-primary" onClick={(e) => handleOpenLink(result.link, e)}>
+                                                <ArrowSquareUpRightIcon size={24} />
+                                            </Button>
                                             <span className="hidden md:inline">-</span>
                                             <p className="text-sm md:flex-1">{result.description}</p>
                                             <p className="text-sm opacity-50">{result.category}</p>
