@@ -2,9 +2,9 @@
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import { ShuffleIcon } from "@phosphor-icons/react";
-import { getResources } from "@/app/api/api";
+import { Item } from "@/types/types";
 
-export const RandomLink = () => {
+export const RandomLink = ({ resources }: { resources: Item[] }) => {
     const [randomLink, setRandomLink] = useState<string>("");
 
     useEffect(() => {
@@ -12,9 +12,8 @@ export const RandomLink = () => {
     }, []);
 
     const getRandomLink = async () => {
-        const links = await getResources();
-        const randomIndex = Math.floor(Math.random() * links.length);
-        setRandomLink(links[randomIndex].link);
+        const randomIndex = Math.floor(Math.random() * resources.length);
+        setRandomLink(resources[randomIndex].link);
     }
 
     const handleClick = (e: React.MouseEvent) => {

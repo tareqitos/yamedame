@@ -5,9 +5,11 @@ import { getCardData } from "@/utils/constants";
 import Link from "next/link";
 import { RandomLink } from "@/components/random";
 import { StarIcon } from "@phosphor-icons/react/dist/ssr";
+import { getResources } from "./api/api";
 
 export default async function Home() {
   const cards = getCardData();
+  const resources = await getResources();
 
   return (
     <div className="flex flex-col items-center border-0">
@@ -20,7 +22,7 @@ export default async function Home() {
           <StarIcon size={20} color="#fcbc32" weight="fill" className="mr-2 inline align-sub" />
           <Link href="/beginners" title="Beginner Esse">Beginner Essentials</Link>
         </Button>
-        <RandomLink />
+        <RandomLink resources={resources} />
       </div>
       <div className="xl:px-20 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card, index) => (

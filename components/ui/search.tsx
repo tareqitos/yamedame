@@ -8,8 +8,9 @@ import { SearchResult } from "minisearch";
 import Link from "next/link";
 import { Icon } from "./icon";
 import { ArrowSquareUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import { Item } from "@/types/types";
 
-export const SearchButton = () => {
+export const SearchButton = ({ resources }: { resources: Item[] }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [fitleredResults, setFilteredResults] = useState<SearchResult[]>([]);
     const [query, setQuery] = useState('');
@@ -18,7 +19,7 @@ export const SearchButton = () => {
     useEffect(() => {
         const timeoutId = setTimeout(async () => {
             if (query.trim()) {
-                const results = await search(query.trim());
+                const results = await search(query.trim(), resources);
                 setFilteredResults(results);
             } else {
                 setFilteredResults([]);
