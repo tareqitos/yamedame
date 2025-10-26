@@ -1,8 +1,8 @@
 "use client"
-import { getResources } from "@/utils/api";
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import { ShuffleIcon } from "@phosphor-icons/react";
+import { getResources } from "@/app/api/api";
 
 export const RandomLink = () => {
     const [randomLink, setRandomLink] = useState<string>("");
@@ -12,7 +12,7 @@ export const RandomLink = () => {
     }, []);
 
     const getRandomLink = async () => {
-        const links = await getResources()
+        const links = await getResources();
         const randomIndex = Math.floor(Math.random() * links.length);
         setRandomLink(links[randomIndex].link);
     }

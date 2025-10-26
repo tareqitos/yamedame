@@ -1,8 +1,8 @@
+import { getResources } from "@/app/api/api";
 import NotFound from "@/app/not-found";
 import { MediaCard, ResourceCard } from "@/components/ui/card";
 import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
 import { MainCardProps } from "@/types/types";
-import { getResources } from "@/utils/api";
 import { getCardByPath, getCardData } from "@/utils/constants";
 import { convertToSlug, groupByCategory } from "@/utils/helpers";
 
@@ -11,8 +11,9 @@ export default async function CategoryPage({ params }: { params: { category: str
 
     const card = getCardByPath(category) as MainCardProps;
 
-    const data = await getResources()
+    const data = await getResources();
     const resources = groupByCategory(data.filter((data: { path: string }) => data.path === category));
+
 
     if (!card) {
         return <NotFound />

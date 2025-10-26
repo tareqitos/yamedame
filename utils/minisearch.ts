@@ -1,5 +1,5 @@
+import { getResources } from '@/app/api/api'
 import MiniSearch from 'minisearch'
-import { getResources } from './api'
 
 let miniSearch: MiniSearch | null = null
 

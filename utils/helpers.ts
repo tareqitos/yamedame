@@ -1,5 +1,5 @@
+import { getResources } from "@/app/api/api";
 import { Item } from "@/types/types";
-import { getResources } from "./api";
 
 // Group resources by their category
 export const groupByCategory = (items: Item[]): Record<string, Item[]> => {
