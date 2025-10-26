@@ -6,7 +6,6 @@ import { Title } from "./ui/title"
 
 export const Header = async () => {
     const data = await getResources();
-
     return (
         <div className="flex justify-between p-4 bg-card-background">
             <Title />

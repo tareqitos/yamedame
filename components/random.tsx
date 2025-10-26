@@ -1,11 +1,14 @@
 "use client"
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
-import { ShuffleIcon } from "@phosphor-icons/react";
+import { DiceFiveIcon } from "@phosphor-icons/react";
 import { Item } from "@/types/types";
 
 export const RandomLink = ({ resources }: { resources: Item[] }) => {
     const [randomLink, setRandomLink] = useState<string>("");
+    if (!resources || resources.length === 0) {
+        return null;
+    }
 
     useEffect(() => {
         getRandomLink();
@@ -27,7 +30,7 @@ export const RandomLink = ({ resources }: { resources: Item[] }) => {
 
     return (
         <Button variant="secondary" onClick={handleClick}>
-            <ShuffleIcon className="mr-2 inline align-top" size={24} />
+            <DiceFiveIcon className="mr-2 inline align-top" size={24} />
             <a href={randomLink} target="_blank" title="Open a random resource!" rel="noopener noreferrer">Surprise me</a>
         </Button>
     );
