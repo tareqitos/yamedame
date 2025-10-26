@@ -1,0 +1,1402 @@
+[
+    {
+        "name": "Bret Mayer''s Kanji Resource",
+        "description": "Kanji resources for structured practice and lists.",
+        "link": "http://www.bretmayer.com/kanji.html",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Genkoyoushi Paper Generator",
+        "description": "Create manuscript paper for kanji practice.",
+        "link": "https://www.incompetech.com/graphpaper/genkoyoushi/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Hinoki Project",
+        "description": "Computational linguistics and vocabulary learning.",
+        "link": "https://hinoki-project.org/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Japanese Graph",
+        "description": "Practice kanji and vocabulary with visualizations.",
+        "link": "https://japanesegraph.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kanji by Stroke Order",
+        "description": "Learn kanji stroke order through writing practice.",
+        "link": "https://kanji.sljfaq.org/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kanji Practice",
+        "description": "Interactive platform for kanji and vocabulary.",
+        "link": "https://kanjipractice.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kanjipedia",
+        "description": "Comprehensive kanji dictionary with examples.",
+        "link": "https://www.kanjipedia.jp/howto/about.html",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Koohii Kanji Review",
+        "description": "Community-driven kanji and vocabulary learning.",
+        "link": "https://kanji.koohii.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kotoba no Gakko",
+        "description": "Vocabulary acquisition and insights.",
+        "link": "https://site.kotobanogakko.com/special/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "KotobaBot",
+        "description": "Chatbot for practicing vocabulary.",
+        "link": "https://kotobaweb.com/bot",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kotowaza",
+        "description": "Learn proverbs and cultural insights.",
+        "link": "https://kotowaza.co.uk/index.php",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kurumi Kanji Search",
+        "description": "Kanji search tool to build vocabulary.",
+        "link": "https://kurumi.com/jp/kjbh/?k=%E6%9C%AC",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Mainichi Kanji",
+        "description": "Daily kanji practice to build vocabulary.",
+        "link": "https://mainichikanji.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Niai - Similar Vocabulary",
+        "description": "Explore similar words.",
+        "link": "https://niai.mrahhal.net/similar",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Nippon Colors",
+        "description": "Traditional Japanese color meanings",
+        "link": "https://nipponcolors.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": "",
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "OniKanji",
+        "description": "Master kanji naturally with context-based learning systeme",
+        "link": "https://onikanji.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": "",
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Shared Anki Decks",
+        "description": "Anki decks for vocabulary and kanji.",
+        "link": "https://ankiweb.net/shared/info/457148655?cb=1717343711197",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "WaniKani",
+        "description": "Learn kanji and vocabulary with mnemonics.",
+        "link": "https://www.wanikani.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Wikibooks Linguistics Vocabulary",
+        "description": "Vocabulary list for linguistics terms.",
+        "link": "https://en.m.wikibooks.org/wiki/Japanese/Vocabulary/Linguistics",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Yomikatawa",
+        "description": "Learn vocabulary and kanji readings.",
+        "link": "https://yomikatawa.com/",
+        "category": "Vocabulary & Kanji",
+        "platform": null,
+        "slug": "vocabulary",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "DeepL Translator",
+        "description": "Accurate translations between languages.",
+        "link": "https://www.deepl.com/en/translator#",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "GeekyDic",
+        "description": "User-friendly online dictionary.",
+        "link": "https://emilekroeger.github.io/geekydic/app/index.html#/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Goo Dictionary",
+        "description": "Comprehensive dictionary with examples.",
+        "link": "https://dictionary.goo.ne.jp/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Jisho",
+        "description": "Powerful dictionary with detailed explanations.",
+        "link": "http://www.jisho.org/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Jisho (Hlorenzi)",
+        "description": "Alternative Jisho interface with added features.",
+        "link": "https://jisho.hlorenzi.com/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Jitenon Kanji Dictionary",
+        "description": "Kanji dictionary with detailed character breakdowns.",
+        "link": "https://kanji.jitenon.jp/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "JLect",
+        "description": "Explore dialects and regional vocabulary.",
+        "link": "https://www.jlect.com/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Jotoba",
+        "description": "Multilingual dictionary with context.",
+        "link": "https://jotoba.de/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Kanjisho",
+        "description": "Kanji-focused dictionary with readings and stroke order.",
+        "link": "https://www.kanjisho.com/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Kotobank",
+        "description": "Dictionary aggregator with multiple sources.",
+        "link": "https://kotobank.jp/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Onomato Project",
+        "description": "Explore onomatopoeia with examples.",
+        "link": "https://onomatoproject.com/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "PokeJisho",
+        "description": "Pokémon-themed dictionary.",
+        "link": "https://www.pokejisho.com/en/jisho/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Takoboto",
+        "description": "Offline dictionary with kanji lookup.",
+        "link": "https://takoboto.jp/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Weblio Thesaurus",
+        "description": "Find synonyms and related words.",
+        "link": "https://thesaurus.weblio.jp/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "dictionaries",
+        "image": null
+    },
+    {
+        "name": "Yomitan",
+        "description": "Translate text on webpages easily.",
+        "link": "https://github.com/themoeway/yomitan",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Aedict",
+        "description": "Comprehensive dictionary app.",
+        "link": "http://aedict.eu/",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Kanji Benkyō",
+        "description": "Learn kanji with this app.",
+        "link": "https://apps.apple.com/us/app/learn-japanese-kanji-benky%C5%8D/id1541592138?ct=https%3A%2F%2Findiecatalog.app",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Shirabe Jisho",
+        "description": "Dictionary app with kanji lookup.",
+        "link": "https://apps.apple.com/app/shirabe-jisho/id1005203380",
+        "category": "Dictionaries",
+        "platform": null,
+        "slug": "dictionaries",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "DJT Grammar Guide",
+        "description": "Extensive guide covering grammar in depth.",
+        "link": "https://djtarchive.neocities.org/bunpou/full_day",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Edewakaru",
+        "description": "Detailed explanations of grammar points.",
+        "link": "https://www.edewakaru.com/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Guide to Japanese",
+        "description": "Your go-to guide for grammar and basics.",
+        "link": "https://guidetojapanese.org/learn/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "IMABI",
+        "description": "Detailed grammar lessons for all levels.",
+        "link": "https://www.imabi.org/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "JLPT Grammar List",
+        "description": "Comprehensive list of JLPT grammar points.",
+        "link": "https://jlptgrammarlist.neocities.org/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Kanji-Link",
+        "description": "Learn grammar and kanji with quizzes.",
+        "link": "https://www.kanji-link.com/fr/#",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Maggie Sensei",
+        "description": "Friendly lessons on grammar points.",
+        "link": "https://maggiesensei.com/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Minato JF",
+        "description": "Online courses and resources, including grammar lessons.",
+        "link": "https://minato-jf.jp/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Sakubi",
+        "description": "Minimalist guide to essential grammar.",
+        "link": "https://sakubi.neocities.org/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Tanos JLPT Resources",
+        "description": "Grammar lists and practice materials for the JLPT.",
+        "link": "http://www.tanos.co.uk/jlpt/",
+        "category": "Grammar",
+        "platform": null,
+        "slug": "grammar",
+        "path": "grammar",
+        "image": null
+    },
+    {
+        "name": "Dokusho Club",
+        "description": "Reading club for learners.",
+        "link": "https://dokushoclub.com/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Learn Natively",
+        "description": "Find books for your reading level.",
+        "link": "https://learnnatively.com/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Mangaz",
+        "description": "Read manga online.",
+        "link": "https://www.mangaz.com/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Master List of Book Clubs",
+        "description": "A master list of books going from absolute beginner to advanced learner",
+        "link": "https://community.wanikani.com/t/master-list-of-book-clubs/35283",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Satori Reader",
+        "description": "Read and listen to stories.",
+        "link": "https://www.satorireader.com/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Sōseki Project",
+        "description": "A collection of the author Natsume Sōseki''s work.",
+        "link": "https://www.sosekiproject.org/#",
+        "category": "Reading",
+        "platform": "",
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Tadoku",
+        "description": "Free graded readers for learners.",
+        "link": "https://tadoku.org/japanese/en/free-books-en/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Yomimono Ippai",
+        "description": "Lots of books to read for every level",
+        "link": "http://www17408ui.sakura.ne.jp/tatsum/project/Yomimono/Yomimono-ippai/index.html",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "YomuJP",
+        "description": "Read texts with translations.",
+        "link": "https://yomujp.com/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "YomuYomu",
+        "description": "Read books online.",
+        "link": "https://yomuyomu.app/",
+        "category": "Reading",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Manabi Reader",
+        "description": "A solid app for reading sentences, read ebooks and listen to audios.",
+        "link": "https://reader.manabi.io/",
+        "category": "Apps",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Mihon",
+        "description": "Manga reader app.",
+        "link": "https://mihon.app/",
+        "category": "Apps",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Voracious",
+        "description": "Improve reading and listening skills.",
+        "link": "https://voracious.app/",
+        "category": "Apps",
+        "platform": null,
+        "slug": "reading",
+        "path": "reading",
+        "image": null
+    },
+    {
+        "name": "Free Japanese Font",
+        "description": "Download free fonts.",
+        "link": "https://www.freejapanesefont.com/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Google Sheets JLPT",
+        "description": "Comprehensive JLPT study resources.",
+        "link": "https://docs.google.com/spreadsheets/d/15ELElkomfixdS4-dNrpxrNl14mlJUZrdD0h7N6iEE2k/edit?gid=1386920750#gid=1386920750",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Japanese Discord",
+        "description": "Join the community for language practice.",
+        "link": "https://discord.gg/japanese",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Japanese Wiki",
+        "description": "Explore various topics.",
+        "link": "https://www.japanesewiki.com/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Kaiwa Kai",
+        "description": "Practice conversation skills.",
+        "link": "https://www.kaiwakai.com/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Kuzuri Resources",
+        "description": "Collection of useful resources.",
+        "link": "https://kuzuri.neocities.org/resources",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "LangPractice",
+        "description": "Language practice platform.",
+        "link": "https://langpractice.com/japanese/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Learn Japanese Reddit",
+        "description": "Community for learners.",
+        "link": "https://www.reddit.com/r/LearnJapanese/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Rondely English Terms",
+        "description": "Glossary of English terms.",
+        "link": "https://rondely.com/EigoYogo/irir/iti.htm",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "SuperNative",
+        "description": "Improve listening skills.",
+        "link": "https://supernative.tv/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "The Moe Way",
+        "description": "An amazing guide with tips ",
+        "link": "https://learnjapanese.moe/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Unagibun JLPT Online",
+        "description": "Online resources for JLPT preparation.",
+        "link": "https://www.unagibun.com/jlpt-online/",
+        "category": "Miscellaneous",
+        "platform": null,
+        "slug": "miscellaneous",
+        "path": "miscellaneous",
+        "image": null
+    },
+    {
+        "name": "Kana Dojo",
+        "description": "KanaDojo is a fun, minimalist, aesthetic platform for learning and practicing Japanese online",
+        "link": "https://kanadojo.com",
+        "category": "Kana",
+        "platform": null,
+        "slug": "kana",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Kana Pro",
+        "description": "Practice your hiragana and katakana",
+        "link": "https://kana.pro",
+        "category": "Kana",
+        "platform": null,
+        "slug": "kana",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Real Kana",
+        "description": "Study your kana with the possibility to choose between multiple fonts",
+        "link": "https://realkana.com",
+        "category": "Kana",
+        "platform": null,
+        "slug": "kana",
+        "path": "vocabulary",
+        "image": null
+    },
+    {
+        "name": "Akane Japanese Class",
+        "description": "Effective and beginner-friendly Japanese lessons.",
+        "link": "https://www.youtube.com/@Akane-JapaneseClass/",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/d85bb43d-a668-413f-83ad-d22693f02a03.jpg"
+    },
+    {
+        "name": "CI Japanese",
+        "description": "Comprehensible input for Japanese learners.",
+        "link": "https://www.youtube.com/@cijapanese",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/e0f45662-ec4d-4a04-b1df-773ec6429768.jpg"
+    },
+    {
+        "name": "Dogen",
+        "description": "Japanese language learning with a comedic twist.",
+        "link": "https://www.youtube.com/@Dogen",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/76399ea0-eed3-420a-b11b-dfa84d7959e8.jpg"
+    },
+    {
+        "name": "Japanese Ammo with Misa",
+        "description": "Comprehensive Japanese lessons for all levels.",
+        "link": "https://www.youtube.com/@JapaneseAmmowithMisa",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/9eeba09f-98d3-486a-b53d-cdc75f63856b.jpg"
+    },
+    {
+        "name": "Japanese with Shun",
+        "description": "Simple and effective Japanese language lessons.",
+        "link": "https://www.youtube.com/@JapanesewithShun",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/6b8aeee9-f179-4019-a4b0-98ee7cdfd717.jpg"
+    },
+    {
+        "name": "Japanese with Taka",
+        "description": "Master Japanese with Taka''s focused lessons.",
+        "link": "https://www.youtube.com/@JapanesewithTaka",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/21c8daac-3bde-4c2d-9aff-ba471a35d9ba.jpg"
+    },
+    {
+        "name": "Japasuta",
+        "description": "Interactive Japanese language tutorials.",
+        "link": "https://www.youtube.com/@japasuta",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/c2ecabe8-e935-4158-adf2-cdf3bb58f21a.jpg"
+    },
+    {
+        "name": "Meshclass",
+        "description": "Learn Japanese through fun and interactive lessons.",
+        "link": "https://www.youtube.com/@meshclass",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/4025ac12-6487-4f3d-9ffe-5dd6d284cabf.jpg"
+    },
+    {
+        "name": "Miku Real Japanese",
+        "description": "Practical and real-life Japanese learning.",
+        "link": "https://www.youtube.com/@mikurealjapanese",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/02649d85-7886-40fc-92f3-46ab25bf4189.jpg"
+    },
+    {
+        "name": "Necota''s Japanese Language Class",
+        "description": "Creative lessons for mastering Japanese.",
+        "link": "https://www.youtube.com/@necotasjapaneselanguagecla291",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/e7c82a95-198f-43bc-bb59-3228fe942d9a.jpg"
+    },
+    {
+        "name": "Nihongo no Mori",
+        "description": "Learn Japanese grammar and vocabulary effectively.",
+        "link": "https://www.youtube.com/@nihongonomori2013",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/5331a389-d720-4097-9f31-9e0f201b38e0.jpg"
+    },
+    {
+        "name": "Onomappu",
+        "description": "Learn Japanese through natural expressions and phrases.",
+        "link": "https://www.youtube.com/@Onomappu/",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/26d78526-5f7a-42ed-8fb5-6a39b020cb45.jpg"
+    },
+    {
+        "name": "Sambonjuku",
+        "description": "Fun and engaging Japanese lessons for learners.",
+        "link": "https://www.youtube.com/@sambonjuku/",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/51c7e587-a8db-4814-9e36-78762f5cf9e6.jpg"
+    },
+    {
+        "name": "Sayuri Saying",
+        "description": "Practical and fun Japanese language tutorials.",
+        "link": "https://www.youtube.com/@SayuriSaying",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/a879e1a3-5439-4d6d-8d60-e161c571023c.jpg"
+    },
+    {
+        "name": "Tanaka San",
+        "description": "Learn Japanese with practical conversations and tips.",
+        "link": "https://www.youtube.com/@japanese_tanakasan",
+        "category": "Language Learning",
+        "platform": "youtube",
+        "slug": "language-learning",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/5aeb279c-b4b8-4b8a-8fef-3c57befb642e.jpg"
+    },
+    {
+        "name": "Archipel Documentaries",
+        "description": "Deep dive into Japanese culture and tradition through documentaries.",
+        "link": "https://www.youtube.com/@ArchipelDocumentaries",
+        "category": "Culture",
+        "platform": "youtube",
+        "slug": "culture",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f59e9b0c-fc9e-492e-b49f-116f334bdf92.jpg"
+    },
+    {
+        "name": "Bappa Shota",
+        "description": "Japanese vlogger who has been traveling the world since 2011",
+        "link": "https://www.youtube.com/@BappaShota",
+        "category": "Culture",
+        "platform": "youtube",
+        "slug": "culture",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/a27c10e8-0058-4859-ac19-aeccaf37c764.jpg?height=150&width=150"
+    },
+    {
+        "name": "Koto Labo",
+        "description": "Insights into Japanese music and traditional instruments.",
+        "link": "https://www.youtube.com/@kotolabo",
+        "category": "Culture",
+        "platform": "youtube",
+        "slug": "culture",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/b6d30567-06bd-4d00-8254-976d74e9dad8.jpg"
+    },
+    {
+        "name": "Osho Taigu",
+        "description": "Explore Japanese traditions and Zen teachings.",
+        "link": "https://www.youtube.com/@osho_taigu/",
+        "category": "Culture",
+        "platform": "youtube",
+        "slug": "culture",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/be5a1326-fc18-4f04-9c11-ff386428d6d7.jpg"
+    },
+    {
+        "name": "Burihhiiinews Channel",
+        "description": "Stay updated with Japanese news and cultural insights.",
+        "link": "https://www.youtube.com/@burihhiiiinewschannel",
+        "category": "Entertainment",
+        "platform": "youtube",
+        "slug": "entertainment",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f58c21eb-c837-42f9-af41-ef9afd6d38b2.jpg"
+    },
+    {
+        "name": "Cocoro Kase",
+        "description": "Engaging lessons and insights focused on language and cultural nuances.",
+        "link": "https://www.youtube.com/@cocoro_kase",
+        "category": "Pop Culture",
+        "platform": "youtube",
+        "slug": "pop-culture",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/dd11fcff-2253-4d1d-8e0b-2eef1a9b2493.jpg"
+    },
+    {
+        "name": "EASY JAPANESE",
+        "description": "Simplified and accessible language lessons with practical examples.",
+        "link": "https://www.youtube.com/@EASYJAPANESE",
+        "category": "Podcast",
+        "platform": "youtube",
+        "slug": "podcast",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/97cf5176-be71-4a56-9c47-e3cf3fbae773.jpg"
+    },
+    {
+        "name": "Nihongo Con Teppei",
+        "description": "Podcast for beginner on how to speak the language naturally.",
+        "link": "https://open.spotify.com/show/4W4jYoKRmjlURKO1fIfcOK?si=53534ca1bd654ffd",
+        "category": "Podcast",
+        "platform": "spotify",
+        "slug": "podcast",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/f5d98ed5-9d5d-40a7-823d-81e11f6758bf.jpg?height=100&width=100&quality=50"
+    },
+    {
+        "name": "Oyasumi Japanese with Shun",
+        "description": "Easy Japanese using Genki (N5-N4) grammar. This is perfect to listen before you go to sleep.",
+        "link": "https://open.spotify.com/show/7x4JCyDeWR60kzJXoOBTrQ",
+        "category": "Podcast",
+        "platform": "spotify",
+        "slug": "podcast",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/10d34001-1ee0-4773-9c50-5e170a519a82.jpg?height=150&width=150"
+    },
+    {
+        "name": "The Bite Size Japanese Podcast",
+        "description": "A podcast about daily life for improving your listening skills",
+        "link": "https://open.spotify.com/show/58H68tM3uC2JNZI4hXvdeu",
+        "category": "Podcast",
+        "platform": "spotify",
+        "slug": "podcast",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/6a10d710-6f8c-41c4-b36e-384784a08748.jpg?height=150&width=150"
+    },
+    {
+        "name": "The Miku Real Japanese",
+        "description": "Miku shares insights into daily life and culture.",
+        "link": "https://open.spotify.com/show/6Nl8RDfPxsk4h4bfWe76Kg?si=48aec8e2d5234a98",
+        "category": "Podcast",
+        "platform": "spotify",
+        "slug": "podcast",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/d945d521-c56f-43da-972a-8386260670f2.jpg?height=150&width=150"
+    },
+    {
+        "name": "Game Nantoka / ゲームなんとか",
+        "description": "Podcast of friends casually talking about games.",
+        "link": "https://open.spotify.com/show/0VpJSbTokWLLJ0zppnbrlM?si=13ab080d6e7f4dbe",
+        "category": "Gaming",
+        "platform": "spotify",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/1a81d385-dfca-40da-aea0-5133f3c1beac.jpg?height=150&width=150"
+    },
+    {
+        "name": "KIYOi / キヨ。",
+        "description": "Dynamic gaming streams, reviews, and humorous commentary.",
+        "link": "https://www.youtube.com/@KIYOisGOD",
+        "category": "Gaming",
+        "platform": "youtube",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/80e37a5c-f9b4-4f6d-b479-4391cffc8511.jpg"
+    },
+    {
+        "name": "Kojiseto Games",
+        "description": "Entertaining gaming content with commentary on various popular titles.",
+        "link": "https://www.youtube.com/@KojisetoGames",
+        "category": "Gaming",
+        "platform": "youtube",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/c18df950-aea4-47df-8422-dbcccb81a605.jpg"
+    },
+    {
+        "name": "Senakuma Desu",
+        "description": "Fun and creative videos that explore casual and everyday topics.",
+        "link": "https://www.youtube.com/@senakumadesu",
+        "category": "Gaming",
+        "platform": "youtube",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/cfc78559-4f1a-4c53-8995-241d879052bd.jpg"
+    },
+    {
+        "name": "Sora Sakurai",
+        "description": "Official channel of Masahiro Sakurai, creator of Kirby and Super Smash Bros.",
+        "link": "https://www.youtube.com/@sora_sakurai_jp",
+        "category": "Gaming",
+        "platform": "youtube",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/468ce1be-a0cd-499b-949f-03b3ce7930b0.jpg"
+    },
+    {
+        "name": "Tetsuo/てつお ",
+        "description": "Channel focused on the Dragon Quest video games series.",
+        "link": "https://www.youtube.com/@ch-mj8xi",
+        "category": "Gaming",
+        "platform": "youtube",
+        "slug": "gaming",
+        "path": "media",
+        "image": "https://cloud.tareqitos.me/i/b1d092f6-3ede-4c1b-8da5-f89bad292a32.jpg"
+    },
+    {
+        "name": "Anki",
+        "description": "Powerful flashcard app for studying.",
+        "link": "https://apps.ankiweb.net/",
+        "category": "Flashcards",
+        "platform": null,
+        "slug": "flashcards",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Quizlet",
+        "description": "Study with flashcards and games.",
+        "link": "https://quizlet.com/",
+        "category": "Flashcards",
+        "platform": null,
+        "slug": "flashcards",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Renshuu",
+        "description": "Practice vocabulary and grammar.",
+        "link": "https://www.renshuu.org/",
+        "category": "Flashcards",
+        "platform": null,
+        "slug": "flashcards",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Ringotan",
+        "description": "Learn kanji with mnemonics.",
+        "link": "https://www.ringotan.com/",
+        "category": "Flashcards",
+        "platform": null,
+        "slug": "flashcards",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Smouldering Durtles",
+        "description": "An android client application for WaniKani",
+        "link": "https://play.google.com/store/apps/details?id=com.smouldering_durtles.wk&hl=en-US",
+        "category": "Flashcards",
+        "platform": null,
+        "slug": "flashcards",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Bunpro",
+        "description": "Grammar study platform.",
+        "link": "https://bunpro.jp/",
+        "category": "Grammar & Kana",
+        "platform": null,
+        "slug": "grammar-kana",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Kana",
+        "description": "Learn hiragana and katakana.",
+        "link": "https://apps.apple.com/us/app/kana-hiragana-and-katakana/id1454200955?ct=https%3A%2F%2Findiecatalog.app",
+        "category": "Grammar & Kana",
+        "platform": null,
+        "slug": "grammar-kana",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Genkoyoushi",
+        "description": "Japanese character graph generator",
+        "link": "https://www.incompetech.com/graphpaper/genkoyoushi/",
+        "category": "Tools",
+        "platform": null,
+        "slug": "tools",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Hanabi",
+        "description": "A powerful subtitle parser for Youtube using AI",
+        "link": "https://hanabira.org/",
+        "category": "Tools",
+        "platform": null,
+        "slug": "tools",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Jimaku",
+        "description": "A list of subtitles files for anime, drama and movies.",
+        "link": "https://jimaku.cc",
+        "category": "Tools",
+        "platform": null,
+        "slug": "tools",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Kaku",
+        "description": "Handwriting recognition app.",
+        "link": "https://kaku.fuwafuwa.ca/",
+        "category": "Tools",
+        "platform": null,
+        "slug": "tools",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "Sensei",
+        "description": "Learn with interactive lessons.",
+        "link": "https://apps.apple.com/us/app/learn-japanese-sensei/id1495789984?ct=https%3A%2F%2Findiecatalog.app",
+        "category": "Tools",
+        "platform": null,
+        "slug": "tools",
+        "path": "applications",
+        "image": null
+    },
+    {
+        "name": "AFK Arena",
+        "description": "Adventure / Arena game",
+        "link": "https://play.google.com/store/apps/details?id=com.lilithgame.hgame.gp",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Aggretsuko: Match 3",
+        "description": "Puzzle game based on the popular Netflix animation series",
+        "link": "https://play.google.com/store/apps/details?id=com.hive.aggretsuko",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "ALTER EGO",
+        "description": "Game about literature and psychology",
+        "link": "https://play.google.com/store/apps/details?id=com.caracolu.alterego",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Animal crossing: Pocket Camp",
+        "description": "Build your camp with furnitures",
+        "link": "https://play.google.com/store/apps/details?id=com.nintendo.zaca",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Any Kairosoft game",
+        "description": "Strategy game in a RPG style",
+        "link": "https://play.google.com/store/apps/dev?id=7710637777904825280",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "AZNANA",
+        "description": "Narrative game",
+        "link": "https://play.google.com/store/apps/details?id=com.caracolu.aznana",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "BanG Dream!",
+        "description": "Popular rythm game with original and anime covered songs",
+        "link": "https://play.google.com/store/apps/details?id=com.bushiroad.en.bangdreamgbp",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Bear''s Restaurant",
+        "description": "Manage a restaurant for the dead people and animals",
+        "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.bearsrestaurant",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Cats & Soup",
+        "description": "Cook with cats and prepare delicious soups",
+        "link": "https://play.google.com/store/apps/details?id=com.hidea.cat",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Fishing paradiso",
+        "description": "A narrative game with a moving scenario",
+        "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.fishingparadise",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "her tears were my light",
+        "description": "A love story between time and space",
+        "link": "https://play.google.com/store/apps/details?id=com.nomnomnami.hertearsweremylight",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Hungry hearts diner",
+        "description": "Manage a Japanese restaurant and bond with your clients",
+        "link": "https://play.google.com/store/apps/details?id=jp.co.gagex.orionEN",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Love is in small things",
+        "description": "A cozy art game",
+        "link": "https://play.google.com/store/apps/details?id=com.lunosoft.puuung1",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Snowman Story",
+        "description": "Follow the story of a snowman who doesn''t want to melt",
+        "link": "https://play.google.com/store/apps/details?id=com.rpgsnack.snowman",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Sumikkogurashi farm",
+        "description": "Relaxing farming game",
+        "link": "https://play.google.com/store/apps/details?id=jp.co.imagineer.sumikkogurashi.farm",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Tsuki''s Oddysey",
+        "description": "A passive adventure game",
+        "link": "https://play.google.com/store/apps/details?id=com.hyperbeard.odyssey",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "Vanished anniversary",
+        "description": "Visual novel with five unique stories",
+        "link": "https://play.google.com/store/apps/details?id=com.abocado.abocado",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "ねこあつめ",
+        "description": "Tamagochi game with a cat",
+        "link": "https://play.google.com/store/apps/details?id=jp.co.hit_point.nekoatsume",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "旅かえる",
+        "description": "A game about a Frog that goes on many journeys",
+        "link": "https://play.google.com/store/apps/details?id=jp.co.hit_point.tabikaeru",
+        "category": "Mobile",
+        "platform": "",
+        "slug": "mobile",
+        "path": "games",
+        "image": null
+    },
+    {
+        "name": "unityroom",
+        "description": "A list of Unity-made games playable in browser",
+        "link": "https://unityroom.com/",
+        "category": "Web",
+        "platform": "",
+        "slug": "web",
+        "path": "games",
+        "image": null
+    }
+]
