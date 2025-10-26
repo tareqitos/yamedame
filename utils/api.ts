@@ -11,6 +11,7 @@ export const getResources = cache(async () => {
         }
 
         const result = await response.json()
+
         return Array.isArray(result) ? result : [];
     } catch (error) {
         console.error("Failed to fetch resources: ", error)

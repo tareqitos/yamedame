@@ -1,4 +1,4 @@
-"use client"
+// NOT USED
 
 import { convertToSlug } from "@/utils/helpers"
 import { MediaCard, ResourceCard } from "./ui/card"

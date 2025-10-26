@@ -68,8 +68,8 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                             {
                                 child.platform?.map((platform: string, index: number) => (
                                     <IconMedia key={index} platform={platform} size={24} />
-                                )
-                                )}
+                                ))
+                            }
                         </div>
                     </div>
                 </li>
