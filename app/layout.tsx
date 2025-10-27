@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/themeContext";
 import NextTopLoader from "nextjs-toploader";
+import { ToTopButton } from "@/components/top";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -81,6 +82,7 @@ export default function RootLayout({
         <ThemeProvider>
           <NextTopLoader showForHashAnchor={false} showSpinner={false} />
           <Header />
+          <ToTopButton />
           <main className="flex-1 px-[max(1rem,calc(50vw-800px))] lg:px-[max(2rem,calc(50vw-800px))]">
             {children}
           </main>

@@ -6,7 +6,7 @@ import { convertToSlug } from "@/utils/helpers";
 import Link from "next/link";
 import Button from "./button";
 import { useState } from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, ArrowRightIcon, HouseIcon } from "@phosphor-icons/react";
 
 type SidebarMenuProps = {
     items: MainCardProps[]
@@ -16,6 +16,10 @@ const MenuList = ({ items, onLinkClick }: { items: MainCardProps[]; onLinkClick?
     <>
         <h1 className="opacity-80">Menu</h1>
         <hr className="my-4 opacity-20" />
+        <div className="mb-2">
+            <Icon path="home" size={20} className="inline-block align-sub mr-4" />
+            <Link href="/" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Home</Link>
+        </div>
         <div className="mb-2">
             <Icon path="beginners" size={20} className="inline-block align-sub mr-4" />
             <Link href="/beginners" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Beginner Essentials</Link>
@@ -35,10 +39,15 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
 
     return (
         <>
-            <div className="flex xl:hidden gap-2 fixed left-10 bottom-10 z-99">
+            <div className="flex gap-2 fixed left-4 xl:-left-40 bottom-10 z-99 transition-primary duration-75">
                 <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
                     Menu
                 </Button>
+                <Link href="/" className="inline">
+                    <Button variant="button">
+                        <HouseIcon size={24} weight="fill" className="inline-block" />
+                    </Button>
+                </Link>
             </div>
 
             <div className={`fixed xl:hidden top-0 left-0 w-full h-full transition-primary ${isOpen ? 'bg-black/50 z-100' : 'bg-black/0 invisible'}`} onClick={() => setIsOpen(false)}></div>
@@ -85,10 +94,9 @@ const CategoryList = ({ items, onLinkClick }: { items: string[]; onLinkClick?: (
 export const SidebarCategory = ({ items }: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
-
     return (
         <>
-            <div className="flex lg:hidden gap-2 fixed right-10 bottom-10 z-99">
+            <div className="flex lg:-right-34 gap-2 fixed right-4 bottom-10 z-99 transition-primary duration-75">
                 <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
                     On this page
                 </Button>
