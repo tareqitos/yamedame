@@ -25,7 +25,7 @@ export const ToTopButton = () => {
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
     
-    const buttonVisiblityStyle = isVisible ? 'bottom-10 visible' : '-bottom-10 invisible';
+    const buttonVisiblityStyle = isVisible ? 'bottom-16 visible' : '-bottom-10 invisible';
 
     return (
         <Button

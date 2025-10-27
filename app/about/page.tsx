@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <div className="mt-10">
+        <div className="my-10">
             <Link href="/">
             <Button variant="secondary" className="flex items-center mb-4">
                 <ArrowLeftIcon size={20} className="inline mr-2"/>

@@ -74,7 +74,7 @@ export default function UpdatesPage() {
                     <p className="mt-4">{aprilUpdate.closingRemark}</p>
                 </article>
             </div>
-            <p className="text-center text-9xl font-mochiy my-12 opacity-10" >以上です!</p>
+            <p className="text-center text-8xl md:text-9xl font-mochiy my-12 opacity-10 transition-primary" >以上です!</p>
         </div>
     );
 }
