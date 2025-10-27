@@ -56,7 +56,7 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
 
     return (
         <>
-            <Button variant="search" className="inline-flex transition-primary !duration-50 hover:pr-8" onClick={() => isOpen ? handleClose() : handleOpen()}>
+            <Button variant="search" className="inline-flex transition-primary !duration-50 hover:md:pr-8" onClick={() => isOpen ? handleClose() : handleOpen()}>
                 <MagnifyingGlassIcon size={24} className="md:mr-2" />
                 <span className="hidden md:inline">Search</span>
             </Button>
@@ -84,10 +84,11 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
                                             <div className="flex items-center gap-2">
                                                 <Icon path={result.path} className="inline-block md:mr-2" size={20} />
                                                 <p className="text-primary font-semibold hover:text-link-hover">{result.name}</p>
+                                                <Button variant="primary" className="text-primary inline" onClick={(e) => handleOpenLink(result.link, e)}>
+                                                    <ArrowSquareUpRightIcon size={24} />
+                                                </Button>
                                             </div>
-                                            <Button variant="primary" className="text-primary" onClick={(e) => handleOpenLink(result.link, e)}>
-                                                <ArrowSquareUpRightIcon size={24} />
-                                            </Button>
+
                                             <span className="hidden md:inline">-</span>
                                             <p className="text-sm md:flex-1">{result.description}</p>
                                             <p className="text-sm opacity-50">{result.category}</p>
