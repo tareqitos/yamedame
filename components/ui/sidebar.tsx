@@ -39,7 +39,7 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
 
     return (
         <>
-            <div className="flex xl:hidden gap-2 fixed left-4 bottom-10 z-99">
+            <div className="flex gap-2 fixed left-4 xl:-left-40 bottom-10 z-99 transition-primary duration-75">
                 <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
                     Menu
                 </Button>
@@ -94,10 +94,9 @@ const CategoryList = ({ items, onLinkClick }: { items: string[]; onLinkClick?: (
 export const SidebarCategory = ({ items }: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
-
     return (
         <>
-            <div className="flex lg:hidden gap-2 fixed right-4 bottom-10 z-99">
+            <div className="flex lg:-right-34 gap-2 fixed right-4 bottom-10 z-99 transition-primary duration-75">
                 <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
                     On this page
                 </Button>
