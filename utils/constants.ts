@@ -1,5 +1,5 @@
 import { Item } from "@/types/types";
-import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon } from "@phosphor-icons/react/dist/ssr";
+import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon, CatIcon, RabbitIcon, BirdIcon, BoneIcon, FishSimpleIcon, ButterflyIcon } from "@phosphor-icons/react/dist/ssr";
 
 // Using Phosphor Icons
 export const Icons = [
@@ -10,6 +10,7 @@ export const Icons = [
   { path: 'media', icon: VideoCameraIcon, iconColor: "#D084D6" },
   { path: 'games', icon: GameControllerIcon, iconColor: "#e67e22" },
   { path: 'applications', icon: DesktopIcon, iconColor: "#de6878" },
+  { path: 'animals', icon: CatIcon, iconColor: "#6876de" },
   { path: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
   { path: 'beginners', icon: StarIcon, iconColor: "#fcbc32" },
   { path: 'home', icon: HouseIcon, iconColor: "#fc3c32" },
@@ -17,24 +18,34 @@ export const Icons = [
 ]
 
 export const IconsCategory = [
-  { category: 'dictionaries', icon: BooksIcon, iconColor: "#23AE5B" },
-  { category: 'dictionaries-apps', icon: BooksIcon, iconColor: "#de6878" },
-  { category: 'vocabulary-kanji', icon: TranslateIcon, iconColor: "#426BFE" },
-  { category: 'grammar', icon: BookOpenTextIcon, iconColor: "#bdc3c7" },
-  { category: 'reading', icon: BookIcon, iconColor: "#67cdd1" },
-  { category: 'apps', icon: BookIcon, iconColor: "#67cdd1" },
-  { category: 'kana', icon: FlowerTulipIcon, iconColor: "#d6408bff" },
-  { category: 'mobile', icon: DeviceMobileIcon, iconColor: "#e67e22" },
-  { category: 'web', icon: BrowserIcon, iconColor: "#e67e22" },
-  { category: 'flashcards', icon: CardsThreeIcon, iconColor: "#de6878" },
-  { category: 'grammar-kana', icon: BookOpenTextIcon, iconColor: "#de6878" },
-  { category: 'tools', icon: ToolboxIcon, iconColor: "#de6878" },
-  { category: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
-  { category: 'language-learning', icon: GlobeHemisphereEastIcon, iconColor: "#D084D6" },
-  { category: 'culture', icon: GrainsIcon, iconColor: "#D084D6" },
-  { category: 'entertainment', icon: TelevisionIcon, iconColor: "#D084D6" },
-  { category: 'podcast', icon: CassetteTapeIcon, iconColor: "#D084D6" },
-  { category: 'gaming', icon: JoystickIcon, iconColor: "#D084D6" },
+  { category: 'dictionaries', icon: BooksIcon, iconColor: "#1a8e47" },
+  { category: 'dictionaries-apps', icon: BooksIcon, iconColor: "#c44d5f" },
+  { category: 'vocabulary-kanji', icon: TranslateIcon, iconColor: "#3654d1" },
+  { category: 'grammar', icon: BookOpenTextIcon, iconColor: "#7d8891" },
+  { category: 'reading', icon: BookIcon, iconColor: "#4ba6aa" },
+  { category: 'apps', icon: BookIcon, iconColor: "#4ba6aa" },
+  { category: 'kana', icon: FlowerTulipIcon, iconColor: "#b5316e" },
+  { category: 'mobile', icon: DeviceMobileIcon, iconColor: "#c96519" },
+  { category: 'web', icon: BrowserIcon, iconColor: "#c96519" },
+  { category: 'flashcards', icon: CardsThreeIcon, iconColor: "#c44d5f" },
+  { category: 'grammar-kana', icon: BookOpenTextIcon, iconColor: "#c44d5f" },
+  { category: 'tools', icon: ToolboxIcon, iconColor: "#c44d5f" },
+  { category: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#4ba6aa" },
+  { category: 'language-learning', icon: GlobeHemisphereEastIcon, iconColor: "#a866b5" },
+  { category: 'culture', icon: GrainsIcon, iconColor: "#a866b5" },
+  { category: 'entertainment', icon: TelevisionIcon, iconColor: "#a866b5" },
+  { category: 'podcast', icon: CassetteTapeIcon, iconColor: "#a866b5" },
+  { category: 'gaming', icon: JoystickIcon, iconColor: "#a866b5" },
+
+  // Animals
+
+  { category: 'general', icon: CatIcon, iconColor: "#e6739a" },
+  { category: 'study-games', icon: GameControllerIcon, iconColor: "#5ba3e6" },
+  { category: 'mammals', icon: RabbitIcon, iconColor: "#a673e6" },
+  { category: 'birds', icon: BirdIcon, iconColor: "#e6a673" },
+  { category: 'dinosaurs', icon: BoneIcon, iconColor: "#73e68b" },
+  { category: 'sea-fish', icon: FishSimpleIcon, iconColor: "#73c8e6" },
+  { category: 'insects-arachnids', icon: ButterflyIcon, iconColor: "#e6c873" },
 
 ]
 
@@ -50,10 +61,11 @@ export const getCardData = () => {
     { title: 'Grammar', desc: 'Master Japanese grammar rules, patterns, and sentence structures.', path: 'grammar', icon: "📖" },
     { title: 'Reading', desc: 'Practice reading skills with various texts, articles, and stories.', path: 'reading', icon: "📚" },
     { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media', icon: "💾" },
-    { title: 'Games', desc: 'Find and play games to enhance to practice the language!', path: 'games', icon: "🎮" },
+    { title: 'Games', desc: 'Find and play games to enhance and practice the language!', path: 'games', icon: "🎮" },
     { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications', icon: "💻" },
-    { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "🐱" },
-    { title: 'And more to come', desc: 'Stay tuned for more resources and updates!', path: "", icon: "✨" }
+    { title: 'Animals', desc: 'Discover Japanese wildlife and learn animal-related vocabulary.', path: 'animals', icon: "🐱" },
+    { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "📦" },
+    { title: 'More Coming Soon', desc: 'Stay tuned for additional resources and updates!', path: "", icon: "✨" }
   ];
 };
 

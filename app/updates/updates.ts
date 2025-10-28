@@ -21,9 +21,115 @@ const oct2025Updates = [
                 type: '"Surprise me" Button',
                 description:
                     "A simple randomizer button to discover a new site with a single click. Yay!",
+            }
+        ],
+        newResources: [
+            {
+                name: "Monosugoi Zukan",
+                link: "https://www.nhk.or.jp/school/sukudo/zukan/",
+                description: "NHK's interactive animal book with 3D views, quizzes, and facts.",
+            },
+            {
+                name: "Ikimonopedia",
+                link: "https://ikimonopedia.com/",
+                description: "Large web animal encyclopedia with photos, videos, and species facts.",
+            },
+            {
+                name: "Digital Dialects: Animals 1",
+                link: "https://www.digitaldialects.com/Japanese/Animals.htm",
+                description: "Beginner game to learn animal words with audio and simple quizzes.",
+            },
+            {
+                name: "Digital Dialects: Animals 2",
+                link: "https://www.digitaldialects.com/Japanese/Animals_2.htm",
+                description: "Next-step practice for animal vocabulary with listening tasks.",
+            },
+            {
+                name: "Forest Creatures — Mammals",
+                link: "https://www.tokyo-gas.co.jp/env/forest/creatures/mammal.html",
+                description: "Photo-based guide to mammals living in Tokyo Gas's forest sites.",
+            },
+            {
+                name: "Japanese Bird Encyclopedia",
+                link: "https://www.birdfan.net/pg/kind/zukan/",
+                description: "Species pages with photos, calls, ranges, and identification tips.",
+            },
+            {
+                name: "BIRD FAN: Wild Bird Guide",
+                link: "https://www.birdfan.net/pg/kind/index/",
+                description: "Wild Bird Society guide with searchable lists and call samples.",
+            },
+            {
+                name: "Bird Photo Index",
+                link: "http://www.gt-works.com/yachoo/zukan/",
+                description: "Photo catalog of birds observed around Chiba and nearby areas.",
+            },
+            {
+                name: "Dinosaur Encyclopedia",
+                link: "https://www.dinosaur.pref.fukui.jp/dino/encyclopedia",
+                description: "Species index by the Fukui Prefectural Dinosaur Museum.",
+            },
+            {
+                name: "Chōgyo Zukan — Game Fish",
+                link: "https://www.honda.co.jp/fishing/picture-book/",
+                description: "Angler-focused fish profiles with practical notes and tips.",
+            },
+            {
+                name: "Sakana Zukan",
+                link: "https://zukan.com/fish",
+                description: "Searchable fish index with hazards, habitat, and usage notes.",
+            },
+            {
+                name: "Poisonous Fish Guide",
+                link: "https://www.mhlw.go.jp/topics/syokuchu/poison/animal_det_01.html",
+                description: "Overview of toxic and venomous fish with identification points.",
+            },
+            {
+                name: "Toshitoshi Web Fish Encyclopedia",
+                link: "http://www.toshitoshi.com/ftp/zukan.html",
+                description: "Fish photos shot at aquariums across Japan with brief notes.",
+            },
+            {
+                name: "Toshitoshi Web Aquarium",
+                link: "http://www.toshitoshi.com/",
+                description: "Photo tours and highlights from aquariums nationwide.",
+            },
+            {
+                name: "Chirimon Encyclopedia",
+                link: "https://www.chirimen.info/zukan/",
+                description: "Identify tiny sea creatures found in dried young sardines.",
+            },
+            {
+                name: "Evolving Insect Encyclopedia",
+                link: "http://www.insects.jp/",
+                description: "Broad photo index of insects organized by order and family.",
+            },
+            {
+                name: "Spider Encyclopedia",
+                link: "https://www.spider-web.jp/",
+                description: "Common spiders with clear photos and concise descriptions.",
+            },
+            {
+                name: "Aquatic Insects Photo Index",
+                link: "http://mizukusa.ac/",
+                description: "Macro photos and IDs for freshwater aquatic insects.",
+            },
+            {
+                name: "Larvae Encyclopedia",
+                link: "http://aoki2.si.gunma-u.ac.jp/youtyuu/",
+                description: "Photo catalog specializing in insect larvae across orders.",
+            },
+            {
+                name: "Household Pest Encyclopedia",
+                link: "https://www.fukushihoken.metro.tokyo.lg.jp/kankyo/eisei/gaichu/",
+                description: "Traits and control methods for pests in and around homes.",
+            },
+            {
+                name: "Earth Pest Encyclopedia",
+                link: "https://www.earth.jp/gaichu/",
+                description: "Pest biology and control advice by Earth Corporation.",
             },
         ],
-        newResources: [],
         closingRemark:
             "Thank you and happy learning!",
     },

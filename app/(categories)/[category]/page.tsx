@@ -36,7 +36,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                     <section>
                         {Object.entries(resources).map((cat, index) => (
                             <div key={index}>
-                                <div id={convertToSlug(cat[0])} className="pt-4"></div>
+                                <div id={convertToSlug(cat[0])} className="pt-38 -mt-32"></div>
                                 <h2 className="text-2xl font-semibold">{cat[0]}</h2>
                                 {category === "media" ? (
                                     <MediaCard array={cat[1]} className="mb-10" />
