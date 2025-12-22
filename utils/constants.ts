@@ -10,7 +10,7 @@ export const Icons = [
   { path: 'media', icon: VideoCameraIcon, iconColor: "#D084D6" },
   { path: 'games', icon: GameControllerIcon, iconColor: "#e67e22" },
   { path: 'applications', icon: DesktopIcon, iconColor: "#de6878" },
-  { path: 'animals', icon: CatIcon, iconColor: "#6876de" },
+  { path: 'encyclopedia', icon: CatIcon, iconColor: "#6876de" },
   { path: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
   { path: 'beginners', icon: StarIcon, iconColor: "#fcbc32" },
   { path: 'home', icon: HouseIcon, iconColor: "#fc3c32" },
@@ -37,7 +37,7 @@ export const IconsCategory = [
   { category: 'podcast', icon: CassetteTapeIcon, iconColor: "#a866b5" },
   { category: 'gaming', icon: JoystickIcon, iconColor: "#a866b5" },
 
-  // Animals
+  // Encyclopedia
 
   { category: 'general', icon: CatIcon, iconColor: "#e6739a" },
   { category: 'study-games', icon: GameControllerIcon, iconColor: "#5ba3e6" },
@@ -63,7 +63,7 @@ export const getCardData = () => {
     { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media', icon: "💾" },
     { title: 'Games', desc: 'Find and play games to enhance and practice the language!', path: 'games', icon: "🎮" },
     { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications', icon: "💻" },
-    { title: 'Animals', desc: 'Discover Japanese wildlife and learn animal-related vocabulary.', path: 'animals', icon: "🐱" },
+    { title: 'Encyclopedia', desc: 'Discover Japanese wildlife and learn animal-related vocabulary.', path: 'encyclopedia', icon: "🐱" },
     { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "📦" },
     { title: 'More Coming Soon', desc: 'Stay tuned for additional resources and updates!', path: "", icon: "✨" }
   ];
