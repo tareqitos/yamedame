@@ -1,3 +1,138 @@
+const jan2026Updates = [
+    {
+        title: "January 2026 - Update",
+        changes: [
+            {
+                type: "New Category",
+                description: "Added a 'Science & Technology' category to the site.",
+            },
+        ],
+        newResources: [
+            /* === Science & Technology === */
+            {
+                name: "Rebuild (Rebuild.fm)",
+                link: "https://rebuild.fm/",
+                description: "Japanese tech podcast about software, gadgets, and developer culture.",
+            },
+            {
+                name: "Goryugocast (ごりゅごcast)",
+                link: "https://podcasts.apple.com/us/podcast/%E3%81%94%E3%82%8A%E3%82%85%E3%81%94cast/id1373668452",
+                description: "Tech tips and tools to improve daily work and digital life.",
+            },
+            {
+                name: "Weekly Nikkei Trendy (週刊 日経トレンディ)",
+                link: "https://podcasts.apple.com/jp/podcast/%E9%80%B1%E5%88%8A-%E6%97%A5%E7%B5%8C%E3%83%88%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3-%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89/id265250079",
+                description: "Short weekly episodes on trends, business, and consumer culture.",
+            },
+            {
+                name: "Still Rendering (スティル・レンダリング)",
+                link: "https://podcasts.apple.com/jp/podcast/still-rendering-%E3%82%B9%E3%83%86%E3%82%A3%E3%83%AC%E3%83%B3/id1384526571",
+                description: "Casual conversations on life, technology, and modern culture.",
+            },
+            {
+                name: "Sonnai Rika no Jikan (そんない理科の時間)",
+                link: "https://sonnai.com/",
+                description: "Friendly science podcast explaining everyday phenomena.",
+            },
+            {
+                name: "Off Topic (オフトピック)",
+                link: "https://podcasts.apple.com/jp/podcast/off-topic-%E3%82%AA%E3%83%95%E3%83%88%E3%83%94%E3%83%83%E3%82%AF/id1444665909",
+                description: "Deep dives into tech, startups, business, and global trends.",
+            },
+            {
+                name: "Yuru Computer Science Radio (ゆるコンピュータ科学ラジオ)",
+                link: "https://podcasts.apple.com/jp/podcast/%E3%82%86%E3%82%8B%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E7%A7%91%E5%AD%A6%E3%83%A9%E3%82%B8%E3%82%AA/id1604353315",
+                description: "Relaxed explanations of computer science concepts.",
+            },
+            {
+                name: "Scientalk (サイエントーク)",
+                link: "https://podcasts.apple.com/jp/podcast/%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%83%88%E3%83%BC%E3%82%AF/id1566371326",
+                description: "Entertaining science talks and curious research topics.",
+            },
+            {
+                name: "Radio Scientia (科学のラジオ)",
+                link: "https://podcasts.apple.com/jp/podcast/%E7%A7%91%E5%AD%A6%E3%81%AE%E3%83%A9%E3%82%B8%E3%82%AA-radio-scientia/id1571226322",
+                description: "Science discussions connecting research with daily life.",
+            },
+            {
+                name: "Yuru Yuru Math Essence (ゆるゆる数学エッセンス)",
+                link: "https://podcasts.apple.com/jp/podcast/%E3%82%86%E3%82%8B%E3%82%86%E3%82%8B%E6%95%B0%E5%AD%A6%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B9/id1608689666",
+                description: "Soft and accessible introductions to mathematical ideas.",
+            },
+            {
+                name: "Scienmania (サイエンマニア)",
+                link: "https://podcasts.apple.com/us/podcast/%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%83%9E%E3%83%8B%E3%82%A2/id1583760781",
+                description: "Fun science facts and curious topics for enthusiasts.",
+            },
+            {
+                name: "Kieharu Psychology Radio (きえはる心理学ラジオ)",
+                link: "https://podcasts.apple.com/jp/podcast/%E3%81%8D%E3%81%88%E3%81%AF%E3%82%8B%E5%BF%83%E7%90%86%E5%AD%A6%E3%83%A9%E3%82%B8%E3%82%AA/id1582322296",
+                description: "Calm and clear explanations of psychology concepts.",
+            },
+            {
+                name: "Know Food Radio (KNOWフードラジオ)",
+                link: "https://podcasts.apple.com/jp/podcast/know%E3%83%95%E3%83%BC%E3%83%89%E3%83%A9%E3%82%B8%E3%82%AA-%E7%9F%A5%E3%81%A3%E3%81%A6%E5%91%B3%E3%82%8F%E3%81%86%E7%90%86%E7%A7%91-%E7%A4%BE%E4%BC%9A/id1598116589",
+                description: "Food explored through science, culture, and society.",
+            },
+            {
+                name: "Butuzaku (ぶつざく)",
+                link: "https://podcasts.apple.com/jp/podcast/%E7%94%9F%E7%89%A9%E3%82%92%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8A%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B%E3%83%A9%E3%82%B8%E3%82%AA-%E3%81%B6%E3%81%A4%E3%81%96%E3%81%8F/id1591918352",
+                description: "Simple and friendly introductions to biology topics.",
+            },
+            {
+                name: "Tsukuba University Lab Side Stories (研究室サイドストーリー)",
+                link: "https://podcasts.apple.com/us/podcast/%E7%AD%91%E6%B3%A2%E5%A4%A7%E5%AD%A6%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88-%E7%A0%94%E7%A9%B6%E5%AE%A4%E3%82%B5%E3%82%A4%E3%83%89%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/id1619227905",
+                description: "Behind-the-scenes stories from university research labs.",
+            },
+            {
+                name: "Shono Radio (小農ラジオ)",
+                link: "https://podcasts.apple.com/jp/podcast/%E5%B0%8F%E8%BE%B2%E3%83%A9%E3%82%B8%E3%82%AA/id1481765269",
+                description: "Organic farming, soil, and sustainable agriculture talks.",
+            },
+
+            /* === News === */
+            {
+                name: "OK! Cozy up! (飯田浩司のOK! Cozy up！)",
+                link: "https://www.1242.com/cozy/",
+                description: "Daily Japanese news talk show with commentary and guest opinions.",
+            },
+            {
+                name: "Asahi News Podcast (朝日新聞 ニュースの現場から)",
+                link: "https://www.asahi.com/special/podcasts/",
+                description: "In-depth reporting and analysis by Asahi Shimbun journalists.",
+            },
+            {
+                name: "NewsPicks Talk Room",
+                link: "https://newspicks.com/originals/talkroom/",
+                description: "Business, tech, and social topics discussed by NewsPicks editors.",
+            },
+            {
+                name: "Ogiue Chiki Session (荻上チキ・Session)",
+                link: "https://www.tbsradio.jp/ss954/",
+                description: "Daily current affairs podcast with critical analysis and interviews.",
+            },
+            {
+                name: "Machida Tetsu no Fukabori (町田徹のふかぼり！)",
+                link: "https://www.radionikkei.jp/podcast/fukabori/",
+                description: "Weekly deep dives into Japanese economic and political news.",
+            },
+            {
+                name: "Iida Koji The Daily News (飯田浩司 The Daily News)",
+                link: "https://www.1242.com/iida/",
+                description: "Condensed daily news updates hosted by Koji Iida.",
+            },
+            {
+                name: "SBS Japanese (SBS日本語放送)",
+                link: "https://www.sbs.com.au/language/japanese/",
+                description: "Japanese-language news and features from Australia’s SBS.",
+            }
+        ],
+        closingRemark:
+            "Happy New Year! Wishing you all the best in 2026 and happy learning!",
+    }
+]
+
+
 const oct2025Updates = [
     {
         title: "October 2025 - Update",
@@ -141,11 +276,11 @@ const apr2025Updates = [
         changes: [
             {
                 type: "New Category",
-                description:"Introduced a new game category page.",
+                description: "Introduced a new game category page.",
             },
             {
                 type: "Introduced a new section",
-                description:"Created a dedicated kana section on the Resources page.",
+                description: "Created a dedicated kana section on the Resources page.",
             },
         ],
         newResources: [
@@ -270,4 +405,4 @@ const apr2025Updates = [
     },
 ];
 
-export { oct2025Updates, apr2025Updates };
+export { jan2026Updates, oct2025Updates, apr2025Updates };

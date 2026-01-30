@@ -37,7 +37,7 @@ export default async function Home() {
         ))}
       </div>
       <div className="flex gap-2 my-10">
-        <Button variant="secondary"><Link href="/updates" title="Monthly updates">Updates 🌸</Link></Button>
+        <Button variant="secondary"><Link href="/updates" title="Monthly updates">Jan 2026 Updates 🌸</Link></Button>
         <Button variant="secondary"><Link href="/about" title="About">About</Link></Button>
         <Button variant="secondary"><Link href="https://ko-fi.com/H2H0QZVAZ" title="Buy me a coffee!">Donate</Link></Button>
       </div>

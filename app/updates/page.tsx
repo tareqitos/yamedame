@@ -1,4 +1,4 @@
-import { apr2025Updates, oct2025Updates } from "./updates";
+import { apr2025Updates, jan2026Updates, oct2025Updates } from "./updates";
 
 type Update = {
     title: string;
@@ -44,8 +44,8 @@ const Update = ({ title, changes, newResources }: Update) => {
 }
 
 export default function UpdatesPage() {
-    const latestUpdate = oct2025Updates[0];
-    const aprilUpdate = apr2025Updates[0];
+    const latestUpdate = jan2026Updates[0];
+    const lastUpdate = oct2025Updates[0];
     return (
         <div className="container mx-auto max-w-4xl px-4 py-12">
             <div className="space-y-8">
@@ -67,11 +67,11 @@ export default function UpdatesPage() {
                 </article>
                 <article className="rounded-lg border border-primary bg-card text-card-foreground shadow-md p-6 md:p-10">
                     <Update
-                        title={aprilUpdate.title}
-                        changes={aprilUpdate.changes}
-                        newResources={aprilUpdate.newResources}
+                        title={lastUpdate.title}
+                        changes={lastUpdate.changes}
+                        newResources={lastUpdate.newResources}
                     />
-                    <p className="mt-4">{aprilUpdate.closingRemark}</p>
+                    <p className="mt-4">{lastUpdate.closingRemark}</p>
                 </article>
             </div>
             <p className="text-center text-8xl md:text-9xl font-mochiy my-12 opacity-10 transition-primary" >以上です!</p>
