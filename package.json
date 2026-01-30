@@ -15,7 +15,7 @@
     "fs": "^0.0.1-security",
     "minisearch": "^7.2.0",
     "mysql2": "^3.15.1",
-    "next": "15.5.4",
+    "next": "^16.1.6",
     "nextjs-toploader": "^3.9.17",
     "path": "^0.12.7",
     "react": "19.1.0",
