@@ -18,6 +18,7 @@ export default async function CategoryPage({ params }: { params: { category: str
     const { category } = await params;
 
     const card = getCardByPath(category) as MainCardProps;
+    const types = ['podcast', 'media'];
 
     // This data will be fetched at build time
     const data = await getResources();
@@ -38,7 +39,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                             <div key={index}>
                                 <div id={convertToSlug(cat[0])} className="pt-38 -mt-32"></div>
                                 <h2 className="text-2xl font-semibold">{cat[0]}</h2>
-                                {category === "media" ? (
+                                {types.includes(category) ? (
                                     <MediaCard array={cat[1]} className="mb-10" />
                                 ) : (
                                     <ResourceCard
