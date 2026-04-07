@@ -8,12 +8,17 @@ const nextConfig: NextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: `${process.env.NEXT_PUBLIC_API_URL}`,
+      },
+    ],
     domains: [],
     // Autoriser les data URLs
     unoptimized: true, // 👈 nécessaire pour les base64
     qualities: [1, 25, 50, 75, 80, 100],
-  }
+  },
   // images: {
   //   remotePatterns: [
   //     {

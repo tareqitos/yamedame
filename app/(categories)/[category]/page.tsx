@@ -7,8 +7,11 @@ import { convertToSlug, groupByCategory } from "@/utils/helpers";
 
 export async function generateStaticParams() {
     const data = await getResources();
-    const uniquePaths = [...new Set(data.map((item: { path: string }) => item.path))];
-
+    const uniquePaths = [...new Set(
+        data
+            .map((item: { path: string }) => item.path)
+            .filter(Boolean) // retire les undefined/null
+    )];
     return uniquePaths.map((path) => ({
         category: path,
     }));
