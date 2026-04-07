@@ -33,7 +33,7 @@ export default function About() {
                     and anyone who wants to learn more about the Japanese language and culture
                 </p>
                 <p>Take care, and happy learning!</p>
-                <Image className='' width={100} height={84} src="https://cloud.tareqitos.me/i/057cfd5d-f418-4e2c-a350-370ae4eec222.png?width=100" alt="doodle" />
+                {/* <Image className='' width={100} height={84} src="https://cloud.tareqitos.me/i/057cfd5d-f418-4e2c-a350-370ae4eec222.png?width=100" alt="doodle" /> */}
                 <p className="font-bold">Tareqitos</p>
             </div>
         </div>

@@ -46,30 +46,30 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
         )}>
             {array.map((child) => (
                 <li key={child.id} className="relative flex flex-row gap-4 items-center">
+                    <div className="relative overflow-hidden w-20 h-20 flex-shrink-0 rounded-sm z-2">
+                        <Image
+                            src={child.image ? `data:image/png;base64,${child.image}` : "/red-on-white-circle.png"}
+                            alt={child.name}
+                            width={80} height={80}
+                            className="miniature w-20 h-20 object-cover object-center"
+                        />
+                    </div>
                     <Image
-                        src={child.image?.startsWith("https") ? child.image : "/red-on-white-circle.png"}
-                        alt={child.name}
-                        width={80} height={80}
-                        className="rounded-sm z-1"
-                    />
-                    <Image
-                        src={child.image?.startsWith("https") ? child.image : "/red-on-white-circle.png"}
+                        src={child.image ? `data:image/png;base64,${child.image}` : "/red-on-white-circle.png"}
                         alt={child.name}
                         width={100} height={100}
                         quality={1}
-                        className="absolute -left-4 blur-xl opacity-50"
+                        className="absolute -left-4 blur-xl opacity-50 w-[100px] h-[100px]"
                     />
                     <div className="flex flex-col">
-                        <a href={child.link} target="_blank" className={` hover:text-white transition-primary`}>
+                        <a href={child.link} target="_blank" className="hover:text-white transition-primary">
                             {child.name}
                         </a>
                         <p className="text-foreground">{child.description}</p>
                         <div className="flex w-fit gap-2 bg-background px-2 py-1 rounded-lg">
-                            {
-                                child.platform?.map((platform: string, index: number) => (
-                                    <IconMedia key={index} platform={platform} size={24} />
-                                ))
-                            }
+                            {child.platform?.map((platform: string, index: number) => (
+                                <IconMedia key={index} platform={platform} size={24} />
+                            ))}
                         </div>
                     </div>
                 </li>

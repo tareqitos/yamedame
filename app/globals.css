@@ -69,6 +69,7 @@ li:hover svg {
   @apply fill-link-hover filter;
   filter: drop-shadow(0 0 10px rgb(255, 255, 255));
 }
+
 .center-horizontal {
   @apply left-1/2 -translate-x-1/2;
 }

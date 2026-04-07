@@ -7,17 +7,25 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@phosphor-icons/react"],
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: `${process.env.API_IMAGE_URL}`,
-        port: '',
-        pathname: '/i/**',
-      },
-    ],
+    dangerouslyAllowSVG: true,
+    remotePatterns: [],
+    domains: [],
+    // Autoriser les data URLs
+    unoptimized: true, // 👈 nécessaire pour les base64
     qualities: [1, 25, 50, 75, 80, 100],
+  }
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: `${process.env.API_IMAGE_URL}`,
+  //       port: '',
+  //       pathname: '/i/**',
+  //     },
+  //   ],
+  //   qualities: [1, 25, 50, 75, 80, 100],
 
-  },
+  // },
 };
 
 export default nextConfig;
