@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/themeContext";
 import NextTopLoader from "nextjs-toploader";
 import { ToTopButton } from "@/components/top";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,6 +86,19 @@ export default function RootLayout({
           <ToTopButton />
           <main className="flex-1 px-[max(1rem,calc(50vw-800px))] lg:px-[max(2rem,calc(50vw-800px))]">
             {children}
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                style: {
+                  background: 'var(--card-background)',
+                  color: 'var(--foreground)',
+                  border: '1px solid color-mix(in srgb, var(--foreground) 10%, transparent)',
+                  borderRadius: '12px',
+                  fontSize: '14px',
+                  padding: '12px 16px',
+                },
+              }}
+            />
           </main>
           <Footer />
         </ThemeProvider>
