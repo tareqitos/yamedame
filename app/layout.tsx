@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/themeContext";
 import NextTopLoader from "nextjs-toploader";
 import { ToTopButton } from "@/components/top";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,6 +86,19 @@ export default function RootLayout({
           <ToTopButton />
           <main className="flex-1 px-[max(1rem,calc(50vw-800px))] lg:px-[max(2rem,calc(50vw-800px))]">
             {children}
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                style: {
+                  background: 'var(--card-background)',
+                  color: 'var(--foreground)',
+                  border: '1px solid color-mix(in srgb, var(--foreground) 10%, transparent)',
+                  borderRadius: '12px',
+                  fontSize: '14px',
+                  padding: '12px 16px',
+                },
+              }}
+            />
           </main>
           <Footer />
         </ThemeProvider>
@@ -96,7 +110,7 @@ export default function RootLayout({
 function Head() {
   return (
     <head>
-      <script defer src="https://analytics.tareqitos.me/script.js" data-website-id="420f37a5-a3c0-424a-803f-3b937bf0c67f"></script>
+      <script defer src="https://uma.ttos.me/script.js" data-website-id="586f741a-2561-44e1-8a05-3b709b9cb7a6"></script>
       <meta property="og:image" content="/og-image.png"></meta>
       <meta property="og:site_name" content="Yame Dame"></meta>
       <meta property="og:title" content="Yame Dame"></meta>

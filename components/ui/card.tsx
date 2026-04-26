@@ -48,14 +48,14 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                 <li key={child.id} className="relative flex flex-row gap-4 items-center">
                     <div className="relative overflow-hidden w-20 h-20 flex-shrink-0 rounded-sm z-2">
                         <Image
-                            src={child.image ? `data:image/png;base64,${child.image}` : "/red-on-white-circle.png"}
+                            src={`${process.env.NEXT_PUBLIC_API_URL}/resources/${child.id}/image`}
                             alt={child.name}
                             width={80} height={80}
                             className="miniature w-20 h-20 object-cover object-center"
                         />
                     </div>
                     <Image
-                        src={child.image ? `data:image/png;base64,${child.image}` : "/red-on-white-circle.png"}
+                        src={`${process.env.NEXT_PUBLIC_API_URL}/resources/${child.id}/image`}
                         alt={child.name}
                         width={100} height={100}
                         quality={1}

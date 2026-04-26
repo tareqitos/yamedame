@@ -1,4 +1,5 @@
 import { getResources } from "@/app/api/api";
+import { Feedback } from "@/components/feedback";
 import { MediaCard, ResourceCard } from "@/components/ui/card";
 import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
 import { MainCardProps } from "@/types/types";
@@ -7,8 +8,11 @@ import { convertToSlug, groupByCategory } from "@/utils/helpers";
 
 export async function generateStaticParams() {
     const data = await getResources();
-    const uniquePaths = [...new Set(data.map((item: { path: string }) => item.path))];
-
+    const uniquePaths = [...new Set(
+        data
+            .map((item: { path: string }) => item.path)
+            .filter(Boolean) // retire les undefined/null
+    )];
     return uniquePaths.map((path) => ({
         category: path,
     }));
@@ -38,7 +42,8 @@ export default async function CategoryPage({ params }: { params: { category: str
                         {Object.entries(resources).map((cat, index) => (
                             <div key={index}>
                                 <div id={convertToSlug(cat[0])} className="pt-38 -mt-32"></div>
-                                <h2 className="text-2xl font-semibold">{cat[0]}</h2>
+                                <h2 className="text-2xl inline mr-2 font-semibold">{cat[0]}</h2>
+                                <Feedback item={cat[0]} />
                                 {types.includes(category) ? (
                                     <MediaCard array={cat[1]} className="mb-10" />
                                 ) : (

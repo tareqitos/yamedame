@@ -20,7 +20,7 @@ export default async function Home() {
       <div className="flex gap-2 mb-5">
         <Button variant="secondary" className="">
           <StarIcon size={20} color="#fcbc32" weight="fill" className="mr-2 inline align-sub" />
-          <Link href="/beginners" title="Beginner Esse">Beginner Essentials</Link>
+          <Link href="/beginners" title="Beginner Essentials">Beginner Essentials</Link>
         </Button>
         <RandomLink resources={resources} />
       </div>

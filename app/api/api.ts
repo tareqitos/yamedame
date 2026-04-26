@@ -21,3 +21,25 @@ export async function getResources() {
         return [];
     }
 }
+
+export async function submitFeedback(category: string, name: string, url: string) {
+    try {
+        const response = await fetch(`${API_URL}/feedback`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ category, name, url }),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`Submit feedback failed! Status: ${response.status}, Body: ${errorText}`);
+            return false;
+        }
+
+        console.log("Feedback submitted successfully.");
+        return true;
+    } catch (error) {
+        console.error("Failed to submit feedback (catch block):", error);
+        return false;
+    }
+}
