@@ -1,4 +1,39 @@
-const jan2026Updates = [
+export const may2026Updates = [
+    {
+        title: "May 2026 - Update",
+        changes: [
+            {
+                type: "Feedback form",
+                description: "I've added a feedback form to the site. If you have any suggestions or ideas, feel free to reach out! Your feedback helps provide the best resources for everyone.",
+            },
+        ],
+        newResources: [
+            /* === Science & Technology === */
+            {
+                name: "Yokubi (よくび)",
+                link: "https://yoku.bi",
+                description: "An exhaustive grammar guide.",
+            },
+            {
+                name: "Kanji Pirates",
+                link: "https://apps.apple.com/us/app/kanji-pirates/id1527202558",
+                description: "A game app designed to help you master all kanji characters learned in Japanese elementary school",
+            },
+            {
+                name: "Kanjikana",
+                link: "https://kanjikana.com",
+                description: "Free lists and tools to learn Japanese kanji and vocabulary. Suitable for all levels.",
+            },
+            {
+                name: "Kuma Sensei",
+                link: "https://www.kumasensei.net/",
+                description: "Kuma Sensei is a small but growing hub for Japanese learning, with study plans, posts about Japanese language and culture, and resources.",
+            },
+        ]
+    }
+]
+
+export const jan2026Updates = [
     {
         title: "January 2026 - Update",
         changes: [
@@ -132,8 +167,7 @@ const jan2026Updates = [
     }
 ]
 
-
-const oct2025Updates = [
+export const oct2025Updates = [
     {
         title: "October 2025 - Update",
         changes: [
@@ -270,7 +304,7 @@ const oct2025Updates = [
     },
 ];
 
-const apr2025Updates = [
+export const apr2025Updates = [
     {
         title: "April 2025 - Update",
         changes: [
@@ -404,5 +438,3 @@ const apr2025Updates = [
             "Stay tuned for more updates and happy learning!",
     },
 ];
-
-export { jan2026Updates, oct2025Updates, apr2025Updates };
