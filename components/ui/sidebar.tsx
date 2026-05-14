@@ -85,7 +85,7 @@ const CategoryList = ({ items, onLinkClick }: { items: string[]; onLinkClick?: (
         {items.map((cat: string, index: number) => (
             <div key={index} className="mb-2">
                 <IconCategory category={convertToSlug(cat)} size={20} className="inline-block mr-4" />
-                <a href={`#${convertToSlug(cat)}`} className="inline text-lg hover:text-primary" onClick={onLinkClick}>{cat}</a>
+                <a href={`#${convertToSlug(cat)}`} className="inline text-lg hover:text-primary" onClick={onLinkClick} data-umami-event={cat}>{cat}</a>
             </div>
         ))}
     </>
