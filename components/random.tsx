@@ -31,7 +31,7 @@ export const RandomLink = ({ resources }: { resources: Item[] }) => {
     return (
         <Button variant="secondary" onClick={handleClick}>
             <DiceFiveIcon className="mr-2 inline align-top" size={24} />
-            <a href={randomLink} target="_blank" title="Open a random resource!" rel="noopener noreferrer">Surprise me</a>
+            <a href={randomLink} target="_blank" title="Open a random resource!" rel="noopener noreferrer" data-umami-event="Surprise me" data-umami-event-link={randomLink} >Surprise me</a>
         </Button>
     );
 }
