@@ -66,9 +66,12 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                             {child.name}
                         </a>
                         <p className="text-foreground">{child.description}</p>
-                        <div className="flex w-fit gap-2 bg-background px-2 py-1 rounded-lg">
+                        <div className="flex w-fit gap-2 py-1 rounded-lg">
+
                             {child.platform?.map((platform: string, index: number) => (
-                                <IconMedia key={index} platform={platform} size={24} />
+                                <div key={index} className="bg-background px-2 py-1 rounded-lg">
+                                    <IconMedia platform={platform} size={24} />
+                                </div>
                             ))}
                         </div>
                     </div>

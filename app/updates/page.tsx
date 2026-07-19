@@ -3,6 +3,7 @@ import {
     oct2025Updates,
     jan2026Updates,
     may2026Updates,
+    july2026Updates,
 } from "./updates";
 
 type Update = {
@@ -24,7 +25,7 @@ const Update = ({ title, changes, newResources }: Update) => {
         <div className="mb-10">
             <h2 className="text-2xl font-semibold tracking-tight mb-4">{title}</h2>
             <ul className='flex flex-col gap-2 list-disc'>
-                {changes.map((change, index) => (
+                {changes?.map((change, index) => (
                     <li key={index}>
                         <strong className="text-primary">{change.type}:</strong> {change.description}
                     </li>
@@ -34,7 +35,7 @@ const Update = ({ title, changes, newResources }: Update) => {
                 <>
                     <h3 className="text-xl font-semibold tracking-tight mt-6 mb-2">New Resources:</h3>
                     <ul className='flex flex-col gap-2 list-disc'>
-                        {newResources.map((resource, index) => (
+                        {[...newResources].sort((a, b) => a.name.localeCompare(b.name)).map((resource, index) => (
                             <li key={index}>
                                 <a href={resource.link} className="text-primary hover:text-link-hover" target="_blank" rel="noopener noreferrer">
                                     {resource.name}
@@ -50,8 +51,8 @@ const Update = ({ title, changes, newResources }: Update) => {
 }
 
 export default function UpdatesPage() {
-    const latestUpdate = may2026Updates[0] as Update;
-    const lastUpdate = jan2026Updates[0] as Update;
+    const latestUpdate = july2026Updates[0] as Update;
+    const lastUpdate = may2026Updates[0] as Update;
     return (
         <div className="container mx-auto max-w-4xl px-4 py-12">
             <div className="space-y-8">

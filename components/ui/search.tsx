@@ -77,10 +77,10 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
                             />
                         </form>
                         {fitleredResults.length > 0 && (
-                            <ul className="bg-card-background p-4 mt-2 rounded-lg max-h-96 overflow-y-auto">
+                            <ul className="bg-card-background p-4 mt-2 rounded-lg max-h-120 overflow-y-auto">
                                 {fitleredResults.map((result, index) => (
-                                    <li key={index} className="border-b border-primary/10 last:border-b-0">
-                                        <Link href={`/${result.path}#${result.slug}`} className="md:flex items-center gap-2 p-2 border-b border-primary/10 last:border-b-0" onClick={() => handleClose()}>
+                                    <li key={index} className="border-b border-primary/10 p-2 last:border-b-0">
+                                        <Link href={`/${result.path}#${result.slug}`} className="md:flex-col items-center gap-2 border-b border-primary/10 last:border-b-0" onClick={() => handleClose()}>
                                             <div className="flex items-center gap-2">
                                                 <Icon path={result.path} className="inline-block md:mr-2" size={20} />
                                                 <p className="text-primary font-semibold hover:text-link-hover">{result.name}</p>
@@ -89,7 +89,7 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
                                                 </Button>
                                             </div>
 
-                                            <span className="hidden md:inline">-</span>
+                                            {/* <span className="hidden md:inline">-</span> */}
                                             <p className="text-sm md:flex-1">{result.description}</p>
                                             <p className="text-sm opacity-50">{result.category}</p>
                                         </Link>
