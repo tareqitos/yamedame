@@ -1,3 +1,145 @@
+export const july2026Updates = [
+    {
+        title: "July 2026 - Update",
+        newResources: [
+            /* === Podcasts === */
+            {
+                name: "Momoko To Nihongo",
+                link: "https://podcasts.apple.com/us/podcast/momoko-to-nihongo-japanese-listening-for-beginners/id1502161857",
+                description: "Japanese listening podcast for beginners and intermediates.",
+            },
+            {
+                name: "Nihongo Zattsu Dan",
+                link: "https://podtail.com/en/podcast/--nihongo-japanese/",
+                description: "Japanese language podcast discussing everyday topics.",
+            },
+            {
+                name: "Nihongo Picnic",
+                link: "https://podcasts.apple.com/jp/podcast/%E6%97%A5%E6%9C%AC%E8%AA%9E-with-%E3%81%82%E3%81%93-nihongo-picnic/id1525265840",
+                description: "Japanese podcast with Ako covering everyday conversation topics.",
+            },
+            {
+                name: "Japanese with Teppei and Noriko",
+                link: "https://teppeinorikojapanese.com/",
+                description: "Podcast teaching natural Japanese with Teppei and Noriko.",
+            },
+            {
+                name: "Learn Japanese with Noriko",
+                link: "https://podcasts.apple.com/us/podcast/learn-japanese-with-noriko/id1500470294",
+                description: "Podcast teaching Japanese through natural conversation with Noriko.",
+            },
+
+            /* === Dictionaries & Vocabulary === */
+            {
+                name: "J-Nihongo",
+                link: "http://j-nihongo.com/",
+                description: "Japanese grammar explanations and lessons for learners.",
+            },
+            {
+                name: "Kanjipedia",
+                link: "http://www.kanjipedia.jp/",
+                description: "Comprehensive online kanji dictionary with detailed entries.",
+            },
+            {
+                name: "Kanji Nerd",
+                link: "http://www.kanjinerd.com/en/items",
+                description: "Kanji study resource with breakdowns and mnemonics.",
+            },
+            {
+                name: "Imi Kaisetsu Note",
+                link: "https://meaning.jp/",
+                description: "Japanese word meaning explanations and usage notes.",
+            },
+            {
+                name: "Kanji Stroke Order Dictionary",
+                link: "http://kakijun.com/",
+                description: "Dictionary showing correct kanji stroke writing order.",
+            },
+            {
+                name: "Kanji Alive",
+                link: "http://app.kanjialive.com/",
+                description: "Interactive kanji dictionary app with video stroke order.",
+            },
+            {
+                name: "Oichan's Dictionary",
+                link: "http://www.itjp.org/dic/home.html",
+                description: "Japanese dictionary and language reference resource.",
+            },
+            {
+                name: "JPDB",
+                link: "https://jpdb.io/",
+                description: "Vocabulary and kanji SRS tool with frequency-based decks.",
+            },
+            {
+                name: "Kanji wo Kakou",
+                link: "https://ryohkei.com/",
+                description: "Kanji writing practice site with stroke order guides.",
+            },
+
+            /* === Grammar === */
+            {
+                name: "Marshall's Grammar List",
+                link: "https://marshallyin.com/all-grammar-list/",
+                description: "Comprehensive list of Japanese grammar points with explanations.",
+            },
+            {
+                name: "Classical Japanese Auxiliary Verb Chart",
+                link: "http://www.manabu-oshieru.com/daigakujuken/kobun/jyodoshi001.html",
+                description: "Chart of auxiliary verbs used in classical Japanese (kobun).",
+            },
+            {
+                name: "TUFS Japanese Grammar Course",
+                link: "http://www.coelang.tufs.ac.jp/mt/ja/gmod/",
+                description: "University-hosted structured Japanese grammar course.",
+            },
+            {
+                name: "Nihongo Kyoshi NET",
+                link: "https://nihongokyoshi-net.com/",
+                description: "Grammar and teaching resources by Japanese language teachers.",
+            },
+            {
+                name: "Fumitei Comprehensive Grammar Guide",
+                link: "https://www.fumitei.jp/japanese-grammar/",
+                description: "Comprehensive guide covering Japanese grammar points in depth.",
+            },
+            {
+                name: "JLPT N2 Grammar Playlist",
+                link: "https://www.youtube.com/playlist?list=PLINFE8v4DOhvV5tJT77oF92vIwLLl6wAA",
+                description: "YouTube playlist covering JLPT N2 grammar points.",
+            },
+
+            /* === Study / Games === */
+            {
+                name: "Kanji Test Game",
+                link: "https://www.gamedesign.jp/sp/kanji/",
+                description: "Web-based kanji quiz game to test your knowledge.",
+            },
+            {
+                name: "Kanji Game Creator",
+                link: "https://kotobaweb.com/kanjigame/create",
+                description: "Create custom kanji quiz games to practice reading.",
+            },
+
+            /* === Culture & Miscellaneous === */
+            {
+                name: "Japanese Stack Exchange",
+                link: "http://japanese.stackexchange.com/",
+                description: "Q&A community for Japanese language learners and speakers.",
+            },
+            {
+                name: "JLPT Official Site",
+                link: "https://www.jlpt.jp/e/",
+                description: "Official site for the Japanese Language Proficiency Test.",
+            },
+            {
+                name: "Nihon no Kotoba to Bunka",
+                link: "https://nihon5-bunka.net/",
+                description: "Site exploring Japanese language and culture together.",
+            },
+        ]
+    }
+]
+
 export const may2026Updates = [
     {
         title: "May 2026 - Update",
