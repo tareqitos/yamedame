@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Button from './ui/button';
 import { LightbulbFilamentIcon } from "@phosphor-icons/react";
-import { submitFeedback } from '@/app/api/api';
+import { submitFeedback } from '@/app/actions/feedback';
 import { toast } from 'sonner';
 import { convertToSlug } from '@/utils/helpers';
 
