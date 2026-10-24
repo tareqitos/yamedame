@@ -53,7 +53,7 @@ const Step = ({ number, title, children, resources }: StepProps) => (
 
 export default function BeginnersPage() {
     return (
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-row gap-4">
             <SidebarMenu items={getCardData()} />
             <div className="flex flex-col gap-14 mt-10 lg:mt-20 mb-20 px-4">
 
