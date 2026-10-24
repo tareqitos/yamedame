@@ -14,7 +14,7 @@ export default function About() {
             </Link>
 
             <div className="flex flex-col gap-4 mt-10 pl-4 border-l-1 border-foreground/10">
-                <h1 className="text-2xl lg:text-4xl font-black">Hello!</h1>
+                <h1 className="text-4xl lg:text-5xl font-black">Hello!</h1>
                 <p>Welcome to Yame Dame!</p>
                 <p>This project was created for several reasons. Initially, I wanted a convenient place to organize and access my
                     resources for studying Japanese.

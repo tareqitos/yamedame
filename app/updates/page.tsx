@@ -49,11 +49,11 @@ export default function UpdatesPage() {
     return (
         <div className="container mx-auto max-w-4xl px-4 py-12">
             <div className="space-y-8">
-                <header className="text-center">
-                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+                <header>
+                    <h1 className="text-4xl lg:text-5xl font-black">
                         What's New
                     </h1>
-                    <p className="mt-4 text-lg text-muted-foreground">
+                    <p className="mt-4">
                         You can find the latest updates here!
                     </p>
                 </header>
