@@ -21,6 +21,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-favorite: #fcbc32;
   --color-card-background: var(--card-background);
     --color-logo: var(--color-logo);
     --color-link-hover: var(--link-hover);
@@ -60,6 +61,47 @@ body {
 .transition-logo {
   @apply transition-transform duration-200;
   transition-timing-function: cubic-bezier(.075, .82, .165, 1)
+}
+
+/* Favorite star: a small pop with a faint ring when added, a short dip when removed */
+.favorite-pop {
+  animation: favorite-pop 350ms cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.favorite-unpop {
+  animation: favorite-unpop 200ms ease-out;
+}
+
+.favorite-ring {
+  @apply absolute inset-0 rounded-full border-2 border-favorite pointer-events-none;
+  /* Same length as favorite-pop: the ring is removed when the icon animation ends */
+  animation: favorite-ring 350ms ease-out forwards;
+}
+
+@keyframes favorite-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes favorite-unpop {
+  0% { transform: scale(1); }
+  50% { transform: scale(.85); }
+  100% { transform: scale(1); }
+}
+
+@keyframes favorite-ring {
+  0% { transform: scale(.6); opacity: .5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favorite-pop, .favorite-unpop, .favorite-ring {
+    animation: none;
+  }
+  .favorite-ring {
+    display: none;
+  }
 }
 
 .title:hover>div>div:first-child {

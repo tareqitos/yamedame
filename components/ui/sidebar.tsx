@@ -6,7 +6,7 @@ import { convertToSlug } from "@/utils/helpers";
 import Link from "next/link";
 import Button from "./button";
 import { useState } from "react";
-import { ArrowLeftIcon, ArrowRightIcon, HouseIcon, ListBulletsIcon, ListIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, ArrowRightIcon, HouseIcon, StarIcon, ListBulletsIcon, ListIcon } from "@phosphor-icons/react";
 
 type SidebarMenuProps = {
     items: MainCardProps[]
@@ -24,6 +24,10 @@ const MenuList = ({ items, onLinkClick }: { items: MainCardProps[]; onLinkClick?
             <Icon path="beginners" size={20} className="inline-block align-sub mr-4" />
             <Link href="/beginners" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Beginners Guide</Link>
         </div>
+        <div className="mb-2">
+            <Icon path="favorites" size={20} className="inline-block align-sub mr-4" />
+            <Link href="/favorites" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Favorites</Link>
+        </div>
         <hr className="my-4 opacity-20" />
         {items.slice(0, -1).map((item, index: number) => (
             <div key={index} className="mb-2">
@@ -40,6 +44,11 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
     return (
         <>
             <div className="flex flex-col gap-2 fixed right-4 xl:-right-20 bottom-16 z-99 transition-primary duration-75">
+                <Link href="/favorites" aria-label="Favorites">
+                    <Button variant="button" className="p-3!" tabIndex={-1}>
+                        <StarIcon size={24} weight="fill" className="block" />
+                    </Button>
+                </Link>
                 <Button variant="button" className="p-3!" onClick={() => setIsOpen(!isOpen)} aria-label="Menu">
                     <ListIcon size={24} weight="bold" className="block" />
                 </Button>
@@ -96,8 +105,8 @@ export const SidebarCategory = ({ items }: SidebarProps) => {
 
     return (
         <>
-            {/* Stacked above the SidebarMenu buttons (2 × 52px + gap) */}
-            <div className="flex flex-col fixed right-4 lg:-right-20 bottom-46 z-99 transition-primary duration-75">
+            {/* Stacked above the SidebarMenu buttons (3 × 52px + gaps) */}
+            <div className="flex flex-col fixed right-4 lg:-right-20 bottom-61 z-99 transition-primary duration-75">
                 <Button variant="button" className="p-3!" onClick={() => setIsOpen(!isOpen)} aria-label="On this page">
                     <ListBulletsIcon size={24} weight="bold" className="block" />
                 </Button>

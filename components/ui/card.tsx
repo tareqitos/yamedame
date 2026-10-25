@@ -2,8 +2,11 @@
 
 import clsx from "clsx"
 import { Icon, IconCategory, IconMedia } from "./icon"
-import { MainCardProps, ResourceCardProps } from "@/types/types"
+import { Item, MainCardProps, ResourceCardProps } from "@/types/types"
 import Image from "next/image"
+import { StarIcon } from "@phosphor-icons/react"
+import { useFavorites } from "@/utils/favorites"
+import { useState } from "react"
 
 
 const MainCard = ({ title, path, desc }: MainCardProps) => {
@@ -18,6 +21,42 @@ const MainCard = ({ title, path, desc }: MainCardProps) => {
     )
 }
 
+const FavoriteButton = ({ item }: { item: Item }) => {
+    const { isFavorite, toggleFavorite } = useFavorites();
+    const active = isFavorite(item.id);
+    // Only set by a click, so hearts don't animate when favorites load from storage
+    const [animation, setAnimation] = useState<"pop" | "unpop" | null>(null);
+
+    const handleClick = () => {
+        setAnimation(active ? "unpop" : "pop");
+        toggleFavorite(item.id);
+    }
+
+    return (
+        <button
+            type="button"
+            onClick={handleClick}
+            aria-pressed={active}
+            aria-label={active ? `Remove ${item.name} from favorites` : `Add ${item.name} to favorites`}
+            title={active ? "Remove from favorites" : "Add to favorites"}
+            className={clsx(
+                "relative shrink-0 p-1 rounded-full cursor-pointer transition-primary hover:scale-110 active:scale-95",
+                active ? "text-favorite" : "text-foreground/30 hover:text-favorite"
+            )}
+            data-umami-event={active ? "Remove favorite" : "Add favorite"}
+            data-umami-event-name={item.name}
+        >
+            {animation === "pop" && <span className="favorite-ring" aria-hidden />}
+            <StarIcon
+                size={22}
+                weight={active ? "fill" : "bold"}
+                className={clsx(animation && `favorite-${animation}`)}
+                onAnimationEnd={() => setAnimation(null)}
+            />
+        </button>
+    )
+}
+
 const ResourceCard = ({ array, className }: ResourceCardProps) => {
     return (
         <ul className={clsx(
@@ -25,12 +64,15 @@ const ResourceCard = ({ array, className }: ResourceCardProps) => {
             className
         )}>
             {array.map((child) => (
-                <li key={child.id}>
-                    <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
-                    <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`} data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
-                        {child.name}
-                    </a>
-                    &nbsp;- <span className="text-[16px] sm:text-lg text-foreground">{child.description}</span>
+                <li key={child.id} className="flex items-start gap-2">
+                    <div className="flex-1">
+                        <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
+                        <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`} data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
+                            {child.name}
+                        </a>
+                        &nbsp;- <span className="text-[16px] sm:text-lg text-foreground">{child.description}</span>
+                    </div>
+                    <FavoriteButton item={child} />
                 </li>
             ))}
         </ul>
@@ -61,7 +103,7 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                         quality={1}
                         className="absolute -left-4 blur-xl opacity-50 w-[100px] h-[100px]"
                     />
-                    <div className="flex flex-col">
+                    <div className="flex flex-col flex-1">
                         <a href={child.link} target="_blank" className="hover:text-white transition-primary" data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
                             {child.name}
                         </a>
@@ -75,6 +117,7 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                             ))}
                         </div>
                     </div>
+                    <FavoriteButton item={child} />
                 </li>
             ))}
         </ul>
