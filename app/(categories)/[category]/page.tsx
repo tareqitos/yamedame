@@ -5,6 +5,7 @@ import { SidebarCategory, SidebarMenu } from "@/components/ui/sidebar";
 import { MainCardProps } from "@/types/types";
 import { getCardByPath, getCardData } from "@/utils/constants";
 import { convertToSlug, groupByCategory } from "@/utils/helpers";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
     const data = await getResources();
@@ -21,7 +22,8 @@ export async function generateStaticParams() {
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const { category } = await params;
 
-    const card = getCardByPath(category) as MainCardProps;
+    const card = getCardByPath(category) as MainCardProps | undefined;
+    if (!card) notFound();
     const types = ['podcast', 'media'];
 
     // This data will be fetched at build time
@@ -34,13 +36,13 @@ export default async function CategoryPage({ params }: { params: { category: str
                 <SidebarMenu items={getCardData()} />
                 <div className="flex flex-col flex-1">
                     <section className="sticky top-0 pt-10 lg:-top-10 lg:pt-20 bg-background z-10">
-                        <h1 className="text-4xl lg:text-5xl font-black dynamic-title transition-primary">{`${card.title} ${card.icon}`}</h1>
-                        <p className="mt-4">{card.desc}</p>
+                        <h1 className="text-4xl lg:text-5xl font-black dynamic-title transition-primary animate-rise">{`${card.title} ${card.icon}`}</h1>
+                        <p className="mt-4 animate-rise" style={{ "--i": 1 } as React.CSSProperties}>{card.desc}</p>
                         <hr className="mt-10 opacity-10" />
                     </section>
                     <section>
                         {Object.entries(resources).map((cat, index) => (
-                            <div key={index}>
+                            <div key={index} className="animate-rise" style={{ "--i": index + 2 } as React.CSSProperties}>
                                 <div id={convertToSlug(cat[0])} className="pt-38 -mt-32"></div>
                                 <h2 className="text-2xl inline mr-2 font-semibold">{cat[0]}</h2>
                                 <Feedback item={cat[0]} />

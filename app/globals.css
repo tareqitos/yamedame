@@ -7,6 +7,13 @@
   --color-logo: #C93D1A;
     --card-background: #E9EEF3;
     --link-hover: #68b3e4;
+
+  /* Motion: one easing for things settling in, one spring for playful feedback */
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-slow: 450ms;
 }
 
 [data-theme="dark"] {
@@ -21,6 +28,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-favorite: #fcbc32;
   --color-card-background: var(--card-background);
     --color-logo: var(--color-logo);
     --color-link-hover: var(--link-hover);
@@ -54,12 +62,158 @@ body {
   @apply border-transparent border-1 transition-all hover:border-primary
 }
 .transition-primary {
-  @apply transition-all duration-100 ease-in
+  @apply transition-all;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--motion-ease);
 }
 
 .transition-logo {
   @apply transition-transform duration-200;
-  transition-timing-function: cubic-bezier(.075, .82, .165, 1)
+  transition-timing-function: var(--motion-ease);
+}
+
+/* Entrances: elements fade in while rising a few pixels.
+   Set --i on siblings to stagger them, capped so long lists don't wait */
+.animate-rise {
+  animation: rise var(--motion-slow) var(--motion-ease) both;
+  animation-delay: calc(min(var(--i, 0), 12) * 40ms);
+}
+
+.animate-fade {
+  animation: fade var(--motion-base) var(--motion-ease) both;
+}
+
+.animate-pop-in {
+  animation: pop-in var(--motion-base) var(--motion-ease) both;
+}
+
+.animate-spin-in {
+  animation: spin-in var(--motion-slow) var(--motion-spring) both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(-6px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes spin-in {
+  from { opacity: 0; transform: rotate(-90deg) scale(.6); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Accordion exit: the element folds from its measured height (--collapse-from) down to nothing.
+   The negative margin absorbs the 1rem gap of resource lists, so nothing jumps when the row is removed */
+.animate-collapse {
+  overflow: hidden;
+  pointer-events: none;
+  animation: collapse 300ms var(--motion-ease) both;
+}
+
+li.animate-collapse {
+  animation-name: collapse-row;
+}
+
+@keyframes collapse {
+  from { height: var(--collapse-from); opacity: 1; }
+  to { height: 0; opacity: 0; }
+}
+
+@keyframes collapse-row {
+  from { height: var(--collapse-from); opacity: 1; margin-bottom: 0; }
+  to { height: 0; opacity: 0; margin-bottom: -1rem; }
+}
+
+details[open] > :not(summary) {
+  animation: rise var(--motion-base) var(--motion-ease) both;
+}
+
+/* Cards and list rows lift slightly under the pointer */
+.hover-lift {
+  transition: translate var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease-out;
+
+  &:hover {
+    translate: 0 -4px;
+  }
+
+  &:active {
+    translate: 0 -1px;
+  }
+}
+
+/* Icon inside a .group nudges when its parent is hovered */
+.hover-wiggle {
+  transition: transform var(--motion-slow) var(--motion-spring);
+}
+
+.group:hover .hover-wiggle {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* Favorite star: a full turn with a slight pop and a faint ring when added, a short dip when removed */
+.favorite-pop {
+  /* Rotation and scale are separate animations: an easing applies between every keyframe,
+     so a single animation with a 50% step would slow down and stop halfway through the turn */
+  animation:
+    favorite-spin 600ms cubic-bezier(.1, 0, .2, 1),
+    favorite-grow 600ms ease-in-out;
+}
+
+.favorite-unpop {
+  animation: favorite-unpop 200ms ease-out;
+}
+
+.favorite-ring {
+  @apply absolute inset-0 rounded-full border-2 border-favorite pointer-events-none;
+  /* Shorter than favorite-pop and kept faded out (forwards) until the icon animation ends and removes it */
+  animation: favorite-ring 450ms ease-out 150ms both;
+}
+
+@keyframes favorite-spin {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@keyframes favorite-grow {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.2; }
+}
+
+@keyframes favorite-unpop {
+  0% { transform: scale(1); }
+  50% { transform: scale(.85); }
+  100% { transform: scale(1); }
+}
+
+@keyframes favorite-ring {
+  0% { transform: scale(.6); opacity: .5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise, .animate-fade, .animate-pop-in, .animate-spin-in,
+  details[open] > :not(summary),
+  .favorite-pop, .favorite-unpop, .favorite-ring {
+    animation: none;
+  }
+  .favorite-ring, .animate-collapse {
+    display: none;
+  }
+  .hover-lift:hover, .hover-lift:active {
+    translate: none;
+  }
+  .group:hover .hover-wiggle {
+    transform: none;
+  }
 }
 
 .title:hover>div>div:first-child {
@@ -104,9 +258,9 @@ li:hover svg {
   transform: scaleY(0);
   pointer-events: none;
   transition:
-    max-height 100ms cubic-bezier(.075, .82, .165, 1),
-    opacity 100ms cubic-bezier(.075, .82, .165, 1),
-    transform 100ms cubic-bezier(.075, .82, .165, 1);
+    max-height var(--motion-base) var(--motion-ease),
+    opacity var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-ease);
 }
 
 .reveal-panel[data-state="open"] {

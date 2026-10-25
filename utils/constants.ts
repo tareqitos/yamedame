@@ -1,5 +1,5 @@
 import { Item } from "@/types/types";
-import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon, CatIcon, RabbitIcon, BirdIcon, BoneIcon, FishSimpleIcon, ButterflyIcon, MinusIcon, HeadphonesIcon, AppleLogoIcon, NewspaperIcon } from "@phosphor-icons/react/dist/ssr";
+import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon, CatIcon, RabbitIcon, BirdIcon, BoneIcon, FishSimpleIcon, ButterflyIcon, MinusIcon, HeadphonesIcon, AppleLogoIcon, NewspaperIcon, PlantIcon } from "@phosphor-icons/react/dist/ssr";
 
 // Using Phosphor Icons
 export const Icons = [
@@ -13,8 +13,9 @@ export const Icons = [
   { path: 'applications', icon: DesktopIcon, iconColor: "#de6878" },
   { path: 'encyclopedia', icon: CatIcon, iconColor: "#6876de" },
   { path: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#67cdd1" },
-  { path: 'beginners', icon: StarIcon, iconColor: "#fcbc32" },
+  { path: 'beginners', icon: PlantIcon, iconColor: "#5cbf6a" },
   { path: 'home', icon: HouseIcon, iconColor: "#fc3c32" },
+  { path: 'favorites', icon: StarIcon, iconColor: "#fcbc32" },
   { path: '', icon: SparkleIcon, iconColor: "#fcbc32" },
 ]
 

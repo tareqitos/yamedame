@@ -39,7 +39,7 @@ type StepProps = {
 };
 
 const Step = ({ number, title, children, resources }: StepProps) => (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 animate-rise" style={{ "--i": number + 1 } as React.CSSProperties}>
         <div className="flex items-baseline gap-4">
             <span className="font-mochiy text-4xl opacity-20">{number}</span>
             <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
@@ -57,7 +57,7 @@ export default function BeginnersPage() {
             <SidebarMenu items={getCardData()} />
             <div className="flex flex-col gap-14 mt-10 lg:mt-20 mb-20 px-4">
 
-                <header>
+                <header className="animate-rise">
                     <h1 className="text-4xl lg:text-5xl font-black">Beginners Guide</h1>
                     <p className="mt-4">
                         People say Japanese is hard to get into. The language takes time, sure, but the first steps? Those are pretty clear.
@@ -65,7 +65,7 @@ export default function BeginnersPage() {
                     </p>
                 </header>
 
-                <section className="flex flex-col gap-4">
+                <section className="flex flex-col gap-4 animate-rise" style={{ "--i": 1 } as React.CSSProperties}>
                     <h2 className="text-2xl lg:text-3xl font-bold">Three scripts, one sentence</h2>
                     <p>Japanese doesn&apos;t have one alphabet. It has three, and they show up together:</p>
                     <div className="p-6 rounded-2xl bg-card-background text-center">
@@ -144,7 +144,7 @@ export default function BeginnersPage() {
                     </p>
                 </Step>
 
-                <section className="flex flex-col gap-4 pl-4 border-l-1 border-foreground/10">
+                <section className="flex flex-col gap-4 pl-4 border-l-1 border-foreground/10 animate-rise" style={{ "--i": 6 } as React.CSSProperties}>
                     <h2 className="text-2xl font-bold">On pace</h2>
                     <p>
                         I don&apos;t know of any shortcut to learn a language. Everyone who got good at Japanese did the same

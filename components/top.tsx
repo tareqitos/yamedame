@@ -31,7 +31,7 @@ export const ToTopButton = () => {
         <Button
             onClick={scrollToTop}
             variant="button"
-            className={`fixed center-horizontal z-99 duration-75! ${buttonVisiblityStyle}`}
+            className={`fixed center-horizontal z-99 duration-(--motion-base)! ease-(--motion-spring)! ${buttonVisiblityStyle}`}
         >
             <ArrowUpIcon size={24} weight="bold" className="inline-block" />
         </Button>

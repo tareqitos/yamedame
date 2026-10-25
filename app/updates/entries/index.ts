@@ -7,7 +7,7 @@ import u20260719 from "./2026-07-19";
 import u20261025 from "./2026-10-25";
 
 // Add new updates here, order doesn't matter
-export const updates: Update[] = [u20250401, u20251001, u20260101, u20260507, u20260719, u20261025]
+export const updates: Update[] = [u20250401, u20251001, u20260101, u20260507, u20261025]
     .sort((a, b) => b.date.localeCompare(a.date));
 
 export const latestUpdate = updates[0];

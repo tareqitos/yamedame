@@ -24,4 +24,5 @@ export type MainCardProps = {
 export type ResourceCardProps = {
     array: Item[],
     className?: string,
+    leavingIds?: string[], // Rows collapsing before being removed
 }
