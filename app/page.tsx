@@ -6,6 +6,7 @@ import Link from "next/link";
 import { RandomLink } from "@/components/random";
 import { StarIcon } from "@phosphor-icons/react/dist/ssr";
 import { getResources } from "./api/api";
+import { formatUpdateMonth, latestUpdate } from "./updates/entries";
 
 export default async function Home() {
   const cards = getCardData();
@@ -37,7 +38,7 @@ export default async function Home() {
         ))}
       </div>
       <div className="flex gap-2 my-10">
-        <Button variant="secondary"><Link href="/updates" title="Monthly updates">Jan 2026 Updates 🌸</Link></Button>
+        <Button variant="secondary"><Link href="/updates" title="Monthly updates">{formatUpdateMonth(latestUpdate.date, "short")} Updates {latestUpdate.emoji}</Link></Button>
         <Button variant="secondary"><Link href="/about" title="About">About</Link></Button>
         <Button variant="secondary"><Link href="https://ko-fi.com/H2H0QZVAZ" title="Buy me a coffee!">Donate</Link></Button>
       </div>
