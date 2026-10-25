@@ -1,5 +1,5 @@
 import { Item } from "@/types/types";
-import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon, CatIcon, RabbitIcon, BirdIcon, BoneIcon, FishSimpleIcon, ButterflyIcon, MinusIcon, HeadphonesIcon, AppleLogoIcon, NewspaperIcon, PlantIcon } from "@phosphor-icons/react/dist/ssr";
+import { BookOpenTextIcon, GameControllerIcon, DesktopIcon, TranslateIcon, VideoCameraIcon, SparkleIcon, FlowerTulipIcon, DeviceMobileIcon, BrowserIcon, CardsThreeIcon, KanbanIcon, BooksIcon, ToolboxIcon, BowlSteamIcon, GlobeHemisphereEastIcon, GrainsIcon, TelevisionIcon, JoystickIcon, CassetteTapeIcon, YoutubeLogoIcon, SpotifyLogoIcon, BookIcon, StarIcon, HouseIcon, CatIcon, RabbitIcon, BirdIcon, BoneIcon, FishSimpleIcon, ButterflyIcon, MinusIcon, HeadphonesIcon, AppleLogoIcon, NewspaperIcon, PlantIcon, GraduationCapIcon, PuzzlePieceIcon, CoffeeIcon, UsersThreeIcon } from "@phosphor-icons/react/dist/ssr";
 
 // Using Phosphor Icons
 export const Icons = [
@@ -32,7 +32,10 @@ export const IconsCategory = [
   { category: 'flashcards', icon: CardsThreeIcon, iconColor: "#c44d5f" },
   { category: 'grammar-kana', icon: BookOpenTextIcon, iconColor: "#c44d5f" },
   { category: 'tools', icon: ToolboxIcon, iconColor: "#c44d5f" },
+  { category: 'learning-apps', icon: GraduationCapIcon, iconColor: "#c44d5f" },
+  { category: 'learning-games', icon: PuzzlePieceIcon, iconColor: "#c96519" },
   { category: 'miscellaneous', icon: BowlSteamIcon, iconColor: "#4ba6aa" },
+  { category: 'communities', icon: UsersThreeIcon, iconColor: "#4ba6aa" },
   { category: 'language-learning', icon: GlobeHemisphereEastIcon, iconColor: "#a866b5" },
   { category: 'culture', icon: GrainsIcon, iconColor: "#a866b5" },
   { category: 'entertainment', icon: TelevisionIcon, iconColor: "#a866b5" },
@@ -40,6 +43,7 @@ export const IconsCategory = [
   { category: 'radicals', icon: MinusIcon, iconColor: "#3654d1" },
   { category: 'podcast', icon: CassetteTapeIcon, iconColor: "#84a5d6" },
   { category: 'news', icon: NewspaperIcon, iconColor: "#84a5d6" },
+  { category: 'culture-lifestyle', icon: CoffeeIcon, iconColor: "#84a5d6" },
   { category: 'science-technology', icon: GlobeHemisphereEastIcon, iconColor: "#84a5d6" },
 
   // Encyclopedia
