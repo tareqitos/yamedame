@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 import { DownloadSimpleIcon, StarIcon, UploadSimpleIcon } from "@phosphor-icons/react";
 import { toast } from "sonner";
 import { Item } from "@/types/types";
@@ -161,13 +162,14 @@ export const FavoritesList = ({ resources }: { resources: Item[] }) => {
                 const groupLeaving = items.every(isLeaving);
 
                 return (
+                    // scroll-mt keeps the heading clear of the sticky header when jumping to #path
                     <div
                         key={card.path}
+                        id={card.path}
                         ref={groupLeaving ? collapseFrom : undefined}
-                        className={groupLeaving ? "animate-collapse" : "animate-rise"}
+                        className={clsx("pt-6 scroll-mt-32", groupLeaving ? "animate-collapse" : "animate-rise")}
                         style={{ "--i": index + 2 } as React.CSSProperties}
                     >
-                        <div id={card.path} className="pt-38 -mt-32"></div>
                         <div className="flex items-center gap-3">
                             <span className="p-2 rounded-sm bg-card-background">
                                 <Icon path={card.path} size={22} />

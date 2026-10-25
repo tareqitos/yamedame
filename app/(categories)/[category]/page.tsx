@@ -42,8 +42,8 @@ export default async function CategoryPage({ params }: { params: { category: str
                     </section>
                     <section>
                         {Object.entries(resources).map((cat, index) => (
-                            <div key={index} className="animate-rise" style={{ "--i": index + 2 } as React.CSSProperties}>
-                                <div id={convertToSlug(cat[0])} className="pt-38 -mt-32"></div>
+                            // scroll-mt keeps the heading clear of the sticky header when jumping to #category
+                            <div key={index} id={convertToSlug(cat[0])} className="pt-6 scroll-mt-32 animate-rise" style={{ "--i": index + 2 } as React.CSSProperties}>
                                 <h2 className="text-2xl inline mr-2 font-semibold">{cat[0]}</h2>
                                 <Feedback item={cat[0]} />
                                 {types.includes(category) ? (
