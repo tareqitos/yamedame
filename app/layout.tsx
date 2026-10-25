@@ -75,7 +75,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    // Browser extensions add attributes to <html> before hydration, this only silences that element
+    <html lang="en" suppressHydrationWarning>
       <Head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopPOne.variable} ${nunito.variable} antialiased`}
