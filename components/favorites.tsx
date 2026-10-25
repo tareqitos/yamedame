@@ -1,13 +1,13 @@
 "use client"
 
-import { ChangeEvent, useRef, useSyncExternalStore } from "react";
+import { ChangeEvent, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { DownloadSimpleIcon, StarIcon, UploadSimpleIcon } from "@phosphor-icons/react";
 import { toast } from "sonner";
 import { Item } from "@/types/types";
 import { getCardData } from "@/utils/constants";
 import { addFavorites, useFavorites } from "@/utils/favorites";
-import { MediaCard, ResourceCard } from "./ui/card";
+import { collapseFrom, MediaCard, ResourceCard } from "./ui/card";
 import { Icon } from "./ui/icon";
 import Button from "./ui/button";
 
@@ -75,7 +75,7 @@ const FavoritesActions = ({ favorites, resources }: { favorites: Item[]; resourc
     };
 
     return (
-        <div className="flex flex-wrap justify-end gap-2 mt-6">
+        <div className="flex flex-wrap justify-end gap-2 mt-6 animate-rise" style={{ "--i": 1 } as React.CSSProperties}>
             <Button variant="secondary" onClick={() => inputRef.current?.click()} data-umami-event="Import favorites">
                 <UploadSimpleIcon size={20} weight="bold" className="mr-2 inline align-sub" />
                 Import
@@ -95,21 +95,55 @@ const FavoritesActions = ({ favorites, resources }: { favorites: Item[]; resourc
     );
 };
 
+// Must match the .animate-collapse duration in globals.css
+const COLLAPSE_DURATION = 300;
+
+// Keeps removed favorites on screen while they collapse
+const useLeavingIds = (ids: string[]) => {
+    const [leaving, setLeaving] = useState<string[]>([]);
+    const previous = useRef(ids);
+
+    useEffect(() => {
+        const removed = previous.current.filter((id) => !ids.includes(id));
+        previous.current = ids;
+        if (removed.length === 0) return;
+
+        setLeaving((current) => [...current, ...removed]);
+        // Not cleared when ids change again, otherwise a quick second removal would keep the first row forever
+        setTimeout(() => {
+            setLeaving((current) => current.filter((id) => !removed.includes(id)));
+        }, COLLAPSE_DURATION);
+    }, [ids]);
+
+    // A row clicked again while collapsing is a favorite again
+    return leaving.filter((id) => !ids.includes(id));
+};
+
 export const FavoritesList = ({ resources }: { resources: Item[] }) => {
     const { ids } = useFavorites();
+    const leavingIds = useLeavingIds(ids);
     const hydrated = useHydrated();
 
     if (!hydrated) return null;
 
+    const isLeaving = (item: Item) => leavingIds.includes(String(item.id));
     const favorites = resources.filter((item) => ids.includes(String(item.id)));
-    const actions = <FavoritesActions favorites={favorites} resources={resources} />;
+    const displayed = resources.filter((item) => ids.includes(String(item.id)) || isLeaving(item));
 
-    if (favorites.length === 0) {
-        return (
-            <>
-                {actions}
-                <div className="flex flex-col items-center text-center gap-4 p-10 my-6 rounded-2xl bg-card-background">
-                    <StarIcon size={48} weight="duotone" className="text-favorite" />
+    // Grouped by main category, in the same order as the home page
+    const groups = getCardData()
+        .filter((card) => card.path)
+        .map((card) => ({ card, items: displayed.filter((item) => item.path === card.path) }))
+        .filter((group) => group.items.length > 0);
+
+    // The actions stay mounted in the same place in both states, so they don't replay their entrance
+    // when the last favorite is removed: the export button simply becomes disabled
+    return (
+        <section>
+            <FavoritesActions favorites={favorites} resources={resources} />
+            {displayed.length === 0 ? (
+                <div className="flex flex-col items-center text-center gap-4 p-10 my-6 rounded-2xl bg-card-background animate-rise" style={{ "--i": 2 } as React.CSSProperties}>
+                    <StarIcon size={48} weight="duotone" className="text-favorite animate-spin-in" style={{ animationDelay: "200ms" }} />
                     <p className="text-xl font-semibold">No favorites yet</p>
                     <p className="opacity-80 max-w-md">
                         Tap the <StarIcon size={18} weight="bold" className="inline" /> next to any resource to keep it here.
@@ -122,36 +156,33 @@ export const FavoritesList = ({ resources }: { resources: Item[] }) => {
                         <Button variant="button" tabIndex={-1}>Browse resources</Button>
                     </Link>
                 </div>
-            </>
-        );
-    }
+            ) : groups.map(({ card, items }, index) => {
+                // A category losing its last favorite collapses as a whole
+                const groupLeaving = items.every(isLeaving);
 
-    // Grouped by main category, in the same order as the home page
-    const groups = getCardData()
-        .filter((card) => card.path)
-        .map((card) => ({ card, items: favorites.filter((item) => item.path === card.path) }))
-        .filter((group) => group.items.length > 0);
-
-    return (
-        <section>
-            {actions}
-            {groups.map(({ card, items }) => (
-                <div key={card.path}>
-                    <div id={card.path} className="pt-38 -mt-32"></div>
-                    <div className="flex items-center gap-3">
-                        <span className="p-2 rounded-sm bg-card-background">
-                            <Icon path={card.path} size={22} />
-                        </span>
-                        <Link href={`/${card.path}`} className="text-2xl font-semibold hover:text-primary transition-primary">{card.title}</Link>
-                        <span className="text-sm opacity-60">{items.length}</span>
+                return (
+                    <div
+                        key={card.path}
+                        ref={groupLeaving ? collapseFrom : undefined}
+                        className={groupLeaving ? "animate-collapse" : "animate-rise"}
+                        style={{ "--i": index + 2 } as React.CSSProperties}
+                    >
+                        <div id={card.path} className="pt-38 -mt-32"></div>
+                        <div className="flex items-center gap-3">
+                            <span className="p-2 rounded-sm bg-card-background">
+                                <Icon path={card.path} size={22} />
+                            </span>
+                            <Link href={`/${card.path}`} className="text-2xl font-semibold hover:text-primary transition-primary">{card.title}</Link>
+                            <span className="text-sm opacity-60">{items.filter((item) => !isLeaving(item)).length || ""}</span>
+                        </div>
+                        {mediaTypes.includes(card.path as string) ? (
+                            <MediaCard array={items} className="mb-10" leavingIds={leavingIds} />
+                        ) : (
+                            <ResourceCard array={items} className="mb-10" leavingIds={leavingIds} />
+                        )}
                     </div>
-                    {mediaTypes.includes(card.path as string) ? (
-                        <MediaCard array={items} className="mb-10" />
-                    ) : (
-                        <ResourceCard array={items} className="mb-10" />
-                    )}
-                </div>
-            ))}
+                );
+            })}
         </section>
     );
 }

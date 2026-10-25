@@ -63,8 +63,8 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
 
             {isOpen && (
                 <div className="fixed inset-0 flex h-fit top-20 justify-center z-1000">
-                    <div className="bg-black/60 fixed inset-0 flex items-center justify-center -z-1 transition-primary" onClick={() => handleClose()}></div>
-                    <div className="bg-card-background p-4 pb-10 rounded-lg w-11/12 max-w-4xl border-1 border-primary">
+                    <div className="bg-black/60 fixed inset-0 flex items-center justify-center -z-1 animate-fade" onClick={() => handleClose()}></div>
+                    <div className="bg-card-background p-4 pb-10 rounded-lg w-11/12 max-w-4xl border-1 border-primary animate-pop-in">
                         <form onSubmit={(e) => handleSubmit(e)}>
                             <input
                                 ref={inputRef}
@@ -79,7 +79,7 @@ export const SearchButton = ({ resources }: { resources: Item[] }) => {
                         {fitleredResults.length > 0 && (
                             <ul className="bg-card-background p-4 mt-2 rounded-lg max-h-120 overflow-y-auto">
                                 {fitleredResults.map((result, index) => (
-                                    <li key={index} className="border-b border-primary/10 p-2 last:border-b-0">
+                                    <li key={result.id} className="border-b border-primary/10 p-2 last:border-b-0 animate-rise" style={{ "--i": index } as React.CSSProperties}>
                                         <Link href={`/${result.path}#${result.slug}`} className="md:flex-col items-center gap-2 border-b border-primary/10 last:border-b-0" onClick={() => handleClose()}>
                                             <div className="flex items-center gap-2">
                                                 <Icon path={result.path} className="inline-block md:mr-2" size={20} />

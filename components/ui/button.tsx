@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <button
             className={clsx(
-                "rounded transition-colors",
+                "rounded transition-all active:scale-[.96]",
                 buttonStyles[variant],
                 className
             )}

@@ -78,7 +78,7 @@ export default async function UpdatesPage() {
     return (
         <div className="container mx-auto max-w-4xl px-4 py-12">
             <div className="space-y-8">
-                <header>
+                <header className="animate-rise">
                     <h1 className="text-4xl lg:text-5xl font-black">
                         What's New
                     </h1>
@@ -88,7 +88,7 @@ export default async function UpdatesPage() {
                 </header>
 
                 {pendingCount > 0 && (
-                    <details className="rounded-lg bg-card-background p-6 md:px-10">
+                    <details className="rounded-lg bg-card-background p-6 md:px-10 animate-rise" style={{ "--i": 1 } as React.CSSProperties}>
                         <summary className="cursor-pointer text-xl font-semibold">
                             Changes since the last update ({pendingCount})
                         </summary>
@@ -96,15 +96,15 @@ export default async function UpdatesPage() {
                     </details>
                 )}
 
-                <article className="rounded-lg border border-primary shadow-md p-6 md:p-10">
+                <article className="rounded-lg border border-primary shadow-md p-6 md:p-10 animate-rise" style={{ "--i": 2 } as React.CSSProperties}>
                     <h2 className="text-2xl font-semibold tracking-tight mb-4">
                         {formatUpdateMonth(latest.date)} - Update {latest.emoji}
                     </h2>
                     <UpdateContent update={latest} changes={byUpdate.get(latest.date)!} />
                 </article>
 
-                {older.map(update => (
-                    <details key={update.date} className="rounded-lg border border-foreground/10 p-6 md:px-10">
+                {older.map((update, index) => (
+                    <details key={update.date} className="rounded-lg border border-foreground/10 p-6 md:px-10 animate-rise" style={{ "--i": index + 3 } as React.CSSProperties}>
                         <summary className="cursor-pointer text-2xl font-semibold tracking-tight">
                             {formatUpdateMonth(update.date)} - Update {update.emoji}
                         </summary>

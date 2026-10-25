@@ -11,8 +11,8 @@ import { useState } from "react"
 
 const MainCard = ({ title, path, desc }: MainCardProps) => {
     return (
-        <div className="flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background drop-shadow-lg transition-border">
-            <span className="w-fit p-2 rounded-sm bg-background" >
+        <div className="group flex flex-col w-full rounded-2xl p-6 lg:h-50 bg-card-background drop-shadow-lg transition-border hover-lift">
+            <span className="w-fit p-2 rounded-sm bg-background hover-wiggle" >
                 <Icon path={path} size={28} />
             </span>
             <h1 className="text-xl font-bold mt-2">{title}</h1>
@@ -57,14 +57,23 @@ const FavoriteButton = ({ item }: { item: Item }) => {
     )
 }
 
-const ResourceCard = ({ array, className }: ResourceCardProps) => {
+// Gives .animate-collapse the real height to start from
+export const collapseFrom = (el: HTMLElement | null) => {
+    el?.style.setProperty("--collapse-from", `${el.scrollHeight}px`);
+}
+
+const ResourceCard = ({ array, className, leavingIds }: ResourceCardProps) => {
     return (
         <ul className={clsx(
             "flex flex-col gap-4 p-4 bg-card-background rounded-2xl my-6 text-primary text-lg font-semibold",
             className
         )}>
             {array.map((child) => (
-                <li key={child.id} className="flex items-start gap-2">
+                <li
+                    key={child.id}
+                    ref={leavingIds?.includes(String(child.id)) ? collapseFrom : undefined}
+                    className={clsx("flex items-start gap-2", leavingIds?.includes(String(child.id)) && "animate-collapse")}
+                >
                     <div className="flex-1">
                         <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
                         <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`} data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
@@ -79,7 +88,7 @@ const ResourceCard = ({ array, className }: ResourceCardProps) => {
     )
 }
 
-const MediaCard = ({ array, className }: ResourceCardProps) => {
+const MediaCard = ({ array, className, leavingIds }: ResourceCardProps) => {
 
     return (
         <ul className={clsx(
@@ -87,7 +96,11 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
             className
         )}>
             {array.map((child) => (
-                <li key={child.id} className="relative flex flex-row gap-4 items-center">
+                <li
+                    key={child.id}
+                    ref={leavingIds?.includes(String(child.id)) ? collapseFrom : undefined}
+                    className={clsx("relative flex flex-row gap-4 items-center", leavingIds?.includes(String(child.id)) && "animate-collapse")}
+                >
                     <div className="relative overflow-hidden w-20 h-20 flex-shrink-0 rounded-sm z-2">
                         <Image
                             src={`${process.env.NEXT_PUBLIC_API_URL}/resources/${child.id}/image`}
