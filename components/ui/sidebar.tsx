@@ -6,7 +6,7 @@ import { convertToSlug } from "@/utils/helpers";
 import Link from "next/link";
 import Button from "./button";
 import { useState } from "react";
-import { ArrowLeftIcon, ArrowRightIcon, HouseIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, ArrowRightIcon, HouseIcon, ListBulletsIcon, ListIcon } from "@phosphor-icons/react";
 
 type SidebarMenuProps = {
     items: MainCardProps[]
@@ -39,13 +39,13 @@ export const SidebarMenu = ({ items }: SidebarMenuProps) => {
 
     return (
         <>
-            <div className="flex gap-2 fixed left-4 xl:-left-40 bottom-16 z-99 transition-primary duration-75">
-                <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
-                    Menu
+            <div className="flex flex-col gap-2 fixed right-4 xl:-right-20 bottom-16 z-99 transition-primary duration-75">
+                <Button variant="button" className="p-3!" onClick={() => setIsOpen(!isOpen)} aria-label="Menu">
+                    <ListIcon size={24} weight="bold" className="block" />
                 </Button>
-                <Link href="/" className="inline">
-                    <Button variant="button">
-                        <HouseIcon size={24} weight="fill" className="inline-block" />
+                <Link href="/" aria-label="Home">
+                    <Button variant="button" className="p-3!" tabIndex={-1}>
+                        <HouseIcon size={24} weight="fill" className="block" />
                     </Button>
                 </Link>
             </div>
@@ -96,9 +96,10 @@ export const SidebarCategory = ({ items }: SidebarProps) => {
 
     return (
         <>
-            <div className="flex lg:-right-34 gap-2 fixed right-4 bottom-16 z-99 transition-primary duration-75">
-                <Button variant="button" className="" onClick={() => setIsOpen(!isOpen)}>
-                    On this page
+            {/* Stacked above the SidebarMenu buttons (2 × 52px + gap) */}
+            <div className="flex flex-col fixed right-4 lg:-right-20 bottom-46 z-99 transition-primary duration-75">
+                <Button variant="button" className="p-3!" onClick={() => setIsOpen(!isOpen)} aria-label="On this page">
+                    <ListBulletsIcon size={24} weight="bold" className="block" />
                 </Button>
             </div>
 
