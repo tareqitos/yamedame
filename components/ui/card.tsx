@@ -27,7 +27,7 @@ const ResourceCard = ({ array, className }: ResourceCardProps) => {
             {array.map((child) => (
                 <li key={child.id}>
                     <IconCategory category={child.slug} size={20} className="inline align-sub mr-2" />
-                    <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`}>
+                    <a href={child.link} target="_blank" className={`flex-1 text-[16px] sm:text-lg hover:text-link-hover transition-primary`} data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
                         {child.name}
                     </a>
                     &nbsp;- <span className="text-[16px] sm:text-lg text-foreground">{child.description}</span>
@@ -62,13 +62,16 @@ const MediaCard = ({ array, className }: ResourceCardProps) => {
                         className="absolute -left-4 blur-xl opacity-50 w-[100px] h-[100px]"
                     />
                     <div className="flex flex-col">
-                        <a href={child.link} target="_blank" className="hover:text-white transition-primary">
+                        <a href={child.link} target="_blank" className="hover:text-white transition-primary" data-umami-event="Open link" data-umami-event-name={child.name} data-umami-event-link={child.link}>
                             {child.name}
                         </a>
                         <p className="text-foreground">{child.description}</p>
-                        <div className="flex w-fit gap-2 bg-background px-2 py-1 rounded-lg">
+                        <div className="flex w-fit gap-2 py-1 rounded-lg">
+
                             {child.platform?.map((platform: string, index: number) => (
-                                <IconMedia key={index} platform={platform} size={24} />
+                                <div key={index} className="bg-background px-2 py-1 rounded-lg">
+                                    <IconMedia platform={platform} size={24} />
+                                </div>
                             ))}
                         </div>
                     </div>

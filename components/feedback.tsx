@@ -56,6 +56,7 @@ export const Feedback = ({ item }: FeedbackProps) => {
                 className="w-fit p-2 rounded-sm bg-card-background"
                 aria-expanded={isOpen}
                 onClick={() => { setIsOpen(!isOpen); setCategory(window.location.href + '#' + convertToSlug(item)) }}
+                data-umami-event="Open feedback form"
             >
                 <LightbulbFilamentIcon size={18} weight="regular" className="text-primary" />
             </Button>
@@ -102,6 +103,7 @@ export const Feedback = ({ item }: FeedbackProps) => {
                         className="w-fit text-sm"
                         type="submit"
                         disabled={isLoading}
+                        data-umami-event={`Submit feedback for ${category}`}
                     >
                         {isLoading ? (
                             <span className="flex items-center gap-2">
