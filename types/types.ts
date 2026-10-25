@@ -8,6 +8,8 @@ export type Item = {
     slug: string;
     image?: string
     platform?: string[];
+    created_at?: string | null; // YYYY-MM-DD, null for resources older than the column
+    deleted_at?: string | null; // YYYY-MM-DD, only set on removed resources
 }
 
 // Card props types

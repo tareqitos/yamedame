@@ -22,7 +22,7 @@ const MenuList = ({ items, onLinkClick }: { items: MainCardProps[]; onLinkClick?
         </div>
         <div className="mb-2">
             <Icon path="beginners" size={20} className="inline-block align-sub mr-4" />
-            <Link href="/beginners" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Beginner Essentials</Link>
+            <Link href="/beginners" className="inline text-lg hover:text-primary" onClick={onLinkClick}>Beginners Guide</Link>
         </div>
         <hr className="my-4 opacity-20" />
         {items.slice(0, -1).map((item, index: number) => (

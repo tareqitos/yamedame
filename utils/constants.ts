@@ -62,17 +62,17 @@ export const IconsMedia = [
 
 export const getCardData = () => {
   return [
-    { title: 'Dictionaries', desc: 'Essential dictionaries and reference tools for Japanese learning.', path: 'dictionaries', icon: "📚" },
-    { title: 'Vocabulary', desc: 'Resources to help you build and expand your Japanese vocabulary.', path: 'vocabulary', icon: "📝" },
-    { title: 'Grammar', desc: 'Master Japanese grammar rules, patterns, and sentence structures.', path: 'grammar', icon: "📖" },
-    { title: 'Reading', desc: 'Practice reading skills with various texts, articles, and stories.', path: 'reading', icon: "📚" },
-    { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media', icon: "💾" },
-    { title: 'Podcasts', desc: 'Listen to podcasts to improve your listening skills.', path: 'podcast', icon: "🎧" },
-    { title: 'Games', desc: 'Find and play games to enhance and practice the language!', path: 'games', icon: "🎮" },
-    { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications', icon: "💻" },
-    { title: 'Encyclopedia', desc: 'Discover Japanese wildlife and learn animal-related vocabulary.', path: 'encyclopedia', icon: "🐱" },
-    { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "📦" },
-    { title: 'More Coming Soon', desc: 'Stay tuned for additional resources and updates!', path: "", icon: "✨" }
+    { title: 'Dictionaries', desc: 'Essential dictionaries and reference tools for Japanese learning.', path: 'dictionaries', icon: "" },
+    { title: 'Vocabulary', desc: 'Resources to help you build and expand your Japanese vocabulary.', path: 'vocabulary', icon: "" },
+    { title: 'Grammar', desc: 'Master Japanese grammar rules, patterns, and sentence structures.', path: 'grammar', icon: "" },
+    { title: 'Reading', desc: 'Practice reading skills with various texts, articles, and stories.', path: 'reading', icon: "" },
+    { title: 'Media', desc: 'Teaching videos, vlogs, podcasts, gaming and more!', path: 'media', icon: "" },
+    { title: 'Podcasts', desc: 'Listen to podcasts to improve your listening skills.', path: 'podcast', icon: "" },
+    { title: 'Games', desc: 'Find and play games to enhance and practice the language!', path: 'games', icon: "" },
+    { title: 'Software / Applications', desc: 'Useful software and applications to support your studies.', path: 'applications', icon: "" },
+    { title: 'Encyclopedia', desc: 'Discover Japanese wildlife and learn animal-related vocabulary.', path: 'encyclopedia', icon: "" },
+    { title: 'Miscellaneous', desc: 'Various helpful resources and tools that don\'t fit into other categories.', path: 'miscellaneous', icon: "" },
+    { title: 'More Coming Soon', desc: 'Stay tuned for additional resources and updates!', path: "", icon: "" }
   ];
 };
 

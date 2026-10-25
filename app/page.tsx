@@ -6,6 +6,7 @@ import Link from "next/link";
 import { RandomLink } from "@/components/random";
 import { StarIcon } from "@phosphor-icons/react/dist/ssr";
 import { getResources } from "./api/api";
+import { formatUpdateMonth, latestUpdate } from "./updates/entries";
 
 export default async function Home() {
   const cards = getCardData();
@@ -18,9 +19,9 @@ export default async function Home() {
         <p className="mt-2 px-4 py-1 text-sm bg-card-background rounded-2xl float-end">No excuses not to learn Japanese</p>
       </div>
       <div className="flex gap-2 mb-5">
-        <Button variant="secondary" className="">
+        <Button variant="button" className="">
           <StarIcon size={20} color="#fcbc32" weight="fill" className="mr-2 inline align-sub" />
-          <Link href="/beginners" title="Beginner Essentials">Beginner Essentials</Link>
+          <Link href="/beginners" title="Beginners Guide">Beginners Guide</Link>
         </Button>
         <RandomLink resources={resources} />
       </div>
@@ -37,7 +38,7 @@ export default async function Home() {
         ))}
       </div>
       <div className="flex gap-2 my-10">
-        <Button variant="secondary"><Link href="/updates" title="Monthly updates">July 2026 Updates 🌸</Link></Button>
+        <Button variant="secondary"><Link href="/updates" title="Monthly updates">{formatUpdateMonth(latestUpdate.date, "short")} Updates {latestUpdate.emoji}</Link></Button>
         <Button variant="secondary"><Link href="/about" title="About">About</Link></Button>
         <Button variant="secondary"><Link href="https://ko-fi.com/H2H0QZVAZ" title="Buy me a coffee!" data-umami-event="Donate">Donate</Link></Button>
       </div>

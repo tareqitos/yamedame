@@ -24,3 +24,24 @@ export async function getResources() {
         return [];
     }
 }
+
+
+// Soft-deleted resources, used by the update page
+export async function getRemovedResources() {
+    try {
+        const response = await fetch(`${API_URL}/resources/removed`, {
+            headers: { 'x-api-key': process.env.API_KEY ?? '' },
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`Get removed resources failed! Status: ${response.status}, Body: ${errorText}`);
+            return [];
+        }
+
+        return (await response.json()) || [];
+    } catch (error) {
+        console.error("Failed to fetch removed resources (catch block):", error);
+        return [];
+    }
+}
